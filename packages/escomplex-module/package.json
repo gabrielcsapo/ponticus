@@ -27,7 +27,8 @@
     "babylon": "^6.0.0",
     "espree": "^5.0.0",
     "esprima": "^4.0.0",
-    "typhonjs-config-eslint": "^0.5.0",
+    "eslint": "^8.18.0",
+    "eslint-plugin-prettier": "^4.1.0",
     "@babel/preset-env": "^7.18.6",
     "@babel/register": "^7.18.6",
     "mocha": "^10.0.0"
@@ -35,8 +36,7 @@
   "scripts": {
     "build": "node ../npm-scripts-build-babel/scripts/build.js",
     "build-syntax": "babel ./node_modules/@ponticus/escomplex-commons/src -d ./node_modules/@ponticus/escomplex-commons/dist && babel ./node_modules/escomplex-plugin-metrics-module/src -d ./node_modules/escomplex-plugin-metrics-module/dist && babel ./node_modules/escomplex-plugin-syntax-estree/src -d ./node_modules/escomplex-plugin-syntax-estree/dist && babel ./node_modules/escomplex-plugin-syntax-babylon/src -d ./node_modules/escomplex-plugin-syntax-babylon/dist && babel ./node_modules/typhonjs-plugin-manager/src -d ./node_modules/typhonjs-plugin-manager/dist",
-    "esdoc": "esdoc -c .esdocrc",
-    "eslint": "eslint .",
+    "lint": "eslint .",
     "prepublish": "babel-node ./node_modules/typhonjs-npm-scripts-publish/scripts/prepublish.js",
     "test": "mocha --require @babel/register test/src/*.js",
     "test-coverage": "babel-node ./node_modules/typhonjs-npm-scripts-test-mocha/scripts/mocha-istanbul.js",

@@ -3,8 +3,7 @@
  *
  * @type {{}}
  */
-export const modules =
-{
-   cli: false,
-   index: true
+export const modules = {
+  cli: false,
+  index: true,
 };

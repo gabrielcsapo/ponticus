@@ -11,12 +11,13 @@
   "devDependencies": {
     "@ponticus/npm-scripts-build-babel": "^0.7.1",
     "mocha": "^10.0.0",
-    "typhonjs-config-eslint": "^0.4.0"
+    "eslint": "^8.18.0",
+    "eslint-config-prettier": "^8.5.0"
   },
   "scripts": {
     "build": "node ../npm-scripts-build-babel/scripts/build.js",
     "esdoc": "esdoc -c .esdocrc",
-    "eslint": "eslint .",
+    "lint": "eslint .",
     "prepublish": "babel-node ./node_modules/typhonjs-npm-scripts-publish/scripts/prepublish.js",
     "test": "mocha test/src/**/*.js",
     "test-coverage": "babel-node ./node_modules/typhonjs-npm-scripts-test-mocha/scripts/mocha-istanbul.js"

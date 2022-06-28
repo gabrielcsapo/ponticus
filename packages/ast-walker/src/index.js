@@ -1,4 +1,4 @@
-import ASTWalker from './ASTWalker.js';
+import ASTWalker from "./ASTWalker.js";
 
 /**
  * Default walker instance.
@@ -19,20 +19,20 @@ export default walker;
  * @see https://www.npmjs.com/package/typhonjs-plugin-manager
  * @ignore
  */
-export function onPluginLoad(ev)
-{
-   const eventbus = ev.eventbus;
+export function onPluginLoad(ev) {
+  const eventbus = ev.eventbus;
 
-   let eventPrepend = 'typhonjs';
+  let eventPrepend = "typhonjs";
 
-   const options = ev.pluginOptions;
+  const options = ev.pluginOptions;
 
-   // Apply any plugin options.
-   if (typeof options === 'object')
-   {
-      // If `eventPrepend` is defined then it is prepended before all event bindings.
-      if (typeof options.eventPrepend === 'string') { eventPrepend = `${options.eventPrepend}:`; }
-   }
+  // Apply any plugin options.
+  if (typeof options === "object") {
+    // If `eventPrepend` is defined then it is prepended before all event bindings.
+    if (typeof options.eventPrepend === "string") {
+      eventPrepend = `${options.eventPrepend}:`;
+    }
+  }
 
-   eventbus.on(`${eventPrepend}:ast:walker:traverse`, walker.traverse, walker);
+  eventbus.on(`${eventPrepend}:ast:walker:traverse`, walker.traverse, walker);
 }

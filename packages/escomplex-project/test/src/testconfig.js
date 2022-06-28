@@ -3,9 +3,8 @@
  *
  * @type {{}}
  */
-export const modules =
-{
-   project: true
+export const modules = {
+  project: true,
 };
 
 /**
@@ -13,13 +12,12 @@ export const modules =
  *
  * @type {{}}
  */
-export const parsers =
-{
-   acorn: true,
-   babelParser: true,
-   babylon: true,
-   espree: true,
-   esprima: true
+export const parsers = {
+  acorn: true,
+  babelParser: true,
+  babylon: true,
+  espree: true,
+  esprima: true,
 };
 
 /**

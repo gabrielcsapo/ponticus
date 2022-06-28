@@ -1,5 +1,5 @@
 {
-  "name": "es6-plato",
+  "name": "@ponticus/ponticus",
   "description": "JavaScript source analysis and visualizer",
   "version": "1.2.4",
   "homepage": "https://github.com/the-simian/es6-plato",
@@ -22,9 +22,13 @@
     "node": ">= 0.10.0"
   },
   "scripts": {
-    "test": "echo 'TODO: Replace Grunt'"
+    "test": "echo 'TODO: Replace Grunt'",
+    "lint": "eslint ."
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^8.18.0",
+    "eslint-config-prettier": "^8.5.0"
+  },
   "keywords": [
     "halstead",
     "visualize",
