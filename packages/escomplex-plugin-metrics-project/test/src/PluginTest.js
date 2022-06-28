@@ -1,7 +1,8 @@
+import { suite, test } from 'mocha';
 import { assert }             from 'chai';
 import path                   from 'path';
 
-import ProjectReport          from '@ponticus/escomplex-commons/src/project/report/ProjectReport';
+import ProjectReport          from '@ponticus/escomplex-commons/dist/project/report/ProjectReport';
 
 import PluginMetricsProject   from '../../src/PluginMetricsProject.js';
 

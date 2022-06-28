@@ -1,68 +1,71 @@
-import { assert }    from 'chai';
-import fs            from 'fs';
+const {
+   suite,
+   test,
+   teardown,
+   setup
+} = require('mocha');
 
-import walker        from '../../src/index.js';
+const {
+   assert
+} = require('chai');
+const fs = require('fs');
 
-const walkerPath =   '../../dist/index';
+const walker = require('../../dist/index.js').default;
 
-suite('AST Walker:', () =>
-{
-   suite('require walker:', () =>
-   {
+const walkerPath = '../../dist/index';
+
+suite('AST Walker:', () => {
+   suite('require walker:', () => {
       let requireWalker;
 
-      setup(() => { requireWalker = require(walkerPath); });
-      teardown(() => { requireWalker = undefined; });
-
-      test('require does not throw', () =>
-      {
-         assert.doesNotThrow(() => { require(walkerPath); });
+      setup(() => {
+         requireWalker = require(walkerPath);
+      });
+      teardown(() => {
+         requireWalker = undefined;
       });
 
-      test('walker object is exported', () =>
-      {
+      test('require does not throw', () => {
+         assert.doesNotThrow(() => {
+            require(walkerPath);
+         });
+      });
+
+      test('walker object is exported', () => {
          assert.isObject(requireWalker);
       });
 
-      test('walker throws when traverse is called with empty parameters', () =>
-      {
-         assert.throws(() => { requireWalker.traverse(); });
+      test('walker throws when traverse is called with empty parameters', () => {
+         assert.throws(() => {
+            requireWalker.traverse();
+         });
       });
    });
 
-   suite('walker:', () =>
-   {
-      suite('successfully parses ast tree (fixture):', () =>
-      {
-         test('result has proper node counts', () =>
-         {
+   suite('walker:', () => {
+      suite('successfully parses ast tree (fixture):', () => {
+         test('result has proper node counts', () => {
             const nodeCounts = {};
             const nodeResults = JSON.parse(fs.readFileSync('./test/fixture/espree-estree-results.json', 'utf8'));
 
-            walker.traverse(JSON.parse(fs.readFileSync('./test/fixture/espree-estree.json', 'utf8')),
-            {
-               enterNode: (node) =>
-               {
+            walker.traverse(JSON.parse(fs.readFileSync('./test/fixture/espree-estree.json', 'utf8')), {
+               enterNode: (node) => {
                   nodeCounts[node.type] = typeof nodeCounts[node.type] === 'undefined' ? 1 : nodeCounts[node.type] + 1;
                }
             });
 
-            Object.keys(nodeResults).forEach((key) =>
-            {
+            Object.keys(nodeResults).forEach((key) => {
                assert.strictEqual(nodeCounts[key], nodeResults[key]);
             });
          });
 
-         test('result has proper node counts (ignoreKeys)', () =>
-         {
+         test('result has proper node counts (ignoreKeys)', () => {
             const nodeCounts = {};
             const nodeResults = JSON.parse(fs.readFileSync(
-             './test/fixture/espree-estree-results-ignorekeys.json', 'utf8'));
+               './test/fixture/espree-estree-results-ignorekeys.json', 'utf8'));
 
-            walker.traverse(JSON.parse(fs.readFileSync('./test/fixture/espree-estree.json', 'utf8')),
-            {
-               enterNode: (node) =>
-               {
+            walker.traverse(JSON.parse(fs.readFileSync('./test/fixture/espree-estree.json', 'utf8')), {
+               enterNode: (node) => {
                   nodeCounts[node.type] = typeof nodeCounts[node.type] === 'undefined' ? 1 : nodeCounts[node.type] + 1;
 
                   // Ignore all declaration keys.
@@ -70,22 +73,18 @@ suite('AST Walker:', () =>
                }
             });
 
-            Object.keys(nodeResults).forEach((key) =>
-            {
+            Object.keys(nodeResults).forEach((key) => {
                assert.strictEqual(nodeCounts[key], nodeResults[key]);
             });
          });
 
-         test('result has proper node counts (break / null)', () =>
-         {
+         test('result has proper node counts (break / null)', () => {
             const nodeCounts = {};
             const nodeResults = JSON.parse(fs.readFileSync(
-             './test/fixture/espree-estree-results-breaknull.json', 'utf8'));
+               './test/fixture/espree-estree-results-breaknull.json', 'utf8'));
 
-            walker.traverse(JSON.parse(fs.readFileSync('./test/fixture/espree-estree.json', 'utf8')),
-            {
-               enterNode: (node) =>
-               {
+            walker.traverse(JSON.parse(fs.readFileSync('./test/fixture/espree-estree.json', 'utf8')), {
+               enterNode: (node) => {
                   nodeCounts[node.type] = typeof nodeCounts[node.type] === 'undefined' ? 1 : nodeCounts[node.type] + 1;
 
                   // By returning null all children keys are skipped.
@@ -93,8 +92,7 @@ suite('AST Walker:', () =>
                }
             });
 
-            Object.keys(nodeResults).forEach((key) =>
-            {
+            Object.keys(nodeResults).forEach((key) => {
                assert.strictEqual(nodeCounts[key], nodeResults[key]);
             });
          });

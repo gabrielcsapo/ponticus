@@ -1,3 +1,4 @@
+import { suite, test, setup, teardown } from 'mocha';
 import { assert }          from 'chai';
 
 import ModuleReport        from '../../../src/module/report/ModuleReport';

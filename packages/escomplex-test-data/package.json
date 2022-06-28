@@ -1,36 +1,16 @@
 {
   "name": "@ponticus/escomplex-test-data",
   "version": "0.0.1",
-  "homepage": "https://github.com/typhonjs-node-escomplex/@ponticus/escomplex-test-data/",
+  "homepage": "https://github.com/ponticus/escomplex-test-data/",
   "description": "Provides shared test data resources for all typhonjs-escomplex repos.",
-  "license": "MPL-2.0",
-  "author": {
-    "name": "Mike Leahy"
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/typhonjs-node-escomplex/@ponticus/escomplex-test-data.git"
+    "url": "https://github.com/ponticus/escomplex-test-data.git"
   },
-  "maintainers": [
-    {
-      "name": "Mike Leahy",
-      "email": "support@typhonjs.io",
-      "url": "https://github.com/typhonrt"
-    }
-  ],
   "keywords": [
     "typhonjs",
     "escomplex",
     "test",
     "data"
-  ],
-  "files": [
-    "files",
-    "project",
-    "AUTHORS.md"
-  ],
-  "directories": {},
-  "bugs": {
-    "url": "https://github.com/typhonjs-node-escomplex/@ponticus/escomplex-test-data/issues"
-  }
+  ]
 }

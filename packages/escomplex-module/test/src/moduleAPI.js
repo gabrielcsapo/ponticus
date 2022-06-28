@@ -1,3 +1,4 @@
+import { suite, test } from 'mocha';
 import { assert }       from 'chai';
 
 import * as testconfig  from './testconfig';

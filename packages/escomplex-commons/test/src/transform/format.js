@@ -1,3 +1,4 @@
+import { suite, test } from 'mocha';
 import fs                  from 'fs-extra';
 import { assert }          from 'chai';
 

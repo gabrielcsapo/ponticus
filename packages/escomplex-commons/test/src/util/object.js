@@ -1,3 +1,4 @@
+import { suite, test } from 'mocha';
 import { assert }       from 'chai';
 
 import MethodAverage    from '../../../src/module/report/averages/MethodAverage';

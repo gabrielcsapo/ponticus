@@ -1,4 +1,4 @@
-// import { assert }       from 'chai';
+import { suite, test, setup } from 'mocha';
 
 import parsers          from './parsers';
 import * as testconfig  from './testconfig';

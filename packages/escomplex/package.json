@@ -3,22 +3,7 @@
   "version": "0.1.0",
   "description": "Next generation complexity reporting for Javascript & Typescript based on the Babel parser.",
   "homepage": "https://github.com/typhonjs-node-escomplex/typhonjs-escomplex",
-  "license": "MPL-2.0",
-  "author": {
-    "name": "Michael Leahy"
-  },
   "main": "./dist",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/typhonjs-node-escomplex/typhonjs-escomplex.git"
-  },
-  "maintainers": [
-    {
-      "name": "Michael Leahy",
-      "email": "support@typhonjs.io",
-      "url": "https://github.com/typhonrt"
-    }
-  ],
   "dependencies": {
     "@ponticus/babel-parser": "^0.2.0",
     "commander": "^2.0.0",
@@ -26,10 +11,11 @@
     "@ponticus/escomplex-project": "^0.1.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.18.6",
+    "@babel/register": "^7.18.6",
+    "mocha": "^10.0.0",
     "@ponticus/escomplex-test-data": "0.0.1",
-    "babel-node": "0.0.1-security",
-    "typhonjs-config-eslint": "^0.5.0",
-    "typhonjs-npm-build-test": "^0.7.0"
+    "typhonjs-config-eslint": "^0.5.0"
   },
   "scripts": {
     "build": "node ../npm-scripts-build-babel/scripts/build.js",
@@ -37,7 +23,7 @@
     "esdoc": "esdoc -c .esdocrc",
     "eslint": "eslint .",
     "prepublish": "babel-node ./node_modules/typhonjs-npm-scripts-publish/scripts/prepublish.js",
-    "test": "babel-node ./node_modules/typhonjs-npm-scripts-test-mocha/scripts/mocha.js",
+    "test": "mocha --require @babel/register test/src/index/index.js",
     "test-coverage": "babel-node ./node_modules/typhonjs-npm-scripts-test-mocha/scripts/mocha-istanbul.js",
     "dev-test": "BABEL_ENV=escomplex-dev babel-node ./node_modules/typhonjs-npm-scripts-test-mocha/scripts/mocha.js dev_test",
     "dev-test-coverage": "BABEL_ENV=escomplex-dev babel-node ./node_modules/typhonjs-npm-scripts-test-mocha/scripts/mocha-istanbul.js dev_test"
@@ -61,14 +47,7 @@
     "es9",
     "es10"
   ],
-  "files": [
-    "dist",
-    "src",
-    ".esdocrc",
-    "AUTHORS.md"
-  ],
-  "directories": {},
-  "bugs": {
-    "url": "https://github.com/typhonjs-node-escomplex/typhonjs-escomplex/issues"
+  "volta": {
+    "node": "16.15.0"
   }
 }

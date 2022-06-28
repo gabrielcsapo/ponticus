@@ -1,3 +1,4 @@
+import { suite, test, setup, teardown } from 'mocha';
 import { assert }       from 'chai';
 
 import HalsteadArray    from '../../../src/module/traits/HalsteadArray';

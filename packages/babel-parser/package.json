@@ -24,14 +24,16 @@
     "@babel/parser": "^7.0.0"
   },
   "devDependencies": {
-    "typhonjs-config-eslint": "^0.5.0",
-    "typhonjs-npm-build-test": "^0.7.0"
+    "@babel/preset-env": "^7.18.6",
+    "@babel/register": "^7.18.6",
+    "mocha": "^10.0.0",
+    "typhonjs-config-eslint": "^0.5.0"
   },
   "scripts": {
     "build": "node ../npm-scripts-build-babel/scripts/build.js",
     "eslint": "eslint .",
     "prepublish": "babel-node ./node_modules/typhonjs-npm-scripts-publish/scripts/prepublish.js",
-    "test": "babel-node ./node_modules/typhonjs-npm-scripts-test-mocha/scripts/mocha.js",
+    "test": "mocha --require @babel/register test/src/**/*.js",
     "test-coverage": "babel-node ./node_modules/typhonjs-npm-scripts-test-mocha/scripts/mocha-istanbul.js"
   },
   "keywords": [

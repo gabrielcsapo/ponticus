@@ -1,37 +1,3 @@
 {
-  "presets": ["env", "stage-2"],
-
-  "plugins":
-  [
-    "add-module-exports",
-    ["module-resolver", {
-      "root": ["."],
-      "alias":
-      {
-        "typhonjs-escomplex-commons/src": "typhonjs-escomplex-commons/dist"
-      }
-    }],
-    "transform-runtime"
-  ],
-
-  "env":
-  {
-    "escomplex-dev":
-    {
-      "plugins":
-      [
-        "add-module-exports",
-        ["module-resolver", {
-          "root": ["."],
-          "cwd": "babelrc",
-          "alias":
-          {
-            "typhonjs-escomplex-commons/src": "../typhonjs-escomplex-commons/src",
-            "typhonjs-escomplex-test-data": "../typhonjs-escomplex-test-data"
-          }
-        }],
-        "transform-runtime"
-      ]
-    }
-  }
+  "presets": ["@babel/preset-env"]
 }

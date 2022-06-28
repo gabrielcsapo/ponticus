@@ -1,11 +1,14 @@
+import { suite, test, teardown, setup } from 'mocha';
+
 import fs               from 'fs';
+import path from 'path';
 
 import { assert }       from 'chai';
 
 import parsers          from './parsers';
 import * as testconfig  from './testconfig';
 
-import ProjectReport    from '@ponticus/escomplex-commons/src/project/report/ProjectReport';
+import ProjectReport    from '@ponticus/escomplex-commons/dist/project/report/ProjectReport';
 
 import escomplexProject from '../../src';
 
@@ -20,49 +23,49 @@ if (testconfig.modules['project'])
        */
       const s_LOCAL_TEST_FILES =
       [
-         './node_modules/typhonjs-escomplex-module/src/ESComplexModule.js',
-         './node_modules/typhonjs-escomplex-module/src/index.js',
-         './node_modules/typhonjs-escomplex-module/src/Plugins.js',
+         './node_modules/escomplex-module/src/ESComplexModule.js',
+         './node_modules/escomplex-module/src/index.js',
+         './node_modules/escomplex-module/src/Plugins.js',
 
-         './node_modules/@ponticus/escomplex-commons/src/utils/Enum.js',
-         './node_modules/@ponticus/escomplex-commons/src/utils/MathUtil.js',
-         './node_modules/@ponticus/escomplex-commons/src/utils/StringUtil.js',
-         './node_modules/@ponticus/escomplex-commons/src/utils/ObjectUtil.js',
-         './node_modules/@ponticus/escomplex-commons/src/project/report/ProjectReport.js',
-         './node_modules/@ponticus/escomplex-commons/src/types/ReportType.js',
-         './node_modules/@ponticus/escomplex-commons/src/transform/TransformFormat.js',
-         './node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js',
-         './node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js',
-         './node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js',
-         './node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js',
-         './node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js',
-         './node_modules/@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js',
-         './node_modules/@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js',
-         './node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js',
-         './node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js',
-         './node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js',
-         './node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js',
-         './node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js',
-         './node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js',
-         './node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js',
-         './node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js',
-         './node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js',
-         './node_modules/@ponticus/escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js',
-         './node_modules/@ponticus/escomplex-commons/src/module/report/AbstractReport.js',
-         './node_modules/@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js',
-         './node_modules/@ponticus/escomplex-commons/src/module/report/ClassReport.js',
-         './node_modules/@ponticus/escomplex-commons/src/module/report/HalsteadData.js',
-         './node_modules/@ponticus/escomplex-commons/src/module/report/MethodReport.js',
-         './node_modules/@ponticus/escomplex-commons/src/module/report/ModuleReport.js',
-         './node_modules/@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js',
-         './node_modules/@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js',
-         './node_modules/@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js',
-         './node_modules/@ponticus/escomplex-commons/src/module/traits/actualize.js',
-         './node_modules/@ponticus/escomplex-commons/src/module/traits/HalsteadArray.js',
-         './node_modules/@ponticus/escomplex-commons/src/module/traits/TraitUtil.js',
-         './node_modules/@ponticus/escomplex-commons/src/module/traits/Trait.js',
-         './node_modules/@ponticus/escomplex-commons/src/module/traits/TraitHalstead.js',
-         './node_modules/@ponticus/escomplex-commons/src/analyze/AnalyzeError.js',
+         './node_modules/escomplex-commons/src/utils/Enum.js',
+         './node_modules/escomplex-commons/src/utils/MathUtil.js',
+         './node_modules/escomplex-commons/src/utils/StringUtil.js',
+         './node_modules/escomplex-commons/src/utils/ObjectUtil.js',
+         './node_modules/escomplex-commons/src/project/report/ProjectReport.js',
+         './node_modules/escomplex-commons/src/types/ReportType.js',
+         './node_modules/escomplex-commons/src/transform/TransformFormat.js',
+         './node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js',
+         './node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js',
+         './node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js',
+         './node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js',
+         './node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js',
+         './node_modules/escomplex-commons/src/transform/formats/text/AbstractFormatText.js',
+         './node_modules/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js',
+         './node_modules/escomplex-commons/src/transform/formats/text/FormatText.js',
+         './node_modules/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js',
+         './node_modules/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js',
+         './node_modules/escomplex-commons/src/transform/formats/text/FormatTextModules.js',
+         './node_modules/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js',
+         './node_modules/escomplex-commons/src/transform/formats/json/FormatJSON.js',
+         './node_modules/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js',
+         './node_modules/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js',
+         './node_modules/escomplex-commons/src/transform/formats/json/FormatJSONModules.js',
+         './node_modules/escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js',
+         './node_modules/escomplex-commons/src/module/report/AbstractReport.js',
+         './node_modules/escomplex-commons/src/module/report/AggregateMethodReport.js',
+         './node_modules/escomplex-commons/src/module/report/ClassReport.js',
+         './node_modules/escomplex-commons/src/module/report/HalsteadData.js',
+         './node_modules/escomplex-commons/src/module/report/MethodReport.js',
+         './node_modules/escomplex-commons/src/module/report/ModuleReport.js',
+         './node_modules/escomplex-commons/src/module/report/averages/ModuleAverage.js',
+         './node_modules/escomplex-commons/src/module/report/averages/HalsteadAverage.js',
+         './node_modules/escomplex-commons/src/module/report/averages/MethodAverage.js',
+         './node_modules/escomplex-commons/src/module/traits/actualize.js',
+         './node_modules/escomplex-commons/src/module/traits/HalsteadArray.js',
+         './node_modules/escomplex-commons/src/module/traits/TraitUtil.js',
+         './node_modules/escomplex-commons/src/module/traits/Trait.js',
+         './node_modules/escomplex-commons/src/module/traits/TraitHalstead.js',
+         './node_modules/escomplex-commons/src/analyze/AnalyzeError.js',
 
          './test/fixture/testImportNPMAlias.js',
          './test/fixture/testRequireNPMAlias.js',
@@ -84,16 +87,16 @@ if (testconfig.modules['project'])
          }
 
          // Add srcPathAlias for typhonjs-escomplex-module NPM main alias.
-         if (filePath === './node_modules/typhonjs-escomplex-module/src/index.js')
+         if (filePath === './node_modules/escomplex-module/src/index.js')
          {
             srcPathAlias = 'typhonjs-escomplex-module';
          }
 
          // Load the project data from the test module / files.
-         const testDataFilePath = filePath.replace(/^\.\//, './node_modules/@ponticus/escomplex-test-data/project/');
+         const testDataFilePath = filePath.replace(/^\.\//, './escomplex-test-data/project/');
 
          return {
-            ast: Parser.parse(fs.readFileSync(testDataFilePath, 'utf8')),
+            ast: Parser.parse(fs.readFileSync(path.resolve(__dirname, '..', '..', '..', testDataFilePath), 'utf8')),
             filePath,
             srcPath,
             srcPathAlias
