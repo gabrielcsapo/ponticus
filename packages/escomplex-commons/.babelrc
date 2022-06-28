@@ -1,0 +1,35 @@
+{
+  "presets": ["env", "stage-2"],
+
+  "plugins":
+  [
+    "add-module-exports",
+    ["module-resolver", {
+      "root": ["."],
+      "alias":
+      {
+      }
+    }],
+    "transform-runtime"
+  ],
+
+  "env":
+  {
+    "escomplex-dev":
+    {
+      "plugins":
+      [
+        "add-module-exports",
+        ["module-resolver", {
+          "root": ["."],
+          "cwd": "babelrc",
+          "alias":
+          {
+            "typhonjs-escomplex-test-data": "../typhonjs-escomplex-test-data"
+          }
+        }],
+        "transform-runtime"
+      ]
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+   "title": "typhonjs-ast-walker",
+   "source": "src",
+   "destination": "docs",
+
+   "manual": { "changelog": ["./CHANGELOG.md"] }
+}

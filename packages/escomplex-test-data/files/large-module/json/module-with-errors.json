@@ -1,0 +1,2861 @@
+{
+   "aggregate": {
+      "cyclomatic": 105,
+      "cyclomaticDensity": 28.767,
+      "halstead": {
+         "bugs": 6.167,
+         "difficulty": 105.5,
+         "effort": 1951754.518,
+         "length": 2286,
+         "time": 108430.807,
+         "vocabulary": 273,
+         "volume": 18500.043,
+         "operands": {
+            "distinct": 234,
+            "total": 1266,
+            "identifiers": [
+               "_",
+               "\"underscore\"",
+               "BackboneProxy",
+               "\"./BackboneProxy.js\"",
+               "Events",
+               "\"typhonjs-core-backbone-events/src/Events.js\"",
+               "Model",
+               "\"./Model.js\"",
+               "Utils",
+               "\"./Utils.js\"",
+               "Debug",
+               "\"./Debug.js\"",
+               "Collection",
+               "constructor",
+               "models",
+               "options",
+               "super",
+               "isBoolean",
+               "abortCtor",
+               "hasModelGetter",
+               "isUndefined",
+               "this",
+               "model",
+               "hasComparatorGetter",
+               "comparator",
+               "0",
+               "abortCtorInit",
+               "_reset",
+               "initialize",
+               "arguments",
+               "reset",
+               "extend",
+               "silent",
+               "true",
+               "add",
+               "set",
+               "merge",
+               "false",
+               "s_ADD_OPTIONS",
+               "at",
+               "index",
+               "length",
+               "clone",
+               "create",
+               "attrs",
+               "wait",
+               "_prepareModel",
+               "collection",
+               "success",
+               "m",
+               "resp",
+               "callbackOpts",
+               "call",
+               "context",
+               "save",
+               "null",
+               "fetch",
+               "parse",
+               "method",
+               "\"reset\"",
+               "\"set\"",
+               "log",
+               "Collection - fetch - success callback - method: ",
+               "trigger",
+               "\"sync\"",
+               "wrapError",
+               "sync",
+               "\"read\"",
+               "findWhere",
+               "where",
+               "get",
+               "obj",
+               "isNullOrUndef",
+               "id",
+               "modelId",
+               "attributes",
+               "Collection - get - id: ",
+               "_byId",
+               "cid",
+               "has",
+               "prototype",
+               "idAttribute",
+               "Collection - modelId - 0 - this.model.prototype.idAttribute: ",
+               "JSON",
+               "stringify",
+               "Collection - modelId - 1 - attrs: ",
+               "\"id\"",
+               "pluck",
+               "attr",
+               "map",
+               "pop",
+               "1",
+               "remove",
+               "isModel",
+               "Collection - _prepareModel - 0",
+               "parseObject",
+               "Collection - _prepareModel - 1 - attrs.parseObject: ",
+               "validationError",
+               "\"invalid\"",
+               "push",
+               "singular",
+               "isArray",
+               "slice",
+               "removed",
+               "s_REMOVE_MODELS",
+               "changes",
+               "added",
+               "merged",
+               "\"update\"",
+               "i",
+               "s_REMOVE_REFERENCE",
+               "previousModels",
+               "Collection - set - 0",
+               "s_SET_OPTIONS",
+               "Collection - set - 1 - at: ",
+               "; models.length: ",
+               "toAdd",
+               "toMerge",
+               "toRemove",
+               "modelMap",
+               "sort",
+               "sortable",
+               "sortAttr",
+               "isString",
+               "existing",
+               "Collection - set - 2 - existing",
+               "Collection - set - 3 - merge && model !== existing",
+               "hasChanged",
+               "Collection - set - 4 - !modelMap[existing.cid]",
+               "Collection - set - 5 - add",
+               "Collection - set - 6 - toAdd",
+               "s_ADD_REFERENCE",
+               "Collection - set - 7 - toRemove push",
+               "Collection - set - 8 - before invoking s_REMOVE_MODELS",
+               "orderChanged",
+               "replace",
+               "some",
+               "Collection - set - 9 - set.length > 0 && replace - orderChanged: ",
+               "s_SPLICE",
+               "Collection - set - 10 - toAdd.length > 0 - sort: ",
+               "; at: ",
+               "Collection - set - 11 - sorting silent",
+               "Collection - set - 12 - !options.silent: ",
+               "\"add\"",
+               "\"sort\"",
+               "shift",
+               "Array",
+               "apply",
+               "Error",
+               "\"Cannot sort a set without a comparator\"",
+               "isFunction",
+               "bind",
+               "sortBy",
+               "\"Collection - sync\"",
+               "backbone",
+               "toJSON",
+               "unshift",
+               "first",
+               "\"find\"",
+               "\"filter\"",
+               "collectionMethods",
+               "forEach",
+               "3",
+               "each",
+               "collect",
+               "reduce",
+               "foldl",
+               "inject",
+               "reduceRight",
+               "foldr",
+               "find",
+               "detect",
+               "filter",
+               "select",
+               "reject",
+               "every",
+               "all",
+               "any",
+               "include",
+               "includes",
+               "contains",
+               "invoke",
+               "max",
+               "min",
+               "toArray",
+               "size",
+               "head",
+               "take",
+               "initial",
+               "rest",
+               "tail",
+               "drop",
+               "last",
+               "without",
+               "difference",
+               "indexOf",
+               "shuffle",
+               "lastIndexOf",
+               "isEmpty",
+               "chain",
+               "sample",
+               "partition",
+               "groupBy",
+               "countBy",
+               "indexBy",
+               "findIndex",
+               "findLastIndex",
+               "addUnderscoreMethods",
+               "\"models\"",
+               "Collection - s_ADD_REFERENCE - id: ",
+               "; model.cid: ",
+               "on",
+               "\"all\"",
+               "s_ON_MODEL_EVENT",
+               "<anonymous>",
+               "event",
+               "Collection - s_ON_MODEL_EVENT - 0 - event: ",
+               "\"remove\"",
+               "\"destroy\"",
+               "\"change\"",
+               "prevId",
+               "previousAttributes",
+               "Collection - s_ON_MODEL_EVENT - 1 - change - id: ",
+               "; prevId: ",
+               "Collection - s_REMOVE_MODELS - 0 - model: ",
+               "Collection - s_REMOVE_MODELS - 1 - model: ",
+               "Collection - s_REMOVE_MODELS - 2 - index: ",
+               "splice",
+               "Collection - s_REMOVE_REFERENCE - id: ",
+               "off",
+               "array",
+               "insert",
+               "Math",
+               "\"use strict\""
+            ]
+         },
+         "operators": {
+            "distinct": 39,
+            "total": 1020,
+            "identifiers": [
+               "import",
+               "from",
+               "class",
+               "function",
+               "[]",
+               "{}",
+               "()",
+               "if",
+               "&&",
+               ".",
+               "return",
+               "const",
+               "=",
+               "! (prefix)",
+               "!==",
+               "void (prefix)",
+               "... (spread)",
+               ":",
+               "<",
+               "+=",
+               "new",
+               ":?",
+               "function=>",
+               "||",
+               "-",
+               "for",
+               "let",
+               "++ (postfix)",
+               "+ (prefix)",
+               ">",
+               "+",
+               "else",
+               "throw",
+               "===",
+               "delete (prefix)",
+               "continue",
+               "-- (postfix)",
+               "export",
+               "default"
+            ]
+         }
+      },
+      "params": 54,
+      "sloc": {
+         "logical": 365,
+         "physical": 1120
+      }
+   },
+   "settings": {
+      "commonjs": false,
+      "forin": false,
+      "logicalor": true,
+      "switchcase": true,
+      "trycatch": false,
+      "newmi": false
+   },
+   "classes": [
+      {
+         "aggregate": {
+            "cyclomatic": 86,
+            "cyclomaticDensity": 36.441,
+            "halstead": {
+               "bugs": 4.024,
+               "difficulty": 88.37,
+               "effort": 1066875.3,
+               "length": 1603,
+               "time": 59270.85,
+               "vocabulary": 185,
+               "volume": 12072.804,
+               "operands": {
+                  "distinct": 154,
+                  "total": 878,
+                  "identifiers": [
+                     "Collection",
+                     "Events",
+                     "constructor",
+                     "models",
+                     "options",
+                     "super",
+                     "_",
+                     "isBoolean",
+                     "abortCtor",
+                     "hasModelGetter",
+                     "isUndefined",
+                     "this",
+                     "model",
+                     "hasComparatorGetter",
+                     "comparator",
+                     "Model",
+                     "0",
+                     "abortCtorInit",
+                     "_reset",
+                     "initialize",
+                     "arguments",
+                     "reset",
+                     "extend",
+                     "silent",
+                     "true",
+                     "add",
+                     "set",
+                     "merge",
+                     "false",
+                     "s_ADD_OPTIONS",
+                     "at",
+                     "index",
+                     "length",
+                     "clone",
+                     "create",
+                     "attrs",
+                     "wait",
+                     "_prepareModel",
+                     "collection",
+                     "success",
+                     "m",
+                     "resp",
+                     "callbackOpts",
+                     "call",
+                     "context",
+                     "save",
+                     "null",
+                     "fetch",
+                     "parse",
+                     "method",
+                     "\"reset\"",
+                     "\"set\"",
+                     "Debug",
+                     "log",
+                     "Collection - fetch - success callback - method: ",
+                     "trigger",
+                     "\"sync\"",
+                     "Utils",
+                     "wrapError",
+                     "sync",
+                     "\"read\"",
+                     "findWhere",
+                     "where",
+                     "get",
+                     "obj",
+                     "isNullOrUndef",
+                     "id",
+                     "modelId",
+                     "attributes",
+                     "Collection - get - id: ",
+                     "_byId",
+                     "cid",
+                     "has",
+                     "prototype",
+                     "idAttribute",
+                     "Collection - modelId - 0 - this.model.prototype.idAttribute: ",
+                     "JSON",
+                     "stringify",
+                     "Collection - modelId - 1 - attrs: ",
+                     "\"id\"",
+                     "pluck",
+                     "attr",
+                     "map",
+                     "pop",
+                     "1",
+                     "remove",
+                     "isModel",
+                     "Collection - _prepareModel - 0",
+                     "parseObject",
+                     "Collection - _prepareModel - 1 - attrs.parseObject: ",
+                     "validationError",
+                     "\"invalid\"",
+                     "push",
+                     "singular",
+                     "isArray",
+                     "slice",
+                     "removed",
+                     "s_REMOVE_MODELS",
+                     "changes",
+                     "added",
+                     "merged",
+                     "\"update\"",
+                     "i",
+                     "s_REMOVE_REFERENCE",
+                     "previousModels",
+                     "Collection - set - 0",
+                     "s_SET_OPTIONS",
+                     "Collection - set - 1 - at: ",
+                     "; models.length: ",
+                     "toAdd",
+                     "toMerge",
+                     "toRemove",
+                     "modelMap",
+                     "sort",
+                     "sortable",
+                     "sortAttr",
+                     "isString",
+                     "existing",
+                     "Collection - set - 2 - existing",
+                     "Collection - set - 3 - merge && model !== existing",
+                     "hasChanged",
+                     "Collection - set - 4 - !modelMap[existing.cid]",
+                     "Collection - set - 5 - add",
+                     "Collection - set - 6 - toAdd",
+                     "s_ADD_REFERENCE",
+                     "Collection - set - 7 - toRemove push",
+                     "Collection - set - 8 - before invoking s_REMOVE_MODELS",
+                     "orderChanged",
+                     "replace",
+                     "some",
+                     "Collection - set - 9 - set.length > 0 && replace - orderChanged: ",
+                     "s_SPLICE",
+                     "Collection - set - 10 - toAdd.length > 0 - sort: ",
+                     "; at: ",
+                     "Collection - set - 11 - sorting silent",
+                     "Collection - set - 12 - !options.silent: ",
+                     "\"add\"",
+                     "\"sort\"",
+                     "shift",
+                     "Array",
+                     "apply",
+                     "Error",
+                     "\"Cannot sort a set without a comparator\"",
+                     "isFunction",
+                     "bind",
+                     "sortBy",
+                     "\"Collection - sync\"",
+                     "BackboneProxy",
+                     "backbone",
+                     "toJSON",
+                     "unshift",
+                     "first",
+                     "\"find\"",
+                     "\"filter\""
+                  ]
+               },
+               "operators": {
+                  "distinct": 31,
+                  "total": 725,
+                  "identifiers": [
+                     "function",
+                     "[]",
+                     "{}",
+                     "()",
+                     "if",
+                     "&&",
+                     ".",
+                     "return",
+                     "const",
+                     "=",
+                     "! (prefix)",
+                     "!==",
+                     "void (prefix)",
+                     "... (spread)",
+                     ":",
+                     "<",
+                     "+=",
+                     "new",
+                     ":?",
+                     "function=>",
+                     "||",
+                     "-",
+                     "for",
+                     "let",
+                     "++ (postfix)",
+                     "+ (prefix)",
+                     ">",
+                     "+",
+                     "else",
+                     "throw",
+                     "==="
+                  ]
+               }
+            },
+            "params": 40,
+            "sloc": {
+               "logical": 236,
+               "physical": 856
+            }
+         },
+         "errors": [
+            {
+               "lineStart": 90,
+               "lineEnd": 945,
+               "severity": "info",
+               "message": "maintainability: 106.722 < 115",
+               "name": "Collection",
+               "type": {
+                  "description": "Class",
+                  "name": "CLASS",
+                  "ordinal": 0
+               }
+            }
+         ],
+         "lineEnd": 945,
+         "lineStart": 90,
+         "methods": [
+            {
+               "cyclomatic": 11,
+               "cyclomaticDensity": 61.111,
+               "halstead": {
+                  "bugs": 0.205,
+                  "difficulty": 18.455,
+                  "effort": 11353.625,
+                  "length": 119,
+                  "time": 630.757,
+                  "vocabulary": 36,
+                  "volume": 615.221,
+                  "operands": {
+                     "distinct": 22,
+                     "total": 58,
+                     "identifiers": [
+                        "models",
+                        "options",
+                        "super",
+                        "_",
+                        "isBoolean",
+                        "abortCtor",
+                        "hasModelGetter",
+                        "isUndefined",
+                        "this",
+                        "model",
+                        "hasComparatorGetter",
+                        "comparator",
+                        "Model",
+                        "0",
+                        "abortCtorInit",
+                        "_reset",
+                        "initialize",
+                        "arguments",
+                        "reset",
+                        "extend",
+                        "silent",
+                        "true"
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 14,
+                     "total": 61,
+                     "identifiers": [
+                        "[]",
+                        "{}",
+                        "()",
+                        "if",
+                        "&&",
+                        ".",
+                        "return",
+                        "const",
+                        "=",
+                        "! (prefix)",
+                        "!==",
+                        "void (prefix)",
+                        "... (spread)",
+                        ":"
+                     ]
+                  }
+               },
+               "params": 2,
+               "sloc": {
+                  "logical": 18,
+                  "physical": 41
+               },
+               "errors": [
+                  {
+                     "lineStart": 105,
+                     "lineEnd": 145,
+                     "severity": "warning",
+                     "message": "cyclomatic: 11 > 7",
+                     "name": "constructor",
+                     "type": {
+                        "description": "Class Method",
+                        "name": "CLASS_METHOD",
+                        "ordinal": 1
+                     }
+                  },
+                  {
+                     "lineStart": 105,
+                     "lineEnd": 145,
+                     "severity": "warning",
+                     "message": "halstead.difficulty: 18.455 > 13",
+                     "name": "constructor",
+                     "type": {
+                        "description": "Class Method",
+                        "name": "CLASS_METHOD",
+                        "ordinal": 1
+                     }
+                  }
+               ],
+               "lineEnd": 145,
+               "lineStart": 105,
+               "name": "constructor"
+            },
+            {
+               "cyclomatic": 1,
+               "cyclomaticDensity": 50,
+               "halstead": {
+                  "bugs": 0.023,
+                  "difficulty": 3.056,
+                  "effort": 209.405,
+                  "length": 18,
+                  "time": 11.634,
+                  "vocabulary": 14,
+                  "volume": 68.532,
+                  "operands": {
+                     "distinct": 9,
+                     "total": 11,
+                     "identifiers": [
+                        "models",
+                        "options",
+                        "this",
+                        "set",
+                        "_",
+                        "extend",
+                        "merge",
+                        "false",
+                        "s_ADD_OPTIONS"
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 5,
+                     "total": 7,
+                     "identifiers": [
+                        "return",
+                        "()",
+                        ".",
+                        "{}",
+                        ":"
+                     ]
+                  }
+               },
+               "params": 2,
+               "sloc": {
+                  "logical": 2,
+                  "physical": 4
+               },
+               "errors": [],
+               "lineEnd": 178,
+               "lineStart": 175,
+               "name": "add"
+            },
+            {
+               "cyclomatic": 2,
+               "cyclomaticDensity": 66.667,
+               "halstead": {
+                  "bugs": 0.018,
+                  "difficulty": 4.5,
+                  "effort": 239.179,
+                  "length": 16,
+                  "time": 13.288,
+                  "vocabulary": 10,
+                  "volume": 53.151,
+                  "operands": {
+                     "distinct": 5,
+                     "total": 9,
+                     "identifiers": [
+                        "index",
+                        "0",
+                        "this",
+                        "length",
+                        "models"
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 5,
+                     "total": 7,
+                     "identifiers": [
+                        "if",
+                        "<",
+                        "+=",
+                        ".",
+                        "return"
+                     ]
+                  }
+               },
+               "params": 1,
+               "sloc": {
+                  "logical": 3,
+                  "physical": 5
+               },
+               "errors": [],
+               "lineEnd": 194,
+               "lineStart": 190,
+               "name": "at"
+            },
+            {
+               "cyclomatic": 1,
+               "cyclomaticDensity": 33.333,
+               "halstead": {
+                  "bugs": 0.021,
+                  "difficulty": 5,
+                  "effort": 315.583,
+                  "length": 19,
+                  "time": 17.532,
+                  "vocabulary": 10,
+                  "volume": 63.117,
+                  "operands": {
+                     "distinct": 5,
+                     "total": 10,
+                     "identifiers": [
+                        "this",
+                        "constructor",
+                        "models",
+                        "model",
+                        "comparator"
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 5,
+                     "total": 9,
+                     "identifiers": [
+                        "return",
+                        "new",
+                        ".",
+                        "{}",
+                        ":"
+                     ]
+                  }
+               },
+               "params": 0,
+               "sloc": {
+                  "logical": 3,
+                  "physical": 7
+               },
+               "errors": [],
+               "lineEnd": 209,
+               "lineStart": 203,
+               "name": "clone"
+            },
+            {
+               "cyclomatic": 4,
+               "cyclomaticDensity": 33.333,
+               "halstead": {
+                  "bugs": 0.098,
+                  "difficulty": 12.143,
+                  "effort": 3563.171,
+                  "length": 64,
+                  "time": 197.954,
+                  "vocabulary": 24,
+                  "volume": 293.438,
+                  "operands": {
+                     "distinct": 14,
+                     "total": 34,
+                     "identifiers": [
+                        "attrs",
+                        "options",
+                        "_",
+                        "clone",
+                        "wait",
+                        "model",
+                        "this",
+                        "_prepareModel",
+                        "false",
+                        "add",
+                        "collection",
+                        "success",
+                        "save",
+                        "null"
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 10,
+                     "total": 30,
+                     "identifiers": [
+                        "=",
+                        ":?",
+                        "()",
+                        ".",
+                        "{}",
+                        "const",
+                        "if",
+                        "! (prefix)",
+                        "return",
+                        "function=>"
+                     ]
+                  }
+               },
+               "params": 2,
+               "sloc": {
+                  "logical": 12,
+                  "physical": 22
+               },
+               "errors": [
+                  {
+                     "lineStart": 241,
+                     "lineEnd": 262,
+                     "severity": "info",
+                     "message": "cyclomatic: 4 > 3",
+                     "name": "create",
+                     "type": {
+                        "description": "Class Method",
+                        "name": "CLASS_METHOD",
+                        "ordinal": 1
+                     }
+                  },
+                  {
+                     "lineStart": 241,
+                     "lineEnd": 262,
+                     "severity": "info",
+                     "message": "halstead.difficulty: 12.143 > 8",
+                     "name": "create",
+                     "type": {
+                        "description": "Class Method",
+                        "name": "CLASS_METHOD",
+                        "ordinal": 1
+                     }
+                  }
+               ],
+               "lineEnd": 262,
+               "lineStart": 241,
+               "name": "create"
+            },
+            {
+               "cyclomatic": 3,
+               "cyclomaticDensity": 75,
+               "halstead": {
+                  "bugs": 0.027,
+                  "difficulty": 2.667,
+                  "effort": 219.878,
+                  "length": 23,
+                  "time": 12.215,
+                  "vocabulary": 12,
+                  "volume": 82.454,
+                  "operands": {
+                     "distinct": 9,
+                     "total": 16,
+                     "identifiers": [
+                        "m",
+                        "resp",
+                        "callbackOpts",
+                        "wait",
+                        "collection",
+                        "add",
+                        "success",
+                        "call",
+                        "context"
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 3,
+                     "total": 7,
+                     "identifiers": [
+                        "if",
+                        "()",
+                        "."
+                     ]
+                  }
+               },
+               "params": 3,
+               "sloc": {
+                  "logical": 4,
+                  "physical": 5
+               },
+               "errors": [],
+               "lineEnd": 257,
+               "lineStart": 253,
+               "name": "<anonymous>"
+            },
+            {
+               "cyclomatic": 1,
+               "cyclomaticDensity": 16.667,
+               "halstead": {
+                  "bugs": 0.052,
+                  "difficulty": 7.636,
+                  "effort": 1200.233,
+                  "length": 37,
+                  "time": 66.68,
+                  "vocabulary": 19,
+                  "volume": 157.173,
+                  "operands": {
+                     "distinct": 11,
+                     "total": 21,
+                     "identifiers": [
+                        "options",
+                        "_",
+                        "extend",
+                        "parse",
+                        "true",
+                        "success",
+                        "Utils",
+                        "wrapError",
+                        "this",
+                        "sync",
+                        "\"read\""
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 8,
+                     "total": 16,
+                     "identifiers": [
+                        "=",
+                        "()",
+                        ".",
+                        "{}",
+                        ":",
+                        "const",
+                        "function=>",
+                        "return"
+                     ]
+                  }
+               },
+               "params": 1,
+               "sloc": {
+                  "logical": 6,
+                  "physical": 20
+               },
+               "errors": [],
+               "lineEnd": 317,
+               "lineStart": 298,
+               "name": "fetch"
+            },
+            {
+               "cyclomatic": 3,
+               "cyclomaticDensity": 50,
+               "halstead": {
+                  "bugs": 0.064,
+                  "difficulty": 5.438,
+                  "effort": 1042.671,
+                  "length": 43,
+                  "time": 57.926,
+                  "vocabulary": 22,
+                  "volume": 191.756,
+                  "operands": {
+                     "distinct": 16,
+                     "total": 29,
+                     "identifiers": [
+                        "resp",
+                        "method",
+                        "options",
+                        "reset",
+                        "\"reset\"",
+                        "\"set\"",
+                        "Debug",
+                        "log",
+                        "Collection - fetch - success callback - method: ",
+                        "true",
+                        "this",
+                        "success",
+                        "call",
+                        "context",
+                        "trigger",
+                        "\"sync\""
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 6,
+                     "total": 14,
+                     "identifiers": [
+                        "const",
+                        "=",
+                        ":?",
+                        ".",
+                        "()",
+                        "if"
+                     ]
+                  }
+               },
+               "params": 1,
+               "sloc": {
+                  "logical": 6,
+                  "physical": 10
+               },
+               "errors": [],
+               "lineEnd": 312,
+               "lineStart": 303,
+               "name": "<anonymous>"
+            },
+            {
+               "cyclomatic": 1,
+               "cyclomaticDensity": 100,
+               "halstead": {
+                  "bugs": 0.007,
+                  "difficulty": 1.875,
+                  "effort": 42.11,
+                  "length": 8,
+                  "time": 2.339,
+                  "vocabulary": 7,
+                  "volume": 22.459,
+                  "operands": {
+                     "distinct": 4,
+                     "total": 5,
+                     "identifiers": [
+                        "attrs",
+                        "this",
+                        "where",
+                        "true"
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 3,
+                     "total": 3,
+                     "identifiers": [
+                        "return",
+                        "()",
+                        "."
+                     ]
+                  }
+               },
+               "params": 1,
+               "sloc": {
+                  "logical": 1,
+                  "physical": 4
+               },
+               "errors": [],
+               "lineEnd": 331,
+               "lineStart": 328,
+               "name": "findWhere"
+            },
+            {
+               "cyclomatic": 6,
+               "cyclomaticDensity": 120,
+               "halstead": {
+                  "bugs": 0.077,
+                  "difficulty": 9.346,
+                  "effort": 2167.284,
+                  "length": 52,
+                  "time": 120.405,
+                  "vocabulary": 22,
+                  "volume": 231.89,
+                  "operands": {
+                     "distinct": 13,
+                     "total": 27,
+                     "identifiers": [
+                        "obj",
+                        "Utils",
+                        "isNullOrUndef",
+                        "0",
+                        "id",
+                        "this",
+                        "modelId",
+                        "attributes",
+                        "Debug",
+                        "log",
+                        "Collection - get - id: ",
+                        "_byId",
+                        "cid"
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 9,
+                     "total": 25,
+                     "identifiers": [
+                        "if",
+                        "()",
+                        ".",
+                        "return",
+                        "void (prefix)",
+                        "const",
+                        "=",
+                        "||",
+                        "&&"
+                     ]
+                  }
+               },
+               "params": 1,
+               "sloc": {
+                  "logical": 5,
+                  "physical": 10
+               },
+               "errors": [
+                  {
+                     "lineStart": 345,
+                     "lineEnd": 354,
+                     "severity": "info",
+                     "message": "cyclomatic: 6 > 3",
+                     "name": "get",
+                     "type": {
+                        "description": "Class Method",
+                        "name": "CLASS_METHOD",
+                        "ordinal": 1
+                     }
+                  },
+                  {
+                     "lineStart": 345,
+                     "lineEnd": 354,
+                     "severity": "info",
+                     "message": "halstead.difficulty: 9.346 > 8",
+                     "name": "get",
+                     "type": {
+                        "description": "Class Method",
+                        "name": "CLASS_METHOD",
+                        "ordinal": 1
+                     }
+                  }
+               ],
+               "lineEnd": 354,
+               "lineStart": 345,
+               "name": "get"
+            },
+            {
+               "cyclomatic": 1,
+               "cyclomaticDensity": 100,
+               "halstead": {
+                  "bugs": 0.013,
+                  "difficulty": 2.4,
+                  "effort": 91.294,
+                  "length": 12,
+                  "time": 5.072,
+                  "vocabulary": 9,
+                  "volume": 38.039,
+                  "operands": {
+                     "distinct": 5,
+                     "total": 6,
+                     "identifiers": [
+                        "obj",
+                        "Utils",
+                        "isNullOrUndef",
+                        "this",
+                        "get"
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 4,
+                     "total": 6,
+                     "identifiers": [
+                        "return",
+                        "! (prefix)",
+                        "()",
+                        "."
+                     ]
+                  }
+               },
+               "params": 1,
+               "sloc": {
+                  "logical": 1,
+                  "physical": 4
+               },
+               "errors": [],
+               "lineEnd": 365,
+               "lineStart": 362,
+               "name": "has"
+            },
+            {
+               "cyclomatic": 1,
+               "cyclomaticDensity": 0,
+               "halstead": {
+                  "bugs": 0,
+                  "difficulty": 0,
+                  "effort": 0,
+                  "length": 0,
+                  "time": 0,
+                  "vocabulary": 0,
+                  "volume": 0,
+                  "operands": {
+                     "distinct": 0,
+                     "total": 0,
+                     "identifiers": []
+                  },
+                  "operators": {
+                     "distinct": 0,
+                     "total": 0,
+                     "identifiers": []
+                  }
+               },
+               "params": 0,
+               "sloc": {
+                  "logical": 0,
+                  "physical": 3
+               },
+               "errors": [],
+               "lineEnd": 375,
+               "lineStart": 373,
+               "name": "initialize"
+            },
+            {
+               "cyclomatic": 2,
+               "cyclomaticDensity": 66.667,
+               "halstead": {
+                  "bugs": 0.049,
+                  "difficulty": 3.231,
+                  "effort": 475.403,
+                  "length": 36,
+                  "time": 26.411,
+                  "vocabulary": 17,
+                  "volume": 147.149,
+                  "operands": {
+                     "distinct": 13,
+                     "total": 21,
+                     "identifiers": [
+                        "attrs",
+                        "Debug",
+                        "log",
+                        "this",
+                        "model",
+                        "prototype",
+                        "idAttribute",
+                        "Collection - modelId - 0 - this.model.prototype.idAttribute: ",
+                        "true",
+                        "JSON",
+                        "stringify",
+                        "Collection - modelId - 1 - attrs: ",
+                        "\"id\""
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 4,
+                     "total": 15,
+                     "identifiers": [
+                        "()",
+                        ".",
+                        "return",
+                        "||"
+                     ]
+                  }
+               },
+               "params": 1,
+               "sloc": {
+                  "logical": 3,
+                  "physical": 7
+               },
+               "errors": [],
+               "lineEnd": 412,
+               "lineStart": 406,
+               "name": "modelId"
+            },
+            {
+               "cyclomatic": 1,
+               "cyclomaticDensity": 100,
+               "halstead": {
+                  "bugs": 0.002,
+                  "difficulty": 0.75,
+                  "effort": 4.755,
+                  "length": 4,
+                  "time": 0.264,
+                  "vocabulary": 3,
+                  "volume": 6.34,
+                  "operands": {
+                     "distinct": 2,
+                     "total": 3,
+                     "identifiers": [
+                        "resp",
+                        "options"
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 1,
+                     "total": 1,
+                     "identifiers": [
+                        "return"
+                     ]
+                  }
+               },
+               "params": 2,
+               "sloc": {
+                  "logical": 1,
+                  "physical": 5
+               },
+               "errors": [],
+               "lineEnd": 439,
+               "lineStart": 435,
+               "name": "parse"
+            },
+            {
+               "cyclomatic": 1,
+               "cyclomaticDensity": 100,
+               "halstead": {
+                  "bugs": 0.006,
+                  "difficulty": 2,
+                  "effort": 36.189,
+                  "length": 7,
+                  "time": 2.011,
+                  "vocabulary": 6,
+                  "volume": 18.095,
+                  "operands": {
+                     "distinct": 3,
+                     "total": 4,
+                     "identifiers": [
+                        "attr",
+                        "this",
+                        "map"
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 3,
+                     "total": 3,
+                     "identifiers": [
+                        "return",
+                        "()",
+                        "."
+                     ]
+                  }
+               },
+               "params": 1,
+               "sloc": {
+                  "logical": 1,
+                  "physical": 4
+               },
+               "errors": [],
+               "lineEnd": 464,
+               "lineStart": 461,
+               "name": "pluck"
+            },
+            {
+               "cyclomatic": 1,
+               "cyclomaticDensity": 50,
+               "halstead": {
+                  "bugs": 0.025,
+                  "difficulty": 4.714,
+                  "effort": 348.899,
+                  "length": 20,
+                  "time": 19.383,
+                  "vocabulary": 13,
+                  "volume": 74.009,
+                  "operands": {
+                     "distinct": 7,
+                     "total": 11,
+                     "identifiers": [
+                        "options",
+                        "model",
+                        "this",
+                        "at",
+                        "length",
+                        "1",
+                        "remove"
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 6,
+                     "total": 9,
+                     "identifiers": [
+                        "const",
+                        "=",
+                        "()",
+                        ".",
+                        "-",
+                        "return"
+                     ]
+                  }
+               },
+               "params": 1,
+               "sloc": {
+                  "logical": 2,
+                  "physical": 5
+               },
+               "errors": [],
+               "lineEnd": 478,
+               "lineStart": 474,
+               "name": "pop"
+            },
+            {
+               "cyclomatic": 5,
+               "cyclomaticDensity": 38.462,
+               "halstead": {
+                  "bugs": 0.125,
+                  "difficulty": 11.579,
+                  "effort": 4331.274,
+                  "length": 77,
+                  "time": 240.626,
+                  "vocabulary": 29,
+                  "volume": 374.065,
+                  "operands": {
+                     "distinct": 19,
+                     "total": 44,
+                     "identifiers": [
+                        "attrs",
+                        "options",
+                        "Utils",
+                        "isModel",
+                        "Debug",
+                        "log",
+                        "Collection - _prepareModel - 0",
+                        "true",
+                        "collection",
+                        "this",
+                        "_",
+                        "clone",
+                        "parseObject",
+                        "Collection - _prepareModel - 1 - attrs.parseObject: ",
+                        "model",
+                        "validationError",
+                        "trigger",
+                        "\"invalid\"",
+                        "false"
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 10,
+                     "total": 33,
+                     "identifiers": [
+                        "if",
+                        "()",
+                        ".",
+                        "! (prefix)",
+                        "=",
+                        "return",
+                        ":?",
+                        "{}",
+                        "const",
+                        "new"
+                     ]
+                  }
+               },
+               "params": 2,
+               "sloc": {
+                  "logical": 13,
+                  "physical": 22
+               },
+               "errors": [
+                  {
+                     "lineStart": 488,
+                     "lineEnd": 509,
+                     "severity": "info",
+                     "message": "cyclomatic: 5 > 3",
+                     "name": "_prepareModel",
+                     "type": {
+                        "description": "Class Method",
+                        "name": "CLASS_METHOD",
+                        "ordinal": 1
+                     }
+                  },
+                  {
+                     "lineStart": 488,
+                     "lineEnd": 509,
+                     "severity": "info",
+                     "message": "halstead.difficulty: 11.579 > 8",
+                     "name": "_prepareModel",
+                     "type": {
+                        "description": "Class Method",
+                        "name": "CLASS_METHOD",
+                        "ordinal": 1
+                     }
+                  }
+               ],
+               "lineEnd": 509,
+               "lineStart": 488,
+               "name": "_prepareModel"
+            },
+            {
+               "cyclomatic": 1,
+               "cyclomaticDensity": 50,
+               "halstead": {
+                  "bugs": 0.023,
+                  "difficulty": 3.438,
+                  "effort": 241.685,
+                  "length": 19,
+                  "time": 13.427,
+                  "vocabulary": 13,
+                  "volume": 70.308,
+                  "operands": {
+                     "distinct": 8,
+                     "total": 11,
+                     "identifiers": [
+                        "model",
+                        "options",
+                        "this",
+                        "add",
+                        "_",
+                        "extend",
+                        "at",
+                        "length"
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 5,
+                     "total": 8,
+                     "identifiers": [
+                        "return",
+                        "()",
+                        ".",
+                        "{}",
+                        ":"
+                     ]
+                  }
+               },
+               "params": 2,
+               "sloc": {
+                  "logical": 2,
+                  "physical": 4
+               },
+               "errors": [],
+               "lineEnd": 523,
+               "lineStart": 520,
+               "name": "push"
+            },
+            {
+               "cyclomatic": 5,
+               "cyclomaticDensity": 45.455,
+               "halstead": {
+                  "bugs": 0.119,
+                  "difficulty": 13,
+                  "effort": 4656.639,
+                  "length": 73,
+                  "time": 258.702,
+                  "vocabulary": 30,
+                  "volume": 358.203,
+                  "operands": {
+                     "distinct": 18,
+                     "total": 39,
+                     "identifiers": [
+                        "models",
+                        "options",
+                        "_",
+                        "extend",
+                        "singular",
+                        "isArray",
+                        "slice",
+                        "removed",
+                        "s_REMOVE_MODELS",
+                        "this",
+                        "silent",
+                        "length",
+                        "changes",
+                        "added",
+                        "merged",
+                        "trigger",
+                        "\"update\"",
+                        "0"
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 12,
+                     "total": 34,
+                     "identifiers": [
+                        "=",
+                        "()",
+                        ".",
+                        "{}",
+                        "const",
+                        "! (prefix)",
+                        ":?",
+                        "[]",
+                        "if",
+                        "&&",
+                        ":",
+                        "return"
+                     ]
+                  }
+               },
+               "params": 2,
+               "sloc": {
+                  "logical": 11,
+                  "physical": 15
+               },
+               "errors": [
+                  {
+                     "lineStart": 537,
+                     "lineEnd": 551,
+                     "severity": "info",
+                     "message": "cyclomatic: 5 > 3",
+                     "name": "remove",
+                     "type": {
+                        "description": "Class Method",
+                        "name": "CLASS_METHOD",
+                        "ordinal": 1
+                     }
+                  },
+                  {
+                     "lineStart": 537,
+                     "lineEnd": 551,
+                     "severity": "info",
+                     "message": "halstead.difficulty: 13 > 8",
+                     "name": "remove",
+                     "type": {
+                        "description": "Class Method",
+                        "name": "CLASS_METHOD",
+                        "ordinal": 1
+                     }
+                  }
+               ],
+               "lineEnd": 551,
+               "lineStart": 537,
+               "name": "remove"
+            },
+            {
+               "cyclomatic": 1,
+               "cyclomaticDensity": 33.333,
+               "halstead": {
+                  "bugs": 0.016,
+                  "difficulty": 2.8,
+                  "effort": 133.137,
+                  "length": 15,
+                  "time": 7.396,
+                  "vocabulary": 9,
+                  "volume": 47.549,
+                  "operands": {
+                     "distinct": 5,
+                     "total": 7,
+                     "identifiers": [
+                        "this",
+                        "length",
+                        "0",
+                        "models",
+                        "_byId"
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 4,
+                     "total": 8,
+                     "identifiers": [
+                        "=",
+                        ".",
+                        "[]",
+                        "{}"
+                     ]
+                  }
+               },
+               "params": 0,
+               "sloc": {
+                  "logical": 3,
+                  "physical": 16
+               },
+               "errors": [],
+               "lineEnd": 572,
+               "lineStart": 557,
+               "name": "_reset"
+            },
+            {
+               "cyclomatic": 4,
+               "cyclomaticDensity": 36.364,
+               "halstead": {
+                  "bugs": 0.123,
+                  "difficulty": 16.059,
+                  "effort": 5909.917,
+                  "length": 75,
+                  "time": 328.329,
+                  "vocabulary": 30,
+                  "volume": 368.017,
+                  "operands": {
+                     "distinct": 17,
+                     "total": 42,
+                     "identifiers": [
+                        "models",
+                        "options",
+                        "_",
+                        "clone",
+                        "i",
+                        "0",
+                        "this",
+                        "length",
+                        "s_REMOVE_REFERENCE",
+                        "previousModels",
+                        "_reset",
+                        "add",
+                        "extend",
+                        "silent",
+                        "true",
+                        "trigger",
+                        "\"reset\""
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 13,
+                     "total": 33,
+                     "identifiers": [
+                        "=",
+                        ":?",
+                        "()",
+                        ".",
+                        "{}",
+                        "for",
+                        "let",
+                        "<",
+                        "++ (postfix)",
+                        ":",
+                        "if",
+                        "! (prefix)",
+                        "return"
+                     ]
+                  }
+               },
+               "params": 2,
+               "sloc": {
+                  "logical": 11,
+                  "physical": 16
+               },
+               "errors": [
+                  {
+                     "lineStart": 597,
+                     "lineEnd": 612,
+                     "severity": "info",
+                     "message": "cyclomatic: 4 > 3",
+                     "name": "reset",
+                     "type": {
+                        "description": "Class Method",
+                        "name": "CLASS_METHOD",
+                        "ordinal": 1
+                     }
+                  },
+                  {
+                     "lineStart": 597,
+                     "lineEnd": 612,
+                     "severity": "warning",
+                     "message": "halstead.difficulty: 16.059 > 13",
+                     "name": "reset",
+                     "type": {
+                        "description": "Class Method",
+                        "name": "CLASS_METHOD",
+                        "ordinal": 1
+                     }
+                  }
+               ],
+               "lineEnd": 612,
+               "lineStart": 597,
+               "name": "reset"
+            },
+            {
+               "cyclomatic": 45,
+               "cyclomaticDensity": 43.269,
+               "halstead": {
+                  "bugs": 1.413,
+                  "difficulty": 54.632,
+                  "effort": 231571.258,
+                  "length": 638,
+                  "time": 12865.07,
+                  "vocabulary": 100,
+                  "volume": 4238.78,
+                  "operands": {
+                     "distinct": 76,
+                     "total": 346,
+                     "identifiers": [
+                        "models",
+                        "options",
+                        "Debug",
+                        "log",
+                        "Collection - set - 0",
+                        "true",
+                        "Utils",
+                        "isNullOrUndef",
+                        "_",
+                        "extend",
+                        "s_SET_OPTIONS",
+                        "parse",
+                        "isModel",
+                        "this",
+                        "singular",
+                        "isArray",
+                        "slice",
+                        "at",
+                        "length",
+                        "0",
+                        "1",
+                        "Collection - set - 1 - at: ",
+                        "; models.length: ",
+                        "set",
+                        "toAdd",
+                        "toMerge",
+                        "toRemove",
+                        "modelMap",
+                        "add",
+                        "merge",
+                        "remove",
+                        "sort",
+                        "false",
+                        "sortable",
+                        "comparator",
+                        "sortAttr",
+                        "isString",
+                        "null",
+                        "model",
+                        "i",
+                        "existing",
+                        "get",
+                        "Collection - set - 2 - existing",
+                        "Collection - set - 3 - merge && model !== existing",
+                        "attrs",
+                        "attributes",
+                        "push",
+                        "hasChanged",
+                        "cid",
+                        "Collection - set - 4 - !modelMap[existing.cid]",
+                        "Collection - set - 5 - add",
+                        "_prepareModel",
+                        "Collection - set - 6 - toAdd",
+                        "s_ADD_REFERENCE",
+                        "Collection - set - 7 - toRemove push",
+                        "Collection - set - 8 - before invoking s_REMOVE_MODELS",
+                        "s_REMOVE_MODELS",
+                        "orderChanged",
+                        "replace",
+                        "some",
+                        "Collection - set - 9 - set.length > 0 && replace - orderChanged: ",
+                        "s_SPLICE",
+                        "Collection - set - 10 - toAdd.length > 0 - sort: ",
+                        "; at: ",
+                        "Collection - set - 11 - sorting silent",
+                        "silent",
+                        "Collection - set - 12 - !options.silent: ",
+                        "index",
+                        "trigger",
+                        "\"add\"",
+                        "\"sort\"",
+                        "changes",
+                        "added",
+                        "removed",
+                        "merged",
+                        "\"update\""
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 24,
+                     "total": 292,
+                     "identifiers": [
+                        "()",
+                        ".",
+                        "if",
+                        "return",
+                        "=",
+                        "{}",
+                        "&&",
+                        "! (prefix)",
+                        "||",
+                        "[]",
+                        "const",
+                        ":?",
+                        "let",
+                        "+ (prefix)",
+                        ">",
+                        "<",
+                        "+=",
+                        "+",
+                        "!==",
+                        "for",
+                        "++ (postfix)",
+                        "else",
+                        "function=>",
+                        ":"
+                     ]
+                  }
+               },
+               "params": 2,
+               "sloc": {
+                  "logical": 104,
+                  "physical": 169
+               },
+               "errors": [
+                  {
+                     "lineStart": 637,
+                     "lineEnd": 805,
+                     "severity": "error",
+                     "message": "cyclomatic: 45 > 12",
+                     "name": "set",
+                     "type": {
+                        "description": "Class Method",
+                        "name": "CLASS_METHOD",
+                        "ordinal": 1
+                     }
+                  },
+                  {
+                     "lineStart": 637,
+                     "lineEnd": 805,
+                     "severity": "error",
+                     "message": "halstead.difficulty: 54.632 > 20",
+                     "name": "set",
+                     "type": {
+                        "description": "Class Method",
+                        "name": "CLASS_METHOD",
+                        "ordinal": 1
+                     }
+                  }
+               ],
+               "lineEnd": 805,
+               "lineStart": 637,
+               "name": "set"
+            },
+            {
+               "cyclomatic": 1,
+               "cyclomaticDensity": 100,
+               "halstead": {
+                  "bugs": 0.007,
+                  "difficulty": 2.5,
+                  "effort": 51.699,
+                  "length": 8,
+                  "time": 2.872,
+                  "vocabulary": 6,
+                  "volume": 20.68,
+                  "operands": {
+                     "distinct": 3,
+                     "total": 5,
+                     "identifiers": [
+                        "m",
+                        "index",
+                        "set"
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 3,
+                     "total": 3,
+                     "identifiers": [
+                        "return",
+                        "!==",
+                        "."
+                     ]
+                  }
+               },
+               "params": 2,
+               "sloc": {
+                  "logical": 1,
+                  "physical": 4
+               },
+               "errors": [],
+               "lineEnd": 752,
+               "lineStart": 749,
+               "name": "<anonymous>"
+            },
+            {
+               "cyclomatic": 1,
+               "cyclomaticDensity": 50,
+               "halstead": {
+                  "bugs": 0.018,
+                  "difficulty": 3.75,
+                  "effort": 207.566,
+                  "length": 16,
+                  "time": 11.531,
+                  "vocabulary": 11,
+                  "volume": 55.351,
+                  "operands": {
+                     "distinct": 6,
+                     "total": 9,
+                     "identifiers": [
+                        "options",
+                        "model",
+                        "this",
+                        "at",
+                        "0",
+                        "remove"
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 5,
+                     "total": 7,
+                     "identifiers": [
+                        "const",
+                        "=",
+                        "()",
+                        ".",
+                        "return"
+                     ]
+                  }
+               },
+               "params": 1,
+               "sloc": {
+                  "logical": 2,
+                  "physical": 5
+               },
+               "errors": [],
+               "lineEnd": 819,
+               "lineStart": 815,
+               "name": "shift"
+            },
+            {
+               "cyclomatic": 1,
+               "cyclomaticDensity": 100,
+               "halstead": {
+                  "bugs": 0.014,
+                  "difficulty": 1.5,
+                  "effort": 64.778,
+                  "length": 13,
+                  "time": 3.599,
+                  "vocabulary": 10,
+                  "volume": 43.185,
+                  "operands": {
+                     "distinct": 7,
+                     "total": 7,
+                     "identifiers": [
+                        "Array",
+                        "prototype",
+                        "slice",
+                        "apply",
+                        "this",
+                        "models",
+                        "arguments"
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 3,
+                     "total": 6,
+                     "identifiers": [
+                        "return",
+                        "()",
+                        "."
+                     ]
+                  }
+               },
+               "params": 0,
+               "sloc": {
+                  "logical": 1,
+                  "physical": 4
+               },
+               "errors": [],
+               "lineEnd": 831,
+               "lineStart": 828,
+               "name": "slice"
+            },
+            {
+               "cyclomatic": 6,
+               "cyclomaticDensity": 46.154,
+               "halstead": {
+                  "bugs": 0.126,
+                  "difficulty": 16.471,
+                  "effort": 6201.488,
+                  "length": 76,
+                  "time": 344.527,
+                  "vocabulary": 31,
+                  "volume": 376.519,
+                  "operands": {
+                     "distinct": 17,
+                     "total": 40,
+                     "identifiers": [
+                        "options",
+                        "comparator",
+                        "this",
+                        "Error",
+                        "\"Cannot sort a set without a comparator\"",
+                        "length",
+                        "_",
+                        "isFunction",
+                        "bind",
+                        "1",
+                        "isString",
+                        "models",
+                        "sortBy",
+                        "sort",
+                        "silent",
+                        "trigger",
+                        "\"sort\""
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 14,
+                     "total": 36,
+                     "identifiers": [
+                        "{}",
+                        "let",
+                        "=",
+                        ".",
+                        "if",
+                        "! (prefix)",
+                        "throw",
+                        "new",
+                        "const",
+                        "()",
+                        "else",
+                        "||",
+                        "===",
+                        "return"
+                     ]
+                  }
+               },
+               "params": 1,
+               "sloc": {
+                  "logical": 13,
+                  "physical": 24
+               },
+               "errors": [
+                  {
+                     "lineStart": 843,
+                     "lineEnd": 866,
+                     "severity": "info",
+                     "message": "cyclomatic: 6 > 3",
+                     "name": "sort",
+                     "type": {
+                        "description": "Class Method",
+                        "name": "CLASS_METHOD",
+                        "ordinal": 1
+                     }
+                  },
+                  {
+                     "lineStart": 843,
+                     "lineEnd": 866,
+                     "severity": "warning",
+                     "message": "halstead.difficulty: 16.471 > 13",
+                     "name": "sort",
+                     "type": {
+                        "description": "Class Method",
+                        "name": "CLASS_METHOD",
+                        "ordinal": 1
+                     }
+                  }
+               ],
+               "lineEnd": 866,
+               "lineStart": 843,
+               "name": "sort"
+            },
+            {
+               "cyclomatic": 1,
+               "cyclomaticDensity": 50,
+               "halstead": {
+                  "bugs": 0.021,
+                  "difficulty": 1.5,
+                  "effort": 94.361,
+                  "length": 17,
+                  "time": 5.242,
+                  "vocabulary": 13,
+                  "volume": 62.907,
+                  "operands": {
+                     "distinct": 10,
+                     "total": 10,
+                     "identifiers": [
+                        "Debug",
+                        "log",
+                        "\"Collection - sync\"",
+                        "true",
+                        "BackboneProxy",
+                        "backbone",
+                        "sync",
+                        "apply",
+                        "this",
+                        "arguments"
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 3,
+                     "total": 7,
+                     "identifiers": [
+                        "()",
+                        ".",
+                        "return"
+                     ]
+                  }
+               },
+               "params": 0,
+               "sloc": {
+                  "logical": 2,
+                  "physical": 5
+               },
+               "errors": [],
+               "lineEnd": 879,
+               "lineStart": 875,
+               "name": "sync"
+            },
+            {
+               "cyclomatic": 1,
+               "cyclomaticDensity": 100,
+               "halstead": {
+                  "bugs": 0.007,
+                  "difficulty": 2,
+                  "effort": 39.303,
+                  "length": 7,
+                  "time": 2.183,
+                  "vocabulary": 7,
+                  "volume": 19.651,
+                  "operands": {
+                     "distinct": 3,
+                     "total": 3,
+                     "identifiers": [
+                        "options",
+                        "this",
+                        "map"
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 4,
+                     "total": 4,
+                     "identifiers": [
+                        "return",
+                        "()",
+                        ".",
+                        "function=>"
+                     ]
+                  }
+               },
+               "params": 1,
+               "sloc": {
+                  "logical": 1,
+                  "physical": 4
+               },
+               "errors": [],
+               "lineEnd": 903,
+               "lineStart": 900,
+               "name": "toJSON"
+            },
+            {
+               "cyclomatic": 1,
+               "cyclomaticDensity": 100,
+               "halstead": {
+                  "bugs": 0.006,
+                  "difficulty": 2,
+                  "effort": 36.189,
+                  "length": 7,
+                  "time": 2.011,
+                  "vocabulary": 6,
+                  "volume": 18.095,
+                  "operands": {
+                     "distinct": 3,
+                     "total": 4,
+                     "identifiers": [
+                        "model",
+                        "toJSON",
+                        "options"
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 3,
+                     "total": 3,
+                     "identifiers": [
+                        "return",
+                        "()",
+                        "."
+                     ]
+                  }
+               },
+               "params": 1,
+               "sloc": {
+                  "logical": 1,
+                  "physical": 1
+               },
+               "errors": [],
+               "lineEnd": 902,
+               "lineStart": 902,
+               "name": "<anonymous>"
+            },
+            {
+               "cyclomatic": 1,
+               "cyclomaticDensity": 50,
+               "halstead": {
+                  "bugs": 0.021,
+                  "difficulty": 3.125,
+                  "effort": 196.586,
+                  "length": 17,
+                  "time": 10.921,
+                  "vocabulary": 13,
+                  "volume": 62.907,
+                  "operands": {
+                     "distinct": 8,
+                     "total": 10,
+                     "identifiers": [
+                        "model",
+                        "options",
+                        "this",
+                        "add",
+                        "_",
+                        "extend",
+                        "at",
+                        "0"
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 5,
+                     "total": 7,
+                     "identifiers": [
+                        "return",
+                        "()",
+                        ".",
+                        "{}",
+                        ":"
+                     ]
+                  }
+               },
+               "params": 2,
+               "sloc": {
+                  "logical": 2,
+                  "physical": 4
+               },
+               "errors": [],
+               "lineEnd": 917,
+               "lineStart": 914,
+               "name": "unshift"
+            },
+            {
+               "cyclomatic": 2,
+               "cyclomaticDensity": 200,
+               "halstead": {
+                  "bugs": 0.012,
+                  "difficulty": 2.8,
+                  "effort": 97.634,
+                  "length": 11,
+                  "time": 5.424,
+                  "vocabulary": 9,
+                  "volume": 34.869,
+                  "operands": {
+                     "distinct": 5,
+                     "total": 7,
+                     "identifiers": [
+                        "attrs",
+                        "first",
+                        "this",
+                        "\"find\"",
+                        "\"filter\""
+                     ]
+                  },
+                  "operators": {
+                     "distinct": 4,
+                     "total": 4,
+                     "identifiers": [
+                        "return",
+                        "()",
+                        ".",
+                        ":?"
+                     ]
+                  }
+               },
+               "params": 2,
+               "sloc": {
+                  "logical": 1,
+                  "physical": 4
+               },
+               "errors": [],
+               "lineEnd": 944,
+               "lineStart": 941,
+               "name": "where"
+            }
+         ],
+         "methodAverage": {
+            "cyclomatic": 3.742,
+            "cyclomaticDensity": 66.639,
+            "halstead": {
+               "bugs": 0.088,
+               "difficulty": 7.108,
+               "effort": 8875.587,
+               "length": 49.903,
+               "time": 493.088,
+               "vocabulary": 17.452,
+               "volume": 264.965,
+               "operands": {
+                  "distinct": 11.065,
+                  "total": 27.387
+               },
+               "operators": {
+                  "distinct": 6.387,
+                  "total": 22.516
+               }
+            },
+            "params": 1.29,
+            "sloc": {
+               "logical": 7.613,
+               "physical": 14.613
+            }
+         },
+         "name": "Collection",
+         "maintainability": 106.722
+      }
+   ],
+   "dependencies": [
+      {
+         "line": 3,
+         "path": "underscore",
+         "type": "esm"
+      },
+      {
+         "line": 4,
+         "path": "./BackboneProxy.js",
+         "type": "esm"
+      },
+      {
+         "line": 5,
+         "path": "typhonjs-core-backbone-events/src/Events.js",
+         "type": "esm"
+      },
+      {
+         "line": 6,
+         "path": "./Model.js",
+         "type": "esm"
+      },
+      {
+         "line": 7,
+         "path": "./Utils.js",
+         "type": "esm"
+      },
+      {
+         "line": 9,
+         "path": "./Debug.js",
+         "type": "esm"
+      }
+   ],
+   "errors": [
+      {
+         "lineStart": 1,
+         "lineEnd": 1120,
+         "severity": "info",
+         "message": "maintainability: 105.333 < 115",
+         "name": "",
+         "type": {
+            "description": "Module",
+            "name": "MODULE",
+            "ordinal": 3
+         }
+      }
+   ],
+   "lineEnd": 1120,
+   "lineStart": 1,
+   "maintainability": 105.333,
+   "methods": [
+      {
+         "cyclomatic": 2,
+         "cyclomaticDensity": 33.333,
+         "halstead": {
+            "bugs": 0.08,
+            "difficulty": 5.647,
+            "effort": 1353.875,
+            "length": 53,
+            "time": 75.215,
+            "vocabulary": 23,
+            "volume": 239.749,
+            "operands": {
+               "distinct": 17,
+               "total": 32,
+               "identifiers": [
+                  "collection",
+                  "model",
+                  "_byId",
+                  "cid",
+                  "id",
+                  "modelId",
+                  "attributes",
+                  "Debug",
+                  "log",
+                  "Collection - s_ADD_REFERENCE - id: ",
+                  "; model.cid: ",
+                  "true",
+                  "Utils",
+                  "isNullOrUndef",
+                  "on",
+                  "\"all\"",
+                  "s_ON_MODEL_EVENT"
+               ]
+            },
+            "operators": {
+               "distinct": 6,
+               "total": 21,
+               "identifiers": [
+                  "=",
+                  ".",
+                  "const",
+                  "()",
+                  "if",
+                  "! (prefix)"
+               ]
+            }
+         },
+         "params": 2,
+         "sloc": {
+            "logical": 6,
+            "physical": 10
+         },
+         "errors": [],
+         "lineEnd": 993,
+         "lineStart": 984,
+         "name": "<anonymous>"
+      },
+      {
+         "cyclomatic": 10,
+         "cyclomaticDensity": 62.5,
+         "halstead": {
+            "bugs": 0.187,
+            "difficulty": 14.5,
+            "effort": 8123.663,
+            "length": 106,
+            "time": 451.315,
+            "vocabulary": 39,
+            "volume": 560.253,
+            "operands": {
+               "distinct": 26,
+               "total": 58,
+               "identifiers": [
+                  "event",
+                  "model",
+                  "collection",
+                  "options",
+                  "Debug",
+                  "log",
+                  "Collection - s_ON_MODEL_EVENT - 0 - event: ",
+                  "true",
+                  "\"add\"",
+                  "\"remove\"",
+                  "this",
+                  "\"destroy\"",
+                  "remove",
+                  "\"change\"",
+                  "prevId",
+                  "modelId",
+                  "previousAttributes",
+                  "id",
+                  "attributes",
+                  "Collection - s_ON_MODEL_EVENT - 1 - change - id: ",
+                  "; prevId: ",
+                  "Utils",
+                  "isNullOrUndef",
+                  "_byId",
+                  "trigger",
+                  "arguments"
+               ]
+            },
+            "operators": {
+               "distinct": 13,
+               "total": 48,
+               "identifiers": [
+                  "if",
+                  "()",
+                  ".",
+                  "&&",
+                  "||",
+                  "===",
+                  "!==",
+                  "return",
+                  "const",
+                  "=",
+                  "! (prefix)",
+                  "delete (prefix)",
+                  "... (spread)"
+               ]
+            }
+         },
+         "params": 4,
+         "sloc": {
+            "logical": 16,
+            "physical": 25
+         },
+         "errors": [
+            {
+               "lineStart": 1007,
+               "lineEnd": 1031,
+               "severity": "warning",
+               "message": "cyclomatic: 10 > 7",
+               "name": "<anonymous>",
+               "type": {
+                  "description": "Module Method",
+                  "name": "MODULE_METHOD",
+                  "ordinal": 2
+               }
+            },
+            {
+               "lineStart": 1007,
+               "lineEnd": 1031,
+               "severity": "warning",
+               "message": "halstead.difficulty: 14.5 > 13",
+               "name": "<anonymous>",
+               "type": {
+                  "description": "Module Method",
+                  "name": "MODULE_METHOD",
+                  "ordinal": 2
+               }
+            }
+         ],
+         "lineEnd": 1031,
+         "lineStart": 1007,
+         "name": "<anonymous>"
+      },
+      {
+         "cyclomatic": 5,
+         "cyclomaticDensity": 22.727,
+         "halstead": {
+            "bugs": 0.252,
+            "difficulty": 17.578,
+            "effort": 13278.939,
+            "length": 136,
+            "time": 737.719,
+            "vocabulary": 47,
+            "volume": 755.424,
+            "operands": {
+               "distinct": 32,
+               "total": 75,
+               "identifiers": [
+                  "collection",
+                  "models",
+                  "options",
+                  "removed",
+                  "i",
+                  "0",
+                  "length",
+                  "model",
+                  "get",
+                  "Debug",
+                  "log",
+                  "Collection - s_REMOVE_MODELS - 0 - model: ",
+                  "true",
+                  "toJSON",
+                  "Collection - s_REMOVE_MODELS - 1 - model: ",
+                  "index",
+                  "indexOf",
+                  "Collection - s_REMOVE_MODELS - 2 - index: ",
+                  "splice",
+                  "1",
+                  "_byId",
+                  "cid",
+                  "id",
+                  "modelId",
+                  "attributes",
+                  "Utils",
+                  "isNullOrUndef",
+                  "silent",
+                  "trigger",
+                  "\"remove\"",
+                  "push",
+                  "s_REMOVE_REFERENCE"
+               ]
+            },
+            "operators": {
+               "distinct": 15,
+               "total": 61,
+               "identifiers": [
+                  "const",
+                  "=",
+                  "[]",
+                  "for",
+                  "let",
+                  "<",
+                  ".",
+                  "++ (postfix)",
+                  "()",
+                  "if",
+                  "! (prefix)",
+                  "continue",
+                  "-- (postfix)",
+                  "delete (prefix)",
+                  "return"
+               ]
+            }
+         },
+         "params": 3,
+         "sloc": {
+            "logical": 22,
+            "physical": 38
+         },
+         "errors": [
+            {
+               "lineStart": 1041,
+               "lineEnd": 1078,
+               "severity": "info",
+               "message": "cyclomatic: 5 > 3",
+               "name": "<anonymous>",
+               "type": {
+                  "description": "Module Method",
+                  "name": "MODULE_METHOD",
+                  "ordinal": 2
+               }
+            },
+            {
+               "lineStart": 1041,
+               "lineEnd": 1078,
+               "severity": "warning",
+               "message": "halstead.difficulty: 17.578 > 13",
+               "name": "<anonymous>",
+               "type": {
+                  "description": "Module Method",
+                  "name": "MODULE_METHOD",
+                  "ordinal": 2
+               }
+            }
+         ],
+         "lineEnd": 1078,
+         "lineStart": 1041,
+         "name": "<anonymous>"
+      },
+      {
+         "cyclomatic": 3,
+         "cyclomaticDensity": 37.5,
+         "halstead": {
+            "bugs": 0.092,
+            "difficulty": 8.5,
+            "effort": 2338.331,
+            "length": 60,
+            "time": 129.907,
+            "vocabulary": 24,
+            "volume": 275.098,
+            "operands": {
+               "distinct": 16,
+               "total": 34,
+               "identifiers": [
+                  "collection",
+                  "model",
+                  "_byId",
+                  "cid",
+                  "id",
+                  "modelId",
+                  "attributes",
+                  "Debug",
+                  "log",
+                  "Collection - s_REMOVE_REFERENCE - id: ",
+                  "; model.cid: ",
+                  "Utils",
+                  "isNullOrUndef",
+                  "off",
+                  "\"all\"",
+                  "s_ON_MODEL_EVENT"
+               ]
+            },
+            "operators": {
+               "distinct": 8,
+               "total": 26,
+               "identifiers": [
+                  "delete (prefix)",
+                  ".",
+                  "const",
+                  "=",
+                  "()",
+                  "if",
+                  "! (prefix)",
+                  "==="
+               ]
+            }
+         },
+         "params": 2,
+         "sloc": {
+            "logical": 8,
+            "physical": 11
+         },
+         "errors": [
+            {
+               "lineStart": 1086,
+               "lineEnd": 1096,
+               "severity": "info",
+               "message": "halstead.difficulty: 8.5 > 8",
+               "name": "<anonymous>",
+               "type": {
+                  "description": "Module Method",
+                  "name": "MODULE_METHOD",
+                  "ordinal": 2
+               }
+            }
+         ],
+         "lineEnd": 1096,
+         "lineStart": 1086,
+         "name": "<anonymous>"
+      },
+      {
+         "cyclomatic": 4,
+         "cyclomaticDensity": 33.333,
+         "halstead": {
+            "bugs": 0.144,
+            "difficulty": 26.5,
+            "effort": 11462.969,
+            "length": 97,
+            "time": 636.832,
+            "vocabulary": 22,
+            "volume": 432.565,
+            "operands": {
+               "distinct": 11,
+               "total": 53,
+               "identifiers": [
+                  "array",
+                  "insert",
+                  "at",
+                  "Math",
+                  "min",
+                  "max",
+                  "0",
+                  "length",
+                  "tail",
+                  "Array",
+                  "i"
+               ]
+            },
+            "operators": {
+               "distinct": 11,
+               "total": 44,
+               "identifiers": [
+                  "=",
+                  "()",
+                  ".",
+                  "const",
+                  "new",
+                  "-",
+                  "for",
+                  "let",
+                  "<",
+                  "++ (postfix)",
+                  "+"
+               ]
+            }
+         },
+         "params": 3,
+         "sloc": {
+            "logical": 12,
+            "physical": 10
+         },
+         "errors": [
+            {
+               "lineStart": 1105,
+               "lineEnd": 1114,
+               "severity": "info",
+               "message": "cyclomatic: 4 > 3",
+               "name": "<anonymous>",
+               "type": {
+                  "description": "Module Method",
+                  "name": "MODULE_METHOD",
+                  "ordinal": 2
+               }
+            },
+            {
+               "lineStart": 1105,
+               "lineEnd": 1114,
+               "severity": "error",
+               "message": "halstead.difficulty: 26.5 > 20",
+               "name": "<anonymous>",
+               "type": {
+                  "description": "Module Method",
+                  "name": "MODULE_METHOD",
+                  "ordinal": 2
+               }
+            }
+         ],
+         "lineEnd": 1114,
+         "lineStart": 1105,
+         "name": "<anonymous>"
+      }
+   ],
+   "methodAverage": {
+      "cyclomatic": 3.889,
+      "cyclomaticDensity": 62.645,
+      "halstead": {
+         "bugs": 0.097,
+         "difficulty": 8.141,
+         "effort": 8658.36,
+         "length": 55.528,
+         "time": 481.02,
+         "vocabulary": 19.333,
+         "volume": 291.028,
+         "operands": {
+            "distinct": 12.361,
+            "total": 30.583
+         },
+         "operators": {
+            "distinct": 6.972,
+            "total": 24.944
+         }
+      },
+      "params": 1.5,
+      "sloc": {
+         "logical": 8.333,
+         "physical": 15.194
+      }
+   }
+}

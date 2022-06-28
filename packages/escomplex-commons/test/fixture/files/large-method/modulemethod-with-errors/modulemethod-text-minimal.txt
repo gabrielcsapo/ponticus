@@ -1,0 +1,5 @@
+Module method: <anonymous> (1041)
+   cyclomatic: 5
+   halstead.difficulty: 17.578
+   errors: (info) cyclomatic: 5 > 3 @ Module Method - <anonymous> (1041 - 1078)
+   errors: (warning) halstead.difficulty: 17.578 > 13 @ Module Method - <anonymous> (1041 - 1078)

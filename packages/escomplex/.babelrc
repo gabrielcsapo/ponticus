@@ -1,0 +1,38 @@
+{
+   "presets": ["env", "stage-2"],
+
+   "plugins":
+   [
+      "add-module-exports",
+      ["module-resolver", {
+         "root": ["."],
+         "alias":
+         {
+            "typhonjs-escomplex-module/src": "typhonjs-escomplex-module/dist",
+            "typhonjs-escomplex-project/src": "typhonjs-escomplex-project/dist"
+         }
+      }],
+      "transform-runtime"
+   ],
+
+   "env":
+   {
+      "escomplex-dev":
+      {
+         "plugins":
+         [
+            "add-module-exports",
+            ["module-resolver", {
+               "root": ["."],
+               "cwd": "babelrc",
+               "alias":
+               {
+                  "typhonjs-escomplex-module/src": "../typhonjs-escomplex-module/src",
+                  "typhonjs-escomplex-project/src": "../typhonjs-escomplex-project/src"
+               }
+            }],
+            "transform-runtime"
+         ]
+      }
+   }
+}

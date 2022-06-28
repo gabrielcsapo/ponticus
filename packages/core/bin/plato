@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+
+'use strict';
+
+// Internal libs.
+const cli = require('../lib/cli.js');
+const info = require('../lib/info.js');
+
+if (cli.args.v) {
+	info.version();
+	process.exit();
+}
+
+if (cli.args.h) {
+	info.help();
+	process.exit();
+}
+
+cli.exec(function runPlatoViaCLI(){
+	console.log('Done!');
+});

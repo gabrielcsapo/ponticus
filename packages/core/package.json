@@ -1,0 +1,48 @@
+{
+  "name": "es6-plato",
+  "description": "JavaScript source analysis and visualizer",
+  "version": "1.2.4",
+  "homepage": "https://github.com/the-simian/es6-plato",
+  "author": {
+    "name": "Jessse Harlin",
+    "email": "harlinjesse@gmail.com",
+    "url": "http://jesseharlin.net/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/the-simian/es6-plato"
+  },
+  "bugs": {
+    "url": "https://github.com/the-simian/es6-plato/issues"
+  },
+  "bin": "bin/plato",
+  "license": "MIT",
+  "main": "lib/plato.js",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "scripts": {
+    "test": "echo 'TODO: Replace Grunt'"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "halstead",
+    "visualize",
+    "cyclomatic",
+    "complexity",
+    "report",
+    "analysis",
+    "analyze"
+  ],
+  "dependencies": {
+    "eslint": "^7.9.0",
+    "eslint-plugin-react": "^7.20.3",
+    "fs-extra": "^9.0.1",
+    "globby": "^11.0.1",
+    "lodash": "^4.17.19",
+    "mkdirp": "^1.0.4",
+    "posix-getopt": "^1.2.0",
+    "@ponticus/escomplex": "0.1.0",
+    "unixify": "^1.0.0"
+  }
+}
