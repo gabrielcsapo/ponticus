@@ -2,7 +2,7 @@
 
 //TODO: make this not a janky munge of old plato code and the new stuff
 
-const escomplex = require('@ponticus/escomplex');
+const escomplex = require('@ponticus/escomplex').default;
 const _ = require('lodash');
 
 class ComplexityReporter {
@@ -50,6 +50,7 @@ class ComplexityReporter {
   }
 
   async process(source, reportInfo) {
+    console.log(escomplex);
     var report = await escomplex.analyzeModule(source, this.options, this.babelOptions);
 
     // Make the short filename easily accessible
