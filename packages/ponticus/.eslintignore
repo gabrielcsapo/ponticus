@@ -5,3 +5,4 @@ jspm_packages/
 node_modules/
 test/fixture/
 config.js
+lib/assets

@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // [Issue 16][gh]: Support for JSHint style globals
 // -----------------------------------------------------------------------------
@@ -14,23 +14,22 @@
 // [gh]: https://github.com/es-analysis/plato/issues/16
 // [jshint]: http://www.jshint.com/blog/2012-12-29/1-0-0-rc1/
 
-var fs = require('fs-extra'),
-    linter = require('../../lib/reporters/jshint');
+var fs = require("fs-extra"),
+  linter = require("../../lib/reporters/jshint");
 
-exports['issue_16'] = {
-  setUp: function(done) {
+exports["issue_16"] = {
+  setUp: function (done) {
     done();
   },
 
-  'Respect global comment': async function(test) {
-
+  "Respect global comment": async function (test) {
     var file = "test/fixtures/issue_16.js",
-        source = await fs.readFile(file).toString().trim(),
-        config = {},
-        globals = [],
-        report = linter.process(source, config, globals);
+      source = await fs.readFile(file).toString().trim(),
+      config = {},
+      globals = [],
+      report = linter.process(source, config, globals);
 
     test.equal(report.messages.length, 0, "Report returned with messages");
     test.done();
-  }
+  },
 };

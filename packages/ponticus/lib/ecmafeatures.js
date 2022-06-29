@@ -1,50 +1,50 @@
-'use strict';
+"use strict";
 
 module.exports = {
   // enable parsing of arrow functions
-	arrowFunctions: true,
+  arrowFunctions: true,
   // enable parsing of let/const
-	blockBindings: true,
+  blockBindings: true,
   // enable parsing of destructured arrays and objects
-	destructuring: true,
+  destructuring: true,
   // enable parsing of regular expression y flag
-	regexYFlag: true,
+  regexYFlag: true,
   // enable parsing of regular expression u flag
-	regexUFlag: true,
+  regexUFlag: true,
   // enable parsing of template strings
-	templateStrings: true,
+  templateStrings: true,
   // enable parsing of binary literals
-	binaryLiterals: true,
+  binaryLiterals: true,
   // enable parsing of ES6 octal literals
-	octalLiterals: true,
+  octalLiterals: true,
   // enable parsing unicode code point escape sequences
-	unicodeCodePointEscapes: true,
+  unicodeCodePointEscapes: true,
   // enable parsing of default parameters
-	defaultParams: true,
+  defaultParams: true,
   // enable parsing of rest parameters
-	restParams: true,
+  restParams: true,
   // enable parsing of for-of statement
-	forOf: true,
+  forOf: true,
   // enable parsing computed object literal properties
-	objectLiteralComputedProperties: true,
+  objectLiteralComputedProperties: true,
   // enable parsing of shorthand object literal methods
-	objectLiteralShorthandMethods: true,
+  objectLiteralShorthandMethods: true,
   // enable parsing of shorthand object literal properties
-	objectLiteralShorthandProperties: true,
+  objectLiteralShorthandProperties: true,
   // Allow duplicate object literal properties (except '__proto__')
-	objectLiteralDuplicateProperties: true,
+  objectLiteralDuplicateProperties: true,
   // enable parsing of generators/yield
-	generators: true,
+  generators: true,
   // enable parsing spread operator
-	spread: true,
+  spread: true,
   // enable parsing classes
-	classes: true,
+  classes: true,
   // enable parsing of modules
-	modules: true,
+  modules: true,
   // enable React JSX parsing
-	jsx: true,
+  jsx: true,
   // enable return in global scope
-	globalReturn: true,
+  globalReturn: true,
 
-	experimentalObjectRestSpread: true
+  experimentalObjectRestSpread: true,
 };

@@ -1,4 +1,4 @@
-import ESComplexModule from './ESComplexModule';
+import ESComplexModule from "./ESComplexModule";
 
 /**
  * Exports the default instance of ESComplexModule which is associated with the main entry in `package.json`.

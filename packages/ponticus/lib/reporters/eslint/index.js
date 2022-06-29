@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-const ESLint = require('eslint');
+const ESLint = require("eslint");
 
 class ESLintReporter {
   constructor(options) {
@@ -9,15 +9,14 @@ class ESLintReporter {
 
   generateReport(data) {
     var out = {
-      messages: []
+      messages: [],
     };
 
     function addResultToMessages(result) {
-
       let severityMap = {
-        0: 'off',
-        1: 'warn',
-        2: 'error'
+        0: "off",
+        1: "warn",
+        2: "error",
       };
 
       out.messages.push({
@@ -25,7 +24,7 @@ class ESLintReporter {
         line: result.line,
         column: result.column,
         message: result.message,
-        fix: result.fix || {}
+        fix: result.fix || {},
       });
     }
 
@@ -45,14 +44,14 @@ class ESLintReporter {
     var data = [];
 
     // Remove potential Unicode BOM.
-    let _source = source.replace(/^\uFEFF/, '');
+    let _source = source.replace(/^\uFEFF/, "");
 
     var cliResults = await this.cli.lintText(_source);
     var results = cliResults[0].messages || [];
 
     return {
       results: results,
-      data: data
+      data: data,
     };
   }
 }

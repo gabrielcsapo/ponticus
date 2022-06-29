@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-const History = require('./History.js');
+const History = require("./History.js");
 
 class FileHistory extends History {
   addReport(report, date) {
@@ -13,11 +13,10 @@ class FileHistory extends History {
       deliveredBugs: report.complexity.aggregate.halstead.bugs,
       maintainability: report.complexity.maintainability,
       lintErrors: (report.eslint && report.eslint.messages.length) || [],
-      difficulty: report.complexity.aggregate.halstead.difficulty
+      difficulty: report.complexity.aggregate.halstead.difficulty,
     });
     return this;
   }
-
 }
 
 module.exports = FileHistory;

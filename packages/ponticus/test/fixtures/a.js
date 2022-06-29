@@ -1,4 +1,3 @@
-
 var a = 1;
 
 function fnA(arg) {
