@@ -16,7 +16,7 @@
     "@ponticus/escomplex-commons": "^0.1.0",
     "@ponticus/escomplex-plugin-metrics-project": "^0.1.0",
     "typhonjs-escomplex-module": "^0.1.0",
-    "typhonjs-plugin-manager": "^0.2.0"
+    "@ponticus/plugin-manager": "^0.2.0"
   },
   "devDependencies": {
     "@ponticus/escomplex-test-data": "0.0.1",

@@ -11,12 +11,10 @@
     "type": "git",
     "url": "https://github.com/typhonjs-node-npm-scripts/@ponticus/npm-scripts-build-babel.git"
   },
-  "maintainers": [
-    {
-      "name": "typhonrt",
-      "email": "support@typhonjs.io"
-    }
-  ],
+  "scripts": {
+    "test": "node ./test/scripts/test.js",
+    "lint": "eslint ."
+  },
   "dependencies": {
     "babel-core": "^6.0.0",
     "babel-cli": "^6.0.0",
@@ -43,16 +41,7 @@
     "babel",
     "build"
   ],
-  "scripts": {
-    "test": "node ./test/scripts/test.js",
-    "lint": "eslint ."
-  },
-  "files": [
-    "scripts",
-    "AUTHORS.md"
-  ],
-  "directories": {},
-  "bugs": {
-    "url": "https://github.com/typhonjs-node-npm-scripts/@ponticus/npm-scripts-build-babel/issues"
+  "volta": {
+    "node": "16.15.0"
   }
 }

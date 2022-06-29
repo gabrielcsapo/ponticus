@@ -19,14 +19,13 @@
   "license": "MIT",
   "main": "lib/plato.js",
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">= 16.15.0"
   },
   "scripts": {
     "test": "echo 'TODO: Replace Grunt'",
     "lint": "eslint ."
   },
   "devDependencies": {
-    "eslint": "^8.18.0",
     "eslint-config-prettier": "^8.5.0"
   },
   "keywords": [
@@ -48,5 +47,8 @@
     "posix-getopt": "^1.2.0",
     "@ponticus/escomplex": "0.1.0",
     "unixify": "^1.0.0"
+  },
+  "volta": {
+    "node": "16.15.0"
   }
 }
