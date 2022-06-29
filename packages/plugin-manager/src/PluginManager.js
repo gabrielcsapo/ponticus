@@ -1,5 +1,4 @@
 import path from "path";
-import ObjectUtil from "typhonjs-object-util";
 
 import EventProxy from "backbone-esnext-events/dist/EventProxy";
 
@@ -345,8 +344,6 @@ export default class PluginManager {
         },
       })
     );
-
-    ObjectUtil.deepFreeze(pluginData, ["eventPrepend", "scopedName"]);
 
     const eventProxy =
       this._eventbus !== null && typeof this._eventbus !== "undefined"

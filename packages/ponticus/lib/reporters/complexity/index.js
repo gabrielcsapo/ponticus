@@ -1,9 +1,9 @@
-'use strict';
+"use strict";
 
 //TODO: make this not a janky munge of old plato code and the new stuff
 
-const escomplex = require('@ponticus/escomplex').default;
-const _ = require('lodash');
+const escomplex = require("@ponticus/escomplex").default;
+const _ = require("lodash");
 
 class ComplexityReporter {
   constructor(options) {
@@ -12,46 +12,39 @@ class ComplexityReporter {
   }
 
   methodToReportFunction(func) {
-		func.complexity = _.extend({},{
-			cyclomatic: func.cyclomatic,
-			sloc: func.sloc,
-			halstead: func.halstead
-		});
+    func.complexity = _.extend(
+      {},
+      {
+        cyclomatic: func.cyclomatic,
+        sloc: func.sloc,
+        halstead: func.halstead,
+      }
+    );
 
-		func.line = func.line || func.lineStart;
+    func.line = func.line || func.lineStart;
 
-		return func;
+    return func;
   }
 
-  methodToReportFunction(func) {
-		func.complexity = _.extend({}, {
-			cyclomatic: func.cyclomatic,
-			sloc: func.sloc,
-			halstead: func.halstead
-		});
+  allClassMethods(report) {
+    if (!report.classes.length) {
+      return [];
+    }
 
-		func.line = func.line || func.lineStart;
-
-		return func;
-  }
-
-  allClassMethods(report){
-		if(!report.classes.length){
-			return [];
-		}
-
-		return _
-			.chain(report.classes)
-			.map(function(_class){
-				return _class.methods;
-			})
-			.flatten()
-			.value();
+    return _.chain(report.classes)
+      .map(function (_class) {
+        return _class.methods;
+      })
+      .flatten()
+      .value();
   }
 
   async process(source, reportInfo) {
-    console.log(escomplex);
-    var report = await escomplex.analyzeModule(source, this.options, this.babelOptions);
+    var report = await escomplex.analyzeModule(
+      source,
+      this.options,
+      this.babelOptions
+    );
 
     // Make the short filename easily accessible
     report.module = reportInfo.fileShort;
@@ -73,14 +66,12 @@ class ComplexityReporter {
     report.aggregate.complexity = _.clone(report.aggregateAverage);
 
     let functions = report.methods.concat(this.allClassMethods(report));
-    report.functions = _
-      .chain(functions)
+    report.functions = _.chain(functions)
       .map(this.methodToReportFunction)
       .value();
 
     return report;
   }
-
-};
+}
 
 module.exports = ComplexityReporter;

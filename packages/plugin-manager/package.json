@@ -23,8 +23,7 @@
     "mocha": "^10.0.0"
   },
   "dependencies": {
-    "backbone-esnext-events": "<1.0.0",
-    "typhonjs-object-util": "^0.4.0"
+    "backbone-esnext-events": "<1.0.0"
   },
   "scripts": {
     "build": "babel src -d dist",
