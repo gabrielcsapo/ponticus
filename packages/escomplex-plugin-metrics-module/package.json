@@ -1,26 +1,22 @@
 {
-  "name": "@ponticus/escomplex-plugin-metrics-project",
+  "name": "@ponticus/escomplex-plugin-metrics-module",
   "version": "0.1.0",
-  "homepage": "https://github.com/typhonjs-node-escomplex/@ponticus/escomplex-plugin-metrics-project/",
-  "description": "Provides the core project metric / report generation plugin for typhonjs-escomplex project processing.",
-  "license": "MPL-2.0",
-  "main": "./dist/PluginMetricsProject",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/typhonjs-node-escomplex/@ponticus/escomplex-plugin-metrics-project.git"
-  },
+  "homepage": "https://github.com/typhonjs-node-escomplex/escomplex-plugin-metrics-module/",
+  "description": "Provides the core module metric / report generation plugin for typhonjs-escomplex module processing.",
+  "main": "./dist/PluginMetricsModule",
   "dependencies": {
     "@ponticus/escomplex-commons": "^0.1.0"
   },
   "devDependencies": {
-    "@ponticus/escomplex-test-data": "0.0.1",
     "@babel/cli": "^7.18.6",
     "@babel/core": "^7.18.6",
     "@babel/preset-env": "^7.18.6",
     "@babel/register": "^7.18.6",
+    "@ponticus/escomplex-plugin-syntax-babylon": "^0.1.0",
+    "@ponticus/ast-walker": "^0.2.0",
     "mocha": "^10.0.0",
     "eslint": "^8.18.0",
-    "eslint-config-prettier": "^8.5.0"
+    "eslint-plugin-prettier": "^4.1.0"
   },
   "scripts": {
     "build": "babel src -d dist",
@@ -33,7 +29,7 @@
     "escomplex",
     "plugin",
     "metrics",
-    "project"
+    "module"
   ],
   "volta": {
     "node": "16.15.0"

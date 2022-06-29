@@ -3,27 +3,14 @@
   "version": "0.2.0",
   "description": "Provides a front end for Javascript / Typescript AST generation by Babel parser with TyphonJS plugin support.",
   "homepage": "https://github.com/typhonjs-node-ast/babel-parser",
-  "license": "MPL-2.0",
-  "author": {
-    "name": "Michael Leahy"
-  },
   "main": "./dist/BabelParser.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/typhonjs-node-ast/babel-parser.git"
-  },
-  "maintainers": [
-    {
-      "name": "Michael Leahy",
-      "email": "support@typhonjs.io",
-      "url": "https://github.com/typhonrt"
-    }
-  ],
   "dependencies": {
     "babel-runtime": "^6.0.0",
     "@babel/parser": "^7.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.18.6",
+    "@babel/core": "^7.18.6",
     "@babel/preset-env": "^7.18.6",
     "@babel/register": "^7.18.6",
     "mocha": "^10.0.0",
@@ -31,11 +18,10 @@
     "eslint-config-prettier": "^8.5.0"
   },
   "scripts": {
-    "build": "node ../npm-scripts-build-babel/scripts/build.js",
+    "build": "babel src -d dist",
     "lint": "eslint .",
-    "prepublish": "babel-node ./node_modules/typhonjs-npm-scripts-publish/scripts/prepublish.js",
-    "test": "mocha --require @babel/register test/src/**/*.js",
-    "test-coverage": "babel-node ./node_modules/typhonjs-npm-scripts-test-mocha/scripts/mocha-istanbul.js"
+    "prepublish": "npm run build",
+    "test": "mocha --require @babel/register test/src/*.js"
   },
   "keywords": [
     "typhonjs",
@@ -43,13 +29,7 @@
     "parser",
     "AST"
   ],
-  "files": [
-    "dist",
-    "src",
-    "AUTHORS.md"
-  ],
-  "directories": {},
-  "bugs": {
-    "url": "https://github.com/typhonjs-node-ast/babel-parser/issues"
+  "volta": {
+    "node": "16.15.0"
   }
 }

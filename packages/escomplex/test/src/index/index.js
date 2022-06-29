@@ -7,7 +7,7 @@ import escomplex from "../../../src";
 import * as testconfig from "../testconfig";
 
 if (testconfig.modules["index"]) {
-  suite("typhonjs-escomplex:", () => {
+  suite("escomplex:", () => {
     suite("escomplex:", () => {
       test("analyzeModule function is exported", () => {
         assert.isFunction(escomplex.analyzeModule);

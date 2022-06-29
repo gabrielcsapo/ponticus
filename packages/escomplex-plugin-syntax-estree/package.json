@@ -1,0 +1,40 @@
+{
+  "name": "@ponticus/escomplex-plugin-syntax-estree",
+  "version": "0.1.0",
+  "homepage": "https://github.com/typhonjs-node-escomplex/escomplex-plugin-syntax-estree/",
+  "description": "Provides a plugin for typhonjs-escomplex module processing which loads syntax definitions for trait resolution for ESTree AST.",
+  "main": "./dist/PluginSyntaxESTree",
+  "dependencies": {
+    "@ponticus/escomplex-commons": "^0.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.18.6",
+    "@babel/core": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "@babel/register": "^7.18.6",
+    "@ponticus/ast-walker": "^0.2.0",
+    "esbuild": "^0.14.47",
+    "eslint": "^8.18.0",
+    "eslint-plugin-prettier": "^4.1.0",
+    "jest": "^28.1.2",
+    "mocha": "^10.0.0",
+    "sort-object": "^3.0.0"
+  },
+  "scripts": {
+    "build": "babel src -d dist",
+    "lint": "eslint .",
+    "prepublish": "npm run build",
+    "test": "jest __tests__/src"
+  },
+  "keywords": [
+    "typhonjs",
+    "escomplex",
+    "plugin",
+    "syntax",
+    "definitions",
+    "estree"
+  ],
+  "volta": {
+    "node": "16.15.0"
+  }
+}

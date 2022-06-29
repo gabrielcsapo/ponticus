@@ -1,9 +1,9 @@
-import PluginMetricsModule from 'escomplex-plugin-metrics-module/dist/PluginMetricsModule';
-import PluginSyntaxBabylon from 'escomplex-plugin-syntax-babylon/dist/PluginSyntaxBabylon';
+import PluginMetricsModule from '@ponticus/escomplex-plugin-metrics-module/dist/PluginMetricsModule';
+import PluginSyntaxBabylon from '@ponticus/escomplex-plugin-syntax-babylon/dist/PluginSyntaxBabylon';
 
 import ModuleReport        from '@ponticus/escomplex-commons/dist/module/report/ModuleReport';
 
-import PluginManager       from 'typhonjs-plugin-manager/dist/PluginManager';
+import PluginManager       from '@ponticus/plugin-manager/dist/PluginManager';
 
 /**
  * Provides a wrapper around PluginManager for ESComplexModule. Several convenience methods for the plugin callbacks

@@ -9,32 +9,25 @@
     "url": "https://github.com/typhonjs-node-ast/@ponticus/ast-walker.git"
   },
   "devDependencies": {
-    "@ponticus/npm-scripts-build-babel": "^0.7.1",
+    "@babel/cli": "^7.18.6",
+    "@babel/core": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "@babel/register": "^7.18.6",
     "mocha": "^10.0.0",
     "eslint": "^8.18.0",
     "eslint-config-prettier": "^8.5.0"
   },
   "scripts": {
-    "build": "node ../npm-scripts-build-babel/scripts/build.js",
-    "esdoc": "esdoc -c .esdocrc",
+    "build": "babel src -d dist",
     "lint": "eslint .",
-    "prepublish": "babel-node ./node_modules/typhonjs-npm-scripts-publish/scripts/prepublish.js",
-    "test": "mocha test/src/**/*.js",
-    "test-coverage": "babel-node ./node_modules/typhonjs-npm-scripts-test-mocha/scripts/mocha-istanbul.js"
+    "prepublish": "npm run build",
+    "test": "mocha --require @babel/register test/src/*.js"
   },
   "keywords": [
     "typhonjs",
     "ast",
     "traversal"
   ],
-  "files": [
-    "dist",
-    "src",
-    "AUTHORS.md"
-  ],
-  "bugs": {
-    "url": "https://github.com/typhonjs-node-ast/@ponticus/ast-walker/issues"
-  },
   "volta": {
     "node": "16.15.0"
   }

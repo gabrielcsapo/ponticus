@@ -1,4 +1,4 @@
-import PluginManager from "typhonjs-plugin-manager/dist/PluginManager";
+import PluginManager from "@ponticus/plugin-manager/dist/PluginManager";
 
 import PluginMetricsProject from "@ponticus/escomplex-plugin-metrics-project/dist/PluginMetricsProject";
 

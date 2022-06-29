@@ -1,9 +1,9 @@
-const { suite, test, teardown, setup } = require("mocha");
+import { suite, test, teardown, setup } from "mocha";
 
-const { assert } = require("chai");
-const fs = require("fs");
+import { assert } from "chai";
+import { readFileSync } from "fs";
 
-const walker = require("../../dist/index.js").default;
+import walker from "../../dist/index.js";
 
 const walkerPath = "../../dist/index";
 
@@ -40,13 +40,11 @@ suite("AST Walker:", () => {
       test("result has proper node counts", () => {
         const nodeCounts = {};
         const nodeResults = JSON.parse(
-          fs.readFileSync("./test/fixture/espree-estree-results.json", "utf8")
+          readFileSync("./test/fixture/espree-estree-results.json", "utf8")
         );
 
         walker.traverse(
-          JSON.parse(
-            fs.readFileSync("./test/fixture/espree-estree.json", "utf8")
-          ),
+          JSON.parse(readFileSync("./test/fixture/espree-estree.json", "utf8")),
           {
             enterNode: (node) => {
               nodeCounts[node.type] =
@@ -65,16 +63,14 @@ suite("AST Walker:", () => {
       test("result has proper node counts (ignoreKeys)", () => {
         const nodeCounts = {};
         const nodeResults = JSON.parse(
-          fs.readFileSync(
+          readFileSync(
             "./test/fixture/espree-estree-results-ignorekeys.json",
             "utf8"
           )
         );
 
         walker.traverse(
-          JSON.parse(
-            fs.readFileSync("./test/fixture/espree-estree.json", "utf8")
-          ),
+          JSON.parse(readFileSync("./test/fixture/espree-estree.json", "utf8")),
           {
             enterNode: (node) => {
               nodeCounts[node.type] =
@@ -98,16 +94,14 @@ suite("AST Walker:", () => {
       test("result has proper node counts (break / null)", () => {
         const nodeCounts = {};
         const nodeResults = JSON.parse(
-          fs.readFileSync(
+          readFileSync(
             "./test/fixture/espree-estree-results-breaknull.json",
             "utf8"
           )
         );
 
         walker.traverse(
-          JSON.parse(
-            fs.readFileSync("./test/fixture/espree-estree.json", "utf8")
-          ),
+          JSON.parse(readFileSync("./test/fixture/espree-estree.json", "utf8")),
           {
             enterNode: (node) => {
               nodeCounts[node.type] =
