@@ -22,12 +22,12 @@
     "mocha": "^10.0.0",
     "@ponticus/escomplex-test-data": "0.0.1",
     "@typhonjs/babel-parser": "^0.2.0",
-    "acorn": "^6.0.0",
-    "babylon": "^6.0.0",
+    "acorn": "^8.7.1",
+    "babylon": "^6.18.0",
     "eslint": "^8.18.0",
     "eslint-plugin-prettier": "^4.1.0",
-    "espree": "^5.0.0",
-    "esprima": "^4.0.0"
+    "espree": "^9.3.2",
+    "esprima": "^4.0.1"
   },
   "scripts": {
     "build": "babel src -d dist",

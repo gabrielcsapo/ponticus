@@ -157,48 +157,7 @@ es6-plato -r -d report src
 - Complexity from [typhonjs-escomplex](https://github.com/typhonjs-node-escomplex/typhonjs-escomplex)
 - Lint data from [eslint](http://eslint.org/)
 
-## Contributors
-
-- [Jesse Harlin](https://github.com/the-simian)
-- [Jarrod Overson](https://github.com/jsoverson)
-- [Craig Davis](https://github.com/there4)
-- [David Linse](https://github.com/davidlinse)
-
-## Release History
-
-| version     | update                                                                                           |
-| ----------- | ------------------------------------------------------------------------------------------------ |
-| 1.0.2-alpha | Project works with es6 and eslint                                                                |
-| 1.0.6-alpha | Use typhonjs-escomplex                                                                           |
-| 1.0.0       | Class methods parsed and evaluated correctly                                                     |
-| 1.0.2       | Fix error when no callback supplied                                                              |
-| 1.0.5       | Update dependencies; fix lodash; add summary display link                                        |
-| 1.0.7       | Default complexity to 1-100 not 1-177, this can be overridden in the complexity object settings. |
-| 1.0.8       | Fixes to eslint allowing for plugin usage.                                                       |
-| 1.0.9       | Update dependencies to latest versions                                                           |
-| 1.0.13      | Fix templates to work in some CI envs + add jsx support                                          |
-| 1.0.14      | update dependencies in package.json                                                              |
-| 1.0.15      | update dependencies in package.json                                                              |
-| 1.0.16      | switch to globby, address Linux line endings                                                     |
-| 1.0.17      | Explicitly add eslint-plugin-react and update the dependencies                                   |
-| 1.0.18      | Offer eslintrc option in cli and update documentation, update dependencies too                   |
-| 1.1.15      | Update the dependencies and remove Grunt, for now since it was insecure dependency               |
-| 1.1.16      | Update eslint to 5.14.0                                                                          |
-| 1.2.0       | Update eslint, globby, lodash, typhon-complex and others                                         |
-| 1.2.1       | reverts typhon-complex for now, see issue #95                                                    |
-| 1.2.2       | reverts globby, 10 doesn't by default handle windows slashes                                     |
-| 1.2.3       | updates eslint and globby                                  |
-| 1.2.4       | updates lodash                                |
-
 ## About
 
-This is currently a reimplementation of the older plato, and started as a fork from https://github.com/deedubs/es6-plato, but has since been heavily modified.
-After seeing it was unpublished on npm and also wanting to add more features, I Asked if it [would be alright for me to publish and continue the work.](https://github.com/deedubs/es6-plato/issues/4)
-This project uses eslint, not jshint for default linting.
-
-I have switched to the [typhon-js](https://github.com/typhonjs-node-escomplex/typhonjs-escomplex) module since it properly parses classes.
-
-## License
-
-Copyright (c) 2012 Jesse Harlin
-Licensed under the MIT license.
+This is currently a reimplementation of the older plato, and started as a fork from <https://github.com/typhonjs-node-escomplex/typhonjs-escomplex>, but has since been heavily modified.
+After seeing it was unpublished on npm and also wanting to add more features.
