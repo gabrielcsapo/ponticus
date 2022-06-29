@@ -503,8 +503,6 @@ export default class PluginManager {
       })
     );
 
-    ObjectUtil.deepFreeze(pluginData, ["eventPrepend", "scopedName"]);
-
     const eventProxy =
       this._eventbus !== null && typeof this._eventbus !== "undefined"
         ? new EventProxy(this._eventbus)

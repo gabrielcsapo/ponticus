@@ -1,6 +1,3 @@
-import { test, suite, beforeEach } from "mocha";
-import { assert } from "chai";
-
 import EventProxy from "backbone-esnext-events/dist/EventProxy";
 import TyphonEvents from "backbone-esnext-events/dist/TyphonEvents";
 
@@ -16,7 +13,7 @@ class PluginTest {
    */
   test(event) {
     event.data.result.count++;
-    assert.strictEqual(event.pluginName, "PluginTest");
+    expect(event.pluginName).toBe("PluginTest");
   }
 
   /**
@@ -38,7 +35,7 @@ class PluginTest {
 const pluginTest = {
   test: (event) => {
     event.data.result.count++;
-    assert.strictEqual(event.pluginName, "pluginTest");
+    expect(event.pluginName).toBe("pluginTest");
   },
 
   onPluginLoad: (ev) => {
@@ -130,7 +127,7 @@ class PluginTestSync {
   }
 }
 
-suite("PluginManager:", () => {
+describe("PluginManager:", () => {
   let pluginManager, testData;
 
   beforeEach(() => {
@@ -139,11 +136,11 @@ suite("PluginManager:", () => {
   });
 
   test("PluginManager constructor function is exported", () => {
-    assert.isFunction(PluginManager);
+    expect(typeof PluginManager).toBe("function");
   });
 
   test("PluginManager instance is object", () => {
-    assert.isObject(pluginManager);
+    expect(typeof pluginManager).toBe("object");
   });
 
   test("invokeAsyncEvent - PluginManager throws when called with empty parameters", async () => {
@@ -157,9 +154,9 @@ suite("PluginManager:", () => {
   });
 
   test("invokeSyncEvent - PluginManager throws when called with empty parameters", () => {
-    assert.throws(() => {
+    expect(() => {
       pluginManager.invokeSyncEvent();
-    });
+    }).toThrow();
   });
 
   test("PluginManager throws w/ add (no options)", async () => {
@@ -174,27 +171,27 @@ suite("PluginManager:", () => {
 
   test("PluginManager return undefined for createEventProxy when no eventbus is assigned", () => {
     pluginManager = new PluginManager();
-    assert.isUndefined(pluginManager.createEventProxy());
+    expect(pluginManager.createEventProxy()).not.toBeDefined();
   });
 
   test("PluginManager returns EventProxy for createEventProxy when eventbus is assigned", () => {
-    assert.isTrue(pluginManager.createEventProxy() instanceof EventProxy);
+    expect(pluginManager.createEventProxy() instanceof EventProxy).toBe(true);
   });
 
   test("invokeAsyncEvent - PluginManager has empty result", async () => {
     const event = await pluginManager.invokeAsyncEvent("test");
 
-    assert.isObject(event);
-    assert.lengthOf(Object.keys(event), 2);
-    assert.strictEqual(event.$$plugin_invoke_count, 0);
+    expect(typeof event).toBe("object");
+    expect(Object.keys(event).length).toBe(2);
+    expect(event.$$plugin_invoke_count).toBe(0);
   });
 
   test("invokeSyncEvent - PluginManager has empty result", () => {
     const event = pluginManager.invokeSyncEvent("test");
 
-    assert.isObject(event);
-    assert.lengthOf(Object.keys(event), 2);
-    assert.strictEqual(event.$$plugin_invoke_count, 0);
+    expect(typeof event).toBe("object");
+    expect(Object.keys(event).length).toBe(2);
+    expect(event.$$plugin_invoke_count).toBe(0);
   });
 
   test("invokeAsyncEvent - PluginManager w/ plugin and missing method has empty event result", async () => {
@@ -202,9 +199,9 @@ suite("PluginManager:", () => {
 
     const event = await pluginManager.invokeAsyncEvent("nop");
 
-    assert.isObject(event);
-    assert.lengthOf(Object.keys(event), 2);
-    assert.strictEqual(event.$$plugin_invoke_count, 0);
+    expect(typeof event).toBe("object");
+    expect(Object.keys(event).length).toBe(2);
+    expect(event.$$plugin_invoke_count).toBe(0);
   });
 
   test("invokeSyncEvent - PluginManager w/ plugin and missing method has empty event result", () => {
@@ -212,9 +209,9 @@ suite("PluginManager:", () => {
 
     const event = pluginManager.invokeSyncEvent("nop");
 
-    assert.isObject(event);
-    assert.lengthOf(Object.keys(event), 2);
-    assert.strictEqual(event.$$plugin_invoke_count, 0);
+    expect(typeof event).toBe("object");
+    expect(Object.keys(event).length).toBe(2);
+    expect(event.$$plugin_invoke_count).toBe(0);
   });
 
   test("invokeAsyncEvent - PluginManager has valid test / class result (pass through)", async () => {
@@ -226,10 +223,10 @@ suite("PluginManager:", () => {
       testData
     );
 
-    assert.isObject(event);
-    assert.strictEqual(event.result.count, 1);
-    assert.strictEqual(testData.result.count, 1);
-    assert.strictEqual(event.$$plugin_invoke_count, 1);
+    expect(typeof event).toBe("object");
+    expect(event.result.count).toBe(1);
+    expect(testData.result.count).toBe(1);
+    expect(event.$$plugin_invoke_count).toBe(1);
   });
 
   test("invokeSyncEvent - PluginManager has valid test / class result (pass through)", () => {
@@ -237,10 +234,10 @@ suite("PluginManager:", () => {
 
     const event = pluginManager.invokeSyncEvent("test", void 0, testData);
 
-    assert.isObject(event);
-    assert.strictEqual(event.result.count, 1);
-    assert.strictEqual(testData.result.count, 1);
-    assert.strictEqual(event.$$plugin_invoke_count, 1);
+    expect(typeof event).toBe("object");
+    expect(event.result.count).toBe(1);
+    expect(testData.result.count).toBe(1);
+    expect(event.$$plugin_invoke_count).toBe(1);
   });
 
   test("invokeAsyncEvent - PluginManager has valid test / object result (pass through)", async () => {
@@ -252,9 +249,9 @@ suite("PluginManager:", () => {
       testData
     );
 
-    assert.isObject(event);
-    assert.strictEqual(event.result.count, 1);
-    assert.strictEqual(testData.result.count, 1);
+    expect(typeof event).toBe("object");
+    expect(event.result.count).toBe(1);
+    expect(testData.result.count).toBe(1);
   });
 
   test("invokeSyncEvent - PluginManager has valid test / object result (pass through)", () => {
@@ -262,9 +259,9 @@ suite("PluginManager:", () => {
 
     const event = pluginManager.invokeSyncEvent("test", void 0, testData);
 
-    assert.isObject(event);
-    assert.strictEqual(event.result.count, 1);
-    assert.strictEqual(testData.result.count, 1);
+    expect(typeof event).toBe("object");
+    expect(event.result.count).toBe(1);
+    expect(testData.result.count).toBe(1);
   });
 
   test("invokeAsyncEvent - PluginManager has invoked both plugins (pass through)", async () => {
@@ -277,9 +274,9 @@ suite("PluginManager:", () => {
       testData
     );
 
-    assert.isObject(event);
-    assert.strictEqual(event.result.count, 2);
-    assert.strictEqual(testData.result.count, 2);
+    expect(typeof event).toBe("object");
+    expect(event.result.count).toBe(2);
+    expect(testData.result.count).toBe(2);
   });
 
   test("invokeSyncEvent - PluginManager has invoked both plugins (pass through)", () => {
@@ -288,9 +285,9 @@ suite("PluginManager:", () => {
 
     const event = pluginManager.invokeSyncEvent("test", void 0, testData);
 
-    assert.isObject(event);
-    assert.strictEqual(event.result.count, 2);
-    assert.strictEqual(testData.result.count, 2);
+    expect(typeof event).toBe("object");
+    expect(event.result.count).toBe(2);
+    expect(testData.result.count).toBe(2);
   });
 
   test("invokeAsyncEvent - PluginManager has valid test / class result (copy)", async () => {
@@ -298,11 +295,11 @@ suite("PluginManager:", () => {
 
     const event = await pluginManager.invokeAsyncEvent("test", testData);
 
-    assert.isObject(event);
-    assert.strictEqual(event.result.count, 1);
-    assert.strictEqual(testData.result.count, 0);
-    assert.strictEqual(event.$$plugin_invoke_count, 1);
-    assert.strictEqual(event.$$plugin_invoke_names[0], "PluginTest");
+    expect(typeof event).toBe("object");
+    expect(event.result.count).toBe(1);
+    expect(testData.result.count).toBe(0);
+    expect(event.$$plugin_invoke_count).toBe(1);
+    expect(event.$$plugin_invoke_names[0]).toBe("PluginTest");
   });
 
   test("invokeSyncEvent - PluginManager has valid test / class result (copy)", () => {
@@ -310,11 +307,11 @@ suite("PluginManager:", () => {
 
     const event = pluginManager.invokeSyncEvent("test", testData);
 
-    assert.isObject(event);
-    assert.strictEqual(event.result.count, 1);
-    assert.strictEqual(testData.result.count, 0);
-    assert.strictEqual(event.$$plugin_invoke_count, 1);
-    assert.strictEqual(event.$$plugin_invoke_names[0], "PluginTest");
+    expect(typeof event).toBe("object");
+    expect(event.result.count).toBe(1);
+    expect(testData.result.count).toBe(0);
+    expect(event.$$plugin_invoke_count).toBe(1);
+    expect(event.$$plugin_invoke_names[0]).toBe("PluginTest");
   });
 
   test("invokeAsyncEvent - PluginManager has valid test / object result (copy)", async () => {
@@ -322,9 +319,9 @@ suite("PluginManager:", () => {
 
     const event = await pluginManager.invokeAsyncEvent("test", testData);
 
-    assert.isObject(event);
-    assert.strictEqual(event.result.count, 1);
-    assert.strictEqual(testData.result.count, 0);
+    expect(typeof event).toBe("object");
+    expect(event.result.count).toBe(1);
+    expect(testData.result.count).toBe(0);
   });
 
   test("invokeSyncEvent - PluginManager has valid test / object result (copy)", () => {
@@ -332,9 +329,9 @@ suite("PluginManager:", () => {
 
     const event = pluginManager.invokeSyncEvent("test", testData);
 
-    assert.isObject(event);
-    assert.strictEqual(event.result.count, 1);
-    assert.strictEqual(testData.result.count, 0);
+    expect(typeof event).toBe("object");
+    expect(event.result.count).toBe(1);
+    expect(testData.result.count).toBe(0);
   });
 
   test("invokeAsyncEvent - PluginManager has invoked both plugins (copy)", async () => {
@@ -343,9 +340,9 @@ suite("PluginManager:", () => {
 
     const event = await pluginManager.invokeAsyncEvent("test", testData);
 
-    assert.isObject(event);
-    assert.strictEqual(event.result.count, 2);
-    assert.strictEqual(testData.result.count, 0);
+    expect(typeof event).toBe("object");
+    expect(event.result.count).toBe(2);
+    expect(testData.result.count).toBe(0);
   });
 
   test("invokeSyncEvent - PluginManager has invoked both plugins (copy)", () => {
@@ -354,9 +351,9 @@ suite("PluginManager:", () => {
 
     const event = pluginManager.invokeSyncEvent("test", testData);
 
-    assert.isObject(event);
-    assert.strictEqual(event.result.count, 2);
-    assert.strictEqual(testData.result.count, 0);
+    expect(typeof event).toBe("object");
+    expect(event.result.count).toBe(2);
+    expect(testData.result.count).toBe(0);
   });
 
   test("invokeAsyncEvent - PluginManager has invoked both plugins (copy)", async () => {
@@ -371,9 +368,9 @@ suite("PluginManager:", () => {
 
     const event = await pluginManager.invokeAsyncEvent("test2", testData);
 
-    assert.isObject(event);
-    assert.strictEqual(event.result.count, 2);
-    assert.strictEqual(testData.result.count, 0);
+    expect(typeof event).toBe("object");
+    expect(event.result.count).toBe(2);
+    expect(testData.result.count).toBe(0);
   });
 
   test("invoke - PluginManager has invoked with no results", () => {
@@ -390,7 +387,7 @@ suite("PluginManager:", () => {
 
     pluginManager.invoke("test", void 0, "PluginTestSync");
 
-    assert.strictEqual(invoked, true);
+    expect(invoked).toBe(true);
   });
 
   test("promise - invokeAsync - PluginManager has invoked one result (async)", (done) => {
@@ -400,8 +397,8 @@ suite("PluginManager:", () => {
         pluginManager
           .invokeAsync("test", [1, 2], "PluginTestAsync")
           .then((results) => {
-            assert.isNumber(results);
-            assert.strictEqual(results, 6);
+            expect(typeof results).toBe("number");
+            expect(results).toBe(6);
             done();
           });
       });
@@ -415,11 +412,11 @@ suite("PluginManager:", () => {
       ])
       .then(() => {
         pluginManager.invokeAsync("test", [1, 2]).then((results) => {
-          assert.isArray(results);
-          assert.isNumber(results[0]);
-          assert.isNumber(results[1]);
-          assert.strictEqual(results[0], 6);
-          assert.strictEqual(results[1], 6);
+          expect(Array.isArray(results)).toBe(true);
+          expect(typeof results[0]).toBe("number");
+          expect(typeof results[1]).toBe("number");
+          expect(results[0]).toBe(6);
+          expect(results[1]).toBe(6);
           done();
         });
       });
@@ -437,8 +434,8 @@ suite("PluginManager:", () => {
       "PluginTestAsync"
     );
 
-    assert.isNumber(results);
-    assert.strictEqual(results, 6);
+    expect(typeof results).toBe("number");
+    expect(results).toBe(6);
   });
 
   test("async / await - invokeAsync - PluginManager has invoked two results (async)", async () => {
@@ -453,11 +450,11 @@ suite("PluginManager:", () => {
 
     const results = await pluginManager.invokeAsync("test", [1, 2]);
 
-    assert.isArray(results);
-    assert.isNumber(results[0]);
-    assert.isNumber(results[1]);
-    assert.strictEqual(results[0], 6);
-    assert.strictEqual(results[1], 6);
+    expect(Array.isArray(results)).toBe(true);
+    expect(typeof results[0]).toBe("number");
+    expect(typeof results[1]).toBe("number");
+    expect(results[0]).toBe(6);
+    expect(results[1]).toBe(6);
   });
 
   test("invokeSync - PluginManager has invoked one result (sync)", () => {
@@ -468,8 +465,8 @@ suite("PluginManager:", () => {
 
     const result = pluginManager.invokeSync("test", [1, 2], "PluginTestSync");
 
-    assert.isNumber(result);
-    assert.strictEqual(result, 6);
+    expect(typeof result).toBe("number");
+    expect(result).toBe(6);
   });
 
   test("invokeSync - PluginManager has invoked two results (sync)", () => {
@@ -484,41 +481,47 @@ suite("PluginManager:", () => {
 
     const result = pluginManager.invokeSync("test", [1, 2]);
 
-    assert.isArray(result);
-    assert.strictEqual(result[0], 6);
-    assert.strictEqual(result[1], 6);
+    expect(Array.isArray(result)).toBe(true);
+    expect(result[0]).toBe(6);
+    expect(result[1]).toBe(6);
   });
 
   test("PluginConfig is valid", () => {
-    assert.isTrue(pluginManager.isValidConfig({ name: "test" }));
-    assert.isTrue(
+    expect(pluginManager.isValidConfig({ name: "test" })).toBe(true);
+    expect(
       pluginManager.isValidConfig({ name: "test", target: "target" })
-    );
-    assert.isTrue(
+    ).toBe(true);
+    expect(
       pluginManager.isValidConfig({
         name: "test",
         target: "target",
         options: {},
       })
+    ).toBe(true);
+    expect(pluginManager.isValidConfig({ name: "test", options: {} })).toBe(
+      true
     );
-    assert.isTrue(pluginManager.isValidConfig({ name: "test", options: {} }));
   });
 
   test("PluginConfig is invalid", () => {
-    assert.isFalse(pluginManager.isValidConfig());
-    assert.isFalse(pluginManager.isValidConfig({}));
-    assert.isFalse(pluginManager.isValidConfig({ name: 123 }));
-    assert.isFalse(pluginManager.isValidConfig({ target: "target" }));
-    assert.isFalse(pluginManager.isValidConfig({ options: {} }));
-    assert.isFalse(pluginManager.isValidConfig({ name: "test", target: 123 }));
-    assert.isFalse(
+    expect(pluginManager.isValidConfig()).toBe(false);
+    expect(pluginManager.isValidConfig({})).toBe(false);
+    expect(pluginManager.isValidConfig({ name: 123 })).toBe(false);
+    expect(pluginManager.isValidConfig({ target: "target" })).toBe(false);
+    expect(pluginManager.isValidConfig({ options: {} })).toBe(false);
+    expect(pluginManager.isValidConfig({ name: "test", target: 123 })).toBe(
+      false
+    );
+    expect(
       pluginManager.isValidConfig({
         name: "test",
         target: "target",
         options: 123,
       })
+    ).toBe(false);
+    expect(pluginManager.isValidConfig({ name: "test", options: 123 })).toBe(
+      false
     );
-    assert.isFalse(pluginManager.isValidConfig({ name: "test", options: 123 }));
   });
 
   test("PluginManager get unique method names", () => {
@@ -533,10 +536,10 @@ suite("PluginManager:", () => {
 
     const results = pluginManager.getMethodNames();
 
-    assert.isArray(results);
-    assert.lengthOf(results, 2);
-    assert.strictEqual(results[0], "test");
-    assert.strictEqual(results[1], "test2");
+    expect(Array.isArray(results)).toBe(true);
+    expect(results.length).toBe(2);
+    expect(results[0]).toBe("test");
+    expect(results[1]).toBe("test2");
   });
 
   test("PluginManager get plugin data", () => {
@@ -547,12 +550,9 @@ suite("PluginManager:", () => {
 
     const results = pluginManager.getPluginData("PluginTestSync");
 
-    assert.isObject(results);
+    expect(typeof results).toBe("object");
 
-    assert(
-      JSON.stringify(results),
-      '{"manager":{"eventPrepend":"plugins"},"module":{"name":"modulename"},"plugin":{"name":"PluginTestSync","scopedName":"plugins:PluginTestSync","target":"PluginTestSync","targetEscaped":"PluginTestSync","type":"instance","options":{}}}'
-    );
+    expect(JSON.stringify(results)).toBeTruthy();
   });
 
   test("PluginManager get all plugin data", () => {
@@ -566,12 +566,9 @@ suite("PluginManager:", () => {
 
     const results = pluginManager.getAllPluginData();
 
-    assert.isArray(results);
+    expect(Array.isArray(results)).toBe(true);
 
-    assert(
-      JSON.stringify(results),
-      '[{"manager":{"eventPrepend":"plugins"},"module":{"name":"modulename"},"plugin":{"name":"PluginTestSync","scopedName":"plugins:PluginTestSync","target":"PluginTestSync","targetEscaped":"PluginTestSync","type":"instance","options":{}}},{"manager":{"eventPrepend":"plugins"},"module":{"name":"modulename"},"plugin":{"name":"PluginTestNoName2","scopedName":"plugins:PluginTestNoName2","target":"PluginTestNoName2","targetEscaped":"PluginTestNoName2","type":"instance","options":{}}}]'
-    );
+    expect(JSON.stringify(results)).toBeTruthy();
   });
 
   test("PluginManager get plugin event names", () => {
@@ -580,43 +577,34 @@ suite("PluginManager:", () => {
 
     let results = pluginManager.getPluginsEventNames();
 
-    assert(
-      JSON.stringify(results),
-      '[{"pluginName":"PluginTest","events":["test:trigger","test:trigger2,"test:trigger3"]},{"pluginName":"pluginTest","events":["test:trigger","test:trigger4","test:trigger5"]}]'
-    );
+    expect(JSON.stringify(results)).toBeTruthy();
 
     results = pluginManager.getPluginsEventNames("PluginTest");
 
-    assert(
-      JSON.stringify(results),
-      '[{"pluginName":"PluginTest","events":["test:trigger","test:trigger2","test:trigger3"]}]'
-    );
+    expect(JSON.stringify(results)).toBeTruthy();
 
     results = pluginManager.getPluginsEventNames("pluginTest");
 
-    assert(
-      JSON.stringify(results),
-      '[{"pluginName":"pluginTest","events":["test:trigger","test:trigger4","test:trigger5"]}]'
-    );
+    expect(JSON.stringify(results)).toBeTruthy();
   });
 
   test("PluginManager get plugin name from event name", () => {
     pluginManager.add({ name: "PluginTest", instance: new PluginTest() });
     pluginManager.add({ name: "pluginTest", instance: pluginTest });
 
-    assert.throws(() => pluginManager.getPluginsByEventName());
+    expect(() => pluginManager.getPluginsByEventName()).toThrow();
 
     let results = pluginManager.getPluginsByEventName("test:trigger");
 
-    assert(JSON.stringify(results), '["PluginTest","pluginTest"]');
+    expect(JSON.stringify(results)).toBeTruthy();
 
     results = pluginManager.getPluginsByEventName("test:trigger2");
 
-    assert(JSON.stringify(results), '["PluginTest"]');
+    expect(JSON.stringify(results)).toBeTruthy();
 
     results = pluginManager.getPluginsByEventName("test:trigger4");
 
-    assert(JSON.stringify(results), '["pluginTest"]');
+    expect(JSON.stringify(results)).toBeTruthy();
   });
 
   test("PluginManager get plugin names", () => {
@@ -631,10 +619,10 @@ suite("PluginManager:", () => {
 
     const results = pluginManager.getPluginNames();
 
-    assert.isArray(results);
-    assert.lengthOf(results, 2);
-    assert.strictEqual(results[0], "PluginTestSync");
-    assert.strictEqual(results[1], "PluginTestSync2");
+    expect(Array.isArray(results)).toBe(true);
+    expect(results.length).toBe(2);
+    expect(results[0]).toBe("PluginTestSync");
+    expect(results[1]).toBe("PluginTestSync2");
   });
 
   test("PluginManager get plugin event names", () => {
@@ -649,10 +637,10 @@ suite("PluginManager:", () => {
 
     const results = pluginManager.getPluginNames();
 
-    assert.isArray(results);
-    assert.lengthOf(results, 2);
-    assert.strictEqual(results[0], "PluginTestSync");
-    assert.strictEqual(results[1], "PluginTestSync2");
+    expect(Array.isArray(results)).toBe(true);
+    expect(results.length).toBe(2);
+    expect(results[0]).toBe("PluginTestSync");
+    expect(results[1]).toBe("PluginTestSync2");
   });
 
   test("PluginManager get plugin / method names", () => {
@@ -667,11 +655,11 @@ suite("PluginManager:", () => {
 
     const results = pluginManager.getPluginMethodNames();
 
-    assert.isArray(results);
-    assert.lengthOf(results, 2);
-    assert.strictEqual(results[0].plugin, "PluginTestSync");
-    assert.strictEqual(results[0].method, "test");
-    assert.strictEqual(results[1].plugin, "PluginTestNoName2");
-    assert.strictEqual(results[1].method, "test2");
+    expect(Array.isArray(results)).toBe(true);
+    expect(results.length).toBe(2);
+    expect(results[0].plugin).toBe("PluginTestSync");
+    expect(results[0].method).toBe("test");
+    expect(results[1].plugin).toBe("PluginTestNoName2");
+    expect(results[1].method).toBe("test2");
   });
 });
