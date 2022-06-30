@@ -1,7 +1,9 @@
-import EventProxy from "backbone-esnext-events/dist/EventProxy";
-import TyphonEvents from "backbone-esnext-events/dist/TyphonEvents";
+import { test, describe, expect, beforeEach } from "vitest";
 
-import PluginManager from "../../dist/PluginManager.js";
+import EventProxy from "backbone-esnext-events/src/EventProxy";
+import TyphonEvents from "backbone-esnext-events/src/TyphonEvents";
+
+import PluginManager from "../../src/PluginManager.js";
 
 /**
  * A plugin class
