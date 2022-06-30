@@ -1,5 +1,3 @@
-import { suite, test, setup } from "mocha";
-
 import parsers from "./parsers";
 import * as testconfig from "./testconfig";
 
@@ -9,10 +7,10 @@ if (testconfig.modules["moduleStage2"]) {
       return;
     }
 
-    suite(`(${parser.name}): module (stage 3):`, () => {
+    describe(`(${parser.name}): module (stage 3):`, () => {
       // https://github.com/tc39/proposal-throw-expressions
-      suite("throw expressions", () => {
-        setup(() => {
+      describe("throw expressions", () => {
+        beforeEach(() => {
           // Parameter initializers
           parser.analyze(
             'function save(filename = throw new TypeError("Argument required")) {}'
@@ -46,8 +44,8 @@ if (testconfig.modules["moduleStage2"]) {
       });
 
       // https://github.com/tc39/proposal-numeric-separator
-      suite("Numeric separators", () => {
-        setup(() => {
+      describe("Numeric separators", () => {
+        beforeEach(() => {
           parser.analyze("const val = 1_000_000_000;");
         });
 
@@ -55,8 +53,8 @@ if (testconfig.modules["moduleStage2"]) {
       });
 
       // https://github.com/allenwb/ESideas/blob/master/Generator%20metaproperty.md
-      suite("function.sent metaproperty", () => {
-        setup(() => {
+      describe("function.sent metaproperty", () => {
+        beforeEach(() => {
           parser.analyze("function *adder() { let val = function.sent; }");
         });
 
@@ -64,8 +62,8 @@ if (testconfig.modules["moduleStage2"]) {
       });
 
       // https://github.com/tc39/proposal-decorators
-      suite("Decorators", () => {
-        setup(() => {
+      describe("Decorators", () => {
+        beforeEach(() => {
           parser.analyze(
             '@defineElement("num-counter")' +
               "class Counter {" +
@@ -79,8 +77,8 @@ if (testconfig.modules["moduleStage2"]) {
       });
 
       // https://github.com/tc39/proposal-atomics-wait-async
-      suite("Atomics.waitAsync", () => {
-        setup(() => {
+      describe("Atomics.waitAsync", () => {
+        beforeEach(() => {
           parser.analyze(
             'Atomics.waitAsync(ia, 37, 0x1337).then(function (r) { log("Resolved 1: " + r); });'
           );
@@ -101,8 +99,8 @@ if (testconfig.modules["moduleStage2"]) {
       // });
 
       // https://github.com/tc39/proposal-set-methods
-      suite("New Set methods", () => {
-        setup(() => {
+      describe("New Set methods", () => {
+        beforeEach(() => {
           parser.analyze(
             "const set = new Set([1, 2]); set.intersection(set2); set.union(set2); " +
               "set.difference(set2); set.symmetricDifference(set2); set.isSubsetOf(set2); set.isDisjoinWith(set2); " +
@@ -114,8 +112,8 @@ if (testconfig.modules["moduleStage2"]) {
       });
 
       // https://github.com/tc39/proposal-realms
-      suite("Realms", () => {
-        setup(() => {
+      describe("Realms", () => {
+        beforeEach(() => {
           parser.analyze(
             'let r = new Realm(); let f = r.evaluate("(function() { return 17 })");'
           );
@@ -125,8 +123,8 @@ if (testconfig.modules["moduleStage2"]) {
       });
 
       // https://github.com/domenic/proposal-arraybuffer-transfer/
-      suite("ArrayBuffer.prototype.transfer", () => {
-        setup(() => {
+      describe("ArrayBuffer.prototype.transfer", () => {
+        beforeEach(() => {
           parser.analyze(
             "const buffer = new ArrayBuffer(1024); const transferred = buffer.transfer(); buffer.realloc(256)"
           );
@@ -136,8 +134,8 @@ if (testconfig.modules["moduleStage2"]) {
       });
 
       // https://github.com/tc39/proposal-regexp-unicode-sequence-properties
-      suite("Sequence properties in Unicode property escapes", () => {
-        setup(() => {
+      describe("Sequence properties in Unicode property escapes", () => {
+        beforeEach(() => {
           parser.analyze(
             'const regexEmojiKeycap = /p{Emoji_Keycap_Sequence}/u; regexEmojiKeycap.test("4️⃣");'
           );

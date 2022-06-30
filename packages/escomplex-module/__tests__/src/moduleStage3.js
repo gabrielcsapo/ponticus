@@ -1,5 +1,3 @@
-import { suite, test, setup } from "mocha";
-
 import parsers from "./parsers";
 import * as testconfig from "./testconfig";
 
@@ -9,10 +7,10 @@ if (testconfig.modules["moduleStage3"]) {
       return;
     }
 
-    suite(`(${parser.name}): module (stage 3):`, () => {
+    describe(`(${parser.name}): module (stage 3):`, () => {
       // https://github.com/tc39/proposal-flatMap/blob/master/proposal.html
-      suite("Array.prototype.{flat,flatMap}", () => {
-        setup(() => {
+      describe("Array.prototype.{flat,flatMap}", () => {
+        beforeEach(() => {
           parser.analyze("let a = []; a.flat(1); a.flatMap(x => [x * 2]);");
         });
 
@@ -20,8 +18,8 @@ if (testconfig.modules["moduleStage3"]) {
       });
 
       // https://github.com/tc39/proposal-object-from-entries
-      suite("Object.fromEntries", () => {
-        setup(() => {
+      describe("Object.fromEntries", () => {
+        beforeEach(() => {
           parser.analyze('let obj = Object.fromEntries([["a", 0], ["b", 1]]);');
         });
 
@@ -29,8 +27,8 @@ if (testconfig.modules["moduleStage3"]) {
       });
 
       // https://github.com/tc39/proposal-dynamic-import
-      suite("dynamic import()", () => {
-        setup(() => {
+      describe("dynamic import()", () => {
+        beforeEach(() => {
           parser.analyze(
             "import(`./language-packs/${navigator.language}.js`);"
           );
@@ -40,8 +38,8 @@ if (testconfig.modules["moduleStage3"]) {
       });
 
       // https://github.com/tc39/proposal-bigint
-      suite("BigInt", () => {
-        setup(() => {
+      describe("BigInt", () => {
+        beforeEach(() => {
           parser.analyze(
             "const previousMaxSafe = BigInt(Number.MAX_SAFE_INTEGER);"
           );
@@ -51,8 +49,8 @@ if (testconfig.modules["moduleStage3"]) {
       });
 
       // https://github.com/tc39/proposal-import-meta
-      suite("import.meta", () => {
-        setup(() => {
+      describe("import.meta", () => {
+        beforeEach(() => {
           parser.analyze(
             "const size = import.meta.scriptElement.dataset.size || 300;"
           );
@@ -62,8 +60,8 @@ if (testconfig.modules["moduleStage3"]) {
       });
 
       // https://github.com/tc39/proposal-private-methods
-      suite("Private instance methods!!! / NO accessors", () => {
-        setup(() => {
+      describe("Private instance methods!!! / NO accessors", () => {
+        beforeEach(() => {
           parser.analyze(
             "class Person {" +
               "   #age = 19;" +
@@ -98,8 +96,8 @@ if (testconfig.modules["moduleStage3"]) {
       // });
 
       // https://github.com/tc39/proposal-class-fields
-      suite("Class Public Instance Fields & Private Instance Fields", () => {
-        setup(() => {
+      describe("Class Public Instance Fields & Private Instance Fields", () => {
+        beforeEach(() => {
           parser.analyze("class Counter { #x = 0; clicked() { this.#x++; } }");
         });
 
@@ -107,8 +105,8 @@ if (testconfig.modules["moduleStage3"]) {
       });
 
       // https://github.com/tc39/proposal-static-class-features/
-      suite("Static class fields and private static methods", () => {
-        setup(() => {
+      describe("Static class fields and private static methods", () => {
+        beforeEach(() => {
           parser.analyze("class Test { static #x = 1; static #click() { } }");
         });
 
@@ -116,8 +114,8 @@ if (testconfig.modules["moduleStage3"]) {
       });
 
       // https://github.com/tc39/proposal-string-left-right-trim
-      suite("String.prototype.{trimStart,trimEnd}", () => {
-        setup(() => {
+      describe("String.prototype.{trimStart,trimEnd}", () => {
+        beforeEach(() => {
           parser.analyze('" foo".trimStart(); "bar ".trimEnd();');
         });
 
@@ -125,8 +123,8 @@ if (testconfig.modules["moduleStage3"]) {
       });
 
       // https://github.com/tc39/proposal-string-matchall
-      suite("String.prototype.matchAll", () => {
-        setup(() => {
+      describe("String.prototype.matchAll", () => {
+        beforeEach(() => {
           parser.analyze('"-a-a-a".matchAll(/-(a)/ug);');
         });
 

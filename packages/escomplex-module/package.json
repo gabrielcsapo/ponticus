@@ -9,10 +9,10 @@
     "url": "https://github.com/typhonjs-node-escomplex/@ponticus/escomplex-module.git"
   },
   "dependencies": {
-    "@ponticus/escomplex-plugin-metrics-module": "^0.1.0",
     "@ponitcus/escomplex-plugin-syntax-babylon": "^0.1.0",
     "@ponticus/ast-walker": "^0.2.0",
     "@ponticus/escomplex-commons": "^0.1.0",
+    "@ponticus/escomplex-plugin-metrics-module": "^0.1.0",
     "@ponticus/plugin-manager": "^0.2.0"
   },
   "devDependencies": {
@@ -23,17 +23,17 @@
     "@ponticus/babel-parser": "^0.2.0",
     "acorn": "^8.7.1",
     "babylon": "^6.18.0",
-    "espree": "^9.3.2",
-    "esprima": "^4.0.1",
     "eslint": "^8.18.0",
     "eslint-plugin-prettier": "^4.1.0",
-    "mocha": "^10.0.0"
+    "espree": "^9.3.2",
+    "esprima": "^4.0.1",
+    "jest": "^28.1.2"
   },
   "scripts": {
     "build": "babel src -d dist",
     "lint": "eslint .",
     "prepublish": "npm run build",
-    "test": "mocha --require @babel/register test/src/*.js"
+    "test": "jest"
   },
   "keywords": [
     "typhonjs",

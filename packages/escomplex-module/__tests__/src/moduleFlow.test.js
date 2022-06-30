@@ -1,7 +1,3 @@
-import { suite, test, setup, teardown } from "mocha";
-
-import { assert } from "chai";
-
 import parsers from "./parsers";
 import * as testconfig from "./testconfig";
 
@@ -11,11 +7,11 @@ if (testconfig.modules["moduleFlow"]) {
       return;
     }
 
-    suite(`(${parser.name}): module (Flow Typing):`, () => {
-      suite("basic function:", () => {
+    describe(`(${parser.name}): module (Flow Typing):`, () => {
+      describe("basic function:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             "function foo<T: { x: number }>(obj: T): T { console.log(Math.abs(obj.x)); return obj; }",
             void 0,
@@ -24,104 +20,104 @@ if (testconfig.modules["moduleFlow"]) {
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 4);
+          expect(report.aggregate.sloc.logical).toBe(4);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 2);
+          expect(report.aggregate.cyclomatic).toBe(2);
         });
 
         test("functions has correct length", () => {
-          assert.lengthOf(report.methods, 1);
+          expect(report.methods.length).toBe(1);
         });
 
         test("method has correct name", () => {
-          assert.strictEqual(report.methods[0].name, "foo");
+          expect(report.methods[0].name).toBe("foo");
         });
 
         test("method has correct physical lines of code", () => {
-          assert.strictEqual(report.methods[0].sloc.physical, 1);
+          expect(report.methods[0].sloc.physical).toBe(1);
         });
 
         test("method has correct logical lines of code", () => {
-          assert.strictEqual(report.methods[0].sloc.logical, 3);
+          expect(report.methods[0].sloc.logical).toBe(3);
         });
 
         test("method has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.methods[0].cyclomatic, 1);
+          expect(report.methods[0].cyclomatic).toBe(1);
         });
 
         test("method has correct parameter count", () => {
-          assert.strictEqual(report.methods[0].paramCount, 1);
+          expect(report.methods[0].paramCount).toBe(1);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 7);
+          expect(report.aggregate.halstead.operators.total).toBe(7);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 4);
+          expect(report.aggregate.halstead.operators.distinct).toBe(4);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 11);
+          expect(report.aggregate.halstead.operands.total).toBe(11);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 8);
+          expect(report.aggregate.halstead.operands.distinct).toBe(8);
         });
 
         test("aggregate has correct Halstead length", () => {
-          assert.strictEqual(report.aggregate.halstead.length, 18);
+          expect(report.aggregate.halstead.length).toBe(18);
         });
 
         test("aggregate has correct Halstead vocabulary", () => {
-          assert.strictEqual(report.aggregate.halstead.vocabulary, 12);
+          expect(report.aggregate.halstead.vocabulary).toBe(12);
         });
 
         test("aggregate has correct Halstead difficulty", () => {
-          assert.strictEqual(report.aggregate.halstead.difficulty, 2.75);
+          expect(report.aggregate.halstead.difficulty).toBe(2.75);
         });
 
         test("method has correct Halstead length", () => {
-          assert.strictEqual(report.methods[0].halstead.length, 15);
+          expect(report.methods[0].halstead.length).toBe(15);
         });
 
         test("method has correct Halstead vocabulary", () => {
-          assert.strictEqual(report.methods[0].halstead.vocabulary, 10);
+          expect(report.methods[0].halstead.vocabulary).toBe(10);
         });
 
         test("method has correct Halstead difficulty", () => {
-          assert.strictEqual(report.methods[0].halstead.difficulty, 1.929);
+          expect(report.methods[0].halstead.difficulty).toBe(1.929);
         });
 
         test("method has correct Halstead volume", () => {
-          assert.strictEqual(report.methods[0].halstead.volume, 49.829);
+          expect(report.methods[0].halstead.volume).toBe(49.829);
         });
 
         test("method has correct Halstead effort", () => {
-          assert.strictEqual(report.methods[0].halstead.effort, 96.099);
+          expect(report.methods[0].halstead.effort).toBe(96.099);
         });
 
         test("method has correct Halstead bugs", () => {
-          assert.strictEqual(report.methods[0].halstead.bugs, 0.017);
+          expect(report.methods[0].halstead.bugs).toBe(0.017);
         });
 
         test("method has correct Halstead time", () => {
-          assert.strictEqual(report.methods[0].halstead.time, 5.339);
+          expect(report.methods[0].halstead.time).toBe(5.339);
         });
 
         test("maintainability index is correct", () => {
-          assert.strictEqual(report.maintainability, 144.43);
+          expect(report.maintainability).toBe(144.43);
         });
 
         test("aggregate has correct parameter count", () => {
-          assert.strictEqual(report.aggregate.paramCount, 1);
+          expect(report.aggregate.paramCount).toBe(1);
         });
       });
     });

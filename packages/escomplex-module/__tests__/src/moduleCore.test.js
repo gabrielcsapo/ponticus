@@ -1,564 +1,531 @@
-import { suite, test, setup, teardown } from "mocha";
-import { assert } from "chai";
-
 import parsers from "./parsers";
 import * as testconfig from "./testconfig";
 
 if (testconfig.modules["moduleCore"]) {
   parsers.forEach((parser) => {
-    suite(`(${parser.name}): module (Core):`, () => {
-      suite("function call:", () => {
+    describe(`(${parser.name}): module (Core):`, () => {
+      describe("function call:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze('parseInt("10", 10);');
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct physical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.physical, 1);
+          expect(report.aggregate.sloc.physical).toBe(1);
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 1);
+          expect(report.aggregate.sloc.logical).toBe(1);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 1);
+          expect(report.aggregate.cyclomatic).toBe(1);
         });
 
         test("aggregate has correct cyclomatic complexity density", () => {
-          assert.strictEqual(report.aggregate.cyclomaticDensity, 100);
+          expect(report.aggregate.cyclomaticDensity).toBe(100);
         });
 
         test("methods is empty", () => {
-          assert.lengthOf(report.methods, 0);
+          expect(report.methods.length).toBe(0);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 1);
+          expect(report.aggregate.halstead.operators.total).toBe(1);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 1);
+          expect(report.aggregate.halstead.operators.distinct).toBe(1);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 3);
+          expect(report.aggregate.halstead.operands.total).toBe(3);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 3);
+          expect(report.aggregate.halstead.operands.distinct).toBe(3);
         });
 
         test("aggregate has correct Halstead operator identifier length", () => {
-          assert.lengthOf(
-            report.aggregate.halstead.operators.identifiers,
-            report.aggregate.halstead.operators.distinct
-          );
+          expect(report.aggregate.halstead.operators.identifiers.length).toBe(report.aggregate.halstead.operators.distinct);
         });
 
         test("aggregate has correct Halstead operand identifier length", () => {
-          assert.lengthOf(
-            report.aggregate.halstead.operands.identifiers,
-            report.aggregate.halstead.operands.distinct
-          );
+          expect(report.aggregate.halstead.operands.identifiers.length).toBe(report.aggregate.halstead.operands.distinct);
         });
 
         test("aggregate has correct Halstead length", () => {
-          assert.strictEqual(report.aggregate.halstead.length, 4);
+          expect(report.aggregate.halstead.length).toBe(4);
         });
 
         test("aggregate has correct Halstead vocabulary", () => {
-          assert.strictEqual(report.aggregate.halstead.vocabulary, 4);
+          expect(report.aggregate.halstead.vocabulary).toBe(4);
         });
 
         test("aggregate has correct Halstead difficulty", () => {
-          assert.strictEqual(report.aggregate.halstead.difficulty, 0.5);
+          expect(report.aggregate.halstead.difficulty).toBe(0.5);
         });
 
         test("aggregate has correct Halstead volume", () => {
-          assert.strictEqual(report.aggregate.halstead.volume, 8);
+          expect(report.aggregate.halstead.volume).toBe(8);
         });
 
         test("aggregate has correct Halstead effort", () => {
-          assert.strictEqual(report.aggregate.halstead.effort, 4);
+          expect(report.aggregate.halstead.effort).toBe(4);
         });
 
         test("aggregate has correct Halstead bugs", () => {
-          assert.strictEqual(report.aggregate.halstead.bugs, 0.003);
+          expect(report.aggregate.halstead.bugs).toBe(0.003);
         });
 
         test("aggregate has correct Halstead time", () => {
-          assert.strictEqual(report.aggregate.halstead.time, 0.222);
+          expect(report.aggregate.halstead.time).toBe(0.222);
         });
 
         test("maintainability index is correct", () => {
-          assert.strictEqual(report.maintainability, 166.259);
+          expect(report.maintainability).toBe(166.259);
         });
 
         test("aggregate has correct parameter count", () => {
-          assert.strictEqual(report.aggregate.paramCount, 0);
+          expect(report.aggregate.paramCount).toBe(0);
         });
 
         test("mean logical LOC is correct", () => {
-          assert.strictEqual(report.aggregateAverage.sloc.logical, 1);
-          assert.strictEqual(report.methodAverage.sloc.logical, 0);
+          expect(report.aggregateAverage.sloc.logical).toBe(1);
+          expect(report.methodAverage.sloc.logical).toBe(0);
         });
 
         test("mean cyclomatic complexity is correct", () => {
-          assert.strictEqual(report.aggregateAverage.cyclomatic, 1);
-          assert.strictEqual(report.methodAverage.cyclomatic, 0);
+          expect(report.aggregateAverage.cyclomatic).toBe(1);
+          expect(report.methodAverage.cyclomatic).toBe(0);
         });
 
         test("mean Halstead effort is correct", () => {
-          assert.strictEqual(report.aggregateAverage.halstead.effort, 4);
-          assert.strictEqual(report.methodAverage.halstead.effort, 0);
+          expect(report.aggregateAverage.halstead.effort).toBe(4);
+          expect(report.methodAverage.halstead.effort).toBe(0);
         });
 
         test("mean parameter count is correct", () => {
-          assert.strictEqual(report.aggregateAverage.paramCount, 0);
-          assert.strictEqual(report.methodAverage.paramCount, 0);
+          expect(report.aggregateAverage.paramCount).toBe(0);
+          expect(report.methodAverage.paramCount).toBe(0);
         });
 
         test("dependencies is correct", () => {
-          assert.lengthOf(report.dependencies, 0);
+          expect(report.dependencies.length).toBe(0);
         });
       });
 
-      suite("condition:", () => {
+      describe("condition:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze('if (true) { "foo"; }');
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct physical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.physical, 1);
+          expect(report.aggregate.sloc.physical).toBe(1);
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 2);
+          expect(report.aggregate.sloc.logical).toBe(2);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 2);
+          expect(report.aggregate.cyclomatic).toBe(2);
         });
 
         test("aggregate has correct cyclomatic complexity density", () => {
-          assert.strictEqual(report.aggregate.cyclomaticDensity, 100);
+          expect(report.aggregate.cyclomaticDensity).toBe(100);
         });
 
         test("methods is empty", () => {
-          assert.lengthOf(report.methods, 0);
+          expect(report.methods.length).toBe(0);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 1);
+          expect(report.aggregate.halstead.operators.total).toBe(1);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 1);
+          expect(report.aggregate.halstead.operators.distinct).toBe(1);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 2);
+          expect(report.aggregate.halstead.operands.total).toBe(2);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 2);
+          expect(report.aggregate.halstead.operands.distinct).toBe(2);
         });
 
         test("aggregate has correct Halstead operator identifier length", () => {
-          assert.lengthOf(
-            report.aggregate.halstead.operators.identifiers,
-            report.aggregate.halstead.operators.distinct
-          );
+          expect(report.aggregate.halstead.operators.identifiers.length).toBe(report.aggregate.halstead.operators.distinct);
         });
 
         test("aggregate has correct Halstead operand identifier length", () => {
-          assert.lengthOf(
-            report.aggregate.halstead.operands.identifiers,
-            report.aggregate.halstead.operands.distinct
-          );
+          expect(report.aggregate.halstead.operands.identifiers.length).toBe(report.aggregate.halstead.operands.distinct);
         });
 
         test("aggregate has correct Halstead length", () => {
-          assert.strictEqual(report.aggregate.halstead.length, 3);
+          expect(report.aggregate.halstead.length).toBe(3);
         });
 
         test("aggregate has correct Halstead vocabulary", () => {
-          assert.strictEqual(report.aggregate.halstead.vocabulary, 3);
+          expect(report.aggregate.halstead.vocabulary).toBe(3);
         });
 
         test("aggregate has correct Halstead difficulty", () => {
-          assert.strictEqual(report.aggregate.halstead.difficulty, 0.5);
+          expect(report.aggregate.halstead.difficulty).toBe(0.5);
         });
 
         test("aggregate has correct Halstead volume", () => {
-          assert.strictEqual(report.aggregate.halstead.volume, 4.755);
+          expect(report.aggregate.halstead.volume).toBe(4.755);
         });
 
         test("aggregate has correct Halstead effort", () => {
-          assert.strictEqual(report.aggregate.halstead.effort, 2.377);
+          expect(report.aggregate.halstead.effort).toBe(2.377);
         });
 
         test("aggregate has correct Halstead bugs", () => {
-          assert.strictEqual(report.aggregate.halstead.bugs, 0.002);
+          expect(report.aggregate.halstead.bugs).toBe(0.002);
         });
 
         test("aggregate has correct Halstead time", () => {
-          assert.strictEqual(report.aggregate.halstead.time, 0.132);
+          expect(report.aggregate.halstead.time).toBe(0.132);
         });
 
         test("maintainability index is correct", () => {
-          assert.strictEqual(report.maintainability, 156.116);
+          expect(report.maintainability).toBe(156.116);
         });
 
         test("mean logical LOC is correct", () => {
-          assert.strictEqual(report.aggregateAverage.sloc.logical, 2);
-          assert.strictEqual(report.methodAverage.sloc.logical, 0);
+          expect(report.aggregateAverage.sloc.logical).toBe(2);
+          expect(report.methodAverage.sloc.logical).toBe(0);
         });
 
         test("mean cyclomatic complexity is correct", () => {
-          assert.strictEqual(report.aggregateAverage.cyclomatic, 2);
-          assert.strictEqual(report.methodAverage.cyclomatic, 0);
+          expect(report.aggregateAverage.cyclomatic).toBe(2);
+          expect(report.methodAverage.cyclomatic).toBe(0);
         });
 
         test("mean Halstead effort is correct", () => {
-          assert.strictEqual(report.aggregateAverage.halstead.effort, 2.377);
-          assert.strictEqual(report.methodAverage.halstead.effort, 0);
+          expect(report.aggregateAverage.halstead.effort).toBe(2.377);
+          expect(report.methodAverage.halstead.effort).toBe(0);
         });
 
         test("mean parameter count is correct", () => {
-          assert.strictEqual(report.aggregateAverage.paramCount, 0);
-          assert.strictEqual(report.methodAverage.paramCount, 0);
+          expect(report.aggregateAverage.paramCount).toBe(0);
+          expect(report.methodAverage.paramCount).toBe(0);
         });
 
         test("dependencies is correct", () => {
-          assert.lengthOf(report.dependencies, 0);
+          expect(report.dependencies.length).toBe(0);
         });
       });
 
-      suite("condition with alternate:", () => {
+      describe("condition with alternate:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze('if (true) { "foo"; } else { "bar"; }');
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct physical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.physical, 1);
+          expect(report.aggregate.sloc.physical).toBe(1);
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 4);
+          expect(report.aggregate.sloc.logical).toBe(4);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 2);
+          expect(report.aggregate.cyclomatic).toBe(2);
         });
 
         test("methods is empty", () => {
-          assert.lengthOf(report.methods, 0);
+          expect(report.methods.length).toBe(0);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 2);
+          expect(report.aggregate.halstead.operators.total).toBe(2);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 2);
+          expect(report.aggregate.halstead.operators.distinct).toBe(2);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 3);
+          expect(report.aggregate.halstead.operands.total).toBe(3);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 3);
+          expect(report.aggregate.halstead.operands.distinct).toBe(3);
         });
 
         test("aggregate has correct Halstead operator identifier length", () => {
-          assert.lengthOf(
-            report.aggregate.halstead.operators.identifiers,
-            report.aggregate.halstead.operators.distinct
-          );
+          expect(report.aggregate.halstead.operators.identifiers.length).toBe(report.aggregate.halstead.operators.distinct);
         });
 
         test("aggregate has correct Halstead operand identifier length", () => {
-          assert.lengthOf(
-            report.aggregate.halstead.operands.identifiers,
-            report.aggregate.halstead.operands.distinct
-          );
+          expect(report.aggregate.halstead.operands.identifiers.length).toBe(report.aggregate.halstead.operands.distinct);
         });
 
         test("aggregate has correct Halstead length", () => {
-          assert.strictEqual(report.aggregate.halstead.length, 5);
+          expect(report.aggregate.halstead.length).toBe(5);
         });
 
         test("aggregate has correct Halstead vocabulary", () => {
-          assert.strictEqual(report.aggregate.halstead.vocabulary, 5);
+          expect(report.aggregate.halstead.vocabulary).toBe(5);
         });
 
         test("aggregate has correct Halstead difficulty", () => {
-          assert.strictEqual(report.aggregate.halstead.difficulty, 1);
+          expect(report.aggregate.halstead.difficulty).toBe(1);
         });
 
         test("aggregate has correct Halstead volume", () => {
-          assert.strictEqual(report.aggregate.halstead.volume, 11.61);
+          expect(report.aggregate.halstead.volume).toBe(11.61);
         });
 
         test("aggregate has correct Halstead effort", () => {
-          assert.strictEqual(report.aggregate.halstead.effort, 11.61);
+          expect(report.aggregate.halstead.effort).toBe(11.61);
         });
 
         test("aggregate has correct Halstead bugs", () => {
-          assert.strictEqual(report.aggregate.halstead.bugs, 0.004);
+          expect(report.aggregate.halstead.bugs).toBe(0.004);
         });
 
         test("aggregate has correct Halstead time", () => {
-          assert.strictEqual(report.aggregate.halstead.time, 0.645);
+          expect(report.aggregate.halstead.time).toBe(0.645);
         });
       });
 
-      suite("dual condition:", () => {
+      describe("dual condition:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze('if (true) { "foo"; } if (false) { "bar"; }');
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 4);
+          expect(report.aggregate.sloc.logical).toBe(4);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 3);
+          expect(report.aggregate.cyclomatic).toBe(3);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 2);
+          expect(report.aggregate.halstead.operators.total).toBe(2);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 1);
+          expect(report.aggregate.halstead.operators.distinct).toBe(1);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 4);
+          expect(report.aggregate.halstead.operands.total).toBe(4);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 4);
+          expect(report.aggregate.halstead.operands.distinct).toBe(4);
         });
 
         test("aggregate has correct Halstead operator identifier length", () => {
-          assert.lengthOf(
-            report.aggregate.halstead.operators.identifiers,
-            report.aggregate.halstead.operators.distinct
-          );
+          expect(report.aggregate.halstead.operators.identifiers.length).toBe(report.aggregate.halstead.operators.distinct);
         });
 
         test("aggregate has correct Halstead operand identifier length", () => {
-          assert.lengthOf(
-            report.aggregate.halstead.operands.identifiers,
-            report.aggregate.halstead.operands.distinct
-          );
+          expect(report.aggregate.halstead.operands.identifiers.length).toBe(report.aggregate.halstead.operands.distinct);
         });
 
         test("aggregate has correct Halstead length", () => {
-          assert.strictEqual(report.aggregate.halstead.length, 6);
+          expect(report.aggregate.halstead.length).toBe(6);
         });
 
         test("aggregate has correct Halstead vocabulary", () => {
-          assert.strictEqual(report.aggregate.halstead.vocabulary, 5);
+          expect(report.aggregate.halstead.vocabulary).toBe(5);
         });
 
         test("aggregate has correct Halstead difficulty", () => {
-          assert.strictEqual(report.aggregate.halstead.difficulty, 0.5);
+          expect(report.aggregate.halstead.difficulty).toBe(0.5);
         });
       });
 
-      suite("alternate dual condition:", () => {
+      describe("alternate dual condition:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             'if (true) { "foo"; } else if (false) { "bar"; }'
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 5);
+          expect(report.aggregate.sloc.logical).toBe(5);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 3);
+          expect(report.aggregate.cyclomatic).toBe(3);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 3);
+          expect(report.aggregate.halstead.operators.total).toBe(3);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 2);
+          expect(report.aggregate.halstead.operators.distinct).toBe(2);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 4);
+          expect(report.aggregate.halstead.operands.total).toBe(4);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 4);
+          expect(report.aggregate.halstead.operands.distinct).toBe(4);
         });
 
         test("aggregate has correct Halstead operator identifier length", () => {
-          assert.lengthOf(
-            report.aggregate.halstead.operators.identifiers,
-            report.aggregate.halstead.operators.distinct
-          );
+          expect(report.aggregate.halstead.operators.identifiers.length).toBe(report.aggregate.halstead.operators.distinct);
         });
 
         test("aggregate has correct Halstead operand identifier length", () => {
-          assert.lengthOf(
-            report.aggregate.halstead.operands.identifiers,
-            report.aggregate.halstead.operands.distinct
-          );
+          expect(report.aggregate.halstead.operands.identifiers.length).toBe(report.aggregate.halstead.operands.distinct);
         });
       });
 
-      suite("nested condition:", () => {
+      describe("nested condition:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze('if (true) { "foo"; if (false) { "bar"; } }');
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 4);
+          expect(report.aggregate.sloc.logical).toBe(4);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 3);
+          expect(report.aggregate.cyclomatic).toBe(3);
         });
       });
 
-      suite("switch statement:", () => {
+      describe("switch statement:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             'switch (Date.now()) { case 1: "foo"; break; case 2: "bar"; break; default: "baz"; }'
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 10);
+          expect(report.aggregate.sloc.logical).toBe(10);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 3);
+          expect(report.aggregate.cyclomatic).toBe(3);
         });
 
         test("aggregate has correct cyclomatic complexity density", () => {
-          assert.strictEqual(report.aggregate.cyclomaticDensity, 30);
+          expect(report.aggregate.cyclomaticDensity).toBe(30);
         });
 
         test("methods is empty", () => {
-          assert.lengthOf(report.methods, 0);
+          expect(report.methods.length).toBe(0);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 8);
+          expect(report.aggregate.halstead.operators.total).toBe(8);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 6);
+          expect(report.aggregate.halstead.operators.distinct).toBe(6);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 7);
+          expect(report.aggregate.halstead.operands.total).toBe(7);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 7);
+          expect(report.aggregate.halstead.operands.distinct).toBe(7);
         });
       });
 
-      suite("switch statement with fall-through case:", () => {
+      describe("switch statement with fall-through case:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             'switch (Date.now()) { case 1: case 2: "foo"; break; default: "bar"; }'
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 8);
+          expect(report.aggregate.sloc.logical).toBe(8);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 3);
+          expect(report.aggregate.cyclomatic).toBe(3);
         });
 
         test("methods is empty", () => {
-          assert.lengthOf(report.methods, 0);
+          expect(report.methods.length).toBe(0);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 7);
+          expect(report.aggregate.halstead.operators.total).toBe(7);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 6);
+          expect(report.aggregate.halstead.operators.distinct).toBe(6);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 6);
+          expect(report.aggregate.halstead.operands.total).toBe(6);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 6);
+          expect(report.aggregate.halstead.operands.distinct).toBe(6);
         });
       });
 
-      suite("switch statement containing condition:", () => {
+      describe("switch statement containing condition:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             "switch (Date.now()) { " +
               '    case 1: "foo"; break; ' +
@@ -568,1923 +535,1887 @@ if (testconfig.modules["moduleCore"]) {
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 11);
+          expect(report.aggregate.sloc.logical).toBe(11);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 4);
+          expect(report.aggregate.cyclomatic).toBe(4);
         });
 
         test("methods is empty", () => {
-          assert.lengthOf(report.methods, 0);
+          expect(report.methods.length).toBe(0);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 9);
+          expect(report.aggregate.halstead.operators.total).toBe(9);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 7);
+          expect(report.aggregate.halstead.operators.distinct).toBe(7);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 8);
+          expect(report.aggregate.halstead.operands.total).toBe(8);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 8);
+          expect(report.aggregate.halstead.operands.distinct).toBe(8);
         });
       });
 
-      suite("for loop:", () => {
+      describe("for loop:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             'var i; for (i = 0; i < 10; i += 1) { "foo"; }'
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct Halstead operand identifiers", () => {
-          assert.strictEqual(
-            JSON.stringify(report.aggregate.halstead.operands.identifiers),
-            '["i","0","10","1","\\"foo\\""]'
-          );
+          expect(JSON.stringify(report.aggregate.halstead.operands.identifiers)).toBe('["i","0","10","1","\\"foo\\""]');
         });
 
         test("aggregate has correct Halstead operator identifiers", () => {
-          assert.strictEqual(
-            JSON.stringify(report.aggregate.halstead.operators.identifiers),
-            '["var","for","=","<","+="]'
-          );
+          expect(JSON.stringify(report.aggregate.halstead.operators.identifiers)).toBe('["var","for","=","<","+="]');
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 3);
+          expect(report.aggregate.sloc.logical).toBe(3);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 2);
+          expect(report.aggregate.cyclomatic).toBe(2);
         });
 
         test("methods is empty", () => {
-          assert.lengthOf(report.methods, 0);
+          expect(report.methods.length).toBe(0);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 5);
+          expect(report.aggregate.halstead.operators.total).toBe(5);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 5);
+          expect(report.aggregate.halstead.operators.distinct).toBe(5);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 8);
+          expect(report.aggregate.halstead.operands.total).toBe(8);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 5);
+          expect(report.aggregate.halstead.operands.distinct).toBe(5);
         });
 
         test("aggregate has correct Halstead length", () => {
-          assert.strictEqual(report.aggregate.halstead.length, 13);
+          expect(report.aggregate.halstead.length).toBe(13);
         });
 
         test("aggregate has correct Halstead vocabulary", () => {
-          assert.strictEqual(report.aggregate.halstead.vocabulary, 10);
+          expect(report.aggregate.halstead.vocabulary).toBe(10);
         });
 
         test("aggregate has correct Halstead difficulty", () => {
-          assert.strictEqual(report.aggregate.halstead.difficulty, 4);
+          expect(report.aggregate.halstead.difficulty).toBe(4);
         });
       });
 
-      suite("for loop containing condition:", () => {
+      describe("for loop containing condition:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             'var i; for (i = 0; i < 10; i += 1) { if (true) { "foo"; } }'
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 3);
+          expect(report.aggregate.cyclomatic).toBe(3);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 6);
+          expect(report.aggregate.halstead.operators.total).toBe(6);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 6);
+          expect(report.aggregate.halstead.operators.distinct).toBe(6);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 9);
+          expect(report.aggregate.halstead.operands.total).toBe(9);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 6);
+          expect(report.aggregate.halstead.operands.distinct).toBe(6);
         });
       });
 
-      suite("for...in loop:", () => {
+      describe("for...in loop:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             'var property; for (property in { foo: "bar", baz: "qux" }) { "wibble"; }'
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 3);
+          expect(report.aggregate.sloc.logical).toBe(3);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 1);
+          expect(report.aggregate.cyclomatic).toBe(1);
         });
 
         test("methods is empty", () => {
-          assert.lengthOf(report.methods, 0);
+          expect(report.methods.length).toBe(0);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 5);
+          expect(report.aggregate.halstead.operators.total).toBe(5);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 4);
+          expect(report.aggregate.halstead.operators.distinct).toBe(4);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 7);
+          expect(report.aggregate.halstead.operands.total).toBe(7);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 6);
+          expect(report.aggregate.halstead.operands.distinct).toBe(6);
         });
 
         test("aggregate has correct Halstead length", () => {
-          assert.strictEqual(report.aggregate.halstead.length, 12);
+          expect(report.aggregate.halstead.length).toBe(12);
         });
 
         test("aggregate has correct Halstead vocabulary", () => {
-          assert.strictEqual(report.aggregate.halstead.vocabulary, 10);
+          expect(report.aggregate.halstead.vocabulary).toBe(10);
         });
 
         test("aggregate has correct Halstead difficulty", () => {
-          assert.strictEqual(report.aggregate.halstead.difficulty, 2.333);
+          expect(report.aggregate.halstead.difficulty).toBe(2.333);
         });
 
         test("maintainability index is correct", () => {
-          assert.strictEqual(report.maintainability, 137.7);
+          expect(report.maintainability).toBe(137.7);
         });
       });
 
-      suite("for...in loop containing condition:", () => {
+      describe("for...in loop containing condition:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             'var property, object = { foo: "bar", baz: "qux" }; ' +
               'for (property in object) { if (object.hasOwnProperty(property)) { "wibble"; } }'
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 2);
+          expect(report.aggregate.cyclomatic).toBe(2);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 9);
+          expect(report.aggregate.halstead.operators.total).toBe(9);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 8);
+          expect(report.aggregate.halstead.operators.distinct).toBe(8);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 12);
+          expect(report.aggregate.halstead.operands.total).toBe(12);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 8);
+          expect(report.aggregate.halstead.operands.distinct).toBe(8);
         });
       });
 
-      suite("while loop:", () => {
+      describe("while loop:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze('while (true) { "foo"; }');
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 2);
+          expect(report.aggregate.sloc.logical).toBe(2);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 2);
+          expect(report.aggregate.cyclomatic).toBe(2);
         });
 
         test("methods is empty", () => {
-          assert.lengthOf(report.methods, 0);
+          expect(report.methods.length).toBe(0);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 1);
+          expect(report.aggregate.halstead.operators.total).toBe(1);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 1);
+          expect(report.aggregate.halstead.operators.distinct).toBe(1);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 2);
+          expect(report.aggregate.halstead.operands.total).toBe(2);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 2);
+          expect(report.aggregate.halstead.operands.distinct).toBe(2);
         });
       });
 
-      suite("while loop containing condition:", () => {
+      describe("while loop containing condition:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze('while (true) { if (true) { "foo"; } }');
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 3);
+          expect(report.aggregate.cyclomatic).toBe(3);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 2);
+          expect(report.aggregate.halstead.operators.total).toBe(2);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 2);
+          expect(report.aggregate.halstead.operators.distinct).toBe(2);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 3);
+          expect(report.aggregate.halstead.operands.total).toBe(3);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 2);
+          expect(report.aggregate.halstead.operands.distinct).toBe(2);
         });
       });
 
-      suite("do...while loop:", () => {
+      describe("do...while loop:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze('do { "foo"; } while (true)');
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 3);
+          expect(report.aggregate.sloc.logical).toBe(3);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 2);
+          expect(report.aggregate.cyclomatic).toBe(2);
         });
 
         test("methods is empty", () => {
-          assert.lengthOf(report.methods, 0);
+          expect(report.methods.length).toBe(0);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 1);
+          expect(report.aggregate.halstead.operators.total).toBe(1);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 1);
+          expect(report.aggregate.halstead.operators.distinct).toBe(1);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 2);
+          expect(report.aggregate.halstead.operands.total).toBe(2);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 2);
+          expect(report.aggregate.halstead.operands.distinct).toBe(2);
         });
       });
 
-      suite("do...while loop containing condition:", () => {
+      describe("do...while loop containing condition:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze('do { if (true) { "foo"; } } while (true)');
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 3);
+          expect(report.aggregate.cyclomatic).toBe(3);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 2);
+          expect(report.aggregate.halstead.operators.total).toBe(2);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 2);
+          expect(report.aggregate.halstead.operators.distinct).toBe(2);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 3);
+          expect(report.aggregate.halstead.operands.total).toBe(3);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 2);
+          expect(report.aggregate.halstead.operands.distinct).toBe(2);
         });
       });
 
-      suite("try...catch:", () => {
+      describe("try...catch:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze('try { "foo"; } catch (e) { e.message; }');
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 4);
+          expect(report.aggregate.sloc.logical).toBe(4);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 1);
+          expect(report.aggregate.cyclomatic).toBe(1);
         });
 
         test("methods is empty", () => {
-          assert.lengthOf(report.methods, 0);
+          expect(report.methods.length).toBe(0);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 3);
+          expect(report.aggregate.halstead.operators.total).toBe(3);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 3);
+          expect(report.aggregate.halstead.operators.distinct).toBe(3);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 4);
+          expect(report.aggregate.halstead.operands.total).toBe(4);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 3);
+          expect(report.aggregate.halstead.operands.distinct).toBe(3);
         });
       });
 
-      suite("try containing condition", () => {
+      describe("try containing condition", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             'try { if (true) { "foo"; } } catch (e) { "bar"; }'
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 2);
+          expect(report.aggregate.cyclomatic).toBe(2);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 3);
+          expect(report.aggregate.halstead.operators.total).toBe(3);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 3);
+          expect(report.aggregate.halstead.operators.distinct).toBe(3);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 4);
+          expect(report.aggregate.halstead.operands.total).toBe(4);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 4);
+          expect(report.aggregate.halstead.operands.distinct).toBe(4);
         });
       });
 
-      suite("catch containing condition", () => {
+      describe("catch containing condition", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             'try { "foo"; } catch (e) { if (true) { "bar"; } }'
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 2);
+          expect(report.aggregate.cyclomatic).toBe(2);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 3);
+          expect(report.aggregate.halstead.operators.total).toBe(3);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 3);
+          expect(report.aggregate.halstead.operators.distinct).toBe(3);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 4);
+          expect(report.aggregate.halstead.operands.total).toBe(4);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 4);
+          expect(report.aggregate.halstead.operands.distinct).toBe(4);
         });
       });
 
-      suite("catch with finally containing condition", () => {
+      describe("catch with finally containing condition", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             'try { "foo"; } catch (e) { } finally { if (true) { "bar"; } }'
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 2);
+          expect(report.aggregate.cyclomatic).toBe(2);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 4);
+          expect(report.aggregate.halstead.operators.total).toBe(4);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 4);
+          expect(report.aggregate.halstead.operators.distinct).toBe(4);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 4);
+          expect(report.aggregate.halstead.operands.total).toBe(4);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 4);
+          expect(report.aggregate.halstead.operands.distinct).toBe(4);
         });
       });
 
-      suite("function declaration:", () => {
+      describe("function declaration:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze('function foo () { "bar"; }');
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 2);
+          expect(report.aggregate.sloc.logical).toBe(2);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 2);
+          expect(report.aggregate.cyclomatic).toBe(2);
         });
 
         test("methods has correct length", () => {
-          assert.lengthOf(report.methods, 1);
+          expect(report.methods.length).toBe(1);
         });
 
         test("method has correct name", () => {
-          assert.strictEqual(report.methods[0].name, "foo");
+          expect(report.methods[0].name).toBe("foo");
         });
 
         test("method has correct physical lines of code", () => {
-          assert.strictEqual(report.methods[0].sloc.physical, 1);
+          expect(report.methods[0].sloc.physical).toBe(1);
         });
 
         test("method has correct logical lines of code", () => {
-          assert.strictEqual(report.methods[0].sloc.logical, 1);
+          expect(report.methods[0].sloc.logical).toBe(1);
         });
 
         test("method has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.methods[0].cyclomatic, 1);
+          expect(report.methods[0].cyclomatic).toBe(1);
         });
 
         test("method has correct parameter count", () => {
-          assert.strictEqual(report.methods[0].paramCount, 0);
+          expect(report.methods[0].paramCount).toBe(0);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 1);
+          expect(report.aggregate.halstead.operators.total).toBe(1);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 1);
+          expect(report.aggregate.halstead.operators.distinct).toBe(1);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 2);
+          expect(report.aggregate.halstead.operands.total).toBe(2);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 2);
+          expect(report.aggregate.halstead.operands.distinct).toBe(2);
         });
 
         test("aggregate has correct Halstead length", () => {
-          assert.strictEqual(report.aggregate.halstead.length, 3);
+          expect(report.aggregate.halstead.length).toBe(3);
         });
 
         test("aggregate has correct Halstead vocabulary", () => {
-          assert.strictEqual(report.aggregate.halstead.vocabulary, 3);
+          expect(report.aggregate.halstead.vocabulary).toBe(3);
         });
 
         test("aggregate has correct Halstead difficulty", () => {
-          assert.strictEqual(report.aggregate.halstead.difficulty, 0.5);
+          expect(report.aggregate.halstead.difficulty).toBe(0.5);
         });
 
         test("method has correct Halstead length", () => {
-          assert.strictEqual(report.methods[0].halstead.length, 1);
+          expect(report.methods[0].halstead.length).toBe(1);
         });
 
         test("method has correct Halstead vocabulary", () => {
-          assert.strictEqual(report.methods[0].halstead.vocabulary, 1);
+          expect(report.methods[0].halstead.vocabulary).toBe(1);
         });
 
         test("method has correct Halstead difficulty", () => {
-          assert.strictEqual(report.methods[0].halstead.difficulty, 0);
+          expect(report.methods[0].halstead.difficulty).toBe(0);
         });
 
         test("method has correct Halstead volume", () => {
-          assert.strictEqual(report.methods[0].halstead.volume, 0);
+          expect(report.methods[0].halstead.volume).toBe(0);
         });
 
         test("method has correct Halstead effort", () => {
-          assert.strictEqual(report.methods[0].halstead.effort, 0);
+          expect(report.methods[0].halstead.effort).toBe(0);
         });
 
         test("method has correct Halstead bugs", () => {
-          assert.strictEqual(report.methods[0].halstead.bugs, 0);
+          expect(report.methods[0].halstead.bugs).toBe(0);
         });
 
         test("method has correct Halstead time", () => {
-          assert.strictEqual(report.methods[0].halstead.time, 0);
+          expect(report.methods[0].halstead.time).toBe(0);
         });
 
         test("maintainability index is correct", () => {
-          assert.strictEqual(report.maintainability, 170.409);
+          expect(report.maintainability).toBe(170.409);
         });
 
         test("aggregate has correct parameter count", () => {
-          assert.strictEqual(report.aggregate.paramCount, 0);
+          expect(report.aggregate.paramCount).toBe(0);
         });
       });
 
-      suite("nested function declaration:", () => {
+      describe("nested function declaration:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             'function foo () { bar(); function bar () { "baz"; } }'
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 4);
+          expect(report.aggregate.sloc.logical).toBe(4);
         });
 
         test("methods has correct length", () => {
-          assert.lengthOf(report.methods, 2);
+          expect(report.methods.length).toBe(2);
         });
 
         test("first method has correct logical lines of code", () => {
-          assert.strictEqual(report.methods[0].sloc.logical, 2);
+          expect(report.methods[0].sloc.logical).toBe(2);
         });
 
         test("second method has correct logical lines of code", () => {
-          assert.strictEqual(report.methods[1].sloc.logical, 1);
+          expect(report.methods[1].sloc.logical).toBe(1);
         });
 
         test("first method has correct name", () => {
-          assert.strictEqual(report.methods[0].name, "foo");
+          expect(report.methods[0].name).toBe("foo");
         });
 
         test("second method has correct name", () => {
-          assert.strictEqual(report.methods[1].name, "bar");
+          expect(report.methods[1].name).toBe("bar");
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 3);
+          expect(report.aggregate.halstead.operators.total).toBe(3);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 2);
+          expect(report.aggregate.halstead.operators.distinct).toBe(2);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 4);
+          expect(report.aggregate.halstead.operands.total).toBe(4);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 3);
+          expect(report.aggregate.halstead.operands.distinct).toBe(3);
         });
       });
 
-      suite("function declaration containing condition:", () => {
+      describe("function declaration containing condition:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze('function foo () { if (true) { "bar"; } }');
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 3);
+          expect(report.aggregate.cyclomatic).toBe(3);
         });
 
         test("method has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.methods[0].cyclomatic, 2);
+          expect(report.methods[0].cyclomatic).toBe(2);
         });
 
         test("method has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.methods[0].cyclomaticDensity, 100);
+          expect(report.methods[0].cyclomaticDensity).toBe(100);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 2);
+          expect(report.aggregate.halstead.operators.total).toBe(2);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 2);
+          expect(report.aggregate.halstead.operators.distinct).toBe(2);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 3);
+          expect(report.aggregate.halstead.operands.total).toBe(3);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 3);
+          expect(report.aggregate.halstead.operands.distinct).toBe(3);
         });
       });
 
-      suite("assignment expression", () => {
+      describe("assignment expression", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze('var foo = "bar";');
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 1);
+          expect(report.aggregate.sloc.logical).toBe(1);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 1);
+          expect(report.aggregate.cyclomatic).toBe(1);
         });
 
         test("methods is empty", () => {
-          assert.lengthOf(report.methods, 0);
+          expect(report.methods.length).toBe(0);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 2);
+          expect(report.aggregate.halstead.operators.total).toBe(2);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 2);
+          expect(report.aggregate.halstead.operators.distinct).toBe(2);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 2);
+          expect(report.aggregate.halstead.operands.total).toBe(2);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 2);
+          expect(report.aggregate.halstead.operands.distinct).toBe(2);
         });
       });
 
-      suite("member expression computed (literal)", () => {
+      describe("member expression computed (literal)", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze('var foo = this["bar"];');
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 1);
+          expect(report.aggregate.sloc.logical).toBe(1);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 1);
+          expect(report.aggregate.cyclomatic).toBe(1);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 4);
+          expect(report.aggregate.halstead.operators.total).toBe(4);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 4);
+          expect(report.aggregate.halstead.operators.distinct).toBe(4);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 2);
+          expect(report.aggregate.halstead.operands.total).toBe(2);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 2);
+          expect(report.aggregate.halstead.operands.distinct).toBe(2);
         });
 
         test("aggregate has correct Halstead operator identifier `[]`", () => {
-          assert.isAtLeast(
-            report.aggregate.halstead.operators.identifiers.indexOf("[]"),
-            0
-          );
+          expect(report.aggregate.halstead.operators.identifiers.indexOf("[]")).toBeGreaterThanOrEqual(0);
         });
 
         test("aggregate does not have Halstead operator identifier `.`", () => {
-          assert.strictEqual(
-            report.aggregate.halstead.operators.identifiers.indexOf("."),
-            -1
-          );
+          expect(report.aggregate.halstead.operators.identifiers.indexOf(".")).toBe(-1);
         });
       });
 
-      suite("member expression computed (binary expression)", () => {
+      describe("member expression computed (binary expression)", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze("var foo = this[bar + biz + baz];");
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 1);
+          expect(report.aggregate.sloc.logical).toBe(1);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 1);
+          expect(report.aggregate.cyclomatic).toBe(1);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 6);
+          expect(report.aggregate.halstead.operators.total).toBe(6);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 5);
+          expect(report.aggregate.halstead.operators.distinct).toBe(5);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 4);
+          expect(report.aggregate.halstead.operands.total).toBe(4);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 4);
+          expect(report.aggregate.halstead.operands.distinct).toBe(4);
         });
 
         test("aggregate has correct Halstead operator identifier `[]`", () => {
-          assert.isAtLeast(
-            report.aggregate.halstead.operators.identifiers.indexOf("[]"),
-            0
-          );
-          assert.isAtLeast(
-            report.aggregate.halstead.operators.identifiers.indexOf("+"),
-            0
-          );
+          expect(report.aggregate.halstead.operators.identifiers.indexOf("[]")).toBeGreaterThanOrEqual(0);
+          expect(report.aggregate.halstead.operators.identifiers.indexOf("+")).toBeGreaterThanOrEqual(0);
         });
 
         test("aggregate does not have Halstead operator identifier `.`", () => {
-          assert.strictEqual(
-            report.aggregate.halstead.operators.identifiers.indexOf("."),
-            -1
-          );
+          expect(report.aggregate.halstead.operators.identifiers.indexOf(".")).toBe(-1);
         });
 
-        test("aggregate has correct Halstead operand identifier `bar, biz, baz`", () => {
-          assert.isAtLeast(
-            report.aggregate.halstead.operands.identifiers.indexOf("bar"),
-            0
-          );
-          assert.isAtLeast(
-            report.aggregate.halstead.operands.identifiers.indexOf("biz"),
-            0
-          );
-          assert.isAtLeast(
-            report.aggregate.halstead.operands.identifiers.indexOf("baz"),
-            0
-          );
-        });
+        test(
+          "aggregate has correct Halstead operand identifier `bar, biz, baz`",
+          () => {
+            expect(report.aggregate.halstead.operands.identifiers.indexOf("bar")).toBeGreaterThanOrEqual(0);
+            expect(report.aggregate.halstead.operands.identifiers.indexOf("biz")).toBeGreaterThanOrEqual(0);
+            expect(report.aggregate.halstead.operands.identifiers.indexOf("baz")).toBeGreaterThanOrEqual(0);
+          }
+        );
       });
 
-      suite("regexp expression", () => {
+      describe("regexp expression", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze("var foo = /bar/g;");
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 1);
+          expect(report.aggregate.sloc.logical).toBe(1);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 1);
+          expect(report.aggregate.cyclomatic).toBe(1);
         });
 
         test("functions has correct length", () => {
-          assert.lengthOf(report.methods, 0);
+          expect(report.methods.length).toBe(0);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 2);
+          expect(report.aggregate.halstead.operators.total).toBe(2);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 2);
+          expect(report.aggregate.halstead.operators.distinct).toBe(2);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 2);
+          expect(report.aggregate.halstead.operands.total).toBe(2);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 2);
+          expect(report.aggregate.halstead.operands.distinct).toBe(2);
         });
 
         test("aggregate has regex operand identifier", () => {
-          assert.isAtLeast(
-            report.aggregate.halstead.operands.identifiers.indexOf("/bar/g"),
-            0
-          );
+          expect(report.aggregate.halstead.operands.identifiers.indexOf("/bar/g")).toBeGreaterThanOrEqual(0);
         });
 
         test("aggregate has correct Halstead length", () => {
-          assert.strictEqual(report.aggregate.halstead.length, 4);
+          expect(report.aggregate.halstead.length).toBe(4);
         });
 
         test("aggregate has correct Halstead vocabulary", () => {
-          assert.strictEqual(report.aggregate.halstead.vocabulary, 4);
+          expect(report.aggregate.halstead.vocabulary).toBe(4);
         });
 
         test("aggregate has correct Halstead difficulty", () => {
-          assert.strictEqual(report.aggregate.halstead.difficulty, 1);
+          expect(report.aggregate.halstead.difficulty).toBe(1);
         });
 
         test("maintainability index is correct", () => {
-          assert.strictEqual(report.maintainability, 163.888);
+          expect(report.maintainability).toBe(163.888);
         });
 
         test("aggregate has correct parameter count", () => {
-          assert.strictEqual(report.aggregate.paramCount, 0);
+          expect(report.aggregate.paramCount).toBe(0);
         });
       });
 
-      suite("ternary condtional expression assigned to variable:", () => {
+      describe("ternary condtional expression assigned to variable:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze('var foo = true ? "bar" : "baz";');
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 1);
+          expect(report.aggregate.sloc.logical).toBe(1);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 2);
+          expect(report.aggregate.cyclomatic).toBe(2);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 3);
+          expect(report.aggregate.halstead.operators.total).toBe(3);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 3);
+          expect(report.aggregate.halstead.operators.distinct).toBe(3);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 4);
+          expect(report.aggregate.halstead.operands.total).toBe(4);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 4);
+          expect(report.aggregate.halstead.operands.distinct).toBe(4);
         });
       });
 
-      suite("nested ternary condtional expression:", () => {
+      describe("nested ternary condtional expression:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             'var foo = true ? "bar" : (false ? "baz" : "qux");'
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 1);
+          expect(report.aggregate.sloc.logical).toBe(1);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 3);
+          expect(report.aggregate.cyclomatic).toBe(3);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 4);
+          expect(report.aggregate.halstead.operators.total).toBe(4);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 3);
+          expect(report.aggregate.halstead.operators.distinct).toBe(3);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 6);
+          expect(report.aggregate.halstead.operands.total).toBe(6);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 6);
+          expect(report.aggregate.halstead.operands.distinct).toBe(6);
         });
       });
 
-      suite("logical or expression assigned to variable:", () => {
+      describe("logical or expression assigned to variable:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze("var foo = true || false;");
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 1);
+          expect(report.aggregate.sloc.logical).toBe(1);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 2);
+          expect(report.aggregate.cyclomatic).toBe(2);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 3);
+          expect(report.aggregate.halstead.operators.total).toBe(3);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 3);
+          expect(report.aggregate.halstead.operators.distinct).toBe(3);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 3);
+          expect(report.aggregate.halstead.operands.total).toBe(3);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 3);
+          expect(report.aggregate.halstead.operands.distinct).toBe(3);
         });
       });
 
-      suite("anonymous function assigned to variable:", () => {
+      describe("anonymous function assigned to variable:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze('var foo = function () { "bar"; }');
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 3);
+          expect(report.aggregate.sloc.logical).toBe(3);
         });
 
         test("methods has correct length", () => {
-          assert.lengthOf(report.methods, 1);
+          expect(report.methods.length).toBe(1);
         });
 
         test("method has correct name", () => {
-          assert.strictEqual(report.methods[0].name, "<anon method-1>");
+          expect(report.methods[0].name).toBe("<anon method-1>");
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 3);
+          expect(report.aggregate.halstead.operators.total).toBe(3);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 3);
+          expect(report.aggregate.halstead.operators.distinct).toBe(3);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 2);
+          expect(report.aggregate.halstead.operands.total).toBe(2);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 2);
+          expect(report.aggregate.halstead.operands.distinct).toBe(2);
         });
       });
 
-      suite("named function assigned to variable:", () => {
+      describe("named function assigned to variable:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze('var foo = function bar () { "baz"; }');
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 3);
+          expect(report.aggregate.sloc.logical).toBe(3);
         });
 
         test("method has correct name", () => {
-          assert.strictEqual(report.methods[0].name, "bar");
+          expect(report.methods[0].name).toBe("bar");
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 3);
+          expect(report.aggregate.halstead.operands.total).toBe(3);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 3);
+          expect(report.aggregate.halstead.operands.distinct).toBe(3);
         });
       });
 
-      suite("ternary condtional expression returned from function:", () => {
+      describe("ternary condtional expression returned from function:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             'function foo () { return true ? "bar" : "baz"; }'
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 2);
+          expect(report.aggregate.sloc.logical).toBe(2);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 3);
+          expect(report.aggregate.cyclomatic).toBe(3);
         });
 
         test("method has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.methods[0].cyclomatic, 2);
+          expect(report.methods[0].cyclomatic).toBe(2);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 3);
+          expect(report.aggregate.halstead.operators.total).toBe(3);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 3);
+          expect(report.aggregate.halstead.operators.distinct).toBe(3);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 4);
+          expect(report.aggregate.halstead.operands.total).toBe(4);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 4);
+          expect(report.aggregate.halstead.operands.distinct).toBe(4);
         });
       });
 
-      suite("logical or expression returned from function:", () => {
+      describe("logical or expression returned from function:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze("function foo () { return true || false; }");
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 2);
+          expect(report.aggregate.sloc.logical).toBe(2);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 3);
+          expect(report.aggregate.cyclomatic).toBe(3);
         });
 
         test("method has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.methods[0].cyclomatic, 2);
+          expect(report.methods[0].cyclomatic).toBe(2);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 3);
+          expect(report.aggregate.halstead.operands.total).toBe(3);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 3);
+          expect(report.aggregate.halstead.operands.distinct).toBe(3);
         });
       });
 
-      suite("anonymous function returned from function:", () => {
+      describe("anonymous function returned from function:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             'function foo () { return function () { "bar"; }; }'
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 4);
+          expect(report.aggregate.sloc.logical).toBe(4);
         });
 
         test("methods has correct length", () => {
-          assert.lengthOf(report.methods, 2);
+          expect(report.methods.length).toBe(2);
         });
 
         test("first method has correct name", () => {
-          assert.strictEqual(report.methods[0].name, "foo");
+          expect(report.methods[0].name).toBe("foo");
         });
 
         test("second method is anonymous", () => {
-          assert.strictEqual(report.methods[1].name, "<anon method-1>");
+          expect(report.methods[1].name).toBe("<anon method-1>");
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 3);
+          expect(report.aggregate.halstead.operators.total).toBe(3);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 2);
+          expect(report.aggregate.halstead.operators.distinct).toBe(2);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 2);
+          expect(report.aggregate.halstead.operands.total).toBe(2);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 2);
+          expect(report.aggregate.halstead.operands.distinct).toBe(2);
         });
       });
 
-      suite("named function returned from function:", () => {
+      describe("named function returned from function:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             'function foo () { return function bar () { "baz"; }; }'
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("second method has correct name", () => {
-          assert.strictEqual(report.methods[1].name, "bar");
+          expect(report.methods[1].name).toBe("bar");
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 3);
+          expect(report.aggregate.halstead.operands.total).toBe(3);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 3);
+          expect(report.aggregate.halstead.operands.distinct).toBe(3);
         });
       });
 
-      suite("ternary condtional expression passed as argument:", () => {
+      describe("ternary condtional expression passed as argument:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze('parseInt("10", true ? 10 : 8);');
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 2);
+          expect(report.aggregate.cyclomatic).toBe(2);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 2);
+          expect(report.aggregate.halstead.operators.total).toBe(2);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 2);
+          expect(report.aggregate.halstead.operators.distinct).toBe(2);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 5);
+          expect(report.aggregate.halstead.operands.total).toBe(5);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 5);
+          expect(report.aggregate.halstead.operands.distinct).toBe(5);
         });
       });
 
-      suite("logical or expression passed as argument:", () => {
+      describe("logical or expression passed as argument:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze('parseInt("10", 10 || 8);');
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 2);
+          expect(report.aggregate.cyclomatic).toBe(2);
         });
       });
 
-      suite("anonymous function passed as argument:", () => {
+      describe("anonymous function passed as argument:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze('setTimeout(function () { "foo"; }, 1000);');
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 3);
+          expect(report.aggregate.sloc.logical).toBe(3);
         });
 
         test("methods has correct length", () => {
-          assert.lengthOf(report.methods, 1);
+          expect(report.methods.length).toBe(1);
         });
 
         test("method is anonymous", () => {
-          assert.strictEqual(report.methods[0].name, "<anon method-1>");
+          expect(report.methods[0].name).toBe("<anon method-1>");
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 2);
+          expect(report.aggregate.halstead.operators.total).toBe(2);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 2);
+          expect(report.aggregate.halstead.operators.distinct).toBe(2);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 3);
+          expect(report.aggregate.halstead.operands.total).toBe(3);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 3);
+          expect(report.aggregate.halstead.operands.distinct).toBe(3);
         });
       });
 
-      suite("named function passed as argument:", () => {
+      describe("named function passed as argument:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             'setTimeout(function foo () { "bar"; }, 1000);'
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("method has correct name", () => {
-          assert.strictEqual(report.methods[0].name, "foo");
+          expect(report.methods[0].name).toBe("foo");
         });
       });
 
-      suite("logical AND expression:", () => {
+      describe("logical AND expression:", () => {
         test("aggregate has correct cyclomatic complexity", () => {
           const report = parser.analyze("var foo = true && false;", {});
-          assert.strictEqual(report.aggregate.cyclomatic, 2);
-          assert.strictEqual(report.methodAverage.cyclomatic, 0);
+          expect(report.aggregate.cyclomatic).toBe(2);
+          expect(report.methodAverage.cyclomatic).toBe(0);
         });
       });
 
-      suite("logical OR expression with logicalor false:", () => {
+      describe("logical OR expression with logicalor false:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze("var foo = true || false;", {
             logicalor: false,
           });
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 1);
+          expect(report.aggregate.cyclomatic).toBe(1);
         });
       });
 
-      suite("switch statement with switchcase false:", () => {
+      describe("switch statement with switchcase false:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             'switch (Date.now()) { case 1: "foo"; break; case 2: "bar"; break; default: "baz"; }',
             { switchcase: false }
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 1);
+          expect(report.aggregate.cyclomatic).toBe(1);
         });
       });
 
-      suite("for...in loop with forin true:", () => {
+      describe("for...in loop with forin true:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             'var property; for (property in { foo: "bar", baz: "qux" }) { "wibble"; }',
             { forin: true }
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct Halstead operand identifiers", () => {
-          assert.strictEqual(
-            JSON.stringify(report.aggregate.halstead.operands.identifiers),
-            '["property","foo","\\"bar\\"","baz","\\"qux\\"","\\"wibble\\""]'
-          );
+          expect(JSON.stringify(report.aggregate.halstead.operands.identifiers)).toBe('["property","foo","\\"bar\\"","baz","\\"qux\\"","\\"wibble\\""]');
         });
 
         test("aggregate has correct Halstead operator identifiers", () => {
-          assert.strictEqual(
-            JSON.stringify(report.aggregate.halstead.operators.identifiers),
-            '["var","forin","{}",":"]'
-          );
+          expect(JSON.stringify(report.aggregate.halstead.operators.identifiers)).toBe('["var","forin","{}",":"]');
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 3);
+          expect(report.aggregate.sloc.logical).toBe(3);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 2);
+          expect(report.aggregate.cyclomatic).toBe(2);
         });
 
         test("maintainability index is correct", () => {
-          assert.strictEqual(report.maintainability, 137.007);
+          expect(report.maintainability).toBe(137.007);
         });
       });
 
-      suite("try...catch with trycatch true:", () => {
+      describe("try...catch with trycatch true:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze('try { "foo"; } catch (e) { e.message; }', {
             trycatch: true,
           });
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 2);
+          expect(report.aggregate.cyclomatic).toBe(2);
         });
       });
 
-      suite("IIFE:", () => {
+      describe("IIFE:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             '(function (foo) { if (foo === "foo") { console.log(foo); return; } "bar"; }("foo"));'
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 6);
+          expect(report.aggregate.sloc.logical).toBe(6);
         });
 
         test("methods has correct length", () => {
-          assert.lengthOf(report.methods, 1);
+          expect(report.methods.length).toBe(1);
         });
 
         test("method has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.methods[0].cyclomatic, 2);
+          expect(report.methods[0].cyclomatic).toBe(2);
         });
 
         test("method has correct parameter count", () => {
-          assert.strictEqual(report.methods[0].paramCount, 1);
+          expect(report.methods[0].paramCount).toBe(1);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 3);
+          expect(report.aggregate.cyclomatic).toBe(3);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 7);
+          expect(report.aggregate.halstead.operators.total).toBe(7);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 6);
+          expect(report.aggregate.halstead.operators.distinct).toBe(6);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 8);
+          expect(report.aggregate.halstead.operands.total).toBe(8);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 5);
+          expect(report.aggregate.halstead.operands.distinct).toBe(5);
         });
 
         test("aggregate has correct parameter count", () => {
-          assert.strictEqual(report.aggregate.paramCount, 1);
+          expect(report.aggregate.paramCount).toBe(1);
         });
       });
 
-      suite("logical and condition:", () => {
+      describe("logical and condition:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze('if ("foo" && "bar") { "baz"; }');
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 2);
+          expect(report.aggregate.sloc.logical).toBe(2);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 3);
+          expect(report.aggregate.cyclomatic).toBe(3);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 2);
+          expect(report.aggregate.halstead.operators.total).toBe(2);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 2);
+          expect(report.aggregate.halstead.operators.distinct).toBe(2);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 3);
+          expect(report.aggregate.halstead.operands.total).toBe(3);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 3);
+          expect(report.aggregate.halstead.operands.distinct).toBe(3);
         });
       });
 
-      suite("call on function object:", () => {
+      describe("call on function object:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze('(function () { "foo"; }).call(this);');
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 3);
+          expect(report.aggregate.sloc.logical).toBe(3);
         });
 
         test("methods has correct length", () => {
-          assert.lengthOf(report.methods, 1);
+          expect(report.methods.length).toBe(1);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 4);
+          expect(report.aggregate.halstead.operators.total).toBe(4);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 4);
+          expect(report.aggregate.halstead.operators.distinct).toBe(4);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 2);
+          expect(report.aggregate.halstead.operands.total).toBe(2);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 2);
+          expect(report.aggregate.halstead.operands.distinct).toBe(2);
         });
       });
 
-      suite("anonymous function assigned to property:", () => {
+      describe("anonymous function assigned to property:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             'var foo = {}; foo.bar = function () { "foobar"; };'
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 4);
+          expect(report.aggregate.sloc.logical).toBe(4);
         });
 
         test("methods has correct length", () => {
-          assert.lengthOf(report.methods, 1);
+          expect(report.methods.length).toBe(1);
         });
 
         test("method has correct name", () => {
-          assert.strictEqual(report.methods[0].name, "<anon method-1>");
+          expect(report.methods[0].name).toBe("<anon method-1>");
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 6);
+          expect(report.aggregate.halstead.operators.total).toBe(6);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 5);
+          expect(report.aggregate.halstead.operators.distinct).toBe(5);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 4);
+          expect(report.aggregate.halstead.operands.total).toBe(4);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 3);
+          expect(report.aggregate.halstead.operands.distinct).toBe(3);
         });
       });
 
-      suite("anonymous function assigned to property of literal:", () => {
+      describe("anonymous function assigned to property of literal:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze('"".bar = function () { "bar"; };');
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 3);
+          expect(report.aggregate.sloc.logical).toBe(3);
         });
 
         test("methods has correct length", () => {
-          assert.lengthOf(report.methods, 1);
+          expect(report.methods.length).toBe(1);
         });
 
         test("method has correct name", () => {
-          assert.strictEqual(report.methods[0].name, "<anon method-1>");
+          expect(report.methods[0].name).toBe("<anon method-1>");
         });
       });
 
-      suite("empty object literal:", () => {
+      describe("empty object literal:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze("var foo = {};");
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 1);
+          expect(report.aggregate.sloc.logical).toBe(1);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 1);
+          expect(report.aggregate.cyclomatic).toBe(1);
         });
 
         test("methods has correct length", () => {
-          assert.lengthOf(report.methods, 0);
+          expect(report.methods.length).toBe(0);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 3);
+          expect(report.aggregate.halstead.operators.total).toBe(3);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 3);
+          expect(report.aggregate.halstead.operators.distinct).toBe(3);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 1);
+          expect(report.aggregate.halstead.operands.total).toBe(1);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 1);
+          expect(report.aggregate.halstead.operands.distinct).toBe(1);
         });
       });
 
-      suite("function property of literal object:", () => {
+      describe("function property of literal object:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             'var foo = { bar: "bar", baz: function () { "baz"; } };'
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 5);
+          expect(report.aggregate.sloc.logical).toBe(5);
         });
 
         test("methods has correct length", () => {
-          assert.lengthOf(report.methods, 1);
+          expect(report.methods.length).toBe(1);
         });
 
         test("method has correct name", () => {
-          assert.strictEqual(report.methods[0].name, "<anon method-1>");
+          expect(report.methods[0].name).toBe("<anon method-1>");
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 6);
+          expect(report.aggregate.halstead.operators.total).toBe(6);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 5);
+          expect(report.aggregate.halstead.operators.distinct).toBe(5);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 5);
+          expect(report.aggregate.halstead.operands.total).toBe(5);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 5);
+          expect(report.aggregate.halstead.operands.distinct).toBe(5);
         });
       });
 
-      suite("duplicate function properties of literal object:", () => {
+      describe("duplicate function properties of literal object:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             'var foo = { bar: function () { if (true) { "bar"; } }, bar: function () { "bar"; } };'
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("methods has correct length", () => {
-          assert.lengthOf(report.methods, 2);
+          expect(report.methods.length).toBe(2);
         });
 
         test("first method has correct name", () => {
-          assert.strictEqual(report.methods[0].name, "<anon method-1>");
+          expect(report.methods[0].name).toBe("<anon method-1>");
         });
 
         test("second method has correct name", () => {
-          assert.strictEqual(report.methods[1].name, "<anon method-2>");
+          expect(report.methods[1].name).toBe("<anon method-2>");
         });
 
         test("first method has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.methods[0].cyclomatic, 2);
+          expect(report.methods[0].cyclomatic).toBe(2);
         });
 
         test("second method has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.methods[1].cyclomatic, 1);
+          expect(report.methods[1].cyclomatic).toBe(1);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 4);
+          expect(report.aggregate.cyclomatic).toBe(4);
         });
       });
 
-      suite("throw exception:", () => {
+      describe("throw exception:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             'try { throw new Error("foo"); } catch (e) { alert(error.message); }'
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 4);
+          expect(report.aggregate.sloc.logical).toBe(4);
         });
 
         test("methods has correct length", () => {
-          assert.lengthOf(report.methods, 0);
+          expect(report.methods.length).toBe(0);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 6);
+          expect(report.aggregate.halstead.operators.total).toBe(6);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 6);
+          expect(report.aggregate.halstead.operators.distinct).toBe(6);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 6);
+          expect(report.aggregate.halstead.operands.total).toBe(6);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 6);
+          expect(report.aggregate.halstead.operands.distinct).toBe(6);
         });
       });
 
-      suite("prefix and postfix increment:", () => {
+      describe("prefix and postfix increment:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze("var a = 0; ++a; a++;");
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 3);
+          expect(report.aggregate.sloc.logical).toBe(3);
         });
 
         test("methods has correct length", () => {
-          assert.lengthOf(report.methods, 0);
+          expect(report.methods.length).toBe(0);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 1);
+          expect(report.aggregate.cyclomatic).toBe(1);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 4);
+          expect(report.aggregate.halstead.operators.total).toBe(4);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 4);
+          expect(report.aggregate.halstead.operators.distinct).toBe(4);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 4);
+          expect(report.aggregate.halstead.operands.total).toBe(4);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 2);
+          expect(report.aggregate.halstead.operands.distinct).toBe(2);
         });
       });
 
-      suite("array literal:", () => {
+      describe("array literal:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze('[ "foo", "bar" ];');
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 1);
+          expect(report.aggregate.sloc.logical).toBe(1);
         });
 
         test("methods has correct length", () => {
-          assert.lengthOf(report.methods, 0);
+          expect(report.methods.length).toBe(0);
         });
 
         test("aggregate has correct cyclomatic complexity", () => {
-          assert.strictEqual(report.aggregate.cyclomatic, 1);
+          expect(report.aggregate.cyclomatic).toBe(1);
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 2);
+          expect(report.aggregate.halstead.operators.total).toBe(2);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 2);
+          expect(report.aggregate.halstead.operators.distinct).toBe(2);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 2);
+          expect(report.aggregate.halstead.operands.total).toBe(2);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 2);
+          expect(report.aggregate.halstead.operands.distinct).toBe(2);
         });
       });
 
-      suite("multiple physical lines:", () => {
+      describe("multiple physical lines:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             "// This is a\n// multi-line\n// comment.\nparseInt(\n\t(function () {\n\t\t// Moar\n\t\t" +
               '// commentz!\n\t\treturn [\n\t\t\t"1",\n\t\t\t"0"\n\t\t].join("");\n\t}()),\n\t10\n);'
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
@@ -2495,12 +2426,12 @@ if (testconfig.modules["moduleCore"]) {
             case "acorn":
             case "babelParser":
             case "babylon":
-              assert.strictEqual(report.lineStart, 1);
-              assert.strictEqual(report.lineEnd, 14);
+              expect(report.lineStart).toBe(1);
+              expect(report.lineEnd).toBe(14);
               break;
             default:
-              assert.strictEqual(report.lineStart, 4);
-              assert.strictEqual(report.lineEnd, 14);
+              expect(report.lineStart).toBe(4);
+              expect(report.lineEnd).toBe(14);
           }
         });
 
@@ -2511,174 +2442,168 @@ if (testconfig.modules["moduleCore"]) {
             case "acorn":
             case "babelParser":
             case "babylon":
-              assert.strictEqual(report.aggregate.sloc.physical, 14);
+              expect(report.aggregate.sloc.physical).toBe(14);
               break;
             default:
-              assert.strictEqual(report.aggregate.sloc.physical, 11);
+              expect(report.aggregate.sloc.physical).toBe(11);
           }
         });
 
         test("aggregate has correct Halstead operand identifiers", () => {
-          assert.strictEqual(
-            JSON.stringify(report.aggregate.halstead.operands.identifiers),
-            '["parseInt","\\"1\\"","\\"0\\"","join","\\"\\"","10"]'
-          );
+          expect(JSON.stringify(report.aggregate.halstead.operands.identifiers)).toBe('["parseInt","\\"1\\"","\\"0\\"","join","\\"\\"","10"]');
         });
 
         test("aggregate has correct Halstead operator identifiers", () => {
-          assert.strictEqual(
-            JSON.stringify(report.aggregate.halstead.operators.identifiers),
-            '["()","function","return",".","[]",","]'
-          );
+          expect(JSON.stringify(report.aggregate.halstead.operators.identifiers)).toBe('["()","function","return",".","[]",","]');
         });
 
         test("aggregate has correct logical lines of code", () => {
-          assert.strictEqual(report.aggregate.sloc.logical, 5);
+          expect(report.aggregate.sloc.logical).toBe(5);
         });
 
         test("methods has correct length", () => {
-          assert.lengthOf(report.methods, 1);
+          expect(report.methods.length).toBe(1);
         });
 
         test("method has correct physical lines of code", () => {
-          assert.strictEqual(report.methods[0].sloc.physical, 8);
+          expect(report.methods[0].sloc.physical).toBe(8);
         });
 
         test("method has correct logical lines of code", () => {
-          assert.strictEqual(report.methods[0].sloc.logical, 2);
+          expect(report.methods[0].sloc.logical).toBe(2);
         });
 
         test("maintainability index is correct", () => {
-          assert.strictEqual(report.maintainability, 141.377);
+          expect(report.maintainability).toBe(141.377);
         });
       });
 
-      suite("multiple functions:", () => {
+      describe("multiple functions:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             "function foo (a, b) { if (a) { b(a); } else { a(b); } } " +
               "function bar (c, d) { var i; for (i = 0; i < c.length; i += 1) { d += 1; } console.log(d); }"
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("maintainability index is correct", () => {
-          assert.strictEqual(report.maintainability, 129.225);
+          expect(report.maintainability).toBe(129.225);
         });
 
         test("first method has correct parameter count", () => {
-          assert.strictEqual(report.methods[0].paramCount, 2);
+          expect(report.methods[0].paramCount).toBe(2);
         });
 
         test("second method has correct parameter count", () => {
-          assert.strictEqual(report.methods[1].paramCount, 2);
+          expect(report.methods[1].paramCount).toBe(2);
         });
 
         test("aggregate has correct parameter count", () => {
-          assert.strictEqual(report.aggregate.paramCount, 4);
+          expect(report.aggregate.paramCount).toBe(4);
         });
 
         test("mean logical LOC is correct", () => {
-          assert.strictEqual(report.methodAverage.sloc.logical, 4);
+          expect(report.methodAverage.sloc.logical).toBe(4);
         });
 
         test("mean cyclomatic complexity is correct", () => {
-          assert.strictEqual(report.methodAverage.cyclomatic, 2);
+          expect(report.methodAverage.cyclomatic).toBe(2);
         });
 
         test("mean Halstead effort is correct", () => {
-          assert.strictEqual(report.methodAverage.halstead.effort, 283.607);
+          expect(report.methodAverage.halstead.effort).toBe(283.607);
         });
 
         test("mean parameter count is correct", () => {
-          assert.strictEqual(report.methodAverage.paramCount, 2);
+          expect(report.methodAverage.paramCount).toBe(2);
         });
       });
 
-      suite("issue 3 / reddit.ISV_Damocles:", () => {
+      describe("issue 3 / reddit.ISV_Damocles:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             "var callback = arguments[arguments.length-1] instanceof Function ? " +
               "arguments[arguments.length-1] : function() {};"
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("maintainability index is correct", () => {
-          assert.strictEqual(report.maintainability, 150.966);
+          expect(report.maintainability).toBe(150.966);
         });
       });
 
-      suite("empty return:", () => {
+      describe("empty return:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze("function foo () { return; }");
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct Halstead total operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.total, 2);
+          expect(report.aggregate.halstead.operators.total).toBe(2);
         });
 
         test("aggregate has correct Halstead distinct operators", () => {
-          assert.strictEqual(report.aggregate.halstead.operators.distinct, 2);
+          expect(report.aggregate.halstead.operators.distinct).toBe(2);
         });
 
         test("aggregate has correct Halstead total operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.total, 1);
+          expect(report.aggregate.halstead.operands.total).toBe(1);
         });
 
         test("aggregate has correct Halstead distinct operands", () => {
-          assert.strictEqual(report.aggregate.halstead.operands.distinct, 1);
+          expect(report.aggregate.halstead.operands.distinct).toBe(1);
         });
 
         test("aggregate has correct Halstead difficulty", () => {
-          assert.strictEqual(report.aggregate.halstead.difficulty, 1);
+          expect(report.aggregate.halstead.difficulty).toBe(1);
         });
 
         test("method has correct Halstead difficulty", () => {
-          assert.strictEqual(report.methods[0].halstead.difficulty, 0.5);
+          expect(report.methods[0].halstead.difficulty).toBe(0.5);
         });
 
         test("maintainability index is correct", () => {
-          assert.strictEqual(report.maintainability, 168.038);
+          expect(report.maintainability).toBe(168.038);
         });
       });
 
-      suite("Empty nested functions", () => {
+      describe("Empty nested functions", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze("function foo () { function bar () {} }");
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("maintainability index is correct", () => {
-          assert.strictEqual(report.maintainability, 171);
+          expect(report.maintainability).toBe(171);
         });
       });
 
-      suite("Microsoft variant maintainability index:", () => {
+      describe("Microsoft variant maintainability index:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             "function foo (a, b) { if (a) { b(a); } else { a(b); } }" +
               "function bar (c, d) { var i; for (i = 0; i < c.length; i += 1) { d += 1; } console.log(d); }",
@@ -2686,151 +2611,148 @@ if (testconfig.modules["moduleCore"]) {
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("maintainability index is correct", () => {
-          assert.strictEqual(report.maintainability, 75.57);
+          expect(report.maintainability).toBe(75.57);
         });
       });
 
-      suite("Functions with consistent parameter counts:", () => {
+      describe("Functions with consistent parameter counts:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             "function foo (a) {} function bar (b) {} function baz (c) {}"
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct parameter count", () => {
-          assert.strictEqual(report.aggregate.paramCount, 3);
+          expect(report.aggregate.paramCount).toBe(3);
         });
 
         test("mean parameter count is correct", () => {
-          assert.strictEqual(report.methodAverage.paramCount, 1);
+          expect(report.methodAverage.paramCount).toBe(1);
         });
       });
 
-      suite("Functions with inconsistent parameter counts:", () => {
+      describe("Functions with inconsistent parameter counts:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             "function foo (a, b, c, d, e) {} function bar (a, b, c, d, e) {} function baz (a) {}"
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("aggregate has correct parameter count", () => {
-          assert.strictEqual(report.aggregate.paramCount, 11);
+          expect(report.aggregate.paramCount).toBe(11);
         });
 
         test("mean parameter count is correct", () => {
-          assert.strictEqual(report.methodAverage.paramCount, 3.667);
+          expect(report.methodAverage.paramCount).toBe(3.667);
         });
       });
 
-      suite("CommonJS require literal:", () => {
+      describe("CommonJS require literal:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze('require("./foo");', { commonjs: true });
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("dependencies has correct length", () => {
-          assert.lengthOf(report.dependencies, 1);
+          expect(report.dependencies.length).toBe(1);
         });
 
         test("dependencies are correct", () => {
-          assert.isObject(report.dependencies[0]);
-          assert.strictEqual(report.dependencies[0].line, 1);
-          assert.strictEqual(report.dependencies[0].path, "./foo");
-          assert.strictEqual(report.dependencies[0].type, "cjs");
+          expect(typeof report.dependencies[0]).toBe("object");
+          expect(report.dependencies[0].line).toBe(1);
+          expect(report.dependencies[0].path).toBe("./foo");
+          expect(report.dependencies[0].type).toBe("cjs");
         });
       });
 
-      suite("alternative CommonJS require literal:", () => {
+      describe("alternative CommonJS require literal:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze('require("./bar");', { commonjs: true });
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("dependencies are correct", () => {
-          assert.strictEqual(report.dependencies[0].path, "./bar");
+          expect(report.dependencies[0].path).toBe("./bar");
         });
       });
 
-      suite("CommonJS require multiple:", () => {
+      describe("CommonJS require multiple:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze(
             'require("./foo");\nrequire("./bar");\n\nrequire("./baz");',
             { commonjs: true }
           );
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("dependencies has correct length", () => {
-          assert.lengthOf(report.dependencies, 3);
+          expect(report.dependencies.length).toBe(3);
         });
 
         test("dependencies are correct", () => {
-          assert.strictEqual(report.dependencies[0].line, 1);
-          assert.strictEqual(report.dependencies[0].path, "./foo");
-          assert.strictEqual(report.dependencies[1].line, 2);
-          assert.strictEqual(report.dependencies[1].path, "./bar");
-          assert.strictEqual(report.dependencies[2].line, 4);
-          assert.strictEqual(report.dependencies[2].path, "./baz");
+          expect(report.dependencies[0].line).toBe(1);
+          expect(report.dependencies[0].path).toBe("./foo");
+          expect(report.dependencies[1].line).toBe(2);
+          expect(report.dependencies[1].path).toBe("./bar");
+          expect(report.dependencies[2].line).toBe(4);
+          expect(report.dependencies[2].path).toBe("./baz");
         });
       });
 
-      suite("CommonJS require variable:", () => {
+      describe("CommonJS require variable:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = parser.analyze('var foo = "./foo";require(foo);', {
             commonjs: true,
           });
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("dependencies has correct length", () => {
-          assert.lengthOf(report.dependencies, 1);
+          expect(report.dependencies.length).toBe(1);
         });
 
         test("dependencies are correct", () => {
-          assert.isObject(report.dependencies[0]);
-          assert.strictEqual(report.dependencies[0].line, 1);
-          assert.strictEqual(
-            report.dependencies[0].path,
-            "* dynamic dependency *"
-          );
-          assert.strictEqual(report.dependencies[0].type, "cjs");
+          expect(typeof report.dependencies[0]).toBe("object");
+          expect(report.dependencies[0].line).toBe(1);
+          expect(report.dependencies[0].path).toBe("* dynamic dependency *");
+          expect(report.dependencies[0].type).toBe("cjs");
         });
       });
     });
