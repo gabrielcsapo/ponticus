@@ -1,11 +1,11 @@
-import AbstractSyntaxLoader   from '@ponticus/escomplex-commons/dist/module/plugin/syntax/AbstractSyntaxLoader';
+import AbstractSyntaxLoader   from '@ponticus/escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader';
 
-import ASTGenerator           from '@ponticus/escomplex-commons/dist/utils/ast/ASTGenerator';
+import ASTGenerator           from '@ponticus/escomplex-commons/src/utils/ast/ASTGenerator';
 
-import HalsteadArray          from '@ponticus/escomplex-commons/dist/module/traits/HalsteadArray';
-import TraitUtil              from '@ponticus/escomplex-commons/dist/module/traits/TraitUtil';
+import HalsteadArray          from '@ponticus/escomplex-commons/src/module/traits/HalsteadArray';
+import TraitUtil              from '@ponticus/escomplex-commons/src/module/traits/TraitUtil';
 
-import actualize              from '@ponticus/escomplex-commons/dist/module/traits/actualize';
+import actualize              from '@ponticus/escomplex-commons/src/module/traits/actualize';
 
 /**
  * Provides an typhonjs-escomplex-module / ESComplexModule plugin which loads syntax definitions for trait resolution

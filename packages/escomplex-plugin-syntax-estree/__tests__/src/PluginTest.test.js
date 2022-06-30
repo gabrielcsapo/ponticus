@@ -1,3 +1,5 @@
+import { test, describe, expect } from "vitest";
+
 import PluginSyntaxESTree from '../../src/PluginSyntaxESTree';
 
 const pluginData =
