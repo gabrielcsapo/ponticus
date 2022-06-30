@@ -3,10 +3,13 @@
   "version": "0.2.0",
   "description": "Provides a plugin manager that dispatches events to loaded plugins.",
   "homepage": "https://github.com/typhonjs-node-plugin/typhonjs-plugin-manager",
-  "main": "./dist/PluginManager.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/typhonjs-node-plugin/typhonjs-plugin-manager.git"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.57",

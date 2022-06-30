@@ -1,5 +1,5 @@
-import ProjectMetricAverage from "./ProjectMetricAverage";
-import PluginMetricsProject from "./PluginMetricsProject";
-import ProjectMetricCalculate from "./ProjectMetricCalculate";
+import ProjectMetricAverage from "./ProjectMetricAverage.js";
+import PluginMetricsProject from "./PluginMetricsProject.js";
+import ProjectMetricCalculate from "./ProjectMetricCalculate.js";
 
 export { ProjectMetricAverage, PluginMetricsProject, ProjectMetricCalculate };

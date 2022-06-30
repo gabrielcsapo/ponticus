@@ -1,5 +1,5 @@
-import ProjectMetricAverage from "./ProjectMetricAverage";
-import ProjectMetricCalculate from "./ProjectMetricCalculate";
+import ProjectMetricAverage from "./ProjectMetricAverage.js";
+import ProjectMetricCalculate from "./ProjectMetricCalculate.js";
 
 /**
  * Provides default project metrics gathering and calculation.

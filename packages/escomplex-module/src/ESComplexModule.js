@@ -1,7 +1,7 @@
 import { ASTWalker } from "@ponticus/ast-walker";
 import { ModuleScopeControl } from "@ponticus/escomplex-commons";
 
-import Plugins from "./Plugins";
+import Plugins from "./Plugins.js";
 
 /**
  * Provides a runtime to invoke ESComplexModule plugins for processing / metrics calculations of independent modules.

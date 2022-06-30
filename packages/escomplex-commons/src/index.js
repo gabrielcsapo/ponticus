@@ -7,11 +7,13 @@ import TraitUtil from "./module/traits/TraitUtil.js";
 import actualize from "./module/traits/actualize.js";
 import ObjectUtil from "./utils/ObjectUtil.js";
 import ModuleScopeControl from "./module/report/control/ModuleScopeControl.js";
+import MathUtil from "./utils/MathUtil.js";
 
 export {
   actualize,
   ObjectUtil,
   TraitUtil,
+  MathUtil,
   HalsteadArray,
   ASTGenerator,
   ModuleScopeControl,

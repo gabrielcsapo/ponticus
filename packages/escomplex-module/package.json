@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "description": "Provides module / individual file oriented AST processing for typhonjs-escomplex complexity reports.",
   "homepage": "https://github.com/typhonjs-node-escomplex/@ponticus/escomplex-module",
-  "main": "./dist",
   "repository": {
     "type": "git",
     "url": "https://github.com/typhonjs-node-escomplex/@ponticus/escomplex-module.git"
   },
   "type": "module",
+  "exports": {
+    ".": "./dist/index.js"
+  },
   "dependencies": {
     "@ponitcus/escomplex-plugin-syntax-babylon": "^0.1.0",
     "@ponticus/ast-walker": "^0.2.0",

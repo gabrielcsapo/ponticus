@@ -1,4 +1,4 @@
-import ESComplexModule from "./ESComplexModule";
+import ESComplexModule from "./ESComplexModule.js";
 
 export { ESComplexModule };
 

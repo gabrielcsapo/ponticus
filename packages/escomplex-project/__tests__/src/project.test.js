@@ -6,7 +6,7 @@ import { test, describe, expect, beforeEach, afterEach } from "vitest";
 import parsers from "../util/parsers";
 import * as testconfig from "../util/testconfig";
 
-import ProjectReport from "@ponticus/escomplex-commons/dist/project/report/ProjectReport";
+import { ProjectReport } from "@ponticus/escomplex-commons";
 
 import escomplexProject from "../../src";
 

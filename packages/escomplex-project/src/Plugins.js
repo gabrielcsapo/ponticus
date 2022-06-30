@@ -1,6 +1,6 @@
-import PluginManager from "@ponticus/plugin-manager/dist/PluginManager";
+import { PluginManager } from "@ponticus/plugin-manager";
 
-import PluginMetricsProject from "@ponticus/escomplex-plugin-metrics-project/dist/PluginMetricsProject";
+import { PluginMetricsProject } from "@ponticus/escomplex-plugin-metrics-project";
 
 /**
  * Provides a wrapper around PluginManager for ESComplexProject. Several convenience methods for the plugin callbacks

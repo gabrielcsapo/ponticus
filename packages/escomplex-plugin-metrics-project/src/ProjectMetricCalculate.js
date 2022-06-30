@@ -1,4 +1,4 @@
-import MathUtil from "@ponticus/escomplex-commons/src/utils/MathUtil";
+import { MathUtil } from "@ponticus/escomplex-commons";
 
 /**
  * ProjectMetricCalculate
