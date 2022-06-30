@@ -1,3 +1,5 @@
+import { test, describe, expect } from "vitest";
+
 import * as testconfig from "./testconfig";
 
 import escomplex from "../../src";
@@ -37,17 +39,19 @@ if (testconfig.modules["moduleAPI"]) {
     });
 
     test("analyze returns object", () => {
-      expect(typeof escomplex.analyze({
-        body: [],
-        loc: {
-          start: {
-            line: 0,
+      expect(
+        typeof escomplex.analyze({
+          body: [],
+          loc: {
+            start: {
+              line: 0,
+            },
+            end: {
+              line: 0,
+            },
           },
-          end: {
-            line: 0,
-          },
-        },
-      })).toBe("object");
+        })
+      ).toBe("object");
     });
 
     test("analyzeAsync returns object", () => {
@@ -69,79 +73,72 @@ if (testconfig.modules["moduleAPI"]) {
     });
 
     test("analyze returns aggregate object", () => {
-      expect(typeof escomplex.analyze({
-        body: [],
-        loc: {
-          start: {
-            line: 0,
+      expect(
+        typeof escomplex.analyze({
+          body: [],
+          loc: {
+            start: {
+              line: 0,
+            },
+            end: {
+              line: 0,
+            },
           },
-          end: {
-            line: 0,
-          },
-        },
-      }).aggregate).toBe("object");
+        }).aggregate
+      ).toBe("object");
     });
 
     test("analyze returns aggregate lines of code property", () => {
-      expect(typeof escomplex.analyze({
-        body: [],
-        loc: {
-          start: {
-            line: 0,
+      expect(
+        typeof escomplex.analyze({
+          body: [],
+          loc: {
+            start: {
+              line: 0,
+            },
+            end: {
+              line: 0,
+            },
           },
-          end: {
-            line: 0,
-          },
-        },
-      }).aggregate.sloc).toBe("object");
+        }).aggregate.sloc
+      ).toBe("object");
     });
 
     test("analyze returns aggregate physical lines of code property", () => {
-      expect(typeof escomplex.analyze({
-        body: [],
-        loc: {
-          start: {
-            line: 0,
+      expect(
+        typeof escomplex.analyze({
+          body: [],
+          loc: {
+            start: {
+              line: 0,
+            },
+            end: {
+              line: 0,
+            },
           },
-          end: {
-            line: 0,
-          },
-        },
-      }).aggregate.sloc.physical).toBe("number");
+        }).aggregate.sloc.physical
+      ).toBe("number");
     });
 
     test("analyze returns aggregate logical lines of code property", () => {
-      expect(typeof escomplex.analyze({
-        body: [],
-        loc: {
-          start: {
-            line: 0,
+      expect(
+        typeof escomplex.analyze({
+          body: [],
+          loc: {
+            start: {
+              line: 0,
+            },
+            end: {
+              line: 0,
+            },
           },
-          end: {
-            line: 0,
-          },
-        },
-      }).aggregate.sloc.logical).toBe("number");
+        }).aggregate.sloc.logical
+      ).toBe("number");
     });
 
     test("analyze returns aggregate cyclomatic complexity property", () => {
-      expect(typeof escomplex.analyze({
-        body: [],
-        loc: {
-          start: {
-            line: 0,
-          },
-          end: {
-            line: 0,
-          },
-        },
-      }).aggregate.cyclomatic).toBe("number");
-    });
-
-    test(
-      "analyze returns aggregate cyclomatic complexity density property",
-      () => {
-        expect(typeof escomplex.analyze({
+      expect(
+        typeof escomplex.analyze({
           body: [],
           loc: {
             start: {
@@ -151,70 +148,45 @@ if (testconfig.modules["moduleAPI"]) {
               line: 0,
             },
           },
-        }).aggregate.cyclomaticDensity).toBe("number");
-      }
-    );
+        }).aggregate.cyclomatic
+      ).toBe("number");
+    });
+
+    test("analyze returns aggregate cyclomatic complexity density property", () => {
+      expect(
+        typeof escomplex.analyze({
+          body: [],
+          loc: {
+            start: {
+              line: 0,
+            },
+            end: {
+              line: 0,
+            },
+          },
+        }).aggregate.cyclomaticDensity
+      ).toBe("number");
+    });
 
     test("analyze returns aggregate halstead property", () => {
-      expect(typeof escomplex.analyze({
-        body: [],
-        loc: {
-          start: {
-            line: 0,
+      expect(
+        typeof escomplex.analyze({
+          body: [],
+          loc: {
+            start: {
+              line: 0,
+            },
+            end: {
+              line: 0,
+            },
           },
-          end: {
-            line: 0,
-          },
-        },
-      }).aggregate.halstead).toBe("object");
+        }).aggregate.halstead
+      ).toBe("object");
     });
 
     test("analyze returns aggregate halstead operators property", () => {
-      expect(typeof escomplex.analyze({
-        body: [],
-        loc: {
-          start: {
-            line: 0,
-          },
-          end: {
-            line: 0,
-          },
-        },
-      }).aggregate.halstead.operators).toBe("object");
-    });
-
-    test("analyze returns aggregate halstead total operators property", () => {
-      expect(typeof escomplex.analyze({
-        body: [],
-        loc: {
-          start: {
-            line: 0,
-          },
-          end: {
-            line: 0,
-          },
-        },
-      }).aggregate.halstead.operators.total).toBe("number");
-    });
-
-    test("analyze returns aggregate halstead distinct operators property", () => {
-      expect(typeof escomplex.analyze({
-        body: [],
-        loc: {
-          start: {
-            line: 0,
-          },
-          end: {
-            line: 0,
-          },
-        },
-      }).aggregate.halstead.operators.distinct).toBe("number");
-    });
-
-    test(
-      "analyze returns aggregate halstead operator identifiers property",
-      () => {
-        expect(Array.isArray(escomplex.analyze({
+      expect(
+        typeof escomplex.analyze({
           body: [],
           loc: {
             start: {
@@ -224,106 +196,176 @@ if (testconfig.modules["moduleAPI"]) {
               line: 0,
             },
           },
-        }).aggregate.halstead.operators.identifiers)).toBe(true);
-      }
-    );
+        }).aggregate.halstead.operators
+      ).toBe("object");
+    });
+
+    test("analyze returns aggregate halstead total operators property", () => {
+      expect(
+        typeof escomplex.analyze({
+          body: [],
+          loc: {
+            start: {
+              line: 0,
+            },
+            end: {
+              line: 0,
+            },
+          },
+        }).aggregate.halstead.operators.total
+      ).toBe("number");
+    });
+
+    test("analyze returns aggregate halstead distinct operators property", () => {
+      expect(
+        typeof escomplex.analyze({
+          body: [],
+          loc: {
+            start: {
+              line: 0,
+            },
+            end: {
+              line: 0,
+            },
+          },
+        }).aggregate.halstead.operators.distinct
+      ).toBe("number");
+    });
+
+    test("analyze returns aggregate halstead operator identifiers property", () => {
+      expect(
+        Array.isArray(
+          escomplex.analyze({
+            body: [],
+            loc: {
+              start: {
+                line: 0,
+              },
+              end: {
+                line: 0,
+              },
+            },
+          }).aggregate.halstead.operators.identifiers
+        )
+      ).toBe(true);
+    });
 
     test("analyze returns aggregate halstead operands property", () => {
-      expect(typeof escomplex.analyze({
-        body: [],
-        loc: {
-          start: {
-            line: 0,
+      expect(
+        typeof escomplex.analyze({
+          body: [],
+          loc: {
+            start: {
+              line: 0,
+            },
+            end: {
+              line: 0,
+            },
           },
-          end: {
-            line: 0,
-          },
-        },
-      }).aggregate.halstead.operands).toBe("object");
+        }).aggregate.halstead.operands
+      ).toBe("object");
     });
 
     test("analyze returns aggregate halstead total operands property", () => {
-      expect(typeof escomplex.analyze({
-        body: [],
-        loc: {
-          start: {
-            line: 0,
+      expect(
+        typeof escomplex.analyze({
+          body: [],
+          loc: {
+            start: {
+              line: 0,
+            },
+            end: {
+              line: 0,
+            },
           },
-          end: {
-            line: 0,
-          },
-        },
-      }).aggregate.halstead.operands.total).toBe("number");
+        }).aggregate.halstead.operands.total
+      ).toBe("number");
     });
 
     test("analyze returns aggregate halstead distinct operands property", () => {
-      expect(typeof escomplex.analyze({
-        body: [],
-        loc: {
-          start: {
-            line: 0,
+      expect(
+        typeof escomplex.analyze({
+          body: [],
+          loc: {
+            start: {
+              line: 0,
+            },
+            end: {
+              line: 0,
+            },
           },
-          end: {
-            line: 0,
-          },
-        },
-      }).aggregate.halstead.operands.distinct).toBe("number");
+        }).aggregate.halstead.operands.distinct
+      ).toBe("number");
     });
 
     test("analyze returns aggregate halstead operand identifiers property", () => {
-      expect(Array.isArray(escomplex.analyze({
-        body: [],
-        loc: {
-          start: {
-            line: 0,
-          },
-          end: {
-            line: 0,
-          },
-        },
-      }).aggregate.halstead.operands.identifiers)).toBe(true);
+      expect(
+        Array.isArray(
+          escomplex.analyze({
+            body: [],
+            loc: {
+              start: {
+                line: 0,
+              },
+              end: {
+                line: 0,
+              },
+            },
+          }).aggregate.halstead.operands.identifiers
+        )
+      ).toBe(true);
     });
 
     test("analyze returns maintainability property", () => {
-      expect(typeof escomplex.analyze({
-        body: [],
-        loc: {
-          start: {
-            line: 0,
+      expect(
+        typeof escomplex.analyze({
+          body: [],
+          loc: {
+            start: {
+              line: 0,
+            },
+            end: {
+              line: 0,
+            },
           },
-          end: {
-            line: 0,
-          },
-        },
-      }).maintainability).toBe("number");
+        }).maintainability
+      ).toBe("number");
     });
 
     test("analyze returns methods property", () => {
-      expect(Array.isArray(escomplex.analyze({
-        body: [],
-        loc: {
-          start: {
-            line: 0,
-          },
-          end: {
-            line: 0,
-          },
-        },
-      }).methods)).toBe(true);
+      expect(
+        Array.isArray(
+          escomplex.analyze({
+            body: [],
+            loc: {
+              start: {
+                line: 0,
+              },
+              end: {
+                line: 0,
+              },
+            },
+          }).methods
+        )
+      ).toBe(true);
     });
 
     test("analyze returns dependencies property", () => {
-      expect(Array.isArray(escomplex.analyze({
-        body: [],
-        loc: {
-          start: {
-            line: 0,
-          },
-          end: {
-            line: 0,
-          },
-        },
-      }).dependencies)).toBe(true);
+      expect(
+        Array.isArray(
+          escomplex.analyze({
+            body: [],
+            loc: {
+              start: {
+                line: 0,
+              },
+              end: {
+                line: 0,
+              },
+            },
+          }).dependencies
+        )
+      ).toBe(true);
     });
   });
 }

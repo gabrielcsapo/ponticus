@@ -1,5 +1,4 @@
-import { suite, test } from "mocha";
-import { assert } from "chai";
+import { test, describe, expect } from "vitest";
 
 import AbstractSyntaxLoader from "../../../src/module/plugin/syntax/AbstractSyntaxLoader";
 
@@ -55,23 +54,23 @@ class Child extends Parent {
 }
 
 if (testconfig.modules["modulePlugin"]) {
-  suite("plugin:", () => {
+  describe("plugin:", () => {
     /**
      * Verifies that AbstractSyntaxLoader can find all child / parent inheritance methods
      */
-    suite("syntax (AbstractSyntaxLoader):", () => {
+    describe("syntax (AbstractSyntaxLoader):", () => {
       const instance = new Child();
 
       test("verify child / parent syntax loading", () => {
         const event = { data: { settings: {}, syntaxes: {} } };
         instance.onLoadSyntax(event);
 
-        assert.isUndefined(event.data.syntaxes["onConfigure"]);
+        expect(event.data.syntaxes["onConfigure"]).not.toBeDefined();
 
-        assert.isObject(event.data.syntaxes["ChildThree"]);
-        assert.isObject(event.data.syntaxes["ChildFour"]);
-        assert.isObject(event.data.syntaxes["ParentOne"]);
-        assert.isObject(event.data.syntaxes["ParentTwo"]);
+        expect(typeof event.data.syntaxes["ChildThree"]).toBe("object");
+        expect(typeof event.data.syntaxes["ChildFour"]).toBe("object");
+        expect(typeof event.data.syntaxes["ParentOne"]).toBe("object");
+        expect(typeof event.data.syntaxes["ParentTwo"]).toBe("object");
       });
     });
   });

@@ -1,35 +1,33 @@
-import { suite, test } from "mocha";
-
-import { assert } from "chai";
+import { test, describe, expect } from "vitest";
 
 import BabelParser from "../../src/BabelParser";
 
-suite("babel-parser:", () => {
-  suite("BabelParser:", () => {
+describe("babel-parser:", () => {
+  describe("BabelParser:", () => {
     test("parse function is exported", () => {
-      assert.isFunction(BabelParser.parse);
+      expect(typeof BabelParser.parse).toBe("function");
     });
 
     test("parse - ES6", () => {
       const ast = BabelParser.parse(
         "export default class Foo { constructor() { } }"
       );
-      assert.isObject(ast);
-      assert.strictEqual(ast.type, "File");
+      expect(typeof ast).toBe("object");
+      expect(ast.type).toBe("File");
     });
 
     test("parse - Typescript", () => {
       const ast = BabelParser.parse(
         "function fooGood<T extends { x: number }>(obj: T): T { console.log(Math.abs(obj.x)); return obj; }"
       );
-      assert.isObject(ast);
-      assert.strictEqual(ast.type, "File");
+      expect(typeof ast).toBe("object");
+      expect(ast.type).toBe("File");
     });
 
     test("parse - Decorator before export throws", () => {
-      assert.throws(() => {
+      expect(() => {
         BabelParser.parse("@decorator export class MyClass {}");
-      });
+      }).toThrow();
     });
 
     test("parse - Decorator before export with override", () => {
@@ -38,16 +36,16 @@ suite("babel-parser:", () => {
         void 0,
         { decoratorsBeforeExport: true }
       );
-      assert.isObject(ast);
-      assert.strictEqual(ast.type, "File");
+      expect(typeof ast).toBe("object");
+      expect(ast.type).toBe("File");
     });
 
     test("parse - No decorators legacy override", () => {
-      assert.throws(() => {
+      expect(() => {
         BabelParser.parse(
           "class MyClass { @getDecorators().methods[name] foo() {} }"
         );
-      });
+      }).toThrow();
     });
 
     test("parse - Decorators legacy override", () => {
@@ -56,16 +54,16 @@ suite("babel-parser:", () => {
         void 0,
         { decoratorsLegacy: true }
       );
-      assert.isObject(ast);
-      assert.strictEqual(ast.type, "File");
+      expect(typeof ast).toBe("object");
+      expect(ast.type).toBe("File");
     });
 
     test("parse - No flow override", () => {
-      assert.throws(() => {
+      expect(() => {
         BabelParser.parse(
           "function fooGood<T: { x: number }>(obj: T): T { console.log(Math.abs(obj.x)); return obj; }"
         );
-      });
+      }).toThrow();
     });
 
     test("parse - Flow override", () => {
@@ -74,8 +72,8 @@ suite("babel-parser:", () => {
         void 0,
         { flow: true }
       );
-      assert.isObject(ast);
-      assert.strictEqual(ast.type, "File");
+      expect(typeof ast).toBe("object");
+      expect(ast.type).toBe("File");
     });
   });
 });

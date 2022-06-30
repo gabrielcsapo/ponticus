@@ -4,6 +4,7 @@
   "homepage": "https://github.com/typhonjs-node-escomplex/escomplex-plugin-metrics-module/",
   "description": "Provides the core module metric / report generation plugin for typhonjs-escomplex module processing.",
   "main": "./dist/PluginMetricsModule",
+  "type": "module",
   "dependencies": {
     "@ponticus/escomplex-commons": "^0.1.0"
   },

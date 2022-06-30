@@ -1,5 +1,4 @@
-import { suite, test, setup, teardown } from "mocha";
-import { assert } from "chai";
+import { test, describe, expect, beforeEach, afterEach } from "vitest";
 
 import ClassReport from "../../../src/module/report/ClassReport";
 import MethodReport from "../../../src/module/report/MethodReport";
@@ -9,38 +8,38 @@ import ModuleScopeControl from "../../../src/module/report/control/ModuleScopeCo
 import * as testconfig from "../testconfig";
 
 if (testconfig.modules["moduleReport"]) {
-  suite("report:", () => {
-    suite("ModuleReport:", () => {
-      suite("instantiation:", () => {
+  describe("report:", () => {
+    describe("ModuleReport:", () => {
+      describe("instantiation:", () => {
         let report;
 
-        setup(() => {
+        beforeEach(() => {
           report = new ModuleReport(10, 100);
         });
-        teardown(() => {
+        afterEach(() => {
           report = undefined;
         });
 
         test("report has correct line start / end", () => {
-          assert.strictEqual(report.lineStart, 10);
-          assert.strictEqual(report.lineEnd, 100);
+          expect(report.lineStart).toBe(10);
+          expect(report.lineEnd).toBe(100);
         });
       });
 
-      suite("createScope / popScope:", () => {
+      describe("createScope / popScope:", () => {
         let report, scopeControl;
 
-        setup(() => {
+        beforeEach(() => {
           report = new ModuleReport(10, 100);
           scopeControl = new ModuleScopeControl(report);
         });
 
-        teardown(() => {
+        afterEach(() => {
           report = void 0;
         });
 
         test("report has correct class scope", () => {
-          assert.isUndefined(scopeControl.getCurrentClassReport());
+          expect(scopeControl.getCurrentClassReport()).not.toBeDefined();
 
           let classReport = scopeControl.createScope({
             type: "class",
@@ -50,22 +49,22 @@ if (testconfig.modules["moduleReport"]) {
           });
           let classReport2 = scopeControl.getCurrentClassReport();
 
-          assert.instanceOf(classReport, ClassReport);
-          assert.instanceOf(classReport2, ClassReport);
+          expect(classReport).toBeInstanceOf(ClassReport);
+          expect(classReport2).toBeInstanceOf(ClassReport);
 
-          assert.lengthOf(report.classes, 1);
+          expect(report.classes.length).toBe(1);
 
-          assert.strictEqual(classReport, classReport2);
+          expect(classReport).toBe(classReport2);
 
           classReport = scopeControl.popScope({ type: "class" });
           classReport2 = scopeControl.getCurrentClassReport();
 
-          assert.isUndefined(classReport);
-          assert.isUndefined(classReport2);
+          expect(classReport).not.toBeDefined();
+          expect(classReport2).not.toBeDefined();
         });
 
         test("report has correct method scope", () => {
-          assert.isUndefined(scopeControl.getCurrentMethodReport());
+          expect(scopeControl.getCurrentMethodReport()).not.toBeDefined();
 
           let methodReport = scopeControl.createScope({
             type: "method",
@@ -78,18 +77,18 @@ if (testconfig.modules["moduleReport"]) {
 
           let methodReport2 = scopeControl.getCurrentMethodReport();
 
-          assert.instanceOf(methodReport, MethodReport);
-          assert.instanceOf(methodReport2, MethodReport);
+          expect(methodReport).toBeInstanceOf(MethodReport);
+          expect(methodReport2).toBeInstanceOf(MethodReport);
 
-          assert.lengthOf(report.methods, 1);
+          expect(report.methods.length).toBe(1);
 
-          assert.strictEqual(methodReport, methodReport2);
+          expect(methodReport).toBe(methodReport2);
 
           methodReport = scopeControl.popScope({ type: "method" });
           methodReport2 = scopeControl.getCurrentMethodReport();
 
-          assert.isUndefined(methodReport);
-          assert.isUndefined(methodReport2);
+          expect(methodReport).not.toBeDefined();
+          expect(methodReport2).not.toBeDefined();
         });
 
         test("report has correct class w/ method scope", () => {
@@ -108,48 +107,48 @@ if (testconfig.modules["moduleReport"]) {
             paramNames: [],
           });
 
-          assert.lengthOf(report.classes, 1);
-          assert.lengthOf(report.classes[0].methods, 1);
+          expect(report.classes.length).toBe(1);
+          expect(report.classes[0].methods.length).toBe(1);
 
-          assert.lengthOf(report.methods, 0);
+          expect(report.methods.length).toBe(0);
         });
 
         test("error thrown for unknown scope type", () => {
-          assert.throws(() => {
+          expect(() => {
             report.createScope({
               type: "unknown",
               name: "?",
               lineStart: 100,
               lineEnd: 200,
             });
-          });
+          }).toThrow();
 
-          assert.throws(() => {
+          expect(() => {
             scopeControl.createScope();
-          });
+          }).toThrow();
 
-          assert.throws(() => {
+          expect(() => {
             scopeControl.createScope("unknown");
-          });
+          }).toThrow();
 
-          assert.throws(() => {
+          expect(() => {
             scopeControl.popScope();
-          });
+          }).toThrow();
 
-          assert.throws(() => {
+          expect(() => {
             scopeControl.popScope("unknown");
-          });
+          }).toThrow();
         });
       });
     });
 
-    suite("HalsteadData:", () => {
+    describe("HalsteadData:", () => {
       let report;
 
-      setup(() => {
+      beforeEach(() => {
         report = new ModuleReport(10, 100);
       });
-      teardown(() => {
+      afterEach(() => {
         report = undefined;
       });
 
@@ -158,9 +157,9 @@ if (testconfig.modules["moduleReport"]) {
         report.aggregate.halstead.operands.distinct = 1000;
         report.aggregate.halstead.operands.identifiers.push("test");
         report.aggregate.halstead.reset(true);
-        assert.strictEqual(report.aggregate.halstead.bugs, 0);
-        assert.strictEqual(report.aggregate.halstead.operands.distinct, 0);
-        assert.lengthOf(report.aggregate.halstead.operands.identifiers, 0);
+        expect(report.aggregate.halstead.bugs).toBe(0);
+        expect(report.aggregate.halstead.operands.distinct).toBe(0);
+        expect(report.aggregate.halstead.operands.identifiers.length).toBe(0);
       });
     });
   });

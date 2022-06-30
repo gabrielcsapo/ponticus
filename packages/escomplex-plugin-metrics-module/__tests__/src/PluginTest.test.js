@@ -1,6 +1,8 @@
 import fs from "fs";
 import path from "path";
 
+import { test, describe, expect } from "vitest";
+
 import PluginSyntaxBabylon from "@ponticus/escomplex-plugin-syntax-babylon/dist/PluginSyntaxBabylon";
 import ModuleReport from "@ponticus/escomplex-commons/dist/module/report/ModuleReport";
 import ModuleScopeControl from "@ponticus/escomplex-commons/dist/module/report/control/ModuleScopeControl";

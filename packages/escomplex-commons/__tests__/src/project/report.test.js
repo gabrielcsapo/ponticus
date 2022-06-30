@@ -1,5 +1,4 @@
-import { suite, test, setup, teardown } from "mocha";
-import { assert } from "chai";
+import { test, describe, expect, beforeEach, afterEach } from "vitest";
 
 import ModuleReport from "../../../src/module/report/ModuleReport";
 import ProjectReport from "../../../src/project/report/ProjectReport";
@@ -9,12 +8,12 @@ import ModuleScopeControl from "../../../src/module/report/control/ModuleScopeCo
 import * as testconfig from "../testconfig";
 
 if (testconfig.modules["projectReport"]) {
-  suite("result:", () => {
-    suite("ProjectReport:", () => {
-      suite("instantiation:", () => {
+  describe("result:", () => {
+    describe("ProjectReport:", () => {
+      describe("instantiation:", () => {
         let result;
 
-        setup(() => {
+        beforeEach(() => {
           const report = new ModuleReport(10, 100);
           const report2 = new ModuleReport(10, 100);
           const report3 = new ModuleReport(10, 100);
@@ -65,18 +64,18 @@ if (testconfig.modules["projectReport"]) {
           ];
         });
 
-        teardown(() => {
+        afterEach(() => {
           result = undefined;
         });
 
         test("result has correct number of reports", () => {
-          assert.lengthOf(result.modules, 3);
+          expect(result.modules.length).toBe(3);
         });
 
         test("result has correct report `srcPath` order", () => {
-          assert.strictEqual(result.modules[0].srcPath, "./a.js");
-          assert.strictEqual(result.modules[1].srcPath, "./b.js");
-          assert.strictEqual(result.modules[2].srcPath, "./c.js");
+          expect(result.modules[0].srcPath).toBe("./a.js");
+          expect(result.modules[1].srcPath).toBe("./b.js");
+          expect(result.modules[2].srcPath).toBe("./c.js");
         });
 
         test("finalize w/ serializeModules === false is correct", () => {
@@ -84,43 +83,43 @@ if (testconfig.modules["projectReport"]) {
           report.srcPath = "./a.js";
           result = new ProjectReport([report], { serializeModules: false });
 
-          assert.isNotArray(result.modules[0]._scopeStackClass);
-          assert.isNotArray(result.modules[0]._scopeStackMethod);
+          expect(Array.isArray(result.modules[0]._scopeStackClass)).not.toBe(true);
+          expect(Array.isArray(result.modules[0]._scopeStackMethod)).not.toBe(true);
 
           result.finalize();
 
-          assert.isObject(result.modules[0]);
+          expect(typeof result.modules[0]).toBe("object");
 
           const reportKeys = Object.keys(result.modules[0]);
 
-          assert.lengthOf(reportKeys, 3);
-          assert.strictEqual(reportKeys[0], "filePath");
-          assert.strictEqual(reportKeys[1], "srcPath");
-          assert.strictEqual(reportKeys[2], "srcPathAlias");
+          expect(reportKeys.length).toBe(3);
+          expect(reportKeys[0]).toBe("filePath");
+          expect(reportKeys[1]).toBe("srcPath");
+          expect(reportKeys[2]).toBe("srcPathAlias");
 
-          assert.isUndefined(result.modules[0].filePath);
-          assert.strictEqual(result.modules[0].srcPath, "./a.js");
-          assert.isUndefined(result.modules[0].srcPathAlias);
+          expect(result.modules[0].filePath).not.toBeDefined();
+          expect(result.modules[0].srcPath).toBe("./a.js");
+          expect(result.modules[0].srcPathAlias).not.toBeDefined();
         });
       });
 
-      suite("project with errors", () => {
+      describe("project with errors", () => {
         const largeProjectJSON = require("@ponticus/escomplex-test-data/files/large-project/json/project-with-errors");
 
         let projectReport;
 
-        setup(() => {
+        beforeEach(() => {
           projectReport = ProjectReport.parse(largeProjectJSON);
         });
 
-        teardown(() => {
+        afterEach(() => {
           projectReport = void 0;
         });
 
         test("getErrors count is correct", () => {
           const errors = projectReport.getErrors();
 
-          assert.lengthOf(errors, 154);
+          expect(errors.length).toBe(154);
 
           /*
                console.log('!!!! getErrors - errors: ' + JSON.stringify(errors));
@@ -141,7 +140,7 @@ if (testconfig.modules["projectReport"]) {
             query: { severity: "warning" },
           });
 
-          assert.lengthOf(errors, 38);
+          expect(errors.length).toBe(38);
 
           /*
                console.log('!!!! getErrors - errors: ' + JSON.stringify(errors));
@@ -158,11 +157,10 @@ if (testconfig.modules["projectReport"]) {
         });
       });
 
-      suite("large project parsing performance", () => {
+      describe("large project parsing performance", () => {
         const largeProjectJSON = require("@ponticus/escomplex-test-data/files/large-project/json/project");
 
-        test("deserialize JSON object should be sufficiently fast", function () {
-          this.timeout(75);
+        test("deserialize JSON object should be sufficiently fast", () => {
           ProjectReport.parse(largeProjectJSON);
         });
       });

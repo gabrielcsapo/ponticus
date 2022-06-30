@@ -1,4 +1,4 @@
-import ObjectUtil from "@ponticus/escomplex-commons/dist/utils/ObjectUtil";
+import ObjectUtil from "@ponticus/escomplex-commons/utils/ObjectUtil";
 
 /**
  * Provides a typhonjs-escomplex-module / ESComplexModule plugin which gathers and calculates all default metrics.

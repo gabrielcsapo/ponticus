@@ -1,50 +1,52 @@
-import { suite, test, teardown, setup } from "mocha";
+import { test, describe, expect, beforeEach, afterEach } from "vitest";
 
-import { assert } from "chai";
 import { readFileSync } from "fs";
 
 import walker from "../../dist/index.js";
 
 const walkerPath = "../../dist/index";
 
-suite("AST Walker:", () => {
-  suite("require walker:", () => {
+describe("AST Walker:", () => {
+  describe("require walker:", () => {
     let requireWalker;
 
-    setup(() => {
+    beforeEach(() => {
       requireWalker = require(walkerPath);
     });
-    teardown(() => {
+
+    afterEach(() => {
       requireWalker = undefined;
     });
 
     test("require does not throw", () => {
-      assert.doesNotThrow(() => {
+      expect(() => {
         require(walkerPath);
-      });
+      }).not.toThrow();
     });
 
     test("walker object is exported", () => {
-      assert.isObject(requireWalker);
+      expect(typeof requireWalker).toBe("object");
     });
 
     test("walker throws when traverse is called with empty parameters", () => {
-      assert.throws(() => {
+      expect(() => {
         requireWalker.traverse();
-      });
+      }).toThrow();
     });
   });
 
-  suite("walker:", () => {
-    suite("successfully parses ast tree (fixture):", () => {
+  describe("walker:", () => {
+    describe("successfully parses ast tree (fixture):", () => {
       test("result has proper node counts", () => {
         const nodeCounts = {};
         const nodeResults = JSON.parse(
-          readFileSync("./test/fixture/espree-estree-results.json", "utf8")
+          readFileSync("./__tests__/fixture/espree-estree-results.json", "utf8")
         );
 
         walker.traverse(
-          JSON.parse(readFileSync("./test/fixture/espree-estree.json", "utf8")),
+          JSON.parse(
+            readFileSync("./__tests__/fixture/espree-estree.json", "utf8")
+          ),
           {
             enterNode: (node) => {
               nodeCounts[node.type] =
@@ -56,7 +58,7 @@ suite("AST Walker:", () => {
         );
 
         Object.keys(nodeResults).forEach((key) => {
-          assert.strictEqual(nodeCounts[key], nodeResults[key]);
+          expect(nodeCounts[key]).toBe(nodeResults[key]);
         });
       });
 
@@ -64,13 +66,15 @@ suite("AST Walker:", () => {
         const nodeCounts = {};
         const nodeResults = JSON.parse(
           readFileSync(
-            "./test/fixture/espree-estree-results-ignorekeys.json",
+            "./__tests__/fixture/espree-estree-results-ignorekeys.json",
             "utf8"
           )
         );
 
         walker.traverse(
-          JSON.parse(readFileSync("./test/fixture/espree-estree.json", "utf8")),
+          JSON.parse(
+            readFileSync("./__tests__/fixture/espree-estree.json", "utf8")
+          ),
           {
             enterNode: (node) => {
               nodeCounts[node.type] =
@@ -87,7 +91,7 @@ suite("AST Walker:", () => {
         );
 
         Object.keys(nodeResults).forEach((key) => {
-          assert.strictEqual(nodeCounts[key], nodeResults[key]);
+          expect(nodeCounts[key]).toBe(nodeResults[key]);
         });
       });
 
@@ -95,13 +99,15 @@ suite("AST Walker:", () => {
         const nodeCounts = {};
         const nodeResults = JSON.parse(
           readFileSync(
-            "./test/fixture/espree-estree-results-breaknull.json",
+            "./__tests__/fixture/espree-estree-results-breaknull.json",
             "utf8"
           )
         );
 
         walker.traverse(
-          JSON.parse(readFileSync("./test/fixture/espree-estree.json", "utf8")),
+          JSON.parse(
+            readFileSync("./__tests__/fixture/espree-estree.json", "utf8")
+          ),
           {
             enterNode: (node) => {
               nodeCounts[node.type] =
@@ -116,7 +122,7 @@ suite("AST Walker:", () => {
         );
 
         Object.keys(nodeResults).forEach((key) => {
-          assert.strictEqual(nodeCounts[key], nodeResults[key]);
+          expect(nodeCounts[key]).toBe(nodeResults[key]);
         });
       });
     });

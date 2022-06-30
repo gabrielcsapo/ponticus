@@ -1,4 +1,4 @@
-import ObjectUtil from "@ponticus/escomplex-commons/dist/utils/ObjectUtil";
+import ObjectUtil from "@ponticus/escomplex-commons/src/utils/ObjectUtil";
 
 /**
  * ProjectMetricCalculate

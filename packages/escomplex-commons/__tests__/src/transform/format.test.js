@@ -1,6 +1,5 @@
-import { suite, test } from "mocha";
 import fs from "fs-extra";
-import { assert } from "chai";
+import { test, describe, expect } from "vitest";
 
 import ClassReport from "../../../src/module/report/ClassReport";
 import ClassMethodReport from "../../../src/module/report/ClassMethodReport";
@@ -21,9 +20,9 @@ runTests();
  */
 function runTests() {
   if (testconfig.modules["transformFormat"]) {
-    suite("transform:", () => {
-      suite("TransformFormat:", () => {
-        suite("forEach / formatReport (large-module/module):", () => {
+    describe("transform:", () => {
+      describe("TransformFormat:", () => {
+        describe("forEach / formatReport (large-module/module):", () => {
           const largeModuleJSON = require("@ponticus/escomplex-test-data/files/large-module/json/module");
 
           const moduleReport = ModuleReport.parse(largeModuleJSON);
@@ -34,43 +33,40 @@ function runTests() {
                 const output = format.formatReport(moduleReport);
 
                 const original = fs.readFileSync(
-                  `./test/fixture/files/large-module/module/module-${formatName}.${format.extension}`,
+                  `./__tests__/fixture/files/large-module/module/module-${formatName}.${format.extension}`,
                   "utf8"
                 );
 
-                assert.strictEqual(output, original);
+                expect(output).toBe(original);
               });
             }
           });
         });
 
-        suite(
-          "forEach / formatReport (large-project/project-no-modules):",
-          () => {
-            const largeProjectJSON = require("@ponticus/escomplex-test-data/files/large-project/json/project-no-modules");
+        describe("forEach / formatReport (large-project/project-no-modules):", () => {
+          const largeProjectJSON = require("@ponticus/escomplex-test-data/files/large-project/json/project-no-modules");
 
-            const projectResult = ProjectReport.parse(largeProjectJSON);
+          const projectResult = ProjectReport.parse(largeProjectJSON);
 
-            TransformFormat.forEach((format, formatName) => {
-              if (TransformFormat.isSupported(formatName, projectResult.type)) {
-                test(`formatName: ${formatName}`, () => {
-                  const output = format.formatReport(projectResult);
+          TransformFormat.forEach((format, formatName) => {
+            if (TransformFormat.isSupported(formatName, projectResult.type)) {
+              test(`formatName: ${formatName}`, () => {
+                const output = format.formatReport(projectResult);
 
-                  const original = fs.readFileSync(
-                    `./test/fixture/files/large-project/project-no-modules/project-${formatName}.${format.extension}`,
-                    "utf8"
-                  );
+                const original = fs.readFileSync(
+                  `./__tests__/fixture/files/large-project/project-no-modules/project-${formatName}.${format.extension}`,
+                  "utf8"
+                );
 
-                  assert.strictEqual(output, original);
-                });
-              }
-            });
-          }
-        );
+                expect(output).toBe(original);
+              });
+            }
+          });
+        });
       });
 
-      suite("ClassReport:", () => {
-        suite("toFormat (large-class/class):", () => {
+      describe("ClassReport:", () => {
+        describe("toFormat (large-class/class):", () => {
           const largeClassJSON = require("@ponticus/escomplex-test-data/files/large-class/json/class");
 
           const classReport = ClassReport.parse(largeClassJSON);
@@ -80,16 +76,16 @@ function runTests() {
               const output = classReport.toFormat(format.name);
 
               const original = fs.readFileSync(
-                `./test/fixture/files/large-class/class/class-${format.name}.${format.extension}`,
+                `./__tests__/fixture/files/large-class/class/class-${format.name}.${format.extension}`,
                 "utf8"
               );
 
-              assert.strictEqual(output, original);
+              expect(output).toBe(original);
             });
           });
         });
 
-        suite("toFormat (large-module/class-with-errors):", () => {
+        describe("toFormat (large-module/class-with-errors):", () => {
           const largeClassJSON = require("@ponticus/escomplex-test-data/files/large-class/json/class-with-errors");
 
           const classReport = ClassReport.parse(largeClassJSON);
@@ -99,18 +95,18 @@ function runTests() {
               const output = classReport.toFormat(format.name);
 
               const original = fs.readFileSync(
-                `./test/fixture/files/large-class/class-with-errors/class-${format.name}.${format.extension}`,
+                `./__tests__/fixture/files/large-class/class-with-errors/class-${format.name}.${format.extension}`,
                 "utf8"
               );
 
-              assert.strictEqual(output, original);
+              expect(output).toBe(original);
             });
           });
         });
       });
 
-      suite("MethodReport:", () => {
-        suite("toFormat (large-method/classmethod):", () => {
+      describe("MethodReport:", () => {
+        describe("toFormat (large-method/classmethod):", () => {
           const largeMethodJSON = require("@ponticus/escomplex-test-data/files/large-method/json/classmethod");
 
           const methodReport = ClassMethodReport.parse(largeMethodJSON);
@@ -120,16 +116,16 @@ function runTests() {
               const output = methodReport.toFormat(format.name);
 
               const original = fs.readFileSync(
-                `./test/fixture/files/large-method/classmethod/classmethod-${format.name}.${format.extension}`,
+                `./__tests__/fixture/files/large-method/classmethod/classmethod-${format.name}.${format.extension}`,
                 "utf8"
               );
 
-              assert.strictEqual(output, original);
+              expect(output).toBe(original);
             });
           });
         });
 
-        suite("toFormat (large-method/classmethod-with-errors):", () => {
+        describe("toFormat (large-method/classmethod-with-errors):", () => {
           const largeMethodJSON = require("@ponticus/escomplex-test-data/files/large-method/json/classmethod-with-errors");
 
           const methodReport = ClassMethodReport.parse(largeMethodJSON);
@@ -139,16 +135,16 @@ function runTests() {
               const output = methodReport.toFormat(format.name);
 
               const original = fs.readFileSync(
-                `./test/fixture/files/large-method/classmethod-with-errors/classmethod-${format.name}.${format.extension}`,
+                `./__tests__/fixture/files/large-method/classmethod-with-errors/classmethod-${format.name}.${format.extension}`,
                 "utf8"
               );
 
-              assert.strictEqual(output, original);
+              expect(output).toBe(original);
             });
           });
         });
 
-        suite("toFormat (large-method/modulemethod):", () => {
+        describe("toFormat (large-method/modulemethod):", () => {
           const largeMethodJSON = require("@ponticus/escomplex-test-data/files/large-method/json/modulemethod");
 
           const methodReport = ModuleMethodReport.parse(largeMethodJSON);
@@ -158,16 +154,16 @@ function runTests() {
               const output = methodReport.toFormat(format.name);
 
               const original = fs.readFileSync(
-                `./test/fixture/files/large-method/modulemethod/modulemethod-${format.name}.${format.extension}`,
+                `./__tests__/fixture/files/large-method/modulemethod/modulemethod-${format.name}.${format.extension}`,
                 "utf8"
               );
 
-              assert.strictEqual(output, original);
+              expect(output).toBe(original);
             });
           });
         });
 
-        suite("toFormat (large-method/modulemethod-with-errors):", () => {
+        describe("toFormat (large-method/modulemethod-with-errors):", () => {
           const largeMethodJSON = require("@ponticus/escomplex-test-data/files/large-method/json/modulemethod-with-errors");
 
           const methodReport = ModuleMethodReport.parse(largeMethodJSON);
@@ -177,18 +173,18 @@ function runTests() {
               const output = methodReport.toFormat(format.name);
 
               const original = fs.readFileSync(
-                `./test/fixture/files/large-method/modulemethod-with-errors/modulemethod-${format.name}.${format.extension}`,
+                `./__tests__/fixture/files/large-method/modulemethod-with-errors/modulemethod-${format.name}.${format.extension}`,
                 "utf8"
               );
 
-              assert.strictEqual(output, original);
+              expect(output).toBe(original);
             });
           });
         });
       });
 
-      suite("ModuleReport:", () => {
-        suite("toFormat (large-module/module):", () => {
+      describe("ModuleReport:", () => {
+        describe("toFormat (large-module/module):", () => {
           const largeModuleJSON = require("@ponticus/escomplex-test-data/files/large-module/json/module");
 
           const moduleReport = ModuleReport.parse(largeModuleJSON);
@@ -198,16 +194,16 @@ function runTests() {
               const output = moduleReport.toFormat(format.name);
 
               const original = fs.readFileSync(
-                `./test/fixture/files/large-module/module/module-${format.name}.${format.extension}`,
+                `./__tests__/fixture/files/large-module/module/module-${format.name}.${format.extension}`,
                 "utf8"
               );
 
-              assert.strictEqual(output, original);
+              expect(output).toBe(original);
             });
           });
         });
 
-        suite("toFormat (large-module/module-with-errors):", () => {
+        describe("toFormat (large-module/module-with-errors):", () => {
           const largeModuleJSON = require("@ponticus/escomplex-test-data/files/large-module/json/module-with-errors");
 
           const moduleReport = ModuleReport.parse(largeModuleJSON);
@@ -217,18 +213,18 @@ function runTests() {
               const output = moduleReport.toFormat(format.name);
 
               const original = fs.readFileSync(
-                `./test/fixture/files/large-module/module-with-errors/module-${format.name}.${format.extension}`,
+                `./__tests__/fixture/files/large-module/module-with-errors/module-${format.name}.${format.extension}`,
                 "utf8"
               );
 
-              assert.strictEqual(output, original);
+              expect(output).toBe(original);
             });
           });
         });
       });
 
-      suite("ProjectReport:", () => {
-        suite("toFormat (large-project/project):", () => {
+      describe("ProjectReport:", () => {
+        describe("toFormat (large-project/project):", () => {
           const largeProjectJSON = require("@ponticus/escomplex-test-data/files/large-project/json/project");
 
           const projectResult = ProjectReport.parse(largeProjectJSON);
@@ -238,16 +234,16 @@ function runTests() {
               const output = projectResult.toFormat(format.name);
 
               const original = fs.readFileSync(
-                `./test/fixture/files/large-project/project/project-${format.name}.${format.extension}`,
+                `./__tests__/fixture/files/large-project/project/project-${format.name}.${format.extension}`,
                 "utf8"
               );
 
-              assert.strictEqual(output, original);
+              expect(output).toBe(original);
             });
           });
         });
 
-        suite("toFormat (large-project/project-no-modules):", () => {
+        describe("toFormat (large-project/project-no-modules):", () => {
           const largeProjectJSON = require("@ponticus/escomplex-test-data/files/large-project/json/project-no-modules");
 
           const projectResult = ProjectReport.parse(largeProjectJSON);
@@ -257,16 +253,16 @@ function runTests() {
               const output = projectResult.toFormat(format.name);
 
               const original = fs.readFileSync(
-                `./test/fixture/files/large-project/project-no-modules/project-${format.name}.${format.extension}`,
+                `./__tests__/fixture/files/large-project/project-no-modules/project-${format.name}.${format.extension}`,
                 "utf8"
               );
 
-              assert.strictEqual(output, original);
+              expect(output).toBe(original);
             });
           });
         });
 
-        suite("toFormat (large-project/project-with-errors):", () => {
+        describe("toFormat (large-project/project-with-errors):", () => {
           const largeProjectJSON = require("@ponticus/escomplex-test-data/files/large-project/json/project-with-errors");
 
           const projectResult = ProjectReport.parse(largeProjectJSON);
@@ -276,11 +272,11 @@ function runTests() {
               const output = projectResult.toFormat(format.name);
 
               const original = fs.readFileSync(
-                `./test/fixture/files/large-project/project-with-errors/project-${format.name}.${format.extension}`,
+                `./__tests__/fixture/files/large-project/project-with-errors/project-${format.name}.${format.extension}`,
                 "utf8"
               );
 
-              assert.strictEqual(output, original);
+              expect(output).toBe(original);
             });
           });
         });
@@ -296,17 +292,17 @@ function runTests() {
 function generateFormatData()
 {
    // Empty formatted result / report matching test data.
-   fs.emptyDirSync('./test/fixture/files/large-class/class');
-   fs.emptyDirSync('./test/fixture/files/large-class/class-with-errors');
-   fs.emptyDirSync('./test/fixture/files/large-method/classmethod');
-   fs.emptyDirSync('./test/fixture/files/large-method/classmethod-with-errors');
-   fs.emptyDirSync('./test/fixture/files/large-method/modulemethod');
-   fs.emptyDirSync('./test/fixture/files/large-method/modulemethod-with-errors');
-   fs.emptyDirSync('./test/fixture/files/large-module/module');
-   fs.emptyDirSync('./test/fixture/files/large-module/module-with-errors');
-   fs.emptyDirSync('./test/fixture/files/large-project/project');
-   fs.emptyDirSync('./test/fixture/files/large-project/project-no-modules');
-   fs.emptyDirSync('./test/fixture/files/large-project/project-with-errors');
+   fs.emptyDirSync('./__tests__/fixture/files/large-class/class');
+   fs.emptyDirSync('./__tests__/fixture/files/large-class/class-with-errors');
+   fs.emptyDirSync('./__tests__/fixture/files/large-method/classmethod');
+   fs.emptyDirSync('./__tests__/fixture/files/large-method/classmethod-with-errors');
+   fs.emptyDirSync('./__tests__/fixture/files/large-method/modulemethod');
+   fs.emptyDirSync('./__tests__/fixture/files/large-method/modulemethod-with-errors');
+   fs.emptyDirSync('./__tests__/fixture/files/large-module/module');
+   fs.emptyDirSync('./__tests__/fixture/files/large-module/module-with-errors');
+   fs.emptyDirSync('./__tests__/fixture/files/large-project/project');
+   fs.emptyDirSync('./__tests__/fixture/files/large-project/project-no-modules');
+   fs.emptyDirSync('./__tests__/fixture/files/large-project/project-with-errors');
 
    // Generate project result formatted test data.
 
@@ -320,7 +316,7 @@ function generateFormatData()
          const output = format.formatReport(classReport);
 
          fs.writeFileSync(
-          `./test/fixture/files/large-class/class/class-${format.name}.${format.extension}`, output, 'utf8');
+          `./__tests__/fixture/files/large-class/class/class-${format.name}.${format.extension}`, output, 'utf8');
       });
    });
 
@@ -334,7 +330,7 @@ function generateFormatData()
          const output = format.formatReport(classReport2);
 
          fs.writeFileSync(
-          `./test/fixture/files/large-class/class-with-errors/class-${format.name}.${format.extension}`, output,
+          `./__tests__/fixture/files/large-class/class-with-errors/class-${format.name}.${format.extension}`, output,
            'utf8');
       });
    });
@@ -349,7 +345,7 @@ function generateFormatData()
          const output = format.formatReport(classMethodReport);
 
          fs.writeFileSync(
-          `./test/fixture/files/large-method/classmethod/classmethod-${format.name}.${format.extension}`, output,
+          `./__tests__/fixture/files/large-method/classmethod/classmethod-${format.name}.${format.extension}`, output,
            'utf8');
       });
    });
@@ -365,7 +361,7 @@ function generateFormatData()
          const output = format.formatReport(classMethodReport2);
 
          fs.writeFileSync(
-          `./test/fixture/files/large-method/classmethod-with-errors/classmethod-${format.name}.${format.extension}`,
+          `./__tests__/fixture/files/large-method/classmethod-with-errors/classmethod-${format.name}.${format.extension}`,
            output, 'utf8');
       });
    });
@@ -380,7 +376,7 @@ function generateFormatData()
          const output = format.formatReport(moduleMethodReport);
 
          fs.writeFileSync(
-          `./test/fixture/files/large-method/modulemethod/modulemethod-${format.name}.${format.extension}`, output,
+          `./__tests__/fixture/files/large-method/modulemethod/modulemethod-${format.name}.${format.extension}`, output,
            'utf8');
       });
    });
@@ -396,7 +392,7 @@ function generateFormatData()
          const output = format.formatReport(moduleMethodReport2);
 
          fs.writeFileSync(
-          `./test/fixture/files/large-method/modulemethod-with-errors/modulemethod-${format.name}.${format.extension}`,
+          `./__tests__/fixture/files/large-method/modulemethod-with-errors/modulemethod-${format.name}.${format.extension}`,
            output, 'utf8');
       });
    });
@@ -411,7 +407,7 @@ function generateFormatData()
          const output = format.formatReport(moduleReport);
 
          fs.writeFileSync(
-          `./test/fixture/files/large-module/module/module-${format.name}.${format.extension}`, output, 'utf8');
+          `./__tests__/fixture/files/large-module/module/module-${format.name}.${format.extension}`, output, 'utf8');
       });
    });
 
@@ -425,7 +421,7 @@ function generateFormatData()
          const output = format.formatReport(moduleReport2);
 
          fs.writeFileSync(
-          `./test/fixture/files/large-module/module-with-errors/module-${format.name}.${format.extension}`, output,
+          `./__tests__/fixture/files/large-module/module-with-errors/module-${format.name}.${format.extension}`, output,
            'utf8');
       });
    });
@@ -442,7 +438,7 @@ function generateFormatData()
          const output = format.formatReport(projectResult);
 
          fs.writeFileSync(
-          `./test/fixture/files/large-project/project/project-${format.name}.${format.extension}`, output, 'utf8');
+          `./__tests__/fixture/files/large-project/project/project-${format.name}.${format.extension}`, output, 'utf8');
       });
    });
 
@@ -456,7 +452,7 @@ function generateFormatData()
          const output = format.formatReport(projectResult2);
 
          fs.writeFileSync(
-          `./test/fixture/files/large-project/project-no-modules/project-${format.name}.${format.extension}`, output,
+          `./__tests__/fixture/files/large-project/project-no-modules/project-${format.name}.${format.extension}`, output,
            'utf8');
       });
    });
@@ -471,7 +467,7 @@ function generateFormatData()
          const output = format.formatReport(projectResult3);
 
          fs.writeFileSync(
-          `./test/fixture/files/large-project/project-with-errors/project-${format.name}.${format.extension}`, output,
+          `./__tests__/fixture/files/large-project/project-with-errors/project-${format.name}.${format.extension}`, output,
            'utf8');
       });
    });

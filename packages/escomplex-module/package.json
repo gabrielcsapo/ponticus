@@ -8,6 +8,7 @@
     "type": "git",
     "url": "https://github.com/typhonjs-node-escomplex/@ponticus/escomplex-module.git"
   },
+  "type": "module",
   "dependencies": {
     "@ponitcus/escomplex-plugin-syntax-babylon": "^0.1.0",
     "@ponticus/ast-walker": "^0.2.0",
@@ -16,24 +17,23 @@
     "@ponticus/plugin-manager": "^0.2.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.18.6",
-    "@babel/core": "^7.18.6",
-    "@babel/preset-env": "^7.18.6",
-    "@babel/register": "^7.18.6",
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.207",
+    "@swc/jest": "^0.2.21",
+    "vitest": "^0.16.0",
     "@ponticus/babel-parser": "^0.2.0",
     "acorn": "^8.7.1",
     "babylon": "^6.18.0",
     "eslint": "^8.18.0",
     "eslint-plugin-prettier": "^4.1.0",
     "espree": "^9.3.2",
-    "esprima": "^4.0.1",
-    "jest": "^28.1.2"
+    "esprima": "^4.0.1"
   },
   "scripts": {
-    "build": "babel src -d dist",
+    "build": "swc src -d dist",
     "lint": "eslint .",
     "prepublish": "npm run build",
-    "test": "jest"
+    "test": "vitest"
   },
   "keywords": [
     "typhonjs",

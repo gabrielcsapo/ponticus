@@ -1,5 +1,4 @@
-import { suite, test } from "mocha";
-import { assert } from "chai";
+import { test, describe, expect } from "vitest";
 
 import MethodAverage from "../../../src/module/report/averages/MethodAverage";
 import ObjectUtil from "../../../src/utils/ObjectUtil";
@@ -12,17 +11,17 @@ const s_TEST_CONFIRM =
   '["cyclomatic","cyclomaticDensity","halstead.bugs","halstead.difficulty","halstead.effort","halstead.length","halstead.time","halstead.vocabulary","halstead.volume","halstead.operands.distinct","halstead.operands.total","halstead.operators.distinct","halstead.operators.total","paramCount","sloc.logical","sloc.physical"]';
 
 if (testconfig.modules["utilObject"]) {
-  suite("utils:", () => {
-    suite("ObjectUtil", () => {
-      suite("getAccessorList:", () => {
+  describe("utils:", () => {
+    describe("ObjectUtil", () => {
+      describe("getAccessorList:", () => {
         test("MethodAverage accessors correct", () => {
           const result = ObjectUtil.getAccessorList(s_TEST_OBJECT);
 
-          assert.strictEqual(JSON.stringify(result), s_TEST_CONFIRM);
+          expect(JSON.stringify(result)).toBe(s_TEST_CONFIRM);
         });
       });
 
-      suite("safeEqual:", () => {
+      describe("safeEqual:", () => {
         test("safeEqual matches", () => {
           const source = { severity: "info", test: { severity: "info" } };
           const targetTrue = {
@@ -31,7 +30,7 @@ if (testconfig.modules["utilObject"]) {
             value: 123,
           };
 
-          assert.strictEqual(ObjectUtil.safeEqual(source, targetTrue), true);
+          expect(ObjectUtil.safeEqual(source, targetTrue)).toBe(true);
         });
 
         test("safeEqual does not match", () => {
@@ -42,7 +41,7 @@ if (testconfig.modules["utilObject"]) {
             value: 123,
           };
 
-          assert.strictEqual(ObjectUtil.safeEqual(source, targetFalse), false);
+          expect(ObjectUtil.safeEqual(source, targetFalse)).toBe(false);
         });
       });
     });
