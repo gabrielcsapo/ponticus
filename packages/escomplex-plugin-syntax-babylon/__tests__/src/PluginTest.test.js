@@ -1,3 +1,5 @@
+import { test, describe, expect } from "vitest";
+
 import PluginSyntaxBabylon from "../../src/PluginSyntaxBabylon";
 
 const pluginData = [{ name: "ESM", PluginClass: PluginSyntaxBabylon }];
