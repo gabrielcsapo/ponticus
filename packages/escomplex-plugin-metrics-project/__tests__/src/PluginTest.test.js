@@ -1,5 +1,7 @@
 import path from "path";
 
+import { test, describe, expect } from "vitest";
+
 import ProjectReport from "@ponticus/escomplex-commons/dist/project/report/ProjectReport";
 
 import PluginMetricsProject from "../../src/PluginMetricsProject.js";
