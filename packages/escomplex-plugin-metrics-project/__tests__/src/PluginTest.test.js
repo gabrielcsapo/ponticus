@@ -1,5 +1,3 @@
-import { suite, test } from "mocha";
-import { assert } from "chai";
 import path from "path";
 
 import ProjectReport from "@ponticus/escomplex-commons/dist/project/report/ProjectReport";
@@ -9,50 +7,50 @@ import PluginMetricsProject from "../../src/PluginMetricsProject.js";
 const pluginData = [{ name: "ESM", PluginClass: PluginMetricsProject }];
 
 pluginData.forEach((plugin) => {
-  suite(`(${plugin.name}) plugin:`, () => {
-    suite("initialize:", () => {
+  describe(`(${plugin.name}) plugin:`, () => {
+    describe("initialize:", () => {
       const instance = new plugin.PluginClass();
 
       test("plugin was object", () => {
-        assert.isObject(instance);
+        expect(typeof instance).toBe("object");
       });
 
       test("plugin function onConfigure is exported", () => {
-        assert.isFunction(instance.onConfigure);
+        expect(typeof instance.onConfigure).toBe("function");
       });
 
       test("plugin function onProjectCalculate is exported", () => {
-        assert.isFunction(instance.onProjectCalculate);
+        expect(typeof instance.onProjectCalculate).toBe("function");
       });
 
       test("plugin function onProjectAverage is exported", () => {
-        assert.isFunction(instance.onProjectAverage);
+        expect(typeof instance.onProjectAverage).toBe("function");
       });
     });
 
-    suite("method invocation:", () => {
+    describe("method invocation:", () => {
       const instance = new plugin.PluginClass();
 
       test("plugin throws on empty event data", () => {
-        assert.throws(() => {
+        expect(() => {
           instance.onConfigure();
-        });
+        }).toThrow();
       });
 
       test("plugin does not throw on proper event data", () => {
-        assert.doesNotThrow(() => {
+        expect(() => {
           instance.onConfigure({ data: { options: {}, settings: {} } });
-        });
+        }).not.toThrow();
       });
 
       test("plugin passes back syntax data", () => {
         const event = { data: { options: {}, settings: {} } };
         instance.onConfigure(event);
-        assert.strictEqual(event.data.settings.noCoreSize, false);
+        expect(event.data.settings.noCoreSize).toBe(false);
       });
     });
 
-    suite("project results:", () => {
+    describe("project results:", () => {
       const instance = new plugin.PluginClass();
 
       const resultsAfter = require("@ponticus/escomplex-test-data/files/large-project/json/project");
@@ -89,10 +87,7 @@ pluginData.forEach((plugin) => {
 
         resultsBefore.finalize();
 
-        assert.strictEqual(
-          JSON.stringify(resultsBefore),
-          JSON.stringify(resultsAfter)
-        );
+        expect(JSON.stringify(resultsBefore)).toBe(JSON.stringify(resultsAfter));
       });
     });
   });
