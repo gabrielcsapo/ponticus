@@ -5,8 +5,8 @@
   "description": "Provides a plugin for typhonjs-escomplex module processing which loads syntax definitions for trait resolution for Babylon AST.",
   "main": "./dist/PluginSyntaxBabylon",
   "dependencies": {
-    "escomplex-plugin-syntax-estree": "^0.1.0",
-    "@ponticus/escomplex-commons": "^0.1.0"
+    "@ponticus/escomplex-commons": "^0.1.0",
+    "escomplex-plugin-syntax-estree": "^0.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.18.6",
@@ -14,16 +14,16 @@
     "@babel/preset-env": "^7.18.6",
     "@babel/register": "^7.18.6",
     "@ponticus/ast-walker": "^0.2.0",
-    "sort-object": "^3.0.0",
-    "mocha": "^10.0.0",
     "eslint": "^8.18.0",
-    "eslint-plugin-prettier": "^4.1.0"
+    "eslint-plugin-prettier": "^4.1.0",
+    "jest": "^28.1.2",
+    "sort-object": "^3.0.0"
   },
   "scripts": {
     "build": "babel src -d dist",
     "lint": "eslint .",
     "prepublish": "npm run build",
-    "test": "mocha --require @babel/register test/src/*.js"
+    "test": "jest"
   },
   "keywords": [
     "typhonjs",

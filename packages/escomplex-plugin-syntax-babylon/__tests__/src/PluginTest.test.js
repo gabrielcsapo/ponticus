@@ -1,35 +1,28 @@
-import { suite, test } from "mocha";
-import { assert } from "chai";
-
-// import fs                  from 'fs';
-// import sortObj             from 'sort-object';
-// import ASTWalker           from 'typhonjs-ast-walker/src/ASTWalker';
-
 import PluginSyntaxBabylon from "../../src/PluginSyntaxBabylon";
 
 const pluginData = [{ name: "ESM", PluginClass: PluginSyntaxBabylon }];
 
 pluginData.forEach((plugin) => {
-  suite(`(${plugin.name}) plugin:`, () => {
-    suite("initialize:", () => {
+  describe(`(${plugin.name}) plugin:`, () => {
+    describe("initialize:", () => {
       const instance = new plugin.PluginClass();
 
       test("plugin was object", () => {
-        assert.isObject(instance);
+        expect(typeof instance).toBe("object");
       });
 
       test("plugin function is exported", () => {
-        assert.isFunction(instance.onLoadSyntax);
+        expect(typeof instance.onLoadSyntax).toBe("function");
       });
     });
 
-    suite("method invocation:", () => {
+    describe("method invocation:", () => {
       const instance = new plugin.PluginClass();
 
       test("plugin throws on empty event data", () => {
-        assert.throws(() => {
+        expect(() => {
           instance.onLoadSyntax();
-        });
+        }).toThrow();
       });
 
       test("plugin does not throw on proper event data", () => {
@@ -37,9 +30,9 @@ pluginData.forEach((plugin) => {
         const event = { data: { settings: {}, options: {}, syntaxes: {} } };
         instance.onConfigure(event);
 
-        assert.doesNotThrow(() => {
+        expect(() => {
           instance.onLoadSyntax(event);
-        });
+        }).not.toThrow();
       });
 
       test("plugin passes back syntax data", () => {
@@ -48,7 +41,7 @@ pluginData.forEach((plugin) => {
         instance.onConfigure(event);
 
         instance.onLoadSyntax(event);
-        assert.isObject(event.data.syntaxes);
+        expect(typeof event.data.syntaxes).toBe("object");
       });
 
       test("plugin has correct syntax data length", () => {
@@ -59,7 +52,7 @@ pluginData.forEach((plugin) => {
         instance.onLoadSyntax(event);
 
         // Note: that 60+ definitions are from `escomplex-plugin-syntax-estree`.
-        assert.strictEqual(Object.keys(event.data.syntaxes).length, 77);
+        expect(Object.keys(event.data.syntaxes).length).toBe(77);
       });
 
       test("plugin has correct syntax properties", () => {
@@ -70,8 +63,7 @@ pluginData.forEach((plugin) => {
         instance.onLoadSyntax(event);
 
         for (const type in event.data.syntaxes) {
-          assert.strictEqual(
-            JSON.stringify(Object.keys(event.data.syntaxes[type])),
+          expect(JSON.stringify(Object.keys(event.data.syntaxes[type]))).toBe(
             '["lloc","cyclomatic","operators","operands","ignoreKeys","newScope","dependencies"]'
           );
         }
