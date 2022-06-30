@@ -1,6 +1,5 @@
-import { suite, test } from "mocha";
-import { assert } from "chai";
 import fs from "fs";
+import path from "path";
 
 import PluginSyntaxBabylon from "@ponticus/escomplex-plugin-syntax-babylon/dist/PluginSyntaxBabylon";
 import ModuleReport from "@ponticus/escomplex-commons/dist/module/report/ModuleReport";
@@ -13,74 +12,80 @@ import PluginMetricsModule from "../../dist/PluginMetricsModule";
 const pluginData = [{ name: "ESM", PluginClass: PluginMetricsModule }];
 
 pluginData.forEach((plugin) => {
-  suite(`(${plugin.name}) plugin:`, () => {
-    suite("initialize:", () => {
+  describe(`(${plugin.name}) plugin:`, () => {
+    describe("initialize:", () => {
       const instance = new plugin.PluginClass();
 
       test("plugin was object", () => {
-        assert.isObject(instance);
+        expect(typeof instance).toBe("object");
       });
 
       test("plugin function onConfigure is exported", () => {
-        assert.isFunction(instance.onConfigure);
+        expect(typeof instance.onConfigure).toBe("function");
       });
 
       test("plugin function onEnterNode is exported", () => {
-        assert.isFunction(instance.onEnterNode);
+        expect(typeof instance.onEnterNode).toBe("function");
       });
 
       test("plugin function onModuleAverage is exported", () => {
-        assert.isFunction(instance.onModuleAverage);
+        expect(typeof instance.onModuleAverage).toBe("function");
       });
 
       test("plugin function onModuleCalculate is exported", () => {
-        assert.isFunction(instance.onModuleCalculate);
+        expect(typeof instance.onModuleCalculate).toBe("function");
       });
 
       test("plugin function onModuleCalculate is exported", () => {
-        assert.isFunction(instance.onModulePostAverage);
+        expect(typeof instance.onModulePostAverage).toBe("function");
       });
 
       test("plugin function onModulePreScopeCreated is exported", () => {
-        assert.isFunction(instance.onModulePreScopeCreated);
+        expect(typeof instance.onModulePreScopeCreated).toBe("function");
       });
 
       test("plugin function onModulePostScopeCreated is exported", () => {
-        assert.isFunction(instance.onModulePostScopeCreated);
+        expect(typeof instance.onModulePostScopeCreated).toBe("function");
       });
     });
 
-    suite("method invocation:", () => {
+    describe("method invocation:", () => {
       const instance = new plugin.PluginClass();
 
       test("plugin throws on empty event data", () => {
-        assert.throws(() => {
+        expect(() => {
           instance.onConfigure();
-        });
+        }).toThrow();
       });
 
       test("plugin does not throw on proper event data", () => {
-        assert.doesNotThrow(() => {
+        expect(() => {
           instance.onConfigure({ data: { options: {}, settings: {} } });
-        });
+        }).not.toThrow();
       });
 
       test("plugin passes back syntax data", () => {
         const event = { data: { options: {}, settings: {} } };
         instance.onConfigure(event);
-        assert.strictEqual(event.data.settings.newmi, false);
+        expect(event.data.settings.newmi).toBe(false);
       });
     });
 
-    suite("module results:", () => {
+    describe("module results:", () => {
       const syntaxInstance = new PluginSyntaxBabylon();
       const instance = new plugin.PluginClass();
 
       const ast = JSON.parse(
-        fs.readFileSync("./test/fixture/espree-estree.json", "utf8")
+        fs.readFileSync(
+          path.resolve(__dirname, "../fixture/espree-estree.json"),
+          "utf8"
+        )
       );
       const reportResults = JSON.parse(
-        fs.readFileSync("./test/fixture/report-results.json", "utf8")
+        fs.readFileSync(
+          path.resolve(__dirname, "../fixture/report-results.json"),
+          "utf8"
+        )
       );
 
       /**
@@ -196,8 +201,7 @@ pluginData.forEach((plugin) => {
 
         moduleReport.finalize();
 
-        assert.strictEqual(
-          JSON.stringify(moduleReport),
+        expect(JSON.stringify(moduleReport)).toBe(
           JSON.stringify(reportResults)
         );
       });
