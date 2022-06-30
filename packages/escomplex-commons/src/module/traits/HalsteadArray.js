@@ -1,4 +1,4 @@
-import TraitHalstead from "./TraitHalstead";
+import TraitHalstead from "./TraitHalstead.js";
 
 /**
  * Provides a wrapper around an array of Halstead property object hashes which should contain an

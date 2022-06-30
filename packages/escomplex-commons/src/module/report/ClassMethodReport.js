@@ -1,7 +1,7 @@
-import MethodReport from "./MethodReport";
+import MethodReport from "./MethodReport.js";
 
-import ReportType from "../../types/ReportType";
-import TransformFormat from "../../transform/TransformFormat";
+import ReportType from "../../types/ReportType.js";
+import TransformFormat from "../../transform/TransformFormat.js";
 
 /**
  * Provides the class method report object which stores data pertaining to a single method / function.

@@ -1,14 +1,14 @@
-import AbstractReport from "./AbstractReport";
-import AggregateReport from "./AggregateReport";
-import ClassReport from "./ClassReport";
-import MethodAverage from "./averages/MethodAverage";
-import ModuleMethodReport from "./ModuleMethodReport";
+import AbstractReport from "./AbstractReport.js";
+import AggregateReport from "./AggregateReport.js";
+import ClassReport from "./ClassReport.js";
+import MethodAverage from "./averages/MethodAverage.js";
+import ModuleMethodReport from "./ModuleMethodReport.js";
 
-import AnalyzeError from "../../analyze/AnalyzeError";
-import MathUtil from "../../utils/MathUtil";
-import ObjectUtil from "../../utils/ObjectUtil";
-import ReportType from "../../types/ReportType";
-import TransformFormat from "../../transform/TransformFormat";
+import AnalyzeError from "../../analyze/AnalyzeError.js";
+import MathUtil from "../../utils/MathUtil.js";
+import ObjectUtil from "../../utils/ObjectUtil.js";
+import ReportType from "../../types/ReportType.js";
+import TransformFormat from "../../transform/TransformFormat.js";
 
 /**
  * Provides the module report object which stores data pertaining to a single file / module being processed.

@@ -1,5 +1,5 @@
-import AbstractReport from "./AbstractReport";
-import HalsteadData from "./HalsteadData";
+import AbstractReport from "./AbstractReport.js";
+import HalsteadData from "./HalsteadData.js";
 
 /**
  * Provides the aggregate report object which stores base data pertaining to a single method / function or cumulative

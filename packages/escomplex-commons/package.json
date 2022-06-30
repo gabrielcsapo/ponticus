@@ -5,7 +5,7 @@
   "description": "Provides core common utilities for typhonjs-escomplex modules and plugins.",
   "type": "module",
   "exports": {
-    ".": "./dist"
+    ".": "./dist/index.js"
   },
   "devDependencies": {
     "@ponticus/escomplex-test-data": "0.0.1",

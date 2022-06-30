@@ -1,6 +1,6 @@
-import MethodAverage from "./MethodAverage";
+import MethodAverage from "./MethodAverage.js";
 
-import ObjectUtil from "../../../utils/ObjectUtil";
+import ObjectUtil from "../../../utils/ObjectUtil.js";
 
 /**
  * Provides all the averaged module metric data.

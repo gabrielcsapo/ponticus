@@ -1,4 +1,4 @@
-import Enum from "../utils/Enum";
+import Enum from "../utils/Enum.js";
 
 /**
  * Defines ReportType enum.

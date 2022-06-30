@@ -1,4 +1,4 @@
-import FormatTextVisibility from "../text/FormatTextVisibility";
+import FormatTextVisibility from "../text/FormatTextVisibility.js";
 
 /**
  * Provides a format transform for ModuleReport / ProjectReport instances converting a matrix list into markdown.

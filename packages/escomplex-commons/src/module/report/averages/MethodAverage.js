@@ -1,6 +1,6 @@
-import HalsteadAverage from "./HalsteadAverage";
+import HalsteadAverage from "./HalsteadAverage.js";
 
-import ObjectUtil from "../../../utils/ObjectUtil";
+import ObjectUtil from "../../../utils/ObjectUtil.js";
 
 /**
  * Provides all the averaged method metric data.

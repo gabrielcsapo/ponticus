@@ -1,4 +1,4 @@
-import ReportType from "../types/ReportType";
+import ReportType from "../types/ReportType.js";
 
 /**
  * Provides a wrapper for analysis errors stored in the `errors` array for each report type.

@@ -1,15 +1,11 @@
 {
-  "name": "@ponticus/ast-walker",
-  "version": "0.2.1",
-  "homepage": "https://github.com/ponticus/ast-walker/",
-  "description": "Provides a simple Javascript AST traversal utility that traverses all nodes / children regardless of type.",
+  "name": "@ponticus/backbone-esnext-events",
+  "version": "0.3.5",
+  "homepage": "https://github.com/typhonjs-backbone-esnext/backbone-esnext-events",
+  "description": "Separates 'events' support from Backbone in addition to adding TyphonJS extensions.",
   "type": "module",
   "exports": {
     ".": "./dist/index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/typhonjs-node-ast/@ponticus/ast-walker.git"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.57",
@@ -26,9 +22,10 @@
     "test": "vitest"
   },
   "keywords": [
-    "typhonjs",
-    "ast",
-    "traversal"
+    "backbone",
+    "esnext",
+    "events",
+    "eventbus"
   ],
   "volta": {
     "node": "16.15.0"

@@ -1,7 +1,6 @@
 import { test, describe, expect, beforeEach } from "vitest";
 
-import EventProxy from "backbone-esnext-events/src/EventProxy";
-import TyphonEvents from "backbone-esnext-events/src/TyphonEvents";
+import { EventProxy, TyphonEvents } from "@ponticus/backbone-esnext-events";
 
 import PluginManager from "../../src/PluginManager.js";
 

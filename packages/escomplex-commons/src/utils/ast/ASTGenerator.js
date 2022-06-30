@@ -1,4 +1,4 @@
-import ASTState from "./ASTState";
+import ASTState from "./ASTState.js";
 
 /**
  * `ASTGenerator` is a fork of `Astring`. The original author is David Bonnet and `Astring` is released under an MIT

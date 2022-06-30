@@ -1,6 +1,6 @@
-import HalsteadArray from "./HalsteadArray";
-import Trait from "./Trait";
-import TraitUtil from "./TraitUtil";
+import HalsteadArray from "./HalsteadArray.js";
+import Trait from "./Trait.js";
+import TraitUtil from "./TraitUtil.js";
 
 /**
  * Provides a helper method to format core traits for escomplex processing.

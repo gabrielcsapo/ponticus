@@ -1,5 +1,5 @@
-import expressionPrecedence from "./expressionPrecedence";
-import operatorPrecedence from "./operatorPrecedence";
+import expressionPrecedence from "./expressionPrecedence.js";
+import operatorPrecedence from "./operatorPrecedence.js";
 
 /**
  * ASTUTil

@@ -1,13 +1,13 @@
-import TransformFormat from "../../transform/TransformFormat";
+import TransformFormat from "../../transform/TransformFormat.js";
 
-import ModuleAverage from "../../module/report/averages/ModuleAverage";
-import ModuleReport from "../../module/report/ModuleReport";
+import ModuleAverage from "../../module/report/averages/ModuleAverage.js";
+import ModuleReport from "../../module/report/ModuleReport.js";
 
-import ReportType from "../../types/ReportType";
+import ReportType from "../../types/ReportType.js";
 
-import MathUtil from "../../utils/MathUtil";
-import ObjectUtil from "../../utils/ObjectUtil";
-import StringUtil from "../../utils/StringUtil";
+import MathUtil from "../../utils/MathUtil.js";
+import ObjectUtil from "../../utils/ObjectUtil.js";
+import StringUtil from "../../utils/StringUtil.js";
 
 /**
  * Provides the default project report object which stores data pertaining to all modules / files contained.

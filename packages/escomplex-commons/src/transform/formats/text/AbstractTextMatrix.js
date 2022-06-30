@@ -1,5 +1,5 @@
-import ObjectUtil from "../../../utils/ObjectUtil";
-import ReportType from "../../../types/ReportType";
+import ObjectUtil from "../../../utils/ObjectUtil.js";
+import ReportType from "../../../types/ReportType.js";
 
 /**
  * Provides the base text format transform for ProjectReport matrix list entries.

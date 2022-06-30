@@ -1,9 +1,9 @@
-import AggregateReport from "./AggregateReport";
-import AnalyzeError from "../../analyze/AnalyzeError";
+import AggregateReport from "./AggregateReport.js";
+import AnalyzeError from "../../analyze/AnalyzeError.js";
 
 // import NestedMethodReport     from './NestedMethodReport';
 
-import ObjectUtil from "../../utils/ObjectUtil";
+import ObjectUtil from "../../utils/ObjectUtil.js";
 
 /**
  * Provides the method report object which stores data pertaining to a single method / function.

@@ -1,7 +1,6 @@
-import ESComplexModule from "@ponticus/escomplex-module/dist/ESComplexModule";
+import { ESComplexModule } from "@ponticus/escomplex-module";
 
-import ModuleReport from "@ponticus/escomplex-commons/dist/module/report/ModuleReport";
-import ProjectReport from "@ponticus/escomplex-commons/dist/project/report/ProjectReport";
+import { ModuleReport, ProjectReport } from "@ponticus/escomplex-commons";
 
 import Plugins from "./Plugins";
 

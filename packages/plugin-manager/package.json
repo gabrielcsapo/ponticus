@@ -3,10 +3,6 @@
   "version": "0.2.0",
   "description": "Provides a plugin manager that dispatches events to loaded plugins.",
   "homepage": "https://github.com/typhonjs-node-plugin/typhonjs-plugin-manager",
-  "license": "MPL-2.0",
-  "author": {
-    "name": "typhonrt"
-  },
   "main": "./dist/PluginManager.js",
   "repository": {
     "type": "git",
@@ -21,7 +17,7 @@
     "vitest": "^0.16.0"
   },
   "dependencies": {
-    "backbone-esnext-events": "<1.0.0"
+    "@ponticus/backbone-esnext-events": "<1.0.0"
   },
   "scripts": {
     "build": "swc src -d dist",

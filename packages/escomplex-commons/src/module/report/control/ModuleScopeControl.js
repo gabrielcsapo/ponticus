@@ -1,6 +1,6 @@
-import ClassReport from "../ClassReport";
-import ClassMethodReport from "../ClassMethodReport";
-import ModuleMethodReport from "../ModuleMethodReport";
+import ClassReport from "../ClassReport.js";
+import ClassMethodReport from "../ClassMethodReport.js";
+import ModuleMethodReport from "../ModuleMethodReport.js";
 
 /**
  * ModuleScopeControl

@@ -1,7 +1,7 @@
 /* eslint-disable eqeqeq */
-import ASTUtil from "./ASTUtil";
+import ASTUtil from "./ASTUtil.js";
 
-import expressionPrecedence from "./expressionPrecedence";
+import expressionPrecedence from "./expressionPrecedence.js";
 
 let ArrayExpression,
   BinaryExpression,

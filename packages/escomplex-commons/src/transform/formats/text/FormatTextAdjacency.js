@@ -1,4 +1,4 @@
-import AbstractTextMatrix from "./AbstractTextMatrix";
+import AbstractTextMatrix from "./AbstractTextMatrix.js";
 
 /**
  * Provides a format transform for ModuleReport / ProjectReport instances converting a matrix list into plain text.

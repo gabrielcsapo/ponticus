@@ -1,5 +1,5 @@
-import FormatText from "../text/FormatText";
-import SU from "../../../utils/StringUtil";
+import FormatText from "../text/FormatText.js";
+import SU from "../../../utils/StringUtil.js";
 
 /**
  * Provides a format transform for ModuleReport / ProjectReport instances converting them to a markdown string.

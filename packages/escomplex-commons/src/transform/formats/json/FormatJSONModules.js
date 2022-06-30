@@ -1,4 +1,4 @@
-import ReportType from "../../../types/ReportType";
+import ReportType from "../../../types/ReportType.js";
 
 /**
  * Provides a format transform for ESComplex ModuleReport / ProjectReport instances converting them to JSON that

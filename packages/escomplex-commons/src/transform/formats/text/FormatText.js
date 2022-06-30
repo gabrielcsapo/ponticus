@@ -1,8 +1,8 @@
-import AbstractFormatText from "./AbstractFormatText";
+import AbstractFormatText from "./AbstractFormatText.js";
 
-import ReportType from "../../../types/ReportType";
-import SU from "../../../utils/StringUtil";
-import TransformFormat from "../../TransformFormat";
+import ReportType from "../../../types/ReportType.js";
+import SU from "../../../utils/StringUtil.js";
+import TransformFormat from "../../TransformFormat.js";
 
 /**
  * Provides a format transform for ModuleReport / ProjectReport instances converting them to plain text.

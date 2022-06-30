@@ -1,6 +1,6 @@
 import path from "path";
 
-import EventProxy from "backbone-esnext-events/dist/EventProxy";
+import { EventProxy } from "@ponticus/backbone-esnext-events";
 
 import PluginEntry from "./PluginEntry.js";
 import PluginEvent from "./PluginEvent.js";

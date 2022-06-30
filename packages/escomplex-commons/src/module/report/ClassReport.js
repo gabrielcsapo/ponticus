@@ -1,12 +1,12 @@
-import AbstractReport from "./AbstractReport";
-import AggregateReport from "./AggregateReport";
-import ClassMethodReport from "./ClassMethodReport";
-import MethodAverage from "./averages/MethodAverage";
+import AbstractReport from "./AbstractReport.js";
+import AggregateReport from "./AggregateReport.js";
+import ClassMethodReport from "./ClassMethodReport.js";
+import MethodAverage from "./averages/MethodAverage.js";
 
-import AnalyzeError from "../../analyze/AnalyzeError";
-import ReportType from "../../types/ReportType";
-import ObjectUtil from "../../utils/ObjectUtil";
-import TransformFormat from "../../transform/TransformFormat";
+import AnalyzeError from "../../analyze/AnalyzeError.js";
+import ReportType from "../../types/ReportType.js";
+import ObjectUtil from "../../utils/ObjectUtil.js";
+import TransformFormat from "../../transform/TransformFormat.js";
 
 /**
  * Provides the class report object which stores data pertaining to a single ES6 class.

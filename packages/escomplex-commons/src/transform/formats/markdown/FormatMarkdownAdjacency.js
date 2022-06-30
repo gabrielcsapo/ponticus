@@ -1,4 +1,4 @@
-import FormatTextAdjacency from "../text/FormatTextAdjacency";
+import FormatTextAdjacency from "../text/FormatTextAdjacency.js";
 
 /**
  * Provides a format transform for ModuleReport / ProjectReport instances converting a matrix list into markdown.

@@ -1,6 +1,6 @@
-import ASTData from "./ASTData";
+import ASTData from "./ASTData.js";
 
-import astSyntax from "./astSyntax";
+import astSyntax from "./astSyntax.js";
 
 /**
  * ASTState

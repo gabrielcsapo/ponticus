@@ -1,4 +1,4 @@
-import TransformFormat from "../../transform/TransformFormat";
+import TransformFormat from "../../transform/TransformFormat.js";
 
 /**
  * Provides several helper methods to work with method oriented data stored as `this.aggregate` in `ClassReport` /

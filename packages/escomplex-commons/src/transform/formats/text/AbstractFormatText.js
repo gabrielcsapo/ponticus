@@ -1,6 +1,6 @@
-import ObjectUtil from "../../../utils/ObjectUtil";
-import ReportType from "../../../types/ReportType";
-import StringUtil from "../../../utils/StringUtil";
+import ObjectUtil from "../../../utils/ObjectUtil.js";
+import ReportType from "../../../types/ReportType.js";
+import StringUtil from "../../../utils/StringUtil.js";
 
 /**
  * Provides the base text format transform for ModuleReport / ProjectReport instances.
