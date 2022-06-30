@@ -1,5 +1,7 @@
 import ASTWalker from "./ASTWalker.js";
 
+export { ASTWalker };
+
 /**
  * Default walker instance.
  * @type {ASTWalker}

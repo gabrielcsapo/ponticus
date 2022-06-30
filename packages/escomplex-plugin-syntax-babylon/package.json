@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "homepage": "https://github.com/typhonjs-node-escomplex/escomplex-plugin-syntax-babylon/",
   "description": "Provides a plugin for typhonjs-escomplex module processing which loads syntax definitions for trait resolution for Babylon AST.",
-  "main": "./dist/PluginSyntaxBabylon",
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js"
+  },
   "dependencies": {
     "@ponticus/escomplex-commons": "^0.1.0",
     "escomplex-plugin-syntax-estree": "^0.1.0"

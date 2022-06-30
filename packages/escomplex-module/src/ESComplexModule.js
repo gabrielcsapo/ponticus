@@ -1,5 +1,5 @@
-import ASTWalker from "@ponticus/ast-walker/ASTWalker";
-import ModuleScopeControl from "@ponticus/escomplex-commons/module/report/control/ModuleScopeControl";
+import { ASTWalker } from "@ponticus/ast-walker";
+import { ModuleScopeControl } from "@ponticus/escomplex-commons";
 
 import Plugins from "./Plugins";
 

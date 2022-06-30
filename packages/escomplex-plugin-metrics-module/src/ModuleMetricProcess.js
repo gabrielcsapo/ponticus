@@ -1,4 +1,4 @@
-import HalsteadArray from "@ponticus/escomplex-commons/module/traits/HalsteadArray";
+import { HalsteadArray } from "@ponticus/escomplex-commons";
 
 /**
  * Provides the main processing of syntax data for all default metrics gathered.

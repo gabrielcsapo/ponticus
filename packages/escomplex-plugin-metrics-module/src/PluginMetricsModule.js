@@ -1,7 +1,7 @@
-import ModuleMetricAverage from "./ModuleMetricAverage";
-import ModuleMetricCalculate from "./ModuleMetricCalculate";
-import ModuleMetricPostAverage from "./ModuleMetricPostAverage";
-import ModuleMetricProcess from "./ModuleMetricProcess";
+import ModuleMetricAverage from "./ModuleMetricAverage.js";
+import ModuleMetricCalculate from "./ModuleMetricCalculate.js";
+import ModuleMetricPostAverage from "./ModuleMetricPostAverage.js";
+import ModuleMetricProcess from "./ModuleMetricProcess.js";
 
 /**
  * Provides a typhonjs-escomplex-module / ESComplexModule plugin which gathers and calculates all default metrics.

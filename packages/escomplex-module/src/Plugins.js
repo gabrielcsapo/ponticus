@@ -1,9 +1,9 @@
-import PluginMetricsModule from "@ponticus/escomplex-plugin-metrics-module/PluginMetricsModule";
-import PluginSyntaxBabylon from "@ponticus/escomplex-plugin-syntax-babylon/PluginSyntaxBabylon";
+import { PluginMetricsModule } from "@ponticus/escomplex-plugin-metrics-module";
+import { PluginSyntaxBabylon } from "@ponticus/escomplex-plugin-syntax-babylon";
 
-import ModuleReport from "@ponticus/escomplex-commons/module/report/ModuleReport";
+import { ModuleReport } from "@ponticus/escomplex-commons";
 
-import PluginManager from "@ponticus/plugin-manager/PluginManager";
+import { PluginManager } from "@ponticus/plugin-manager";
 
 /**
  * Provides a wrapper around PluginManager for ESComplexModule. Several convenience methods for the plugin callbacks
