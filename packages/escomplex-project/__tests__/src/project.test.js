@@ -1,6 +1,8 @@
 import fs from "fs";
 import path from "path";
 
+import { test, describe, expect, beforeEach, afterEach } from "vitest";
+
 import parsers from "../util/parsers";
 import * as testconfig from "../util/testconfig";
 
@@ -167,9 +169,10 @@ if (testconfig.modules["project"]) {
       describe("no modules:", () => {
         let result;
 
-        beforeEach(() => {
-          result = escomplexProject.analyze([]);
-        });
+        beforeEach,
+          afterEach(() => {
+            result = escomplexProject.analyze([]);
+          });
 
         afterEach(() => {
           result = undefined;
@@ -260,12 +263,9 @@ if (testconfig.modules["project"]) {
           expect(result.modules[0].aggregate.cyclomatic).toBe(2);
         });
 
-        test(
-          "first module aggregate has correct cyclomatic complexity density",
-          () => {
-            expect(result.modules[0].aggregate.cyclomaticDensity).toBe(50);
-          }
-        );
+        test("first module aggregate has correct cyclomatic complexity density", () => {
+          expect(result.modules[0].aggregate.cyclomaticDensity).toBe(50);
+        });
 
         test("first module methods is empty", () => {
           expect(result.modules[0].methods.length).toBe(0);
@@ -276,7 +276,9 @@ if (testconfig.modules["project"]) {
         });
 
         test("first module aggregate has correct Halstead distinct operators", () => {
-          expect(result.modules[0].aggregate.halstead.operators.distinct).toBe(2);
+          expect(result.modules[0].aggregate.halstead.operators.distinct).toBe(
+            2
+          );
         });
 
         test("first module aggregate has correct Halstead total operands", () => {
@@ -284,22 +286,22 @@ if (testconfig.modules["project"]) {
         });
 
         test("first module aggregate has correct Halstead distinct operands", () => {
-          expect(result.modules[0].aggregate.halstead.operands.distinct).toBe(3);
+          expect(result.modules[0].aggregate.halstead.operands.distinct).toBe(
+            3
+          );
         });
 
-        test(
-          "first module aggregate has correct Halstead operator identifier length",
-          () => {
-            expect(result.modules[0].aggregate.halstead.operators.identifiers.length).toBe(result.modules[0].aggregate.halstead.operators.distinct);
-          }
-        );
+        test("first module aggregate has correct Halstead operator identifier length", () => {
+          expect(
+            result.modules[0].aggregate.halstead.operators.identifiers.length
+          ).toBe(result.modules[0].aggregate.halstead.operators.distinct);
+        });
 
-        test(
-          "first module aggregate has correct Halstead operand identifier length",
-          () => {
-            expect(result.modules[0].aggregate.halstead.operands.identifiers.length).toBe(result.modules[0].aggregate.halstead.operands.distinct);
-          }
-        );
+        test("first module aggregate has correct Halstead operand identifier length", () => {
+          expect(
+            result.modules[0].aggregate.halstead.operands.identifiers.length
+          ).toBe(result.modules[0].aggregate.halstead.operands.distinct);
+        });
 
         test("first module aggregate has correct Halstead length", () => {
           expect(result.modules[0].aggregate.halstead.length).toBe(5);
@@ -404,12 +406,9 @@ if (testconfig.modules["project"]) {
           expect(result.modules[0].aggregate.cyclomatic).toBe(2);
         });
 
-        test(
-          "first module aggregate has correct cyclomatic complexity density",
-          () => {
-            expect(result.modules[0].aggregate.cyclomaticDensity).toBe(50);
-          }
-        );
+        test("first module aggregate has correct cyclomatic complexity density", () => {
+          expect(result.modules[0].aggregate.cyclomaticDensity).toBe(50);
+        });
 
         test("first module methods is empty", () => {
           expect(result.modules[0].methods.length).toBe(0);
@@ -420,7 +419,9 @@ if (testconfig.modules["project"]) {
         });
 
         test("first module aggregate has correct Halstead distinct operators", () => {
-          expect(result.modules[0].aggregate.halstead.operators.distinct).toBe(2);
+          expect(result.modules[0].aggregate.halstead.operators.distinct).toBe(
+            2
+          );
         });
 
         test("first module aggregate has correct Halstead total operands", () => {
@@ -428,22 +429,22 @@ if (testconfig.modules["project"]) {
         });
 
         test("first module aggregate has correct Halstead distinct operands", () => {
-          expect(result.modules[0].aggregate.halstead.operands.distinct).toBe(3);
+          expect(result.modules[0].aggregate.halstead.operands.distinct).toBe(
+            3
+          );
         });
 
-        test(
-          "first module aggregate has correct Halstead operator identifier length",
-          () => {
-            expect(result.modules[0].aggregate.halstead.operators.identifiers.length).toBe(result.modules[0].aggregate.halstead.operators.distinct);
-          }
-        );
+        test("first module aggregate has correct Halstead operator identifier length", () => {
+          expect(
+            result.modules[0].aggregate.halstead.operators.identifiers.length
+          ).toBe(result.modules[0].aggregate.halstead.operators.distinct);
+        });
 
-        test(
-          "first module aggregate has correct Halstead operand identifier length",
-          () => {
-            expect(result.modules[0].aggregate.halstead.operands.identifiers.length).toBe(result.modules[0].aggregate.halstead.operands.distinct);
-          }
-        );
+        test("first module aggregate has correct Halstead operand identifier length", () => {
+          expect(
+            result.modules[0].aggregate.halstead.operands.identifiers.length
+          ).toBe(result.modules[0].aggregate.halstead.operands.distinct);
+        });
 
         test("first module aggregate has correct Halstead length", () => {
           expect(result.modules[0].aggregate.halstead.length).toBe(5);
@@ -522,7 +523,9 @@ if (testconfig.modules["project"]) {
         });
 
         test("mean per-function Halstead effort is correct", () => {
-          expect(result.moduleAverage.methodAverage.halstead.effort).toBe(141.804);
+          expect(result.moduleAverage.methodAverage.halstead.effort).toBe(
+            141.804
+          );
         });
 
         test("mean per-function parameter count is correct", () => {
@@ -565,21 +568,18 @@ if (testconfig.modules["project"]) {
           expect(reportsOnly.visibilityList).not.toBeDefined();
         });
 
-        test(
-          "should have default coreSize and visibilityMatrix if we call with noCoreSize",
-          () => {
-            const results = escomplexProject.analyze(modules, {
-              noCoreSize: true,
-            });
+        test("should have default coreSize and visibilityMatrix if we call with noCoreSize", () => {
+          const results = escomplexProject.analyze(modules, {
+            noCoreSize: true,
+          });
 
-            expect(results.coreSize).toBe(0);
-            expect(results.visibilityList).not.toBeDefined();
+          expect(results.coreSize).toBe(0);
+          expect(results.visibilityList).not.toBeDefined();
 
-            // make sure we still have a few things though
-            expect(results.adjacencyList).toBeTruthy();
-            expect(results.moduleAverage.methodAverage.sloc.logical).toBeTruthy();
-          }
-        );
+          // make sure we still have a few things though
+          expect(results.adjacencyList).toBeTruthy();
+          expect(results.moduleAverage.methodAverage.sloc.logical).toBeTruthy();
+        });
 
         test("should be able to run process", () => {
           const fullReport = escomplexProject.analyze(modules);
@@ -609,27 +609,25 @@ if (testconfig.modules["project"]) {
         });
       });
 
-      describe(
-        "local source + NPM module @ponticus/escomplex-commons test w/ serializeModules false:",
-        () => {
-          let result;
+      describe("local source + NPM module @ponticus/escomplex-commons test w/ serializeModules false:", () => {
+        let result;
 
-          beforeEach(() => {
-            result = escomplexProject.analyze(s_LOCAL_TEST_DATA, {
-              serializeModules: false,
-            });
+        beforeEach(() => {
+          result = escomplexProject.analyze(s_LOCAL_TEST_DATA, {
+            serializeModules: false,
           });
+        });
 
-          afterEach(() => {
-            result = undefined;
-          });
+        afterEach(() => {
+          result = undefined;
+        });
 
-          test("modules are in correct order", () => {
-            // TODO REMOVE
-            // fs.writeFileSync(process.cwd() + '/test/fixture/project-no-modules.json', result.toFormat('json', { spacing: 3 }), 'utf8');
+        test("modules are in correct order", () => {
+          // TODO REMOVE
+          // fs.writeFileSync(process.cwd() + '/test/fixture/project-no-modules.json', result.toFormat('json', { spacing: 3 }), 'utf8');
 
-            // TODO REMOVE
-            /*
+          // TODO REMOVE
+          /*
 result.modules.forEach((module, index) =>
 {
    console.log(`assert.strictEqual(result.modules[${index}].filePath, '${module.filePath}');`);
@@ -640,326 +638,457 @@ result.modules.forEach((module, index) =>
    console.log(`assert.strictEqual(result.modules[${index}].srcPath, '${module.srcPath}');`);
 });
 */
-            expect(result.modules[0].filePath).toBe("./src/ESComplexProject.js");
-            expect(result.modules[1].filePath).toBe("./src/index.js");
-            expect(result.modules[2].filePath).toBe("./src/Plugins.js");
-            expect(result.modules[3].filePath).toBe("./test/fixture/testImportNPMAlias.js");
-            expect(result.modules[4].filePath).toBe("./test/fixture/testRequireNPMAlias.js");
-            expect(result.modules[5].filePath).toBe("./node_modules/@ponticus/escomplex-commons/src/analyze/AnalyzeError.js");
-            expect(result.modules[6].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js"
-            );
-            expect(result.modules[7].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/module/report/AbstractReport.js"
-            );
-            expect(result.modules[8].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js"
-            );
-            expect(result.modules[9].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js"
-            );
-            expect(result.modules[10].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js"
-            );
-            expect(result.modules[11].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js"
-            );
-            expect(result.modules[12].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/module/report/ClassReport.js"
-            );
-            expect(result.modules[13].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/module/report/HalsteadData.js"
-            );
-            expect(result.modules[14].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/module/report/MethodReport.js"
-            );
-            expect(result.modules[15].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/module/report/ModuleReport.js"
-            );
-            expect(result.modules[16].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/module/traits/actualize.js"
-            );
-            expect(result.modules[17].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/module/traits/HalsteadArray.js"
-            );
-            expect(result.modules[18].filePath).toBe("./node_modules/@ponticus/escomplex-commons/src/module/traits/Trait.js");
-            expect(result.modules[19].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/module/traits/TraitHalstead.js"
-            );
-            expect(result.modules[20].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/module/traits/TraitUtil.js"
-            );
-            expect(result.modules[21].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/project/report/ProjectReport.js"
-            );
-            expect(result.modules[22].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js"
-            );
-            expect(result.modules[23].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js"
-            );
-            expect(result.modules[24].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js"
-            );
-            expect(result.modules[25].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js"
-            );
-            expect(result.modules[26].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js"
-            );
-            expect(result.modules[27].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js"
-            );
-            expect(result.modules[28].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js"
-            );
-            expect(result.modules[29].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js"
-            );
-            expect(result.modules[30].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js"
-            );
-            expect(result.modules[31].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js"
-            );
-            expect(result.modules[32].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js"
-            );
-            expect(result.modules[33].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js"
-            );
-            expect(result.modules[34].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js"
-            );
-            expect(result.modules[35].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js"
-            );
-            expect(result.modules[36].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js"
-            );
-            expect(result.modules[37].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js"
-            );
-            expect(result.modules[38].filePath).toBe(
-              "./node_modules/@ponticus/escomplex-commons/src/transform/TransformFormat.js"
-            );
-            expect(result.modules[39].filePath).toBe("./node_modules/@ponticus/escomplex-commons/src/types/ReportType.js");
-            expect(result.modules[40].filePath).toBe("./node_modules/@ponticus/escomplex-commons/src/utils/Enum.js");
-            expect(result.modules[41].filePath).toBe("./node_modules/@ponticus/escomplex-commons/src/utils/MathUtil.js");
-            expect(result.modules[42].filePath).toBe("./node_modules/@ponticus/escomplex-commons/src/utils/ObjectUtil.js");
-            expect(result.modules[43].filePath).toBe("./node_modules/@ponticus/escomplex-commons/src/utils/StringUtil.js");
-            expect(result.modules[44].filePath).toBe("./node_modules/typhonjs-escomplex-module/src/ESComplexModule.js");
-            expect(result.modules[45].filePath).toBe("./node_modules/typhonjs-escomplex-module/src/index.js");
-            expect(result.modules[46].filePath).toBe("./node_modules/typhonjs-escomplex-module/src/Plugins.js");
-
-            expect(result.modules[0].srcPath).toBe("./src/ESComplexProject.js");
-            expect(result.modules[1].srcPath).toBe("./src/index.js");
-            expect(result.modules[2].srcPath).toBe("./src/Plugins.js");
-            expect(result.modules[3].srcPath).toBe("./test/fixture/testImportNPMAlias.js");
-            expect(result.modules[4].srcPath).toBe("./test/fixture/testRequireNPMAlias.js");
-            expect(result.modules[5].srcPath).toBe("@ponticus/escomplex-commons/src/analyze/AnalyzeError.js");
-            expect(result.modules[6].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js"
-            );
-            expect(result.modules[7].srcPath).toBe("@ponticus/escomplex-commons/src/module/report/AbstractReport.js");
-            expect(result.modules[8].srcPath).toBe("@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js");
-            expect(result.modules[9].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js"
-            );
-            expect(result.modules[10].srcPath).toBe("@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js");
-            expect(result.modules[11].srcPath).toBe("@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js");
-            expect(result.modules[12].srcPath).toBe("@ponticus/escomplex-commons/src/module/report/ClassReport.js");
-            expect(result.modules[13].srcPath).toBe("@ponticus/escomplex-commons/src/module/report/HalsteadData.js");
-            expect(result.modules[14].srcPath).toBe("@ponticus/escomplex-commons/src/module/report/MethodReport.js");
-            expect(result.modules[15].srcPath).toBe("@ponticus/escomplex-commons/src/module/report/ModuleReport.js");
-            expect(result.modules[16].srcPath).toBe("@ponticus/escomplex-commons/src/module/traits/actualize.js");
-            expect(result.modules[17].srcPath).toBe("@ponticus/escomplex-commons/src/module/traits/HalsteadArray.js");
-            expect(result.modules[18].srcPath).toBe("@ponticus/escomplex-commons/src/module/traits/Trait.js");
-            expect(result.modules[19].srcPath).toBe("@ponticus/escomplex-commons/src/module/traits/TraitHalstead.js");
-            expect(result.modules[20].srcPath).toBe("@ponticus/escomplex-commons/src/module/traits/TraitUtil.js");
-            expect(result.modules[21].srcPath).toBe("@ponticus/escomplex-commons/src/project/report/ProjectReport.js");
-            expect(result.modules[22].srcPath).toBe("@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js");
-            expect(result.modules[23].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js"
-            );
-            expect(result.modules[24].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js"
-            );
-            expect(result.modules[25].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js"
-            );
-            expect(result.modules[26].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js"
-            );
-            expect(result.modules[27].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js"
-            );
-            expect(result.modules[28].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js"
-            );
-            expect(result.modules[29].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js"
-            );
-            expect(result.modules[30].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js"
-            );
-            expect(result.modules[31].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js"
-            );
-            expect(result.modules[32].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js"
-            );
-            expect(result.modules[33].srcPath).toBe("@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js");
-            expect(result.modules[34].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js"
-            );
-            expect(result.modules[35].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js"
-            );
-            expect(result.modules[36].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js"
-            );
-            expect(result.modules[37].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js"
-            );
-            expect(result.modules[38].srcPath).toBe("@ponticus/escomplex-commons/src/transform/TransformFormat.js");
-            expect(result.modules[39].srcPath).toBe("@ponticus/escomplex-commons/src/types/ReportType.js");
-            expect(result.modules[40].srcPath).toBe("@ponticus/escomplex-commons/src/utils/Enum.js");
-            expect(result.modules[41].srcPath).toBe("@ponticus/escomplex-commons/src/utils/MathUtil.js");
-            expect(result.modules[42].srcPath).toBe("@ponticus/escomplex-commons/src/utils/ObjectUtil.js");
-            expect(result.modules[43].srcPath).toBe("@ponticus/escomplex-commons/src/utils/StringUtil.js");
-            expect(result.modules[44].srcPath).toBe("typhonjs-escomplex-module/src/ESComplexModule.js");
-            expect(result.modules[45].srcPath).toBe("typhonjs-escomplex-module/src/index.js");
-            expect(result.modules[46].srcPath).toBe("typhonjs-escomplex-module/src/Plugins.js");
-
-            expect(result.modules[45].srcPathAlias).toBe("typhonjs-escomplex-module");
-          });
-
-          test(
-            "modules only contains object hash w/ filePath, srcPath and srcPathAlias entries",
-            () => {
-              const testString =
-                '[{"filePath":"./src/ESComplexProject.js","srcPath":"./src/ESComplexProject.js"},{"filePath":"./src/index.js","srcPath":"./src/index.js"},{"filePath":"./src/Plugins.js","srcPath":"./src/Plugins.js"},{"filePath":"./test/fixture/testImportNPMAlias.js","srcPath":"./test/fixture/testImportNPMAlias.js"},{"filePath":"./test/fixture/testRequireNPMAlias.js","srcPath":"./test/fixture/testRequireNPMAlias.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/analyze/AnalyzeError.js","srcPath":"@ponticus/escomplex-commons/src/analyze/AnalyzeError.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js","srcPath":"@ponticus/escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/report/AbstractReport.js","srcPath":"@ponticus/escomplex-commons/src/module/report/AbstractReport.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js","srcPath":"@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js","srcPath":"@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js","srcPath":"@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js","srcPath":"@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/report/ClassReport.js","srcPath":"@ponticus/escomplex-commons/src/module/report/ClassReport.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/report/HalsteadData.js","srcPath":"@ponticus/escomplex-commons/src/module/report/HalsteadData.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/report/MethodReport.js","srcPath":"@ponticus/escomplex-commons/src/module/report/MethodReport.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/report/ModuleReport.js","srcPath":"@ponticus/escomplex-commons/src/module/report/ModuleReport.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/traits/actualize.js","srcPath":"@ponticus/escomplex-commons/src/module/traits/actualize.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/traits/HalsteadArray.js","srcPath":"@ponticus/escomplex-commons/src/module/traits/HalsteadArray.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/traits/Trait.js","srcPath":"@ponticus/escomplex-commons/src/module/traits/Trait.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/traits/TraitHalstead.js","srcPath":"@ponticus/escomplex-commons/src/module/traits/TraitHalstead.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/traits/TraitUtil.js","srcPath":"@ponticus/escomplex-commons/src/module/traits/TraitUtil.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/project/report/ProjectReport.js","srcPath":"@ponticus/escomplex-commons/src/project/report/ProjectReport.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/TransformFormat.js","srcPath":"@ponticus/escomplex-commons/src/transform/TransformFormat.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/types/ReportType.js","srcPath":"@ponticus/escomplex-commons/src/types/ReportType.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/utils/Enum.js","srcPath":"@ponticus/escomplex-commons/src/utils/Enum.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/utils/MathUtil.js","srcPath":"@ponticus/escomplex-commons/src/utils/MathUtil.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/utils/ObjectUtil.js","srcPath":"@ponticus/escomplex-commons/src/utils/ObjectUtil.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/utils/StringUtil.js","srcPath":"@ponticus/escomplex-commons/src/utils/StringUtil.js"},{"filePath":"./node_modules/typhonjs-escomplex-module/src/ESComplexModule.js","srcPath":"typhonjs-escomplex-module/src/ESComplexModule.js"},{"filePath":"./node_modules/typhonjs-escomplex-module/src/index.js","srcPath":"typhonjs-escomplex-module/src/index.js","srcPathAlias":"typhonjs-escomplex-module"},{"filePath":"./node_modules/typhonjs-escomplex-module/src/Plugins.js","srcPath":"typhonjs-escomplex-module/src/Plugins.js"}]';
-
-              expect(JSON.stringify(result.modules)).toBe(testString);
-            }
+          expect(result.modules[0].filePath).toBe("./src/ESComplexProject.js");
+          expect(result.modules[1].filePath).toBe("./src/index.js");
+          expect(result.modules[2].filePath).toBe("./src/Plugins.js");
+          expect(result.modules[3].filePath).toBe(
+            "./test/fixture/testImportNPMAlias.js"
           );
-        }
-      );
+          expect(result.modules[4].filePath).toBe(
+            "./test/fixture/testRequireNPMAlias.js"
+          );
+          expect(result.modules[5].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/analyze/AnalyzeError.js"
+          );
+          expect(result.modules[6].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js"
+          );
+          expect(result.modules[7].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/module/report/AbstractReport.js"
+          );
+          expect(result.modules[8].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js"
+          );
+          expect(result.modules[9].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js"
+          );
+          expect(result.modules[10].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js"
+          );
+          expect(result.modules[11].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js"
+          );
+          expect(result.modules[12].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/module/report/ClassReport.js"
+          );
+          expect(result.modules[13].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/module/report/HalsteadData.js"
+          );
+          expect(result.modules[14].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/module/report/MethodReport.js"
+          );
+          expect(result.modules[15].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/module/report/ModuleReport.js"
+          );
+          expect(result.modules[16].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/module/traits/actualize.js"
+          );
+          expect(result.modules[17].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/module/traits/HalsteadArray.js"
+          );
+          expect(result.modules[18].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/module/traits/Trait.js"
+          );
+          expect(result.modules[19].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/module/traits/TraitHalstead.js"
+          );
+          expect(result.modules[20].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/module/traits/TraitUtil.js"
+          );
+          expect(result.modules[21].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/project/report/ProjectReport.js"
+          );
+          expect(result.modules[22].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js"
+          );
+          expect(result.modules[23].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js"
+          );
+          expect(result.modules[24].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js"
+          );
+          expect(result.modules[25].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js"
+          );
+          expect(result.modules[26].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js"
+          );
+          expect(result.modules[27].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js"
+          );
+          expect(result.modules[28].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js"
+          );
+          expect(result.modules[29].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js"
+          );
+          expect(result.modules[30].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js"
+          );
+          expect(result.modules[31].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js"
+          );
+          expect(result.modules[32].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js"
+          );
+          expect(result.modules[33].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js"
+          );
+          expect(result.modules[34].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js"
+          );
+          expect(result.modules[35].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js"
+          );
+          expect(result.modules[36].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js"
+          );
+          expect(result.modules[37].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js"
+          );
+          expect(result.modules[38].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/transform/TransformFormat.js"
+          );
+          expect(result.modules[39].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/types/ReportType.js"
+          );
+          expect(result.modules[40].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/utils/Enum.js"
+          );
+          expect(result.modules[41].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/utils/MathUtil.js"
+          );
+          expect(result.modules[42].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/utils/ObjectUtil.js"
+          );
+          expect(result.modules[43].filePath).toBe(
+            "./node_modules/@ponticus/escomplex-commons/src/utils/StringUtil.js"
+          );
+          expect(result.modules[44].filePath).toBe(
+            "./node_modules/typhonjs-escomplex-module/src/ESComplexModule.js"
+          );
+          expect(result.modules[45].filePath).toBe(
+            "./node_modules/typhonjs-escomplex-module/src/index.js"
+          );
+          expect(result.modules[46].filePath).toBe(
+            "./node_modules/typhonjs-escomplex-module/src/Plugins.js"
+          );
 
-      describe(
-        "local source + NPM module @ponticus/escomplex-commons and typhonjs-escomplex-module test w/ dependencies:",
-        () => {
-          let result;
+          expect(result.modules[0].srcPath).toBe("./src/ESComplexProject.js");
+          expect(result.modules[1].srcPath).toBe("./src/index.js");
+          expect(result.modules[2].srcPath).toBe("./src/Plugins.js");
+          expect(result.modules[3].srcPath).toBe(
+            "./test/fixture/testImportNPMAlias.js"
+          );
+          expect(result.modules[4].srcPath).toBe(
+            "./test/fixture/testRequireNPMAlias.js"
+          );
+          expect(result.modules[5].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/analyze/AnalyzeError.js"
+          );
+          expect(result.modules[6].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js"
+          );
+          expect(result.modules[7].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/report/AbstractReport.js"
+          );
+          expect(result.modules[8].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js"
+          );
+          expect(result.modules[9].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js"
+          );
+          expect(result.modules[10].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js"
+          );
+          expect(result.modules[11].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js"
+          );
+          expect(result.modules[12].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/report/ClassReport.js"
+          );
+          expect(result.modules[13].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/report/HalsteadData.js"
+          );
+          expect(result.modules[14].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/report/MethodReport.js"
+          );
+          expect(result.modules[15].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/report/ModuleReport.js"
+          );
+          expect(result.modules[16].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/traits/actualize.js"
+          );
+          expect(result.modules[17].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/traits/HalsteadArray.js"
+          );
+          expect(result.modules[18].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/traits/Trait.js"
+          );
+          expect(result.modules[19].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/traits/TraitHalstead.js"
+          );
+          expect(result.modules[20].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/traits/TraitUtil.js"
+          );
+          expect(result.modules[21].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/project/report/ProjectReport.js"
+          );
+          expect(result.modules[22].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js"
+          );
+          expect(result.modules[23].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js"
+          );
+          expect(result.modules[24].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js"
+          );
+          expect(result.modules[25].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js"
+          );
+          expect(result.modules[26].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js"
+          );
+          expect(result.modules[27].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js"
+          );
+          expect(result.modules[28].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js"
+          );
+          expect(result.modules[29].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js"
+          );
+          expect(result.modules[30].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js"
+          );
+          expect(result.modules[31].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js"
+          );
+          expect(result.modules[32].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js"
+          );
+          expect(result.modules[33].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js"
+          );
+          expect(result.modules[34].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js"
+          );
+          expect(result.modules[35].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js"
+          );
+          expect(result.modules[36].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js"
+          );
+          expect(result.modules[37].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js"
+          );
+          expect(result.modules[38].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/TransformFormat.js"
+          );
+          expect(result.modules[39].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/types/ReportType.js"
+          );
+          expect(result.modules[40].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/utils/Enum.js"
+          );
+          expect(result.modules[41].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/utils/MathUtil.js"
+          );
+          expect(result.modules[42].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/utils/ObjectUtil.js"
+          );
+          expect(result.modules[43].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/utils/StringUtil.js"
+          );
+          expect(result.modules[44].srcPath).toBe(
+            "typhonjs-escomplex-module/src/ESComplexModule.js"
+          );
+          expect(result.modules[45].srcPath).toBe(
+            "typhonjs-escomplex-module/src/index.js"
+          );
+          expect(result.modules[46].srcPath).toBe(
+            "typhonjs-escomplex-module/src/Plugins.js"
+          );
 
-          beforeEach(() => {
-            result = escomplexProject.analyze(s_LOCAL_TEST_DATA, {
-              commonjs: true,
-              serializeModules: false,
-            });
+          expect(result.modules[45].srcPathAlias).toBe(
+            "typhonjs-escomplex-module"
+          );
+        });
+
+        test("modules only contains object hash w/ filePath, srcPath and srcPathAlias entries", () => {
+          const testString =
+            '[{"filePath":"./src/ESComplexProject.js","srcPath":"./src/ESComplexProject.js"},{"filePath":"./src/index.js","srcPath":"./src/index.js"},{"filePath":"./src/Plugins.js","srcPath":"./src/Plugins.js"},{"filePath":"./test/fixture/testImportNPMAlias.js","srcPath":"./test/fixture/testImportNPMAlias.js"},{"filePath":"./test/fixture/testRequireNPMAlias.js","srcPath":"./test/fixture/testRequireNPMAlias.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/analyze/AnalyzeError.js","srcPath":"@ponticus/escomplex-commons/src/analyze/AnalyzeError.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js","srcPath":"@ponticus/escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/report/AbstractReport.js","srcPath":"@ponticus/escomplex-commons/src/module/report/AbstractReport.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js","srcPath":"@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js","srcPath":"@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js","srcPath":"@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js","srcPath":"@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/report/ClassReport.js","srcPath":"@ponticus/escomplex-commons/src/module/report/ClassReport.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/report/HalsteadData.js","srcPath":"@ponticus/escomplex-commons/src/module/report/HalsteadData.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/report/MethodReport.js","srcPath":"@ponticus/escomplex-commons/src/module/report/MethodReport.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/report/ModuleReport.js","srcPath":"@ponticus/escomplex-commons/src/module/report/ModuleReport.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/traits/actualize.js","srcPath":"@ponticus/escomplex-commons/src/module/traits/actualize.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/traits/HalsteadArray.js","srcPath":"@ponticus/escomplex-commons/src/module/traits/HalsteadArray.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/traits/Trait.js","srcPath":"@ponticus/escomplex-commons/src/module/traits/Trait.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/traits/TraitHalstead.js","srcPath":"@ponticus/escomplex-commons/src/module/traits/TraitHalstead.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/module/traits/TraitUtil.js","srcPath":"@ponticus/escomplex-commons/src/module/traits/TraitUtil.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/project/report/ProjectReport.js","srcPath":"@ponticus/escomplex-commons/src/project/report/ProjectReport.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js","srcPath":"@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/transform/TransformFormat.js","srcPath":"@ponticus/escomplex-commons/src/transform/TransformFormat.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/types/ReportType.js","srcPath":"@ponticus/escomplex-commons/src/types/ReportType.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/utils/Enum.js","srcPath":"@ponticus/escomplex-commons/src/utils/Enum.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/utils/MathUtil.js","srcPath":"@ponticus/escomplex-commons/src/utils/MathUtil.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/utils/ObjectUtil.js","srcPath":"@ponticus/escomplex-commons/src/utils/ObjectUtil.js"},{"filePath":"./node_modules/@ponticus/escomplex-commons/src/utils/StringUtil.js","srcPath":"@ponticus/escomplex-commons/src/utils/StringUtil.js"},{"filePath":"./node_modules/typhonjs-escomplex-module/src/ESComplexModule.js","srcPath":"typhonjs-escomplex-module/src/ESComplexModule.js"},{"filePath":"./node_modules/typhonjs-escomplex-module/src/index.js","srcPath":"typhonjs-escomplex-module/src/index.js","srcPathAlias":"typhonjs-escomplex-module"},{"filePath":"./node_modules/typhonjs-escomplex-module/src/Plugins.js","srcPath":"typhonjs-escomplex-module/src/Plugins.js"}]';
+
+          expect(JSON.stringify(result.modules)).toBe(testString);
+        });
+      });
+
+      describe("local source + NPM module @ponticus/escomplex-commons and typhonjs-escomplex-module test w/ dependencies:", () => {
+        let result;
+
+        beforeEach(() => {
+          result = escomplexProject.analyze(s_LOCAL_TEST_DATA, {
+            commonjs: true,
+            serializeModules: false,
           });
+        });
 
-          afterEach(() => {
-            result = undefined;
-          });
+        afterEach(() => {
+          result = undefined;
+        });
 
-          test("modules are in correct order", () => {
-            expect(result.modules[0].srcPath).toBe("./src/ESComplexProject.js");
-            expect(result.modules[1].srcPath).toBe("./src/index.js");
-            expect(result.modules[2].srcPath).toBe("./src/Plugins.js");
-            expect(result.modules[3].srcPath).toBe("./test/fixture/testImportNPMAlias.js");
-            expect(result.modules[4].srcPath).toBe("./test/fixture/testRequireNPMAlias.js");
-            expect(result.modules[5].srcPath).toBe("@ponticus/escomplex-commons/src/analyze/AnalyzeError.js");
-            expect(result.modules[6].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js"
-            );
-            expect(result.modules[7].srcPath).toBe("@ponticus/escomplex-commons/src/module/report/AbstractReport.js");
-            expect(result.modules[8].srcPath).toBe("@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js");
-            expect(result.modules[9].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js"
-            );
-            expect(result.modules[10].srcPath).toBe("@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js");
-            expect(result.modules[11].srcPath).toBe("@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js");
-            expect(result.modules[12].srcPath).toBe("@ponticus/escomplex-commons/src/module/report/ClassReport.js");
-            expect(result.modules[13].srcPath).toBe("@ponticus/escomplex-commons/src/module/report/HalsteadData.js");
-            expect(result.modules[14].srcPath).toBe("@ponticus/escomplex-commons/src/module/report/MethodReport.js");
-            expect(result.modules[15].srcPath).toBe("@ponticus/escomplex-commons/src/module/report/ModuleReport.js");
-            expect(result.modules[16].srcPath).toBe("@ponticus/escomplex-commons/src/module/traits/actualize.js");
-            expect(result.modules[17].srcPath).toBe("@ponticus/escomplex-commons/src/module/traits/HalsteadArray.js");
-            expect(result.modules[18].srcPath).toBe("@ponticus/escomplex-commons/src/module/traits/Trait.js");
-            expect(result.modules[19].srcPath).toBe("@ponticus/escomplex-commons/src/module/traits/TraitHalstead.js");
-            expect(result.modules[20].srcPath).toBe("@ponticus/escomplex-commons/src/module/traits/TraitUtil.js");
-            expect(result.modules[21].srcPath).toBe("@ponticus/escomplex-commons/src/project/report/ProjectReport.js");
-            expect(result.modules[22].srcPath).toBe("@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js");
-            expect(result.modules[23].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js"
-            );
-            expect(result.modules[24].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js"
-            );
-            expect(result.modules[25].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js"
-            );
-            expect(result.modules[26].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js"
-            );
-            expect(result.modules[27].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js"
-            );
-            expect(result.modules[28].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js"
-            );
-            expect(result.modules[29].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js"
-            );
-            expect(result.modules[30].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js"
-            );
-            expect(result.modules[31].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js"
-            );
-            expect(result.modules[32].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js"
-            );
-            expect(result.modules[33].srcPath).toBe("@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js");
-            expect(result.modules[34].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js"
-            );
-            expect(result.modules[35].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js"
-            );
-            expect(result.modules[36].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js"
-            );
-            expect(result.modules[37].srcPath).toBe(
-              "@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js"
-            );
-            expect(result.modules[38].srcPath).toBe("@ponticus/escomplex-commons/src/transform/TransformFormat.js");
-            expect(result.modules[39].srcPath).toBe("@ponticus/escomplex-commons/src/types/ReportType.js");
-            expect(result.modules[40].srcPath).toBe("@ponticus/escomplex-commons/src/utils/Enum.js");
-            expect(result.modules[41].srcPath).toBe("@ponticus/escomplex-commons/src/utils/MathUtil.js");
-            expect(result.modules[42].srcPath).toBe("@ponticus/escomplex-commons/src/utils/ObjectUtil.js");
-            expect(result.modules[43].srcPath).toBe("@ponticus/escomplex-commons/src/utils/StringUtil.js");
-            expect(result.modules[44].srcPath).toBe("typhonjs-escomplex-module/src/ESComplexModule.js");
-            expect(result.modules[45].srcPath).toBe("typhonjs-escomplex-module/src/index.js");
-            expect(result.modules[46].srcPath).toBe("typhonjs-escomplex-module/src/Plugins.js");
-          });
+        test("modules are in correct order", () => {
+          expect(result.modules[0].srcPath).toBe("./src/ESComplexProject.js");
+          expect(result.modules[1].srcPath).toBe("./src/index.js");
+          expect(result.modules[2].srcPath).toBe("./src/Plugins.js");
+          expect(result.modules[3].srcPath).toBe(
+            "./test/fixture/testImportNPMAlias.js"
+          );
+          expect(result.modules[4].srcPath).toBe(
+            "./test/fixture/testRequireNPMAlias.js"
+          );
+          expect(result.modules[5].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/analyze/AnalyzeError.js"
+          );
+          expect(result.modules[6].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js"
+          );
+          expect(result.modules[7].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/report/AbstractReport.js"
+          );
+          expect(result.modules[8].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js"
+          );
+          expect(result.modules[9].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js"
+          );
+          expect(result.modules[10].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js"
+          );
+          expect(result.modules[11].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js"
+          );
+          expect(result.modules[12].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/report/ClassReport.js"
+          );
+          expect(result.modules[13].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/report/HalsteadData.js"
+          );
+          expect(result.modules[14].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/report/MethodReport.js"
+          );
+          expect(result.modules[15].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/report/ModuleReport.js"
+          );
+          expect(result.modules[16].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/traits/actualize.js"
+          );
+          expect(result.modules[17].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/traits/HalsteadArray.js"
+          );
+          expect(result.modules[18].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/traits/Trait.js"
+          );
+          expect(result.modules[19].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/traits/TraitHalstead.js"
+          );
+          expect(result.modules[20].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/module/traits/TraitUtil.js"
+          );
+          expect(result.modules[21].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/project/report/ProjectReport.js"
+          );
+          expect(result.modules[22].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js"
+          );
+          expect(result.modules[23].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js"
+          );
+          expect(result.modules[24].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js"
+          );
+          expect(result.modules[25].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js"
+          );
+          expect(result.modules[26].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js"
+          );
+          expect(result.modules[27].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js"
+          );
+          expect(result.modules[28].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js"
+          );
+          expect(result.modules[29].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js"
+          );
+          expect(result.modules[30].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js"
+          );
+          expect(result.modules[31].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js"
+          );
+          expect(result.modules[32].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js"
+          );
+          expect(result.modules[33].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js"
+          );
+          expect(result.modules[34].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js"
+          );
+          expect(result.modules[35].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js"
+          );
+          expect(result.modules[36].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js"
+          );
+          expect(result.modules[37].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js"
+          );
+          expect(result.modules[38].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/transform/TransformFormat.js"
+          );
+          expect(result.modules[39].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/types/ReportType.js"
+          );
+          expect(result.modules[40].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/utils/Enum.js"
+          );
+          expect(result.modules[41].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/utils/MathUtil.js"
+          );
+          expect(result.modules[42].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/utils/ObjectUtil.js"
+          );
+          expect(result.modules[43].srcPath).toBe(
+            "@ponticus/escomplex-commons/src/utils/StringUtil.js"
+          );
+          expect(result.modules[44].srcPath).toBe(
+            "typhonjs-escomplex-module/src/ESComplexModule.js"
+          );
+          expect(result.modules[45].srcPath).toBe(
+            "typhonjs-escomplex-module/src/index.js"
+          );
+          expect(result.modules[46].srcPath).toBe(
+            "typhonjs-escomplex-module/src/Plugins.js"
+          );
+        });
 
-          test("adjacency list is correct", () => {
-            const testString =
-              '[{"row":0,"cols":[2,15,21,44]},{"row":1,"cols":[0]},{"row":3,"cols":[45]},{"row":4,"cols":[45]},{"row":5,"cols":[39]},{"row":7,"cols":[38]},{"row":8,"cols":[7,13]},{"row":10,"cols":[9]},{"row":11,"cols":[10]},{"row":12,"cols":[5,7,8,10,38,39,42]},{"row":14,"cols":[5,8]},{"row":15,"cols":[5,7,8,10,12,38,39,41,42]},{"row":16,"cols":[17,18,20]},{"row":17,"cols":[19]},{"row":21,"cols":[11,15,38,39,41,42,43]},{"row":23,"cols":[39,42]},{"row":24,"cols":[39,42]},{"row":25,"cols":[39]},{"row":26,"cols":[33,43]},{"row":27,"cols":[34]},{"row":28,"cols":[35,43]},{"row":29,"cols":[36,43]},{"row":30,"cols":[37]},{"row":31,"cols":[39,42,43]},{"row":32,"cols":[39,42]},{"row":33,"cols":[31,38,39,43]},{"row":34,"cols":[32]},{"row":35,"cols":[31,39,43]},{"row":36,"cols":[31,39,43]},{"row":37,"cols":[32]},{"row":38,"cols":[22,23,24,25,26,27,28,29,30,33,34,35,36,37,39]},{"row":39,"cols":[40]},{"row":41,"cols":[42]},{"row":43,"cols":[42]},{"row":44,"cols":[46]},{"row":45,"cols":[44]},{"row":46,"cols":[15]}]';
+        test("adjacency list is correct", () => {
+          const testString =
+            '[{"row":0,"cols":[2,15,21,44]},{"row":1,"cols":[0]},{"row":3,"cols":[45]},{"row":4,"cols":[45]},{"row":5,"cols":[39]},{"row":7,"cols":[38]},{"row":8,"cols":[7,13]},{"row":10,"cols":[9]},{"row":11,"cols":[10]},{"row":12,"cols":[5,7,8,10,38,39,42]},{"row":14,"cols":[5,8]},{"row":15,"cols":[5,7,8,10,12,38,39,41,42]},{"row":16,"cols":[17,18,20]},{"row":17,"cols":[19]},{"row":21,"cols":[11,15,38,39,41,42,43]},{"row":23,"cols":[39,42]},{"row":24,"cols":[39,42]},{"row":25,"cols":[39]},{"row":26,"cols":[33,43]},{"row":27,"cols":[34]},{"row":28,"cols":[35,43]},{"row":29,"cols":[36,43]},{"row":30,"cols":[37]},{"row":31,"cols":[39,42,43]},{"row":32,"cols":[39,42]},{"row":33,"cols":[31,38,39,43]},{"row":34,"cols":[32]},{"row":35,"cols":[31,39,43]},{"row":36,"cols":[31,39,43]},{"row":37,"cols":[32]},{"row":38,"cols":[22,23,24,25,26,27,28,29,30,33,34,35,36,37,39]},{"row":39,"cols":[40]},{"row":41,"cols":[42]},{"row":43,"cols":[42]},{"row":44,"cols":[46]},{"row":45,"cols":[44]},{"row":46,"cols":[15]}]';
 
-            expect(JSON.stringify(result.adjacencyList)).toBe(testString);
-          });
+          expect(JSON.stringify(result.adjacencyList)).toBe(testString);
+        });
 
-          test("visibility list is correct", () => {
-            const testString =
-              '[{"row":0,"cols":[0,2,5,7,8,9,10,11,12,13,15,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,46]},{"row":1,"cols":[0,1,2,5,7,8,9,10,11,12,13,15,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,46]},{"row":2,"cols":[2]},{"row":3,"cols":[3,5,7,8,9,10,12,13,15,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46]},{"row":4,"cols":[4,5,7,8,9,10,12,13,15,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46]},{"row":5,"cols":[5,39,40]},{"row":6,"cols":[6]},{"row":7,"cols":[7,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{"row":8,"cols":[7,8,13,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{"row":9,"cols":[9]},{"row":10,"cols":[9,10]},{"row":11,"cols":[9,10,11]},{"row":12,"cols":[5,7,8,9,10,12,13,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{"row":13,"cols":[13]},{"row":14,"cols":[5,7,8,13,14,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{"row":15,"cols":[5,7,8,9,10,12,13,15,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43]},{"row":16,"cols":[16,17,18,19,20]},{"row":17,"cols":[17,19]},{"row":18,"cols":[18]},{"row":19,"cols":[19]},{"row":20,"cols":[20]},{"row":21,"cols":[5,7,8,9,10,11,12,13,15,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43]},{"row":22,"cols":[22]},{"row":23,"cols":[23,39,40,42]},{"row":24,"cols":[24,39,40,42]},{"row":25,"cols":[25,39,40]},{"row":26,"cols":[22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{"row":27,"cols":[27,32,34,39,40,42]},{"row":28,"cols":[28,31,35,39,40,42,43]},{"row":29,"cols":[29,31,36,39,40,42,43]},{"row":30,"cols":[30,32,37,39,40,42]},{"row":31,"cols":[31,39,40,42,43]},{"row":32,"cols":[32,39,40,42]},{"row":33,"cols":[22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{"row":34,"cols":[32,34,39,40,42]},{"row":35,"cols":[31,35,39,40,42,43]},{"row":36,"cols":[31,36,39,40,42,43]},{"row":37,"cols":[32,37,39,40,42]},{"row":38,"cols":[22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{"row":39,"cols":[39,40]},{"row":40,"cols":[40]},{"row":41,"cols":[41,42]},{"row":42,"cols":[42]},{"row":43,"cols":[42,43]},{"row":44,"cols":[5,7,8,9,10,12,13,15,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,46]},{"row":45,"cols":[5,7,8,9,10,12,13,15,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46]},{"row":46,"cols":[5,7,8,9,10,12,13,15,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,46]}]';
+        test("visibility list is correct", () => {
+          const testString =
+            '[{"row":0,"cols":[0,2,5,7,8,9,10,11,12,13,15,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,46]},{"row":1,"cols":[0,1,2,5,7,8,9,10,11,12,13,15,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,46]},{"row":2,"cols":[2]},{"row":3,"cols":[3,5,7,8,9,10,12,13,15,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46]},{"row":4,"cols":[4,5,7,8,9,10,12,13,15,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46]},{"row":5,"cols":[5,39,40]},{"row":6,"cols":[6]},{"row":7,"cols":[7,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{"row":8,"cols":[7,8,13,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{"row":9,"cols":[9]},{"row":10,"cols":[9,10]},{"row":11,"cols":[9,10,11]},{"row":12,"cols":[5,7,8,9,10,12,13,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{"row":13,"cols":[13]},{"row":14,"cols":[5,7,8,13,14,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{"row":15,"cols":[5,7,8,9,10,12,13,15,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43]},{"row":16,"cols":[16,17,18,19,20]},{"row":17,"cols":[17,19]},{"row":18,"cols":[18]},{"row":19,"cols":[19]},{"row":20,"cols":[20]},{"row":21,"cols":[5,7,8,9,10,11,12,13,15,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43]},{"row":22,"cols":[22]},{"row":23,"cols":[23,39,40,42]},{"row":24,"cols":[24,39,40,42]},{"row":25,"cols":[25,39,40]},{"row":26,"cols":[22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{"row":27,"cols":[27,32,34,39,40,42]},{"row":28,"cols":[28,31,35,39,40,42,43]},{"row":29,"cols":[29,31,36,39,40,42,43]},{"row":30,"cols":[30,32,37,39,40,42]},{"row":31,"cols":[31,39,40,42,43]},{"row":32,"cols":[32,39,40,42]},{"row":33,"cols":[22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{"row":34,"cols":[32,34,39,40,42]},{"row":35,"cols":[31,35,39,40,42,43]},{"row":36,"cols":[31,36,39,40,42,43]},{"row":37,"cols":[32,37,39,40,42]},{"row":38,"cols":[22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{"row":39,"cols":[39,40]},{"row":40,"cols":[40]},{"row":41,"cols":[41,42]},{"row":42,"cols":[42]},{"row":43,"cols":[42,43]},{"row":44,"cols":[5,7,8,9,10,12,13,15,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,46]},{"row":45,"cols":[5,7,8,9,10,12,13,15,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46]},{"row":46,"cols":[5,7,8,9,10,12,13,15,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,46]}]';
 
-            expect(JSON.stringify(result.visibilityList)).toBe(testString);
-          });
-        }
-      );
+          expect(JSON.stringify(result.visibilityList)).toBe(testString);
+        });
+      });
 
       describe("cjs modules with dependencies:", () => {
         let result;
@@ -1307,17 +1436,14 @@ result.modules.forEach((module, index) =>
         });
 
         test("deserialize JSON object should be sufficiently fast", () => {
-          this.timeout(200);
           ProjectReport.parse(resultFixture);
         });
 
         test("running calculations should be sufficiently fast", () => {
-          this.timeout(300);
           escomplexProject.process(resultSkipCalc);
         });
 
         test("running analyze should be sufficiently fast", () => {
-          this.timeout(1400); // Relatively high for slower CI configurations.
           escomplexProject.analyze(s_LOCAL_TEST_DATA);
         });
       });
