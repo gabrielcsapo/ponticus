@@ -1,6 +1,6 @@
 "use strict";
 
-const ESLint = require("eslint");
+import ESLint from "eslint";
 
 class ESLintReporter {
   constructor(options) {
@@ -56,4 +56,4 @@ class ESLintReporter {
   }
 }
 
-module.exports = ESLintReporter;
+export default ESLintReporter;

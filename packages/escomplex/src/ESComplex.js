@@ -1,6 +1,6 @@
 import path from "path";
 
-import BabelParser from "@ponticus/babel-parser";
+import { BabelParser } from "@ponticus/babel-parser";
 
 import { ESComplexModule } from "@ponticus/escomplex-module";
 import { ESComplexProject } from "@ponticus/escomplex-project";

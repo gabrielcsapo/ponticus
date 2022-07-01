@@ -14,28 +14,32 @@
 "use strict";
 
 // node api
-const path = require("path");
+import path from "path";
 
 // node api with sugar
-const fs = require("fs-extra");
+import fs from "fs-extra";
+
+import { fileURLToPath } from "url";
 
 // vendor
-const _ = require("lodash");
-const fastglob = require("fast-glob");
-const unixify = require("unixify");
-const mkdirp = require("mkdirp");
+import _ from "lodash";
+import fastglob from "fast-glob";
+import unixify from "unixify";
+import mkdirp from "mkdirp";
 
-const ecmaFeatures = require("./ecmafeatures.js");
-const eslintBase = require("./eslintbase.js");
+import ecmaFeatures from "./ecmafeatures.js";
+import eslintBase from "./eslintbase.js";
 
 // local lib
-const util = require("./util.js");
-const OverviewHistory = require("./models/OverviewHistory.js");
-const FileHistory = require("./models/FileHistory.js");
-const Logger = require("./logger.js");
+import util from "./util.js";
+import OverviewHistory from "./models/OverviewHistory.js";
+import FileHistory from "./models/FileHistory.js";
+import Logger from "./logger.js";
 
-const ComplexityReporter = require("./reporters/complexity/index.js");
-const ESLintReporter = require("./reporters/eslint/index.js");
+import ComplexityReporter from "./reporters/complexity/index.js";
+import ESLintReporter from "./reporters/eslint/index.js";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const reporters = {};
 
@@ -400,7 +404,7 @@ async function writeFile(file, source) {
   return fs.writeFile(file, source, "utf8");
 }
 
-module.exports = {
+export default {
   getOverviewReport,
   updateHistoricalOverview,
   writeReport,

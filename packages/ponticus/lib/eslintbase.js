@@ -1,6 +1,6 @@
 "use strict";
 
-module.exports = {
+export default {
   rules: {
     quotes: [2, "single"],
     semi: [2, "always"],

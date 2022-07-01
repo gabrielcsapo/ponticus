@@ -17,4 +17,4 @@ function decorateLoggerAtLevel(level, i) {
 
 levels.forEach(decorateLoggerAtLevel);
 
-module.exports = Logger;
+export default Logger;

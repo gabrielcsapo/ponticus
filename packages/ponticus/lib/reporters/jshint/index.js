@@ -1,7 +1,7 @@
 "use strict";
 
-var JSHINT = require("jshint").JSHINT;
-var jsHintCli = require("jshint/src/cli.js");
+import { JSHINT } from "jshint";
+import jsHintCli from "jshint/src/cli.js";
 
 function process(source, options /*, reportInfo */) {
   if (options == null || Object.getOwnPropertyNames(options).length === 0) {

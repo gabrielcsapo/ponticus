@@ -1,6 +1,6 @@
 "use strict";
 
-const _ = require("lodash");
+import _ from "lodash";
 
 class History {
   constructor(data) {
@@ -34,4 +34,4 @@ class History {
   }
 }
 
-module.exports = History;
+export default History;

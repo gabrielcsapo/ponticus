@@ -1,6 +1,6 @@
 "use strict";
 
-const History = require("./History.js");
+import History from "./History.js";
 
 class FileHistory extends History {
   addReport(report, date) {
@@ -19,4 +19,4 @@ class FileHistory extends History {
   }
 }
 
-module.exports = FileHistory;
+export default FileHistory;

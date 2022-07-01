@@ -1,16 +1,73 @@
 "use strict";
 
-// Node api
-const fs = require("fs-extra");
+import fs from "fs-extra";
 
-// External libs.
-const getopt = require("posix-getopt");
+import getopt from "posix-getopt";
 
-// Local lib
-const options = require("./cli/options.json");
-const plato = require("./plato");
-const info = require("./info");
-const util = require("./util");
+import plato from "./plato.js";
+import info from "./info.js";
+import util from "./util.js";
+
+const options = {
+  h: {
+    long: "help",
+    desc: "Display this help text.",
+    type: "Boolean",
+    modal: true,
+  },
+  q: {
+    long: "quiet",
+    desc: "Reduce output to errors only",
+    type: "Boolean",
+  },
+  v: {
+    long: "version",
+    desc: "Print the version.",
+    type: "Boolean",
+    modal: true,
+  },
+  x: {
+    long: "exclude",
+    desc: "File exclusion regex",
+    type: "String",
+  },
+  d: {
+    long: "dir",
+    desc: "The output directory",
+    type: "String",
+    required: true,
+  },
+  r: {
+    long: "recurse",
+    desc: "Recursively search directories",
+    type: "Boolean",
+  },
+  l: {
+    long: "jshint",
+    desc: "Specify a jshintrc file for JSHint linting",
+    type: "String",
+  },
+  t: {
+    long: "title",
+    desc: "Title of the report",
+    type: "String",
+  },
+  D: {
+    long: "date",
+    desc: "Time to use as the report date (seconds, > 9999999999 assumed to be ms)",
+    type: "String",
+  },
+  n: {
+    long: "noempty",
+    desc: "Skips empty lines from line count",
+    type: "Boolean",
+  },
+  e: {
+    long: "eslint",
+    desc: "Specify a eslintrc file for ESLint linting",
+    type: "String",
+  },
+};
 
 async function exec(options, done) {
   if (typeof options === "function") {
@@ -114,7 +171,7 @@ function parseArgs(options) {
   return args;
 }
 
-module.exports = {
+export default {
   exec,
   options,
   args: parseArgs(options),

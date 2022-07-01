@@ -1,6 +1,8 @@
 import path from "path";
 
-import ESComplexProject from "./ESComplexProject";
+import ESComplexProject from "./ESComplexProject.js";
+
+export { ESComplexProject };
 
 /**
  * Exports the default instance of ESComplexProject which is associated with the main entry in `package.json`.

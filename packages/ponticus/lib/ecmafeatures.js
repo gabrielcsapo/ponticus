@@ -1,6 +1,6 @@
 "use strict";
 
-module.exports = {
+export default {
   // enable parsing of arrow functions
   arrowFunctions: true,
   // enable parsing of let/const

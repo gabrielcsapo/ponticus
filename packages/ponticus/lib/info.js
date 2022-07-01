@@ -1,8 +1,75 @@
 "use strict";
 
 // Project metadata.
-const pkg = require("../package.json");
-const options = require("./cli/options.json");
+import fs from 'fs-extra';
+import path from 'path';
+
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+const pkg = fs.readJSONSync(path.resolve(__dirname, '../package.json'));
+
+const options = {
+  h: {
+    long: "help",
+    desc: "Display this help text.",
+    type: "Boolean",
+    modal: true,
+  },
+  q: {
+    long: "quiet",
+    desc: "Reduce output to errors only",
+    type: "Boolean",
+  },
+  v: {
+    long: "version",
+    desc: "Print the version.",
+    type: "Boolean",
+    modal: true,
+  },
+  x: {
+    long: "exclude",
+    desc: "File exclusion regex",
+    type: "String",
+  },
+  d: {
+    long: "dir",
+    desc: "The output directory",
+    type: "String",
+    required: true,
+  },
+  r: {
+    long: "recurse",
+    desc: "Recursively search directories",
+    type: "Boolean",
+  },
+  l: {
+    long: "jshint",
+    desc: "Specify a jshintrc file for JSHint linting",
+    type: "String",
+  },
+  t: {
+    long: "title",
+    desc: "Title of the report",
+    type: "String",
+  },
+  D: {
+    long: "date",
+    desc: "Time to use as the report date (seconds, > 9999999999 assumed to be ms)",
+    type: "String",
+  },
+  n: {
+    long: "noempty",
+    desc: "Skips empty lines from line count",
+    type: "Boolean",
+  },
+  e: {
+    long: "eslint",
+    desc: "Specify a eslintrc file for ESLint linting",
+    type: "String",
+  },
+};
 
 function version() {
   console.log(pkg.version);
@@ -30,7 +97,7 @@ function help() {
   Object.keys(options).forEach(displayOptionInCli);
 }
 
-module.exports = {
+export default {
   name: pkg.name,
   version,
   help,

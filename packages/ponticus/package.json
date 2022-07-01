@@ -4,15 +4,18 @@
   "version": "1.2.4",
   "bin": "bin/plato",
   "license": "MIT",
-  "main": "lib/plato.js",
+  "type": "module",
   "engines": {
     "node": ">= 16.15.0"
   },
   "scripts": {
+    "build": "rm -rf dist && cp -r lib dist && swc lib -d dist",
     "test": "echo 'TODO: Replace Grunt'",
     "lint": "eslint ."
   },
   "devDependencies": {
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.207",
     "eslint-config-prettier": "^8.5.0"
   },
   "keywords": [
@@ -25,6 +28,7 @@
     "analyze"
   ],
   "dependencies": {
+    "@ponticus/escomplex": "0.1.0",
     "eslint": "^8.18.0",
     "eslint-plugin-react": "^7.30.1",
     "fs-extra": "^10.1.0",
@@ -32,7 +36,6 @@
     "lodash": "^4.17.19",
     "mkdirp": "^1.0.4",
     "posix-getopt": "^1.2.0",
-    "@ponticus/escomplex": "0.1.0",
     "unixify": "^1.0.0"
   },
   "volta": {

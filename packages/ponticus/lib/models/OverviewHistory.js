@@ -1,7 +1,6 @@
 "use strict";
 
-// local lib
-const History = require("./History.js");
+import History from "./History.js";
 
 class OverviewHistory extends History {
   addReport(report, date) {
@@ -21,4 +20,4 @@ class OverviewHistory extends History {
   }
 }
 
-module.exports = OverviewHistory;
+export default OverviewHistory;

@@ -1,11 +1,11 @@
 "use strict";
 
 // node api
-const fs = require("fs-extra");
-const path = require("path");
+import fs from "fs-extra";
+import path from "path";
 
 // local lib
-const Logger = require("./logger.js");
+import Logger from "./logger.js";
 
 const log = new Logger(Logger.WARNING);
 
@@ -91,7 +91,7 @@ function escapeHTML(html) {
     .replace(/'/g, "&#039;");
 }
 
-module.exports = {
+export default {
   findCommonBase,
   formatJSON,
   readJSON,

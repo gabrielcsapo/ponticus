@@ -1,9 +1,9 @@
 "use strict";
 
 //TODO: make this not a janky munge of old plato code and the new stuff
+import escomplex from "@ponticus/escomplex";
 
-const escomplex = require("@ponticus/escomplex").default;
-const _ = require("lodash");
+import _ from "lodash";
 
 class ComplexityReporter {
   constructor(options) {
@@ -74,4 +74,4 @@ class ComplexityReporter {
   }
 }
 
-module.exports = ComplexityReporter;
+export default ComplexityReporter;

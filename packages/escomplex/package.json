@@ -5,7 +5,8 @@
   "homepage": "https://github.com/typhonjs-node-escomplex/typhonjs-escomplex",
   "type": "module",
   "exports": {
-    ".": "./dist/index.js"
+    "import": "./dist/index.js",
+    "require": "./cjs/index.js"
   },
   "dependencies": {
     "@ponticus/babel-parser": "^0.2.0",
@@ -22,7 +23,7 @@
     "vitest": "^0.16.0"
   },
   "scripts": {
-    "build": "swc src -d dist",
+    "build": "swc src -d dist && swc src -d cjs --config module.type=commonjs",
     "lint": "eslint .",
     "prepublish": "npm run build",
     "test": "vitest"
