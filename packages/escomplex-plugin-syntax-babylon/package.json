@@ -1,6 +1,6 @@
 {
   "name": "@ponticus/escomplex-plugin-syntax-babylon",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "homepage": "https://github.com/typhonjs-node-escomplex/escomplex-plugin-syntax-babylon/",
   "description": "Provides a plugin for typhonjs-escomplex module processing which loads syntax definitions for trait resolution for Babylon AST.",
   "type": "module",

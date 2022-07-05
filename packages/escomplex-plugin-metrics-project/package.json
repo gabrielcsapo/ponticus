@@ -1,6 +1,6 @@
 {
   "name": "@ponticus/escomplex-plugin-metrics-project",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "homepage": "https://github.com/typhonjs-node-escomplex/@ponticus/escomplex-plugin-metrics-project/",
   "description": "Provides the core project metric / report generation plugin for typhonjs-escomplex project processing.",
   "type": "module",

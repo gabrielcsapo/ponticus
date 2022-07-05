@@ -1,6 +1,6 @@
 {
   "name": "@ponticus/escomplex-plugin-syntax-estree",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "homepage": "https://github.com/typhonjs-node-escomplex/escomplex-plugin-syntax-estree/",
   "description": "Provides a plugin for typhonjs-escomplex module processing which loads syntax definitions for trait resolution for ESTree AST.",
   "type": "module",

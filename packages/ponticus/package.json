@@ -1,7 +1,7 @@
 {
   "name": "@ponticus/ponticus",
   "description": "JavaScript source analysis and visualizer",
-  "version": "1.2.4",
+  "version": "0.0.0",
   "bin": "bin/plato",
   "license": "MIT",
   "type": "module",

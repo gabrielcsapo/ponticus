@@ -1,6 +1,6 @@
 {
   "name": "@ponticus/escomplex-commons",
-  "version": "0.1.1",
+  "version": "0.0.0",
   "homepage": "https://github.com/typhonjs-node-escomplex/@ponticus/escomplex-commons/",
   "description": "Provides core common utilities for typhonjs-escomplex modules and plugins.",
   "type": "module",

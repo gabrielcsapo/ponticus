@@ -1,6 +1,6 @@
 {
   "name": "@ponticus/escomplex-plugin-metrics-module",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "homepage": "https://github.com/typhonjs-node-escomplex/escomplex-plugin-metrics-module/",
   "description": "Provides the core module metric / report generation plugin for typhonjs-escomplex module processing.",
   "type": "module",
