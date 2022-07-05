@@ -2,10 +2,10 @@
   "name": "@ponticus/escomplex-module",
   "version": "0.0.0",
   "description": "Provides module / individual file oriented AST processing for typhonjs-escomplex complexity reports.",
-  "homepage": "https://github.com/typhonjs-node-escomplex/@ponticus/escomplex-module",
+  "homepage": "https://github.com/gabrielcsapo/ponticus",
   "repository": {
     "type": "git",
-    "url": "https://github.com/typhonjs-node-escomplex/@ponticus/escomplex-module.git"
+    "url": "https://github.com/gabrielcsapo/ponticus.git"
   },
   "type": "module",
   "exports": {

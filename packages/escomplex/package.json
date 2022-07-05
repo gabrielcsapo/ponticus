@@ -2,7 +2,11 @@
   "name": "@ponticus/escomplex",
   "version": "0.0.0",
   "description": "Next generation complexity reporting for Javascript & Typescript based on the Babel parser.",
-  "homepage": "https://github.com/typhonjs-node-escomplex/typhonjs-escomplex",
+  "homepage": "https://github.com/gabrielcsapo/ponticus",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gabrielcsapo/ponticus.git"
+  },
   "type": "module",
   "exports": {
     "import": "./dist/index.js",

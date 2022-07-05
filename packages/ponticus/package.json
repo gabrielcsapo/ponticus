@@ -4,6 +4,11 @@
   "version": "0.0.0",
   "bin": "bin/plato",
   "license": "MIT",
+  "homepage": "https://github.com/gabrielcsapo/ponticus",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gabrielcsapo/ponticus.git"
+  },
   "type": "module",
   "engines": {
     "node": ">= 16.15.0"

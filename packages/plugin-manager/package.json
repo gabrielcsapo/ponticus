@@ -2,10 +2,10 @@
   "name": "@ponticus/plugin-manager",
   "version": "0.0.0",
   "description": "Provides a plugin manager that dispatches events to loaded plugins.",
-  "homepage": "https://github.com/typhonjs-node-plugin/typhonjs-plugin-manager",
+  "homepage": "https://github.com/gabrielcsapo/ponticus",
   "repository": {
     "type": "git",
-    "url": "https://github.com/typhonjs-node-plugin/typhonjs-plugin-manager.git"
+    "url": "https://github.com/gabrielcsapo/ponticus.git"
   },
   "type": "module",
   "exports": {

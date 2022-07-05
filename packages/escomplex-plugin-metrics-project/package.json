@@ -1,15 +1,15 @@
 {
   "name": "@ponticus/escomplex-plugin-metrics-project",
   "version": "0.0.0",
-  "homepage": "https://github.com/typhonjs-node-escomplex/@ponticus/escomplex-plugin-metrics-project/",
+  "homepage": "https://github.com/gabrielcsapo/ponticus",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gabrielcsapo/ponticus.git"
+  },
   "description": "Provides the core project metric / report generation plugin for typhonjs-escomplex project processing.",
   "type": "module",
   "exports": {
     ".": "./dist/index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/typhonjs-node-escomplex/@ponticus/escomplex-plugin-metrics-project.git"
   },
   "dependencies": {
     "@ponticus/escomplex-commons": "^0.0.0"

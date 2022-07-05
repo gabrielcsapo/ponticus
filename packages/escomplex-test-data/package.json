@@ -1,11 +1,11 @@
 {
   "name": "@ponticus/escomplex-test-data",
   "version": "0.0.0",
-  "homepage": "https://github.com/ponticus/escomplex-test-data/",
-  "description": "Provides shared test data resources for all typhonjs-escomplex repos.",
+  "description": "Provides shared test data resources for all @ponticus/escomplex repos.",
+  "homepage": "https://github.com/gabrielcsapo/ponticus",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ponticus/escomplex-test-data.git"
+    "url": "https://github.com/gabrielcsapo/ponticus.git"
   },
   "keywords": [
     "typhonjs",
