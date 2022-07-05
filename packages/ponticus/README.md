@@ -1,4 +1,4 @@
-# es6-plato
+# ponticus
 
 Visualize JavaScript source complexity with plato.
 Based on the older es5 plato, this is a port to `es6` and `eslint`
@@ -9,13 +9,13 @@ Based on the older es5 plato, this is a port to `es6` and `eslint`
 ## Start in 3 steps.
 
 1. Install.
-   `npm install --save-dev es6-plato`
+   `npm install --save-dev @ponticus/ponticus`
 
 2. Add.
 
 ```
 "scripts" : {
-    "complexity-report": "./node_modules/.bin/es6-plato -r -d ./report src",
+    "complexity-report": "./node_modules/.bin/ponticus -r -d ./report src",
 }
 ```
 
@@ -24,7 +24,7 @@ Based on the older es5 plato, this is a port to `es6` and `eslint`
 
 ## Installation
 
-Install the module with: `npm install --save-dev es6-plato`
+Install the module with: `npm install --save-dev @ponticus/ponticus`
 
 ## Usage
 
@@ -64,57 +64,10 @@ function callback(reports) {
 plato.inspect(src, outputDir, platoArgs, callback);
 ```
 
-# Example Gulpfile
-
-```js
-let gulp = require("gulp");
-let plato = require("es6-plato");
-
-let src = "./scripts/**/*.js";
-let outputDir = "./artifacts/plato";
-
-let lintRules = {
-  rules: {
-    indent: [2, "tab"],
-    quotes: [2, "single"],
-    semi: [2, "always"],
-    "no-console": [1],
-    curly: ["error"],
-    "no-dupe-keys": 2,
-    "func-names": [1, "always"]
-  },
-  env: {
-    es6: true
-  },
-  globals: ["require"],
-  parserOptions: {
-    sourceType: "module",
-    ecmaFeatures: {
-      jsx: true,
-      modules: true
-    }
-  }
-};
-
-let complexityRules = {};
-
-let platoArgs = {
-  title: "example",
-  eslint: lintRules,
-  complexity: complexityRules
-};
-
-function analysis() {
-  return plato.inspect(src, outputDir, platoArgs);
-}
-
-gulp.task("analysis", analysis);
-```
-
 ### From the commandline
 
 ```sh
-Usage : es6-plato [options] -d <output_dir> <input files>
+Usage : ponticus [options] -d <output_dir> <input files>
   -h, --help
       Display this help text.
   -q, --quiet
@@ -142,11 +95,11 @@ Usage : es6-plato [options] -d <output_dir> <input files>
 **Example**
 
 ```shell
-es6-plato -r -d report src
+ponticus -r -d report src
 ```
 
 > Note for Windows Users:
- If you are on Windows, you might want to put your glob in quotes if you use a tool such as cygwin, conemu or some other emulator, and you are also targeting files in directories, otherwise the emulator might incorrectly expand the glob before it is handled internally by es6-plato. For instance, if you want to use `/src/**/*.js` and the results are ignoring the root try `'./src/**/*.js'` instead.
+ If you are on Windows, you might want to put your glob in quotes if you use a tool such as cygwin, conemu or some other emulator, and you are also targeting files in directories, otherwise the emulator might incorrectly expand the glob before it is handled internally by ponticus. For instance, if you want to use `/src/**/*.js` and the results are ignoring the root try `'./src/**/*.js'` instead.
 >
 
 
@@ -154,10 +107,5 @@ es6-plato -r -d report src
 
 ## Data sources
 
-- Complexity from [typhonjs-escomplex](https://github.com/typhonjs-node-escomplex/typhonjs-escomplex)
+- Complexity from [@ponticus/escomplex](../escomplex/README.md)
 - Lint data from [eslint](http://eslint.org/)
-
-## About
-
-This is currently a reimplementation of the older plato, and started as a fork from <https://github.com/typhonjs-node-escomplex/typhonjs-escomplex>, but has since been heavily modified.
-After seeing it was unpublished on npm and also wanting to add more features.

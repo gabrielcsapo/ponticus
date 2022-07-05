@@ -1,10 +1,11 @@
-# typhonjs-escomplex-test-data
+# @ponticus/escomplex-test-data
+
 Provides shared test data resources for all typhonjs-escomplex repos.
 
 This repo is included in devDependencies linked directly to GitHub such as:
 ```
   "devDependencies": {
-    "typhonjs-escomplex-test-data": "git+https://git@github.com/typhonjs-node-escomplex/typhonjs-escomplex-test-data.git"
+    "@ponticus/escomplex-test-data": "git+https://git@github.com/gabrielcsapo/packages/@ponticus/escomplex-test-data.git"
   },
 ```
 
@@ -19,15 +20,16 @@ The following files are available:
 `./files/large-module/src/Collection.js`: The JS source that generated large-module `report.json`. 
 
 An examples follows on how to load and parse files for use:
-```
+
+```js
 import ProjectResult    from 'typhonjs-escomplex-commons/src/project/result/ProjectResult';
 
 // You can either use `fs`.
 // const largeProjectJSON = 
-//  JSON.parse(fs.readFileSync('./node_modules/typhonjs-escomplex-test-data/files/large-project/results/results.json', 'utf8'));
+//  JSON.parse(fs.readFileSync('./node_modules/@ponticus/escomplex-test-data/files/large-project/results/results.json', 'utf8'));
 
 // Or for JSON files simply `require` it.
-const largeProjectJSON = require('typhonjs-escomplex-test-data/files/large-project/results/results');
+const largeProjectJSON = require('@ponticus/escomplex-test-data/files/large-project/results/results');
 
 const projectResult = ProjectResult.parse(largeProjectJSON);
 
