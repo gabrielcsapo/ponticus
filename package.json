@@ -1,8 +1,8 @@
 {
   "name": "ponticus",
-  "version": "1.0.0",
   "description": "Visualize JavaScript source complexity",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "build": "npm run build --workspaces --if-present",
     "test": "npm run test --workspaces --if-present",
