@@ -9,9 +9,9 @@
     "require": "./cjs/index.js"
   },
   "dependencies": {
-    "@ponticus/babel-parser": "^0.2.0",
-    "@ponticus/escomplex-module": "^0.1.0",
-    "@ponticus/escomplex-project": "^0.1.0"
+    "@ponticus/babel-parser": "^0.0.0",
+    "@ponticus/escomplex-module": "^0.0.0",
+    "@ponticus/escomplex-project": "^0.0.0"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.57",
@@ -19,7 +19,7 @@
     "@swc/jest": "^0.2.21",
     "eslint": "^8.18.0",
     "eslint-plugin-prettier": "^4.1.0",
-    "@ponticus/escomplex-test-data": "0.0.1",
+    "@ponticus/escomplex-test-data": "0.0.0",
     "vitest": "^0.16.0"
   },
   "scripts": {

@@ -8,7 +8,7 @@
     ".": "./dist/index.js"
   },
   "devDependencies": {
-    "@ponticus/escomplex-test-data": "0.0.1",
+    "@ponticus/escomplex-test-data": "0.0.0",
     "@swc/cli": "^0.1.57",
     "@swc/core": "^1.2.207",
     "@swc/jest": "^0.2.21",

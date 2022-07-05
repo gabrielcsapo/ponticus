@@ -17,6 +17,19 @@
     "node": "16.15.0"
   },
   "devDependencies": {
-    "release-it": "^15.1.1"
+    "@release-it/conventional-changelog": "^4.3.0",
+    "release-it": "^14.0.0",
+    "release-it-yarn-workspaces": "^2.0.1"
+  },
+  "release-it": {
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "infile": "CHANGELOG.md"
+      },
+      "release-it-yarn-workspaces": true
+    },
+    "git": {
+      "tagName": "v${version}"
+    }
   }
 }

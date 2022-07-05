@@ -12,10 +12,10 @@
     ".": "./dist/index.js"
   },
   "dependencies": {
-    "@ponticus/escomplex-commons": "^0.1.0",
-    "@ponticus/escomplex-module": "^0.1.0",
-    "@ponticus/escomplex-plugin-metrics-project": "^0.1.0",
-    "@ponticus/plugin-manager": "^0.2.0"
+    "@ponticus/escomplex-commons": "^0.0.0",
+    "@ponticus/escomplex-module": "^0.0.0",
+    "@ponticus/escomplex-plugin-metrics-project": "^0.0.0",
+    "@ponticus/plugin-manager": "^0.0.0"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.57",
@@ -23,7 +23,7 @@
     "@swc/jest": "^0.2.21",
     "eslint-config-prettier": "^8.5.0",
     "vitest": "^0.16.0",
-    "@ponticus/escomplex-test-data": "0.0.1",
+    "@ponticus/escomplex-test-data": "0.0.0",
     "@typhonjs/babel-parser": "^0.2.0",
     "acorn": "^8.7.1",
     "babylon": "^6.18.0",

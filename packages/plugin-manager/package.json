@@ -20,7 +20,7 @@
     "vitest": "^0.16.0"
   },
   "dependencies": {
-    "@ponticus/backbone-esnext-events": "<1.0.0"
+    "@ponticus/backbone-esnext-events": "^0.0.0"
   },
   "scripts": {
     "build": "swc src -d dist",

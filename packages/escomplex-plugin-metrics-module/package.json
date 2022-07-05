@@ -8,15 +8,15 @@
     ".": "./dist/index.js"
   },
   "dependencies": {
-    "@ponticus/escomplex-commons": "^0.1.0"
+    "@ponticus/escomplex-commons": "^0.0.0"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.57",
     "@swc/core": "^1.2.207",
     "@swc/jest": "^0.2.21",
     "vitest": "^0.16.0",
-    "@ponticus/ast-walker": "^0.2.0",
-    "@ponticus/escomplex-plugin-syntax-babylon": "^0.1.0",
+    "@ponticus/ast-walker": "^0.0.0",
+    "@ponticus/escomplex-plugin-syntax-babylon": "^0.0.0",
     "eslint": "^8.18.0",
     "eslint-plugin-prettier": "^4.1.0"
   },

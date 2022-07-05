@@ -12,14 +12,14 @@
     "url": "https://github.com/typhonjs-node-escomplex/@ponticus/escomplex-plugin-metrics-project.git"
   },
   "dependencies": {
-    "@ponticus/escomplex-commons": "^0.1.0"
+    "@ponticus/escomplex-commons": "^0.0.0"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.57",
     "@swc/core": "^1.2.207",
     "@swc/jest": "^0.2.21",
     "vitest": "^0.16.0",
-    "@ponticus/escomplex-test-data": "0.0.1",
+    "@ponticus/escomplex-test-data": "0.0.0",
     "eslint": "^8.18.0",
     "eslint-config-prettier": "^8.5.0"
   },
