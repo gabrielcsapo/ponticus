@@ -30,7 +30,6 @@
     "test": "vitest"
   },
   "keywords": [
-    "typhonjs",
     "babel",
     "parser",
     "AST"

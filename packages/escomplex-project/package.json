@@ -1,7 +1,7 @@
 {
   "name": "@ponticus/escomplex-project",
   "version": "0.0.0",
-  "description": "Provides project oriented AST processing for typhonjs-escomplex complexity reports.",
+  "description": "Provides project oriented AST processing for @ponticus/escomplex complexity reports.",
   "homepage": "https://github.com/gabrielcsapo/ponticus",
   "repository": {
     "type": "git",
@@ -39,7 +39,6 @@
     "test": "vitest"
   },
   "keywords": [
-    "typhonjs",
     "escomplex",
     "complexity",
     "simplicity",

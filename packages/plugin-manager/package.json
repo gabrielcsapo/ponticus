@@ -29,7 +29,6 @@
     "test": "vitest"
   },
   "keywords": [
-    "typhonjs",
     "plugin",
     "manager"
   ],

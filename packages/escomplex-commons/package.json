@@ -2,7 +2,7 @@
   "name": "@ponticus/escomplex-commons",
   "version": "0.0.0",
   "homepage": "https://github.com/gabrielcsapo/@ponticus/escomplex-commons/",
-  "description": "Provides core common utilities for typhonjs-escomplex modules and plugins.",
+  "description": "Provides core common utilities for @ponticus/escomplex modules and plugins.",
   "type": "module",
   "exports": {
     ".": "./dist/index.js"
@@ -24,7 +24,6 @@
     "test": "vitest"
   },
   "keywords": [
-    "typhonjs",
     "escomplex",
     "commons",
     "report",

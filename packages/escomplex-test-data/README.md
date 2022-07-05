@@ -11,9 +11,9 @@ This repo is included in devDependencies linked directly to GitHub such as:
 
 The following files are available:
 
-`./files/large-project/results/results.json`: A serialized ProjectResult of typhonjs-escomplex-project and dependencies. 
+`./files/large-project/results/results.json`: A serialized ProjectResult of @ponticus/escomplex-project and dependencies. 
 
-`./files/large-project/results/results-no-reports.json`: A serialized ProjectResult of typhonjs-escomplex-project and dependencies without ModuleReports serialized. 
+`./files/large-project/results/results-no-reports.json`: A serialized ProjectResult of @ponticus/escomplex-project and dependencies without ModuleReports serialized. 
 
 `./files/large-module/report/report.json`: A serialized ModuleReport of `backbone-es6`-> `Collection.js`. 
 
@@ -22,7 +22,7 @@ The following files are available:
 An examples follows on how to load and parse files for use:
 
 ```js
-import ProjectResult    from 'typhonjs-escomplex-commons/src/project/result/ProjectResult';
+import { ProjectResult } from '@ponticus/escomplex-commons';
 
 // You can either use `fs`.
 // const largeProjectJSON = 
