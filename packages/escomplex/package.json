@@ -1,6 +1,6 @@
 {
   "name": "@ponticus/escomplex",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Next generation complexity reporting for Javascript & Typescript based on the Babel parser.",
   "homepage": "https://github.com/gabrielcsapo/ponticus",
   "repository": {
@@ -9,7 +9,7 @@
   },
   "type": "module",
   "publishConfig": {
-	  "access": "public",
+    "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "exports": {
@@ -17,9 +17,9 @@
     "require": "./cjs/index.js"
   },
   "dependencies": {
-    "@ponticus/babel-parser": "^0.0.0",
-    "@ponticus/escomplex-module": "^0.0.0",
-    "@ponticus/escomplex-project": "^0.0.0"
+    "@ponticus/babel-parser": "^0.0.1",
+    "@ponticus/escomplex-module": "^0.0.1",
+    "@ponticus/escomplex-project": "^0.0.1"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.57",
@@ -27,7 +27,7 @@
     "@swc/jest": "^0.2.21",
     "eslint": "^8.18.0",
     "eslint-plugin-prettier": "^4.1.0",
-    "@ponticus/escomplex-test-data": "0.0.0",
+    "@ponticus/escomplex-test-data": "0.0.1",
     "vitest": "^0.16.0"
   },
   "scripts": {

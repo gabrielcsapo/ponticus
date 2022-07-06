@@ -1,6 +1,6 @@
 {
   "name": "@ponticus/escomplex-plugin-metrics-module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "homepage": "https://github.com/gabrielcsapo/ponticus",
   "repository": {
     "type": "git",
@@ -9,22 +9,22 @@
   "description": "Provides the core module metric / report generation plugin for @ponticus/escomplex module processing.",
   "type": "module",
   "publishConfig": {
-	  "access": "public",
+    "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "exports": {
     ".": "./dist/index.js"
   },
   "dependencies": {
-    "@ponticus/escomplex-commons": "^0.0.0"
+    "@ponticus/escomplex-commons": "^0.0.1"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.57",
     "@swc/core": "^1.2.207",
     "@swc/jest": "^0.2.21",
     "vitest": "^0.16.0",
-    "@ponticus/ast-walker": "^0.0.0",
-    "@ponticus/escomplex-plugin-syntax-babylon": "^0.0.0",
+    "@ponticus/ast-walker": "^0.0.1",
+    "@ponticus/escomplex-plugin-syntax-babylon": "^0.0.1",
     "eslint": "^8.18.0",
     "eslint-plugin-prettier": "^4.1.0"
   },
@@ -35,7 +35,6 @@
     "test": "vitest"
   },
   "keywords": [
-    
     "escomplex",
     "plugin",
     "metrics",

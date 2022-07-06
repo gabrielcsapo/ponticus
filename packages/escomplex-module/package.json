@@ -1,6 +1,6 @@
 {
   "name": "@ponticus/escomplex-module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Provides module / individual file oriented AST processing for @ponticus/escomplex complexity reports.",
   "homepage": "https://github.com/gabrielcsapo/ponticus",
   "repository": {
@@ -9,7 +9,7 @@
   },
   "type": "module",
   "publishConfig": {
-	  "access": "public",
+    "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "exports": {
@@ -17,17 +17,17 @@
   },
   "dependencies": {
     "@ponitcus/escomplex-plugin-syntax-babylon": "^0.0.0",
-    "@ponticus/ast-walker": "^0.0.0",
-    "@ponticus/escomplex-commons": "^0.0.0",
-    "@ponticus/escomplex-plugin-metrics-module": "^0.0.0",
-    "@ponticus/plugin-manager": "^0.0.0"
+    "@ponticus/ast-walker": "^0.0.1",
+    "@ponticus/escomplex-commons": "^0.0.1",
+    "@ponticus/escomplex-plugin-metrics-module": "^0.0.1",
+    "@ponticus/plugin-manager": "^0.0.1"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.57",
     "@swc/core": "^1.2.207",
     "@swc/jest": "^0.2.21",
     "vitest": "^0.16.0",
-    "@ponticus/babel-parser": "^0.0.0",
+    "@ponticus/babel-parser": "^0.0.1",
     "acorn": "^8.7.1",
     "babylon": "^6.18.0",
     "eslint": "^8.18.0",

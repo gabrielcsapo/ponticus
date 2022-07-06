@@ -1,6 +1,6 @@
 {
   "name": "@ponticus/babel-parser",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Provides a front end for Javascript / Typescript AST generation by Babel parser with TyphonJS plugin support.",
   "homepage": "https://github.com/gabrielcsapo/ponticus",
   "repository": {
@@ -9,7 +9,7 @@
   },
   "type": "module",
   "publishConfig": {
-	  "access": "public",
+    "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "exports": {

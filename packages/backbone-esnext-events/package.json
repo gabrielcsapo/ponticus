@@ -1,6 +1,6 @@
 {
   "name": "@ponticus/backbone-esnext-events",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "homepage": "https://github.com/gabrielcsapo/ponticus",
   "repository": {
     "type": "git",
@@ -9,7 +9,7 @@
   "description": "Separates 'events' support from Backbone in addition to adding TyphonJS extensions.",
   "type": "module",
   "publishConfig": {
-	  "access": "public",
+    "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "exports": {

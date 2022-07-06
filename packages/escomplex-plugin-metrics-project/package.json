@@ -1,6 +1,6 @@
 {
   "name": "@ponticus/escomplex-plugin-metrics-project",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "homepage": "https://github.com/gabrielcsapo/ponticus",
   "repository": {
     "type": "git",
@@ -9,21 +9,21 @@
   "description": "Provides the core project metric / report generation plugin for @ponticus/escomplex project processing.",
   "type": "module",
   "publishConfig": {
-	  "access": "public",
+    "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "exports": {
     ".": "./dist/index.js"
   },
   "dependencies": {
-    "@ponticus/escomplex-commons": "^0.0.0"
+    "@ponticus/escomplex-commons": "^0.0.1"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.57",
     "@swc/core": "^1.2.207",
     "@swc/jest": "^0.2.21",
     "vitest": "^0.16.0",
-    "@ponticus/escomplex-test-data": "0.0.0",
+    "@ponticus/escomplex-test-data": "0.0.1",
     "eslint": "^8.18.0",
     "eslint-config-prettier": "^8.5.0"
   },

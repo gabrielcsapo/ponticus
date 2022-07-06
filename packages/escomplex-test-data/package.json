@@ -1,6 +1,6 @@
 {
   "name": "@ponticus/escomplex-test-data",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Provides shared test data resources for all @ponticus/escomplex repos.",
   "homepage": "https://github.com/gabrielcsapo/ponticus",
   "repository": {

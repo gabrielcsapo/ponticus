@@ -1,7 +1,7 @@
 {
   "name": "ponticus",
   "description": "Visualize JavaScript source complexity",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "repository": "https://github.com/gabrielcsapo/ponticus",
   "private": true,
   "scripts": {
