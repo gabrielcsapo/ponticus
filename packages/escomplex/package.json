@@ -8,6 +8,10 @@
     "url": "https://github.com/gabrielcsapo/ponticus.git"
   },
   "type": "module",
+  "publishConfig": {
+	  "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "exports": {
     "import": "./dist/index.js",
     "require": "./cjs/index.js"

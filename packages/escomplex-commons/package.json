@@ -4,6 +4,10 @@
   "homepage": "https://github.com/gabrielcsapo/@ponticus/escomplex-commons/",
   "description": "Provides core common utilities for @ponticus/escomplex modules and plugins.",
   "type": "module",
+  "publishConfig": {
+	  "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "exports": {
     ".": "./dist/index.js"
   },

@@ -8,6 +8,10 @@
   },
   "description": "Separates 'events' support from Backbone in addition to adding TyphonJS extensions.",
   "type": "module",
+  "publishConfig": {
+	  "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "exports": {
     ".": "./dist/index.js"
   },

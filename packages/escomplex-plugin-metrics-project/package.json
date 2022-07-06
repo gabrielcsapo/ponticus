@@ -8,6 +8,10 @@
   },
   "description": "Provides the core project metric / report generation plugin for @ponticus/escomplex project processing.",
   "type": "module",
+  "publishConfig": {
+	  "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "exports": {
     ".": "./dist/index.js"
   },

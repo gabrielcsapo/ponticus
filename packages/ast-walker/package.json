@@ -8,6 +8,10 @@
   },
   "description": "Provides a simple Javascript AST traversal utility that traverses all nodes / children regardless of type.",
   "type": "module",
+  "publishConfig": {
+	  "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "exports": {
     ".": "./dist/index.js"
   },
