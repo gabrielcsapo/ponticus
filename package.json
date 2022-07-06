@@ -29,6 +29,7 @@
       },
       "release-it-workspaces": true
     },
+    "npm": false,
     "git": {
       "tagName": "v${version}"
     }
