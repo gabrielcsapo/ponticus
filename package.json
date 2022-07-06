@@ -1,7 +1,7 @@
 {
   "name": "ponticus",
   "description": "Visualize JavaScript source complexity",
-  "main": "index.js",
+  "version": "0.0.0",
   "repository": "https://github.com/gabrielcsapo/ponticus",
   "private": true,
   "scripts": {
@@ -19,7 +19,6 @@
   },
   "devDependencies": {
     "release-it-lerna-changelog": "git@github.com:bertdeblock/release-it-lerna-changelog.git#fix-compat-with-release-it-v15",
-    "@release-it/conventional-changelog": "^5.0.0",
     "release-it": "^15.1.1",
     "release-it-workspaces": "^0.0.1"
   },
@@ -27,44 +26,6 @@
     "plugins": {
       "release-it-lerna-changelog": {
         "infile": "CHANGELOG.md"
-      },
-      "@release-it/conventional-changelog": {
-        "preset": "conventionalcommits",
-        "infile": "CHANGELOG.md",
-        "types": [
-          {
-            "type": "feat",
-            "section": "Features"
-          },
-          {
-            "type": "fix",
-            "section": "Bug Fixes"
-          },
-          {
-            "type": "chore",
-            "hidden": true
-          },
-          {
-            "type": "docs",
-            "section": "Documentation Updates"
-          },
-          {
-            "type": "style",
-            "hidden": true
-          },
-          {
-            "type": "refactor",
-            "hidden": true
-          },
-          {
-            "type": "perf",
-            "section": "Performance Improvements"
-          },
-          {
-            "type": "test",
-            "hidden": true
-          }
-        ]
       },
       "release-it-workspaces": true
     },
