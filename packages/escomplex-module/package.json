@@ -16,7 +16,7 @@
     ".": "./dist/index.js"
   },
   "dependencies": {
-    "@ponitcus/escomplex-plugin-syntax-babylon": "^0.0.0",
+    "@ponitcus/escomplex-plugin-syntax-babylon": "^0.0.1",
     "@ponticus/ast-walker": "^0.0.1",
     "@ponticus/escomplex-commons": "^0.0.1",
     "@ponticus/escomplex-plugin-metrics-module": "^0.0.1",
