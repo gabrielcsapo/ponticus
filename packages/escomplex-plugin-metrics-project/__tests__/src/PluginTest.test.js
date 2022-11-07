@@ -2,7 +2,7 @@ import path from "path";
 
 import { test, describe, expect } from "vitest";
 
-import ProjectReport from "@ponticus/escomplex-commons/dist/project/report/ProjectReport";
+import { ProjectReport } from "@ponticus/escomplex-commons";
 
 import PluginMetricsProject from "../../src/PluginMetricsProject.js";
 
@@ -89,7 +89,9 @@ pluginData.forEach((plugin) => {
 
         resultsBefore.finalize();
 
-        expect(JSON.stringify(resultsBefore)).toBe(JSON.stringify(resultsAfter));
+        expect(JSON.stringify(resultsBefore)).toBe(
+          JSON.stringify(resultsAfter)
+        );
       });
     });
   });

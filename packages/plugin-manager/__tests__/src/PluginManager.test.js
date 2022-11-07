@@ -391,34 +391,32 @@ describe("PluginManager:", () => {
     expect(invoked).toBe(true);
   });
 
-  test("promise - invokeAsync - PluginManager has invoked one result (async)", (done) => {
-    pluginManager
+  test("promise - invokeAsync - PluginManager has invoked one result (async)", async () => {
+    return pluginManager
       .addAsync({ name: "PluginTestAsync", instance: new PluginTestAsync() })
       .then(() => {
-        pluginManager
+        return pluginManager
           .invokeAsync("test", [1, 2], "PluginTestAsync")
           .then((results) => {
             expect(typeof results).toBe("number");
             expect(results).toBe(6);
-            done();
           });
       });
   });
 
-  test("promise - invokeAsync - PluginManager has invoked two results (async)", (done) => {
-    pluginManager
+  test("promise - invokeAsync - PluginManager has invoked two results (async)", async () => {
+    return pluginManager
       .addAllAsync([
         { name: "PluginTestAsync", instance: new PluginTestAsync() },
         { name: "PluginTestAsync2", instance: new PluginTestAsync() },
       ])
       .then(() => {
-        pluginManager.invokeAsync("test", [1, 2]).then((results) => {
+        return pluginManager.invokeAsync("test", [1, 2]).then((results) => {
           expect(Array.isArray(results)).toBe(true);
           expect(typeof results[0]).toBe("number");
           expect(typeof results[1]).toBe("number");
           expect(results[0]).toBe(6);
           expect(results[1]).toBe(6);
-          done();
         });
       });
   });

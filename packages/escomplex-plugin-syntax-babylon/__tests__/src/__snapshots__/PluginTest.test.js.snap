@@ -1,0 +1,267 @@
+// Vitest Snapshot v1
+
+exports[`(ESM) plugin: > AST Walker: > verify espree results 1`] = `
+{
+  "ArrowFunctionExpression": {
+    "cyclomatic": {
+      "0": 3,
+    },
+    "dependencies": {
+      "undefined": 3,
+    },
+    "ignoreKeys": {
+      "[\\"id\\",\\"params\\",\\"defaults\\"]": 3,
+    },
+    "lloc": {
+      "0": 3,
+    },
+    "newScope": {
+      "{\\"type\\":\\"method\\",\\"name\\":\\"<anonymous>\\",\\"cyclomatic\\":1,\\"lineStart\\":102,\\"lineEnd\\":105,\\"lloc\\":1,\\"operands\\":{\\"_data\\":[{\\"_data\\":{\\"identifier\\":\\"val\\"},\\"_metric\\":\\"operands\\"}],\\"_metric\\":\\"operands\\"},\\"operators\\":{\\"_data\\":[{\\"_data\\":{\\"identifier\\":\\"function=>\\"},\\"_metric\\":\\"operators\\"}],\\"_metric\\":\\"operators\\"},\\"paramNames\\":[\\"val\\"],\\"postLloc\\":0}": 1,
+      "{\\"type\\":\\"method\\",\\"name\\":\\"<anonymous>\\",\\"cyclomatic\\":1,\\"lineStart\\":107,\\"lineEnd\\":112,\\"lloc\\":1,\\"operands\\":{\\"_data\\":[{\\"_data\\":{\\"identifier\\":\\"len\\"},\\"_metric\\":\\"operands\\"}],\\"_metric\\":\\"operands\\"},\\"operators\\":{\\"_data\\":[{\\"_data\\":{\\"identifier\\":\\"function=>\\"},\\"_metric\\":\\"operators\\"}],\\"_metric\\":\\"operators\\"},\\"paramNames\\":[\\"len\\"],\\"postLloc\\":0}": 1,
+      "{\\"type\\":\\"method\\",\\"name\\":\\"<anonymous>\\",\\"cyclomatic\\":1,\\"lineStart\\":11,\\"lineEnd\\":87,\\"lloc\\":1,\\"operands\\":{\\"_data\\":[{\\"_data\\":{\\"identifier\\":\\"array\\"},\\"_metric\\":\\"operands\\"}],\\"_metric\\":\\"operands\\"},\\"operators\\":{\\"_data\\":[{\\"_data\\":{\\"identifier\\":\\"function=>\\"},\\"_metric\\":\\"operators\\"}],\\"_metric\\":\\"operators\\"},\\"paramNames\\":[\\"array\\"],\\"postLloc\\":0}": 1,
+    },
+    "operands": {
+      "[]": 3,
+    },
+    "operators": {
+      "[]": 3,
+    },
+  },
+  "BinaryExpression": {
+    "cyclomatic": {
+      "0": 2,
+    },
+    "dependencies": {
+      "undefined": 2,
+    },
+    "ignoreKeys": {
+      "[]": 2,
+    },
+    "lloc": {
+      "0": 2,
+    },
+    "newScope": {
+      "undefined": 2,
+    },
+    "operands": {
+      "[]": 2,
+    },
+    "operators": {
+      "[\\"===\\"]": 2,
+    },
+  },
+  "ConditionalExpression": {
+    "cyclomatic": {
+      "1": 1,
+    },
+    "dependencies": {
+      "undefined": 1,
+    },
+    "ignoreKeys": {
+      "[]": 1,
+    },
+    "lloc": {
+      "0": 1,
+    },
+    "newScope": {
+      "undefined": 1,
+    },
+    "operands": {
+      "[]": 1,
+    },
+    "operators": {
+      "[\\":?\\"]": 1,
+    },
+  },
+  "ExportDefaultDeclaration": {
+    "cyclomatic": {
+      "0": 1,
+    },
+    "dependencies": {
+      "undefined": 1,
+    },
+    "ignoreKeys": {
+      "[]": 1,
+    },
+    "lloc": {
+      "0": 1,
+    },
+    "newScope": {
+      "undefined": 1,
+    },
+    "operands": {
+      "[]": 1,
+    },
+    "operators": {
+      "[]": 1,
+    },
+  },
+  "Identifier": {
+    "cyclomatic": {
+      "0": 15,
+    },
+    "dependencies": {
+      "undefined": 15,
+    },
+    "ignoreKeys": {
+      "[]": 15,
+    },
+    "lloc": {
+      "0": 15,
+    },
+    "newScope": {
+      "undefined": 15,
+    },
+    "operands": {
+      "[\\"btoa\\"]": 4,
+      "[\\"polyBtoa\\"]": 2,
+      "[\\"s_BTOA_BASE_64_CHARS\\"]": 1,
+      "[\\"s_BTOA_GET_CHAR\\"]": 1,
+      "[\\"s_BTOA_NEW_BINARY\\"]": 1,
+      "[\\"self\\"]": 6,
+    },
+    "operators": {
+      "[]": 15,
+    },
+  },
+  "Literal": {
+    "cyclomatic": {
+      "0": 2,
+    },
+    "dependencies": {
+      "undefined": 2,
+    },
+    "ignoreKeys": {
+      "[]": 2,
+    },
+    "lloc": {
+      "0": 2,
+    },
+    "newScope": {
+      "undefined": 2,
+    },
+    "operands": {
+      "[\\"\\\\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/\\\\\\"\\"]": 1,
+      "[\\"\\\\\\"object\\\\\\"\\"]": 1,
+    },
+    "operators": {
+      "[]": 2,
+    },
+  },
+  "LogicalExpression": {
+    "cyclomatic": {
+      "1": 2,
+    },
+    "dependencies": {
+      "undefined": 2,
+    },
+    "ignoreKeys": {
+      "[]": 2,
+    },
+    "lloc": {
+      "0": 2,
+    },
+    "newScope": {
+      "undefined": 2,
+    },
+    "operands": {
+      "[]": 2,
+    },
+    "operators": {
+      "[\\"&&\\"]": 2,
+    },
+  },
+  "MemberExpression": {
+    "cyclomatic": {
+      "0": 3,
+    },
+    "dependencies": {
+      "undefined": 3,
+    },
+    "ignoreKeys": {
+      "[]": 3,
+    },
+    "lloc": {
+      "0": 3,
+    },
+    "newScope": {
+      "undefined": 3,
+    },
+    "operands": {
+      "[]": 3,
+    },
+    "operators": {
+      "[\\".\\"]": 3,
+    },
+  },
+  "UnaryExpression": {
+    "cyclomatic": {
+      "0": 1,
+    },
+    "dependencies": {
+      "undefined": 1,
+    },
+    "ignoreKeys": {
+      "[]": 1,
+    },
+    "lloc": {
+      "0": 1,
+    },
+    "newScope": {
+      "undefined": 1,
+    },
+    "operands": {
+      "[]": 1,
+    },
+    "operators": {
+      "[\\"typeof (prefix)\\"]": 1,
+    },
+  },
+  "VariableDeclaration": {
+    "cyclomatic": {
+      "0": 5,
+    },
+    "dependencies": {
+      "undefined": 5,
+    },
+    "ignoreKeys": {
+      "[]": 5,
+    },
+    "lloc": {
+      "0": 5,
+    },
+    "newScope": {
+      "undefined": 5,
+    },
+    "operands": {
+      "[]": 5,
+    },
+    "operators": {
+      "[\\"const\\"]": 5,
+    },
+  },
+  "VariableDeclarator": {
+    "cyclomatic": {
+      "0": 5,
+    },
+    "dependencies": {
+      "undefined": 5,
+    },
+    "ignoreKeys": {
+      "[]": 5,
+    },
+    "lloc": {
+      "1": 5,
+    },
+    "newScope": {
+      "undefined": 5,
+    },
+    "operands": {
+      "[]": 5,
+    },
+    "operators": {
+      "[\\"=\\"]": 5,
+    },
+  },
+}
+`;

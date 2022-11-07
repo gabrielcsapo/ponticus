@@ -2,39 +2,9 @@ import { test, describe, expect, beforeEach, afterEach } from "vitest";
 
 import { readFileSync } from "fs";
 
-import walker from "../../dist/index.js";
-
-const walkerPath = "../../dist/index";
+import walker from "../../src/index.js";
 
 describe("AST Walker:", () => {
-  describe("require walker:", () => {
-    let requireWalker;
-
-    beforeEach(() => {
-      requireWalker = require(walkerPath);
-    });
-
-    afterEach(() => {
-      requireWalker = undefined;
-    });
-
-    test("require does not throw", () => {
-      expect(() => {
-        require(walkerPath);
-      }).not.toThrow();
-    });
-
-    test("walker object is exported", () => {
-      expect(typeof requireWalker).toBe("object");
-    });
-
-    test("walker throws when traverse is called with empty parameters", () => {
-      expect(() => {
-        requireWalker.traverse();
-      }).toThrow();
-    });
-  });
-
   describe("walker:", () => {
     describe("successfully parses ast tree (fixture):", () => {
       test("result has proper node counts", () => {

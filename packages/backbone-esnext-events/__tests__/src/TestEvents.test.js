@@ -208,119 +208,143 @@ describe("Events", () => {
     expect(callbacks.testTriggerOnce).toBe(1);
   });
 
-  test("triggerDefer", (done) => {
-    eventbus.on("test:trigger:defer", () => {
-      expect(eventbus.eventCount).toBe(1);
+  test("triggerDefer", () => {
+    return new Promise((resolve, reject) => {
+      try {
+        eventbus.on("test:trigger:defer", () => {
+          expect(eventbus.eventCount).toBe(1);
 
-      done();
+          resolve();
+        });
+
+        expect(eventbus.eventCount).toBe(1);
+
+        eventbus.triggerDefer("test:trigger:defer");
+      } catch (ex) {
+        reject(ex);
+      }
     });
-
-    expect(eventbus.eventCount).toBe(1);
-
-    eventbus.triggerDefer("test:trigger:defer");
   });
 
-  test("triggerDefer (once)", (done) => {
-    callbacks.testTriggerOnce = 0;
+  test("triggerDefer (once)", () => {
+    return new Promise((resolve, reject) => {
+      try {
+        callbacks.testTriggerOnce = 0;
 
-    eventbus.once("test:trigger:once", () => {
-      callbacks.testTriggerOnce++;
+        eventbus.once("test:trigger:once", () => {
+          callbacks.testTriggerOnce++;
+        });
+
+        expect(eventbus.eventCount).toBe(1);
+
+        eventbus.on("test:trigger:verify", () => {
+          expect(callbacks.testTriggerOnce).toBe(1);
+
+          expect(eventbus.eventCount).toBe(1);
+
+          resolve();
+        });
+
+        expect(eventbus.eventCount).toBe(2);
+
+        eventbus.triggerDefer("test:trigger:once");
+
+        expect(eventbus.eventCount).toBe(2); // Trigger is deferred so 2 events still exist.
+
+        eventbus.triggerDefer("test:trigger:once");
+
+        expect(eventbus.eventCount).toBe(2); // Trigger is deferred so 2 events still exist.
+
+        eventbus.triggerDefer("test:trigger:verify");
+      } catch (ex) {
+        reject(ex);
+      }
     });
-
-    expect(eventbus.eventCount).toBe(1);
-
-    eventbus.on("test:trigger:verify", () => {
-      expect(callbacks.testTriggerOnce).toBe(1);
-
-      expect(eventbus.eventCount).toBe(1);
-
-      done();
-    });
-
-    expect(eventbus.eventCount).toBe(2);
-
-    eventbus.triggerDefer("test:trigger:once");
-
-    expect(eventbus.eventCount).toBe(2); // Trigger is deferred so 2 events still exist.
-
-    eventbus.triggerDefer("test:trigger:once");
-
-    expect(eventbus.eventCount).toBe(2); // Trigger is deferred so 2 events still exist.
-
-    eventbus.triggerDefer("test:trigger:verify");
   });
 
-  test("triggerDefer (listenTo)", (done) => {
-    const test = new TyphonEvents();
+  test("triggerDefer (listenTo)", () => {
+    return new Promise((resolve, reject) => {
+      try {
+        const test = new TyphonEvents();
 
-    callbacks.testTriggerCount = 0;
+        callbacks.testTriggerCount = 0;
 
-    test.listenTo(eventbus, "test:trigger", () => {
-      callbacks.testTriggerCount++;
+        test.listenTo(eventbus, "test:trigger", () => {
+          callbacks.testTriggerCount++;
+        });
+
+        expect(eventbus.eventCount).toBe(1);
+
+        eventbus.on("test:trigger:verify", () => {
+          expect(callbacks.testTriggerCount).toBe(1);
+
+          // Test stop listening such that `test:trigger` is no longer registered.
+          test.stopListening(eventbus, "test:trigger");
+
+          expect(eventbus.eventCount).toBe(2);
+        });
+
+        expect(eventbus.eventCount).toBe(2);
+
+        eventbus.on("test:trigger:verify:done", () => {
+          expect(callbacks.testTriggerCount).toBe(1);
+
+          expect(eventbus.eventCount).toBe(2);
+
+          resolve();
+        });
+
+        expect(eventbus.eventCount).toBe(3);
+
+        eventbus.triggerDefer("test:trigger");
+
+        eventbus.triggerDefer("test:trigger:verify");
+
+        eventbus.triggerDefer("test:trigger");
+
+        eventbus.triggerDefer("test:trigger:verify:done");
+
+        expect(eventbus.eventCount).toBe(3);
+      } catch (ex) {
+        reject(ex);
+      }
     });
-
-    expect(eventbus.eventCount).toBe(1);
-
-    eventbus.on("test:trigger:verify", () => {
-      expect(callbacks.testTriggerCount).toBe(1);
-
-      // Test stop listening such that `test:trigger` is no longer registered.
-      test.stopListening(eventbus, "test:trigger");
-
-      expect(eventbus.eventCount).toBe(2);
-    });
-
-    expect(eventbus.eventCount).toBe(2);
-
-    eventbus.on("test:trigger:verify:done", () => {
-      expect(callbacks.testTriggerCount).toBe(1);
-
-      expect(eventbus.eventCount).toBe(2);
-
-      done();
-    });
-
-    expect(eventbus.eventCount).toBe(3);
-
-    eventbus.triggerDefer("test:trigger");
-
-    eventbus.triggerDefer("test:trigger:verify");
-
-    eventbus.triggerDefer("test:trigger");
-
-    eventbus.triggerDefer("test:trigger:verify:done");
-
-    expect(eventbus.eventCount).toBe(3);
   });
 
-  test("triggerDefer (listenToOnce)", (done) => {
-    const test = new TyphonEvents();
+  test("triggerDefer (listenToOnce)", () => {
+    return new Promise((resolve, reject) => {
+      try {
+        const test = new TyphonEvents();
 
-    callbacks.testTriggerOnce = 0;
+        callbacks.testTriggerOnce = 0;
 
-    test.listenToOnce(eventbus, "test:trigger", () => {
-      callbacks.testTriggerOnce++;
+        test.listenToOnce(eventbus, "test:trigger", () => {
+          callbacks.testTriggerOnce++;
 
-      expect(eventbus.eventCount).toBe(1);
+          expect(eventbus.eventCount).toBe(1);
+        });
+
+        expect(eventbus.eventCount).toBe(1);
+
+        eventbus.on("test:trigger:verify", () => {
+          expect(callbacks.testTriggerOnce).toBe(1);
+
+          expect(eventbus.eventCount).toBe(1);
+
+          resolve();
+        });
+
+        expect(eventbus.eventCount).toBe(2);
+
+        eventbus.triggerDefer("test:trigger");
+        eventbus.triggerDefer("test:trigger");
+        eventbus.triggerDefer("test:trigger:verify");
+
+        expect(eventbus.eventCount).toBe(2);
+      } catch (ex) {
+        reject(ex);
+      }
     });
-
-    expect(eventbus.eventCount).toBe(1);
-
-    eventbus.on("test:trigger:verify", () => {
-      expect(callbacks.testTriggerOnce).toBe(1);
-
-      expect(eventbus.eventCount).toBe(1);
-
-      done();
-    });
-
-    expect(eventbus.eventCount).toBe(2);
-
-    eventbus.triggerDefer("test:trigger");
-    eventbus.triggerDefer("test:trigger");
-    eventbus.triggerDefer("test:trigger:verify");
-
-    expect(eventbus.eventCount).toBe(2);
   });
 
   test("triggerSync-0", () => {
@@ -467,7 +491,7 @@ describe("Events", () => {
     expect(result).not.toBeDefined();
   });
 
-  test("triggerSync (Promise)", (done) => {
+  test("triggerSync (Promise)", () => {
     eventbus.on("test:trigger:sync:then", () => {
       callbacks.testTriggerSyncThen = true;
 
@@ -480,14 +504,13 @@ describe("Events", () => {
 
     expect(promise instanceof Promise).toBeTruthy();
 
-    promise.then((result) => {
+    return promise.then((result) => {
       expect(callbacks.testTriggerSyncThen).toBe(true);
       expect(result).toBe("foobar");
-      done();
     });
   });
 
-  test("promise - triggerAsync", (done) => {
+  test("promise - triggerAsync", () => {
     eventbus.on(
       "test:trigger:async",
       s_CREATE_TIMED_FUNC((resolve) => {
@@ -511,16 +534,15 @@ describe("Events", () => {
     expect(promise instanceof Promise).toBeTruthy();
 
     // triggerAsync resolves all Promises by Promise.all() so result is an array.
-    promise.then((result) => {
+    return promise.then((result) => {
       expect(callbacks.testTriggerAsync).toBe(true);
       expect(callbacks.testTriggerAsync2).toBe(true);
       expect(result[0]).toBe("foo");
       expect(result[1]).toBe("bar");
-      done();
     });
   });
 
-  test("promise - triggerAsync (once)", (done) => {
+  test("promise - triggerAsync (once)", () => {
     callbacks.testTriggerOnce = 0;
 
     expect(eventbus.eventCount).toBe(0);
@@ -546,14 +568,13 @@ describe("Events", () => {
     expect(promise2 instanceof Promise).toBeTruthy();
 
     // triggerAsync resolves all Promises by Promise.all() or Promise.resolve() so result is a string.
-    promise.then((result) => {
+    return promise.then((result) => {
       expect(callbacks.testTriggerOnce).toBe(1);
       expect(result).toBe("foo");
-      done();
     });
   });
 
-  test("promise - triggerAsync (listenTo)", (done) => {
+  test("promise - triggerAsync (listenTo)", () => {
     const test = new TyphonEvents();
 
     callbacks.testTriggerCount = 0;
@@ -573,7 +594,7 @@ describe("Events", () => {
 
     expect(promise instanceof Promise).toBeTruthy();
 
-    promise
+    return promise
       .then((result) => {
         expect(callbacks.testTriggerCount).toBe(1);
         expect(result).toBe("foo");
@@ -586,15 +607,14 @@ describe("Events", () => {
         promise = eventbus.triggerAsync("test:trigger:async");
         expect(promise instanceof Promise).toBeTruthy();
 
-        promise.then((result) => {
+        return promise.then((result) => {
           expect(result).not.toBeDefined();
           expect(callbacks.testTriggerCount).toBe(1);
-          done();
         });
       });
   });
 
-  test("promise - triggerAsync (listenToOnce)", (done) => {
+  test("promise - triggerAsync (listenToOnce)", () => {
     const test = new TyphonEvents();
 
     callbacks.testTriggerOnce = 0;
@@ -622,10 +642,9 @@ describe("Events", () => {
     expect(promise2 instanceof Promise).toBeTruthy();
 
     // triggerAsync resolves all Promises by Promise.all() or Promise.resolve() so result is a string.
-    promise.then((result) => {
+    return promise.then((result) => {
       expect(callbacks.testTriggerOnce).toBe(1);
       expect(result).toBe("foo");
-      done();
     });
   });
 

@@ -82,12 +82,6 @@ pluginData.forEach((plugin) => {
           "utf8"
         )
       );
-      const reportResults = JSON.parse(
-        fs.readFileSync(
-          path.resolve(__dirname, "../fixture/report-results.json"),
-          "utf8"
-        )
-      );
 
       /**
        * Bootstraps the ESComplexModule runtime and fudges traversing the AST with the Babylon trait syntaxes.
@@ -202,9 +196,7 @@ pluginData.forEach((plugin) => {
 
         moduleReport.finalize();
 
-        expect(JSON.stringify(moduleReport)).toBe(
-          JSON.stringify(reportResults)
-        );
+        expect(JSON.stringify(moduleReport)).toMatchSnapshot();
       });
     });
   });

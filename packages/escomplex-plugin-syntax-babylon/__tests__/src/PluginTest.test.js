@@ -1,4 +1,9 @@
+import fs from "fs";
+import path from "path";
+
 import { test, describe, expect } from "vitest";
+
+import { ASTWalker } from "@ponticus/ast-walker";
 
 import PluginSyntaxBabylon from "../../src/PluginSyntaxBabylon";
 
@@ -72,57 +77,60 @@ pluginData.forEach((plugin) => {
       });
     });
 
-    // TODO: Test needs to be updated and verified.
-    // suite('AST Walker:', () =>
-    // {
-    //    const instance = new plugin.PluginClass();
-    //    const verifyResult = JSON.stringify(JSON.parse(fs.readFileSync('./test/fixture/estree-results.json', 'utf8')));
-    //
-    //    test('verify espree results', () =>
-    //    {
-    //       const results = {};
-    //
-    //       // Sets default configuration data.
-    //       const event = { data: { settings: {}, options: {}, syntaxes: {} } };
-    //       instance.onConfigure(event);
-    //
-    //       instance.onLoadSyntax(event);
-    //
-    //       new ASTWalker().traverse(JSON.parse(fs.readFileSync('./test/fixture/espree-estree.json', 'utf8')),
-    //       {
-    //          enterNode: (node, parent) =>
-    //          {
-    //             const syntax = event.data.syntaxes[node.type];
-    //
-    //             if (syntax !== null && typeof syntax === 'object')
-    //             {
-    //                if (typeof results[node.type] === 'undefined') { results[node.type] = {}; }
-    //
-    //                for (const metric in syntax)
-    //                {
-    //                   if (typeof results[node.type][metric] === 'undefined') { results[node.type][metric] = {}; }
-    //
-    //                   const value = syntax[metric].valueOf(node, parent);
-    //
-    //                   const valueKey = JSON.stringify(value);
-    //
-    //                   if (typeof results[node.type][metric][valueKey] === 'undefined')
-    //                   {
-    //                      results[node.type][metric][valueKey] = 1;
-    //                   }
-    //                   else
-    //                   {
-    //                      results[node.type][metric][valueKey]++;
-    //                   }
-    //                }
-    //
-    //                return syntax.ignoreKeys.valueOf();
-    //             }
-    //          }
-    //       });
-    //
-    //       assert.strictEqual(verifyResult, JSON.stringify(sortObj(results)));
-    //    });
-    // });
+    describe("AST Walker:", () => {
+      const instance = new plugin.PluginClass();
+
+      test("verify espree results", () => {
+        const results = {};
+
+        // Sets default configuration data.
+        const event = { data: { settings: {}, options: {}, syntaxes: {} } };
+        instance.onConfigure(event);
+
+        instance.onLoadSyntax(event);
+
+        new ASTWalker().traverse(
+          JSON.parse(
+            fs.readFileSync(
+              path.resolve(__dirname, "../fixture/espree-estree.json"),
+              "utf8"
+            )
+          ),
+          {
+            enterNode: (node, parent) => {
+              const syntax = event.data.syntaxes[node.type];
+
+              if (syntax !== null && typeof syntax === "object") {
+                if (typeof results[node.type] === "undefined") {
+                  results[node.type] = {};
+                }
+
+                for (const metric in syntax) {
+                  if (typeof results[node.type][metric] === "undefined") {
+                    results[node.type][metric] = {};
+                  }
+
+                  const value = syntax[metric].valueOf(node, parent);
+
+                  const valueKey = JSON.stringify(value);
+
+                  if (
+                    typeof results[node.type][metric][valueKey] === "undefined"
+                  ) {
+                    results[node.type][metric][valueKey] = 1;
+                  } else {
+                    results[node.type][metric][valueKey]++;
+                  }
+                }
+
+                return syntax.ignoreKeys.valueOf();
+              }
+            },
+          }
+        );
+
+        expect(results).toMatchSnapshot();
+      });
+    });
   });
 });
