@@ -1,4 +1,3 @@
-import expect from 'expect';
 /**
  * Defines which test to run.
  *

@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "build": "npm run build --workspaces --if-present",
-    "test": "npm run test --workspaces --if-present",
+    "test": "CI=true npm run test --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present",
     "release": "release-it"
   },
@@ -18,9 +18,9 @@
     "node": "16.15.0"
   },
   "devDependencies": {
+    "release-it": "^15.5.0",
     "release-it-lerna-changelog": "git@github.com:bertdeblock/release-it-lerna-changelog.git#fix-compat-with-release-it-v15",
-    "release-it": "^15.1.1",
-    "release-it-workspaces": "^0.0.1"
+    "release-it-workspaces": "^0.0.2"
   },
   "release-it": {
     "plugins": {

@@ -1,4 +1,4 @@
-import BabelParser from "@ponticus/babel-parser";
+import { BabelParser } from "@ponticus/babel-parser";
 
 import * as acorn from "acorn";
 import * as babylon from "babylon";

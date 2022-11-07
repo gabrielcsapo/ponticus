@@ -20,13 +20,12 @@
   },
   "devDependencies": {
     "@swc/cli": "^0.1.57",
-    "@swc/core": "^1.2.207",
-    "@swc/jest": "^0.2.21",
-    "vitest": "^0.16.0",
+    "@swc/core": "^1.3.14",
+    "vitest": "^0.24.5",
     "@ponticus/ast-walker": "^0.0.1",
     "@ponticus/escomplex-plugin-syntax-babylon": "^0.0.1",
-    "eslint": "^8.18.0",
-    "eslint-plugin-prettier": "^4.1.0"
+    "eslint": "^8.26.0",
+    "eslint-plugin-prettier": "^4.2.1"
   },
   "scripts": {
     "build": "swc src -d dist",

@@ -320,26 +320,33 @@ describe("EventProxy", () => {
     expect(callbacks.testTriggerCount).toBe(7);
   });
 
-  test("triggerDefer", (done) => {
-    callbacks.testTriggerCount = 0;
+  test("triggerDefer", () => {
+    return new Promise((resolve, reject) => {
+      try {
+        callbacks.testTriggerCount = 0;
 
-    proxy.on("test:trigger", () => {
-      callbacks.testTriggerCount++;
+        proxy.on("test:trigger", () => {
+          callbacks.testTriggerCount++;
+        });
+        proxy.on("test:trigger2", () => {
+          callbacks.testTriggerCount++;
+        });
+
+        expect(eventbus.eventCount).toBe(2);
+        expect(proxy.eventCount).toBe(2);
+
+        proxy.triggerDefer("test:trigger");
+        eventbus.triggerDefer("test:trigger2");
+
+        setTimeout(() => {
+          expect(callbacks.testTriggerCount).toBe(2);
+
+          resolve();
+        }, 0);
+      } catch (ex) {
+        reject(ex);
+      }
     });
-    proxy.on("test:trigger2", () => {
-      callbacks.testTriggerCount++;
-    });
-
-    expect(eventbus.eventCount).toBe(2);
-    expect(proxy.eventCount).toBe(2);
-
-    proxy.triggerDefer("test:trigger");
-    eventbus.triggerDefer("test:trigger2");
-
-    setTimeout(() => {
-      expect(callbacks.testTriggerCount).toBe(2);
-      done();
-    }, 0);
   });
 
   test("triggerSync-0", () => {

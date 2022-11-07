@@ -83,7 +83,6 @@ async function exec(options, done) {
     });
   }
 
-  console.log(this.args);
   var files = this.args.files;
   var outputDir = this.args.d.value;
   var platoOptions = {

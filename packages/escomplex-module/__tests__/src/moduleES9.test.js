@@ -1,4 +1,4 @@
-import { test, describe, expect, beforeEach } from "vitest";
+import { test, describe, expect, beforeEach, afterEach } from "vitest";
 
 import parsers from "./parsers";
 import * as testconfig from "./testconfig";
