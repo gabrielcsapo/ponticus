@@ -6,13 +6,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.process = exports.analyse = void 0;
 const lodash_1 = require("lodash");
 // @ts-ignore
-const typhonjs_escomplex_1 = __importDefault(require("typhonjs-escomplex"));
+const escomplex_1 = __importDefault(require("@ponticus/escomplex"));
 function analyse(js) {
-    return typhonjs_escomplex_1.default.analyzeModule(js);
+    return escomplex_1.default.analyzeModule(js);
 }
 exports.analyse = analyse;
 function process(analyses) {
-    const summary = typhonjs_escomplex_1.default.processProject(analyses);
+    const summary = escomplex_1.default.processProject(analyses);
     summary.totalLOC = (0, lodash_1.sum)(summary.reports.map((report) => report.aggregate.sloc.logical));
     return summary;
 }

@@ -3,7 +3,7 @@
 import { sum } from "lodash";
 
 // @ts-ignore
-import ESComplex from "typhonjs-escomplex";
+import ESComplex from "@ponticus/escomplex";
 
 export function analyse(js: string) {
     return ESComplex.analyzeModule(js);
