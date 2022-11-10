@@ -1,5 +1,5 @@
 {
-  "name": "@ponticus/ponticus",
+  "name": "@ponticus/plato",
   "description": "JavaScript source analysis and visualizer",
   "version": "0.0.1",
   "bin": "bin/plato",

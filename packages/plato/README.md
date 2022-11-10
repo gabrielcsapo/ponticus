@@ -9,7 +9,7 @@ Based on the older es5 plato, this is a port to `es6` and `eslint`
 ## Start in 3 steps.
 
 1. Install.
-   `npm install --save-dev @ponticus/ponticus`
+   `npm install --save-dev @ponticus/plato`
 
 2. Add.
 
@@ -24,7 +24,7 @@ Based on the older es5 plato, this is a port to `es6` and `eslint`
 
 ## Installation
 
-Install the module with: `npm install --save-dev @ponticus/ponticus`
+Install the module with: `npm install --save-dev @ponticus/plato`
 
 ## Usage
 
