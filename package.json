@@ -20,7 +20,8 @@
   "devDependencies": {
     "release-it": "^15.5.0",
     "release-it-lerna-changelog": "git@github.com:bertdeblock/release-it-lerna-changelog.git#fix-compat-with-release-it-v15",
-    "release-it-workspaces": "^0.0.2"
+    "release-it-workspaces": "^0.0.2",
+    "typescript": "^4.7.3"
   },
   "release-it": {
     "plugins": {
