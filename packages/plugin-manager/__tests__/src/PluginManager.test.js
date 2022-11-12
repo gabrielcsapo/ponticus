@@ -1,6 +1,6 @@
 import { test, describe, expect, beforeEach } from "vitest";
 
-import { EventProxy, TyphonEvents } from "@ponticus/backbone-esnext-events";
+import { EventEmitter } from "events";
 
 import PluginManager from "../../src/PluginManager.js";
 
@@ -132,7 +132,7 @@ describe("PluginManager:", () => {
   let pluginManager, testData;
 
   beforeEach(() => {
-    pluginManager = new PluginManager({ eventbus: new TyphonEvents() });
+    pluginManager = new PluginManager({ eventbus: new EventEmitter() });
     testData = { result: { count: 0 } };
   });
 
@@ -176,7 +176,7 @@ describe("PluginManager:", () => {
   });
 
   test("PluginManager returns EventProxy for createEventProxy when eventbus is assigned", () => {
-    expect(pluginManager.createEventProxy() instanceof EventProxy).toBe(true);
+    expect(pluginManager.createEventProxy() instanceof EventEmitter).toBe(true);
   });
 
   test("invokeAsyncEvent - PluginManager has empty result", async () => {
