@@ -61,7 +61,11 @@ const config = {
       "docusaurus-plugin-typedoc-api",
       {
         projectRoot: path.join(__dirname, ".."),
-        packages: ["packages/escomplex", "packages/analyzer"],
+        packages: [
+          "packages/escomplex",
+          "packages/escomplex-module",
+          "packages/analyzer",
+        ],
         debug: true,
       },
     ],

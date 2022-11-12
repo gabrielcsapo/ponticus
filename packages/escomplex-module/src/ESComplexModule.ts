@@ -1,5 +1,11 @@
+// @ts-ignore
 import { ASTWalker } from "@ponticus/ast-walker";
-import { ModuleScopeControl } from "@ponticus/escomplex-commons";
+// @ts-ignore
+import {
+  type ModuleReport,
+  ModuleScopeControl,
+  // @ts-ignore
+} from "@ponticus/escomplex-commons";
 
 import Plugins from "./Plugins.js";
 
@@ -8,37 +14,39 @@ import Plugins from "./Plugins.js";
  */
 export default class ESComplexModule {
   /**
+   * Provides dispatch methods to all module plugins.
+   * @internal
+   */
+  _plugins: Plugins;
+
+  /**
    * Initializes ESComplexModule.
    *
-   * @param {object}   options - module options including user plugins to load including:
-   * ```
-   * (boolean)         loadDefaultPlugins - When false ESComplexModule will not load any default plugins.
-   * (Array<Object>)   plugins - A list of ESComplexModule plugins that have already been instantiated.
-   * ```
+   * @param options - module options including user plugins to load including:
    */
-  constructor(options = {}) {
+  constructor(
+    options: { loadDefaultPlugins: boolean; plugins: Plugins[] } = {
+      loadDefaultPlugins: false,
+      plugins: [],
+    }
+  ) {
     /* istanbul ignore if */
     if (typeof options !== "object") {
       throw new TypeError("ctor error: `options` is not an `object`.");
     }
 
-    /**
-     * Provides dispatch methods to all module plugins.
-     * @type {Plugins}
-     * @private
-     */
     this._plugins = new Plugins(options);
   }
 
   /**
    * Processes the given ast and calculates metrics via plugins.
    *
-   * @param {object|Array}   ast - Javascript AST.
-   * @param {object}         options - (Optional) module analyze options.
+   * @param ast - Javascript AST.
+   * @param options - (Optional) module analyze options.
    *
-   * @returns {ModuleReport} - A single module report.
+   * @returns A single module report.
    */
-  analyze(ast, options = {}) {
+  analyze(ast: any | any[], options = {}): ModuleReport {
     if (typeof ast !== "object" || Array.isArray(ast)) {
       throw new TypeError(
         "analyze error: `ast` is not an `object` or `array`."
@@ -60,7 +68,7 @@ export default class ESComplexModule {
 
     // Completely traverse the provided AST and defer to plugins to process node traversal.
     new ASTWalker().traverse(ast, {
-      enterNode: (node, parent) => {
+      enterNode: (node: any, parent: any) => {
         const syntax = syntaxes[node.type];
 
         // Process node syntax / ignore keys.
@@ -111,7 +119,7 @@ export default class ESComplexModule {
         return ignoreKeys;
       },
 
-      exitNode: (node, parent) => {
+      exitNode: (node: any, parent: any) => {
         const syntax = syntaxes[node.type];
 
         // Process node syntax / pop scope.
@@ -172,12 +180,12 @@ export default class ESComplexModule {
   /**
    * Wraps in a Promise processing the given ast and calculates metrics via plugins.
    *
-   * @param {object|Array}   ast - Javascript AST.
-   * @param {object}         options - (Optional) module analyze options.
+   * @param ast - Javascript AST.
+   * @param options - (Optional) module analyze options.
    *
-   * @returns {Promise<ModuleReport>} - A single module report.
+   * @returns A single module report.
    */
-  analyzeAsync(ast, options = {}) {
+  analyzeAsync(ast: any | any[], options = {}): Promise<ModuleReport> {
     return new Promise((resolve, reject) => {
       try {
         resolve(this.analyze(ast, options));
