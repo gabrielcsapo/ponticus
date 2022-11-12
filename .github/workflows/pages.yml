@@ -31,11 +31,14 @@ jobs:
       - uses: volta-cli/action@v1
       - run: npm install
       - run: npm run build
-      - run: ./packages/plato/bin/plato.js --dir="output" -r "packages/**/*"
+      - run: ./packages/plato/bin/plato.js --dir="website/static/report" -r "packages/**/*"
+      - run: cd website
+      - run: npm run build
+      - run: cd ..
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: output
+          path: website/build
 
   # Deployment job
   deploy:

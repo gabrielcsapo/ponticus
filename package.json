@@ -1,18 +1,18 @@
 {
-  "name": "ponticus",
+  "name": "@ponticus/root",
   "description": "Visualize JavaScript source complexity",
-  "version": "0.0.1",
   "repository": "https://github.com/gabrielcsapo/ponticus",
   "private": true,
   "scripts": {
     "build": "npm run build --workspaces --if-present",
     "test": "CI=true npm run test --workspaces --if-present",
-    "lint": "npm run lint --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present -- --fix",
     "release": "release-it"
   },
   "license": "ISC",
   "workspaces": [
-    "./packages/*"
+    "./packages/*",
+    "./docs"
   ],
   "volta": {
     "node": "16.15.0"

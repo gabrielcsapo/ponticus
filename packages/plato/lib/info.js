@@ -1,14 +1,14 @@
 "use strict";
 
 // Project metadata.
-import fs from 'fs-extra';
-import path from 'path';
+import fs from "fs-extra";
+import path from "path";
 
 import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const pkg = fs.readJSONSync(path.resolve(__dirname, '../package.json'));
+const pkg = fs.readJSONSync(path.resolve(__dirname, "../package.json"));
 
 const options = {
   h: {

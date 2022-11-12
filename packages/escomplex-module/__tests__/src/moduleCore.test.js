@@ -54,11 +54,15 @@ if (testconfig.modules["moduleCore"]) {
         });
 
         test("aggregate has correct Halstead operator identifier length", () => {
-          expect(report.aggregate.halstead.operators.identifiers.length).toBe(report.aggregate.halstead.operators.distinct);
+          expect(report.aggregate.halstead.operators.identifiers.length).toBe(
+            report.aggregate.halstead.operators.distinct
+          );
         });
 
         test("aggregate has correct Halstead operand identifier length", () => {
-          expect(report.aggregate.halstead.operands.identifiers.length).toBe(report.aggregate.halstead.operands.distinct);
+          expect(report.aggregate.halstead.operands.identifiers.length).toBe(
+            report.aggregate.halstead.operands.distinct
+          );
         });
 
         test("aggregate has correct Halstead length", () => {
@@ -170,11 +174,15 @@ if (testconfig.modules["moduleCore"]) {
         });
 
         test("aggregate has correct Halstead operator identifier length", () => {
-          expect(report.aggregate.halstead.operators.identifiers.length).toBe(report.aggregate.halstead.operators.distinct);
+          expect(report.aggregate.halstead.operators.identifiers.length).toBe(
+            report.aggregate.halstead.operators.distinct
+          );
         });
 
         test("aggregate has correct Halstead operand identifier length", () => {
-          expect(report.aggregate.halstead.operands.identifiers.length).toBe(report.aggregate.halstead.operands.distinct);
+          expect(report.aggregate.halstead.operands.identifiers.length).toBe(
+            report.aggregate.halstead.operands.distinct
+          );
         });
 
         test("aggregate has correct Halstead length", () => {
@@ -278,11 +286,15 @@ if (testconfig.modules["moduleCore"]) {
         });
 
         test("aggregate has correct Halstead operator identifier length", () => {
-          expect(report.aggregate.halstead.operators.identifiers.length).toBe(report.aggregate.halstead.operators.distinct);
+          expect(report.aggregate.halstead.operators.identifiers.length).toBe(
+            report.aggregate.halstead.operators.distinct
+          );
         });
 
         test("aggregate has correct Halstead operand identifier length", () => {
-          expect(report.aggregate.halstead.operands.identifiers.length).toBe(report.aggregate.halstead.operands.distinct);
+          expect(report.aggregate.halstead.operands.identifiers.length).toBe(
+            report.aggregate.halstead.operands.distinct
+          );
         });
 
         test("aggregate has correct Halstead length", () => {
@@ -350,11 +362,15 @@ if (testconfig.modules["moduleCore"]) {
         });
 
         test("aggregate has correct Halstead operator identifier length", () => {
-          expect(report.aggregate.halstead.operators.identifiers.length).toBe(report.aggregate.halstead.operators.distinct);
+          expect(report.aggregate.halstead.operators.identifiers.length).toBe(
+            report.aggregate.halstead.operators.distinct
+          );
         });
 
         test("aggregate has correct Halstead operand identifier length", () => {
-          expect(report.aggregate.halstead.operands.identifiers.length).toBe(report.aggregate.halstead.operands.distinct);
+          expect(report.aggregate.halstead.operands.identifiers.length).toBe(
+            report.aggregate.halstead.operands.distinct
+          );
         });
 
         test("aggregate has correct Halstead length", () => {
@@ -408,11 +424,15 @@ if (testconfig.modules["moduleCore"]) {
         });
 
         test("aggregate has correct Halstead operator identifier length", () => {
-          expect(report.aggregate.halstead.operators.identifiers.length).toBe(report.aggregate.halstead.operators.distinct);
+          expect(report.aggregate.halstead.operators.identifiers.length).toBe(
+            report.aggregate.halstead.operators.distinct
+          );
         });
 
         test("aggregate has correct Halstead operand identifier length", () => {
-          expect(report.aggregate.halstead.operands.identifiers.length).toBe(report.aggregate.halstead.operands.distinct);
+          expect(report.aggregate.halstead.operands.identifiers.length).toBe(
+            report.aggregate.halstead.operands.distinct
+          );
         });
       });
 
@@ -584,11 +604,15 @@ if (testconfig.modules["moduleCore"]) {
         });
 
         test("aggregate has correct Halstead operand identifiers", () => {
-          expect(JSON.stringify(report.aggregate.halstead.operands.identifiers)).toBe('["i","0","10","1","\\"foo\\""]');
+          expect(
+            JSON.stringify(report.aggregate.halstead.operands.identifiers)
+          ).toBe('["i","0","10","1","\\"foo\\""]');
         });
 
         test("aggregate has correct Halstead operator identifiers", () => {
-          expect(JSON.stringify(report.aggregate.halstead.operators.identifiers)).toBe('["var","for","=","<","+="]');
+          expect(
+            JSON.stringify(report.aggregate.halstead.operators.identifiers)
+          ).toBe('["var","for","=","<","+="]');
         });
 
         test("aggregate has correct logical lines of code", () => {
@@ -1323,11 +1347,15 @@ if (testconfig.modules["moduleCore"]) {
         });
 
         test("aggregate has correct Halstead operator identifier `[]`", () => {
-          expect(report.aggregate.halstead.operators.identifiers.indexOf("[]")).toBeGreaterThanOrEqual(0);
+          expect(
+            report.aggregate.halstead.operators.identifiers.indexOf("[]")
+          ).toBeGreaterThanOrEqual(0);
         });
 
         test("aggregate does not have Halstead operator identifier `.`", () => {
-          expect(report.aggregate.halstead.operators.identifiers.indexOf(".")).toBe(-1);
+          expect(
+            report.aggregate.halstead.operators.identifiers.indexOf(".")
+          ).toBe(-1);
         });
       });
 
@@ -1367,22 +1395,31 @@ if (testconfig.modules["moduleCore"]) {
         });
 
         test("aggregate has correct Halstead operator identifier `[]`", () => {
-          expect(report.aggregate.halstead.operators.identifiers.indexOf("[]")).toBeGreaterThanOrEqual(0);
-          expect(report.aggregate.halstead.operators.identifiers.indexOf("+")).toBeGreaterThanOrEqual(0);
+          expect(
+            report.aggregate.halstead.operators.identifiers.indexOf("[]")
+          ).toBeGreaterThanOrEqual(0);
+          expect(
+            report.aggregate.halstead.operators.identifiers.indexOf("+")
+          ).toBeGreaterThanOrEqual(0);
         });
 
         test("aggregate does not have Halstead operator identifier `.`", () => {
-          expect(report.aggregate.halstead.operators.identifiers.indexOf(".")).toBe(-1);
+          expect(
+            report.aggregate.halstead.operators.identifiers.indexOf(".")
+          ).toBe(-1);
         });
 
-        test(
-          "aggregate has correct Halstead operand identifier `bar, biz, baz`",
-          () => {
-            expect(report.aggregate.halstead.operands.identifiers.indexOf("bar")).toBeGreaterThanOrEqual(0);
-            expect(report.aggregate.halstead.operands.identifiers.indexOf("biz")).toBeGreaterThanOrEqual(0);
-            expect(report.aggregate.halstead.operands.identifiers.indexOf("baz")).toBeGreaterThanOrEqual(0);
-          }
-        );
+        test("aggregate has correct Halstead operand identifier `bar, biz, baz`", () => {
+          expect(
+            report.aggregate.halstead.operands.identifiers.indexOf("bar")
+          ).toBeGreaterThanOrEqual(0);
+          expect(
+            report.aggregate.halstead.operands.identifiers.indexOf("biz")
+          ).toBeGreaterThanOrEqual(0);
+          expect(
+            report.aggregate.halstead.operands.identifiers.indexOf("baz")
+          ).toBeGreaterThanOrEqual(0);
+        });
       });
 
       describe("regexp expression", () => {
@@ -1425,7 +1462,9 @@ if (testconfig.modules["moduleCore"]) {
         });
 
         test("aggregate has regex operand identifier", () => {
-          expect(report.aggregate.halstead.operands.identifiers.indexOf("/bar/g")).toBeGreaterThanOrEqual(0);
+          expect(
+            report.aggregate.halstead.operands.identifiers.indexOf("/bar/g")
+          ).toBeGreaterThanOrEqual(0);
         });
 
         test("aggregate has correct Halstead length", () => {
@@ -1939,11 +1978,17 @@ if (testconfig.modules["moduleCore"]) {
         });
 
         test("aggregate has correct Halstead operand identifiers", () => {
-          expect(JSON.stringify(report.aggregate.halstead.operands.identifiers)).toBe('["property","foo","\\"bar\\"","baz","\\"qux\\"","\\"wibble\\""]');
+          expect(
+            JSON.stringify(report.aggregate.halstead.operands.identifiers)
+          ).toBe(
+            '["property","foo","\\"bar\\"","baz","\\"qux\\"","\\"wibble\\""]'
+          );
         });
 
         test("aggregate has correct Halstead operator identifiers", () => {
-          expect(JSON.stringify(report.aggregate.halstead.operators.identifiers)).toBe('["var","forin","{}",":"]');
+          expect(
+            JSON.stringify(report.aggregate.halstead.operators.identifiers)
+          ).toBe('["var","forin","{}",":"]');
         });
 
         test("aggregate has correct logical lines of code", () => {
@@ -2452,11 +2497,15 @@ if (testconfig.modules["moduleCore"]) {
         });
 
         test("aggregate has correct Halstead operand identifiers", () => {
-          expect(JSON.stringify(report.aggregate.halstead.operands.identifiers)).toBe('["parseInt","\\"1\\"","\\"0\\"","join","\\"\\"","10"]');
+          expect(
+            JSON.stringify(report.aggregate.halstead.operands.identifiers)
+          ).toBe('["parseInt","\\"1\\"","\\"0\\"","join","\\"\\"","10"]');
         });
 
         test("aggregate has correct Halstead operator identifiers", () => {
-          expect(JSON.stringify(report.aggregate.halstead.operators.identifiers)).toBe('["()","function","return",".","[]",","]');
+          expect(
+            JSON.stringify(report.aggregate.halstead.operators.identifiers)
+          ).toBe('["()","function","return",".","[]",","]');
         });
 
         test("aggregate has correct logical lines of code", () => {

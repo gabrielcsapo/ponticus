@@ -11,12 +11,10 @@
     "sourceMap": true,
     "outDir": "out"
   },
-  "exclude": [
-    "node_modules",
-    ".vscode-test"
-  ],
+  "exclude": ["node_modules", ".vscode-test"],
   "files": [],
   "references": [
-    { "path": "./packages/analyzer"},
+    { "path": "packages/analyzer" },
+    { "path": "packages/escomplex" }
   ]
 }

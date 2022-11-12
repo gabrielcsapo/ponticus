@@ -1,4 +1,4 @@
-import { test, describe, expect, beforeEach, afterEach } from "vitest";
+import { test, describe, expect } from "vitest";
 
 import { readFileSync } from "fs";
 

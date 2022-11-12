@@ -83,8 +83,12 @@ if (testconfig.modules["projectReport"]) {
           report.srcPath = "./a.js";
           result = new ProjectReport([report], { serializeModules: false });
 
-          expect(Array.isArray(result.modules[0]._scopeStackClass)).not.toBe(true);
-          expect(Array.isArray(result.modules[0]._scopeStackMethod)).not.toBe(true);
+          expect(Array.isArray(result.modules[0]._scopeStackClass)).not.toBe(
+            true
+          );
+          expect(Array.isArray(result.modules[0]._scopeStackMethod)).not.toBe(
+            true
+          );
 
           result.finalize();
 

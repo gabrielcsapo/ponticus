@@ -19,7 +19,9 @@ if (testconfig.modules["utilMath"]) {
           let testString =
             '[{"row":0,"cols":[0]},{"row":1,"cols":[1]},{"row":2,"cols":[2]},{"row":3,"cols":[3]}]';
 
-          expect(JSON.stringify(MathUtil.compactMatrix(matrix))).toBe(testString);
+          expect(JSON.stringify(MathUtil.compactMatrix(matrix))).toBe(
+            testString
+          );
 
           // Matrix with no column entries for row (3).
           matrix = MathUtil.create2DArray(4, 0);
@@ -35,7 +37,9 @@ if (testconfig.modules["utilMath"]) {
           testString =
             '[{"row":0,"cols":[0,2]},{"row":1,"cols":[1,3]},{"row":2,"cols":[0,1,2,3]}]';
 
-          expect(JSON.stringify(MathUtil.compactMatrix(matrix))).toBe(testString);
+          expect(JSON.stringify(MathUtil.compactMatrix(matrix))).toBe(
+            testString
+          );
 
           // Large sparse matrix with few row / column entries.
           matrix = MathUtil.create2DArray(1024, 0);
@@ -52,7 +56,9 @@ if (testconfig.modules["utilMath"]) {
             '[{"row":1,"cols":[1,3]},{"row":120,"cols":[0]},{"row":350,"cols":[22,230,330]},' +
             '{"row":600,"cols":[45]},{"row":1023,"cols":[320]}]';
 
-          expect(JSON.stringify(MathUtil.compactMatrix(matrix))).toBe(testString);
+          expect(JSON.stringify(MathUtil.compactMatrix(matrix))).toBe(
+            testString
+          );
         });
       });
 

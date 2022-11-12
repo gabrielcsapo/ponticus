@@ -1,1 +1,1 @@
-export { analyse, process } from './complexity-analyzer';
+export { analyse, process } from "./complexity-analyzer";
