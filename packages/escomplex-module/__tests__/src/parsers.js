@@ -44,7 +44,7 @@ const s_ESPREE_OPTIONS = {
 
 /**
  * Provides a debug logger.
- * @param {string}   message - log message
+ * @param message - log message
  */
 function log(message) {
   if (testconfig.parserDebug) {
