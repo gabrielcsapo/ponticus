@@ -15,6 +15,7 @@
   "files": [],
   "references": [
     { "path": "packages/analyzer" },
-    { "path": "packages/escomplex" }
+    { "path": "packages/escomplex" },
+    { "path": "packages/escomplex-module" }
   ]
 }
