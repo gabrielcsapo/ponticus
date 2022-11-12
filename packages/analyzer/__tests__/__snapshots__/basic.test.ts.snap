@@ -1,0 +1,98 @@
+// Vitest Snapshot v1
+
+exports[`Basic Test > calling analyse has the expected output 1`] = `
+ModuleReport {
+  "aggregate": AggregateReport {
+    "aggregate": undefined,
+    "cyclomatic": 1,
+    "cyclomaticDensity": 0,
+    "halstead": HalsteadData {
+      "bugs": 0,
+      "difficulty": 0,
+      "effort": 0,
+      "length": 0,
+      "operands": {
+        "distinct": 0,
+        "identifiers": [],
+        "total": 0,
+      },
+      "operators": {
+        "distinct": 0,
+        "identifiers": [],
+        "total": 0,
+      },
+      "time": 0,
+      "vocabulary": 0,
+      "volume": 0,
+    },
+    "paramCount": 0,
+    "sloc": {
+      "logical": 0,
+      "physical": 1,
+    },
+  },
+  "aggregateAverage": MethodAverage {
+    "cyclomatic": 0,
+    "cyclomaticDensity": 0,
+    "halstead": HalsteadAverage {
+      "bugs": 0,
+      "difficulty": 0,
+      "effort": 0,
+      "length": 0,
+      "operands": {
+        "distinct": 0,
+        "total": 0,
+      },
+      "operators": {
+        "distinct": 0,
+        "total": 0,
+      },
+      "time": 0,
+      "vocabulary": 0,
+      "volume": 0,
+    },
+    "paramCount": 0,
+    "sloc": {
+      "logical": 0,
+      "physical": 0,
+    },
+  },
+  "classes": [],
+  "dependencies": [],
+  "errors": [],
+  "filePath": undefined,
+  "lineEnd": 1,
+  "lineStart": 1,
+  "maintainability": 0,
+  "methodAverage": MethodAverage {
+    "cyclomatic": 0,
+    "cyclomaticDensity": 0,
+    "halstead": HalsteadAverage {
+      "bugs": 0,
+      "difficulty": 0,
+      "effort": 0,
+      "length": 0,
+      "operands": {
+        "distinct": 0,
+        "total": 0,
+      },
+      "operators": {
+        "distinct": 0,
+        "total": 0,
+      },
+      "time": 0,
+      "vocabulary": 0,
+      "volume": 0,
+    },
+    "paramCount": 0,
+    "sloc": {
+      "logical": 0,
+      "physical": 0,
+    },
+  },
+  "methods": [],
+  "settings": {},
+  "srcPath": undefined,
+  "srcPathAlias": undefined,
+}
+`;

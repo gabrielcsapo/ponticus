@@ -1,4 +1,3 @@
-import fs from "fs-extra";
 import { test, describe, expect } from "vitest";
 
 import ClassReport from "../../../src/module/report/ClassReport";

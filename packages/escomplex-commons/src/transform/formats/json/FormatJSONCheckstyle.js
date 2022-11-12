@@ -182,6 +182,7 @@ export default class FormatJSONCheckstyle {
    */
   _parseErrors(sourceObject, options, errors) {
     for (const key in options) {
+      // eslint-disable-next-line no-prototype-builtins
       if (!options.hasOwnProperty(key)) {
         continue;
       }
@@ -196,6 +197,7 @@ export default class FormatJSONCheckstyle {
         const map = options[key];
 
         for (const entryKey in map) {
+          // eslint-disable-next-line no-prototype-builtins
           if (!map.hasOwnProperty(entryKey)) {
             continue;
           }

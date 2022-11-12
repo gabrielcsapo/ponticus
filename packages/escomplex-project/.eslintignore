@@ -3,5 +3,5 @@ dist/
 docs/
 jspm_packages/
 node_modules/
-test/fixture/
+__tests__/fixture/
 config.js
