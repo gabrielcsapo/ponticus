@@ -10,6 +10,7 @@ import * as testconfig from "./testconfig";
 import escomplex from "../../src";
 
 const s_ESM_REGEX =
+  // eslint-disable-next-line no-useless-escape
   /(^\s*|[}\);\n]\s*)(import\s*(['"]|(\*\s+as\s+)?[^"'\(\)\n;]+\s*from\s*['"]|\{)|export\s+\*\s+from\s+["']|export\s* (\{|default|function|class|var|const|let|async\s+function))/;
 
 const s_ACORN_OPTIONS = { locations: true };

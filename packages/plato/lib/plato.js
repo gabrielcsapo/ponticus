@@ -226,9 +226,13 @@ async function runReports(files, options, flags, fileOutputDir) {
       } else if (file.match(/\.(js|jsx|mjs|es6|ts|tsx)$/)) {
         log.info('Reading "%s"', file);
 
+        // eslint-disable-next-line no-redeclare
         var fileShort = file.replace(commonBasePath, "");
+        // eslint-disable-next-line no-redeclare
         var fileSafe = fileShort.replace(/[^a-zA-Z0-9]/g, "_");
+        // eslint-disable-next-line no-redeclare
         var source = fs.readFileSync(file).toString();
+        // eslint-disable-next-line no-redeclare
         var trimmedSource = source.trim();
         if (!trimmedSource) {
           log.info('Not parsing empty file "%s"', file);

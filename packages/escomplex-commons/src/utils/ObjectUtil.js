@@ -304,6 +304,7 @@ export default class ObjectUtil {
     }
 
     for (const accessor of Object.keys(accessorValues)) {
+      // eslint-disable-next-line no-prototype-builtins
       if (!accessorValues.hasOwnProperty(accessor)) {
         continue;
       }
@@ -340,6 +341,7 @@ export default class ObjectUtil {
     let result;
 
     for (const key of Object.keys(validationData)) {
+      // eslint-disable-next-line no-prototype-builtins
       if (!validationData.hasOwnProperty(key)) {
         continue;
       }
@@ -735,6 +737,7 @@ function _depthTraverse(data, func, modify) {
       }
     } else if (typeof data === "object") {
       for (const key in data) {
+        // eslint-disable-next-line no-prototype-builtins
         if (data.hasOwnProperty(key)) {
           data[key] = _depthTraverse(data[key], func, modify);
         }
@@ -749,6 +752,7 @@ function _depthTraverse(data, func, modify) {
       }
     } else if (typeof data === "object") {
       for (const key in data) {
+        // eslint-disable-next-line no-prototype-builtins
         if (data.hasOwnProperty(key)) {
           _depthTraverse(data[key], func, modify);
         }
@@ -774,6 +778,7 @@ function _getAccessorList(data) {
   const accessors = [];
 
   for (const key in data) {
+    // eslint-disable-next-line no-prototype-builtins
     if (data.hasOwnProperty(key)) {
       if (typeof data[key] === "object") {
         const childKeys = _getAccessorList(data[key]);

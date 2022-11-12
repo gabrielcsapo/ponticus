@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-var FileHistory = require('../lib/models/FileHistory');
+var FileHistory = require("../lib/models/FileHistory");
 
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -22,24 +22,32 @@ var FileHistory = require('../lib/models/FileHistory');
     test.ifError(value)
 */
 
-exports['FileHistory'] = {
-  setUp: function(done) {
+exports["FileHistory"] = {
+  setUp: function (done) {
     // setup here
     done();
   },
-  'test new historical report generation for overview' : function(test) {
+  "test new historical report generation for overview": function (test) {
     var history = new FileHistory();
-    var newReport = require('./fixtures/model_history.json');
+    var newReport = require("./fixtures/model_history.json");
     history.addReport(newReport);
 
-    test.equal(history[0].sloc, newreport.complexity.aggregate.sloc.physical);
-    test.equal(history[0].lloc, newreport.complexity.aggregate.sloc.logical);
-    test.equal(history[0].deliveredBugs, newReport.complexity.aggregate..halstead.bugs);
-    test.equal(history[0].difficulty, newReport.complexity.aggregate..halstead.difficulty);
-    test.equal(history[0].maintainability, newReport.complexity.maintainability);
+    test.equal(history[0].sloc, newReport.complexity.aggregate.sloc.physical);
+    test.equal(history[0].lloc, newReport.complexity.aggregate.sloc.logical);
+    test.equal(
+      history[0].deliveredBugs,
+      newReport.complexity.aggregate.halstead.bugs
+    );
+    test.equal(
+      history[0].difficulty,
+      newReport.complexity.aggregate.halstead.difficulty
+    );
+    test.equal(
+      history[0].maintainability,
+      newReport.complexity.maintainability
+    );
     test.equal(history[0].functions, newReport.complexity.functions.length);
     test.equal(history[0].lintErrors, newReport.jshint.messages.length);
     test.done();
   },
-
 };

@@ -1,5 +1,3 @@
 import PluginSyntaxESTree from "./PluginSyntaxESTree.js";
 
-export {
-    PluginSyntaxESTree
-}
+export { PluginSyntaxESTree };

@@ -314,6 +314,7 @@ export default class PluginManager {
       // If a target is defined use it instead of the name.
       target = pluginConfig.target || pluginConfig.name;
 
+      // eslint-disable-next-line no-useless-escape
       if (target.match(/^[.\/\\]/)) {
         instance = require(path.resolve(target)); // eslint-disable global-require
 
@@ -472,6 +473,7 @@ export default class PluginManager {
       // If a target is defined use it instead of the name.
       target = pluginConfig.target || pluginConfig.name;
 
+      // eslint-disable-next-line no-useless-escape
       if (target.match(/^[.\/\\]/)) {
         instance = require(path.resolve(target)); // eslint-disable global-require
 

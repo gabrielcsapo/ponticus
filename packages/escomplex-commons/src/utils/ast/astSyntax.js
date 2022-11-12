@@ -158,7 +158,7 @@ export default {
 
     this[node.discriminant.type](node.discriminant, state);
 
-    output.write(`) \{${lineEnd}`);
+    output.write(`) {${lineEnd}`);
 
     const { cases: occurences } = node;
     const { length: occurencesCount } = occurences;

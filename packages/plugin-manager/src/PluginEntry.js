@@ -67,6 +67,7 @@ export default class PluginEntry {
 
     // Escape any forward / reverse slashes for RegExp creation.
     escaped = escaped.replace(/[\\]/g, "\\");
+    // eslint-disable-next-line no-useless-escape
     escaped = escaped.replace(/[\/]/g, "\\/");
 
     return escaped;
