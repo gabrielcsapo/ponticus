@@ -1,6 +1,6 @@
 import path from "path";
 
-import { EventProxy } from "@ponticus/backbone-esnext-events";
+import { EventEmitter } from "events";
 
 import PluginEntry from "./PluginEntry.js";
 import PluginEvent from "./PluginEvent.js";
@@ -289,7 +289,7 @@ export default class PluginManager {
     if (this._pluginMap.has(pluginConfig.name)) {
       // Please note that a plugin or other logger must be setup on the associated eventbus.
       if (this._eventbus !== null && typeof this._eventbus !== "undefined") {
-        this._eventbus.trigger(
+        this._eventbus.emit(
           "log:warn",
           `A plugin already exists with name: ${pluginConfig.name}.`
         );
@@ -348,7 +348,7 @@ export default class PluginManager {
 
     const eventProxy =
       this._eventbus !== null && typeof this._eventbus !== "undefined"
-        ? new EventProxy(this._eventbus)
+        ? new EventEmitter(this._eventbus)
         : void 0;
 
     const entry = new PluginEntry(
@@ -374,10 +374,7 @@ export default class PluginManager {
 
     // Invoke `typhonjs:plugin:manager:plugin:added` allowing external code to react to plugin addition.
     if (this._eventbus) {
-      this._eventbus.trigger(
-        `typhonjs:plugin:manager:plugin:added`,
-        pluginData
-      );
+      this._eventbus.emit(`typhonjs:plugin:manager:plugin:added`, pluginData);
     }
 
     return pluginData;
@@ -448,7 +445,7 @@ export default class PluginManager {
     if (this._pluginMap.has(pluginConfig.name)) {
       // Please note that a plugin or other logger must be setup on the associated eventbus.
       if (this._eventbus !== null && typeof this._eventbus !== "undefined") {
-        this._eventbus.trigger(
+        this._eventbus.emit(
           "log:warn",
           `A plugin already exists with name: ${pluginConfig.name}.`
         );
@@ -507,7 +504,7 @@ export default class PluginManager {
 
     const eventProxy =
       this._eventbus !== null && typeof this._eventbus !== "undefined"
-        ? new EventProxy(this._eventbus)
+        ? new EventEmitter(this._eventbus)
         : void 0;
 
     const entry = new PluginEntry(
@@ -533,10 +530,7 @@ export default class PluginManager {
 
     // Invoke `typhonjs:plugin:manager:plugin:added` allowing external code to react to plugin addition.
     if (this._eventbus) {
-      await this._eventbus.triggerAsync(
-        `typhonjs:plugin:manager:plugin:added`,
-        pluginData
-      );
+      this._eventbus.emit(`typhonjs:plugin:manager:plugin:added`, pluginData);
     }
 
     return pluginData;
@@ -701,12 +695,12 @@ export default class PluginManager {
   }
 
   /**
-   * If an eventbus is assigned to this plugin manager then a new EventProxy wrapping this eventbus is returned.
+   * If an eventbus is assigned to this plugin manager then a new EventEmitter wrapping this eventbus is returned.
    *
    * @returns {EventProxy}
    */
   createEventProxy() {
-    return this._eventbus !== null ? new EventProxy(this._eventbus) : void 0;
+    return this._eventbus !== null ? new EventEmitter(this._eventbus) : void 0;
   }
 
   /**
@@ -1183,7 +1177,7 @@ export default class PluginManager {
     const entry = this._pluginMap.get(pluginName);
 
     return entry instanceof PluginEntry && entry._eventProxy
-      ? entry._eventProxy.getEventNames()
+      ? entry._eventProxy.eventNames()
       : [];
   }
 
@@ -2109,7 +2103,7 @@ export default class PluginManager {
           entry.eventProxy.destroy();
         }
 
-        entry.eventProxy = new EventProxy(targetEventbus);
+        entry.eventProxy = new EventEmitter(targetEventbus);
       }
 
       // Invoke private module method which allows skipping optional error checking.
@@ -2128,7 +2122,7 @@ export default class PluginManager {
         // Invoke `typhonjs:plugin:manager:eventbus:changed` allowing external code to react to plugin
         // changing eventbus.
         if (this._eventbus) {
-          this._eventbus.trigger(
+          this._eventbus.emit(
             `typhonjs:plugin:manager:eventbus:changed`,
             Object.assign(
               {
@@ -2298,7 +2292,7 @@ export default class PluginManager {
       );
 
       // Invoke `typhonjs:plugin:manager:eventbus:removed` allowing external code to react to eventbus removal.
-      this._eventbus.trigger(`typhonjs:plugin:manager:eventbus:removed`, {
+      this._eventbus.emit(`typhonjs:plugin:manager:eventbus:removed`, {
         oldEventbus: this._eventbus,
         oldEventPrepend: oldPrepend,
         newEventbus: targetEventbus,
@@ -2457,7 +2451,7 @@ export default class PluginManager {
     );
 
     // Invoke `typhonjs:plugin:manager:eventbus:set` allowing external code to react to eventbus set.
-    targetEventbus.trigger("typhonjs:plugin:manager:eventbus:set", {
+    targetEventbus.emit("typhonjs:plugin:manager:eventbus:set", {
       oldEventbus: this._eventbus,
       oldEventPrepend: oldPrepend,
       newEventbus: targetEventbus,
@@ -2538,7 +2532,7 @@ export default class PluginManager {
           entry.eventProxy.destroy();
         }
 
-        entry.eventProxy = new EventProxy(targetEventbus);
+        entry.eventProxy = new EventEmitter(targetEventbus);
       }
 
       // Invoke private module method which allows skipping optional error checking.
@@ -3085,7 +3079,7 @@ export default class PluginManager {
         /* nop */
       }
 
-      if (entry.eventProxy instanceof EventProxy) {
+      if (entry.eventProxy instanceof EventEmitter) {
         entry.eventProxy.destroy();
       }
 
@@ -3143,7 +3137,7 @@ export default class PluginManager {
         /* nop */
       }
 
-      if (entry.eventProxy instanceof EventProxy) {
+      if (entry.eventProxy instanceof EventEmitter) {
         entry.eventProxy.destroy();
       }
 
@@ -3153,7 +3147,7 @@ export default class PluginManager {
 
       // Invoke `typhonjs:plugin:manager:plugin:removed` allowing external code to react to plugin removed.
       if (this._eventbus) {
-        await this._eventbus.triggerAsync(
+        this._eventbus.emit(
           `typhonjs:plugin:manager:plugin:removed`,
           pluginData
         );
