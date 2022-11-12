@@ -26,7 +26,7 @@ export default class ESComplexModule {
    */
   constructor(
     options: { loadDefaultPlugins: boolean; plugins: Plugins[] } = {
-      loadDefaultPlugins: false,
+      loadDefaultPlugins: true,
       plugins: [],
     }
   ) {
