@@ -2099,7 +2099,7 @@ export default class PluginManager {
         entry.data.manager.eventPrepend = eventPrepend;
         entry.data.plugin.scopedName = `${eventPrepend}:${entry.name}`;
 
-        if (entry.eventProxy instanceof EventProxy) {
+        if (entry.eventProxy instanceof EventEmitter) {
           entry.eventProxy.destroy();
         }
 
@@ -2528,7 +2528,7 @@ export default class PluginManager {
         entry.data.manager.eventPrepend = eventPrepend;
         entry.data.plugin.scopedName = `${eventPrepend}:${entry.name}`;
 
-        if (entry.eventProxy instanceof EventProxy) {
+        if (entry.eventProxy instanceof EventEmitter) {
           entry.eventProxy.destroy();
         }
 
