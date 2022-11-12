@@ -1,6 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 const path = require("path");
+const fs = require("fs");
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
@@ -21,6 +22,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
   // "packages/plugin-manager",
   // "packages/ponticus",
 ];
+
+console.log("used for debugging, ", fs.readdirSync(path.join(__dirname, "..")));
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -85,7 +88,7 @@ const config = {
             position: "left",
           },
           {
-            href: "/static/report",
+            href: "https://gabrielcsapo.github.io/ponticus/report/",
             label: "Example Report",
             position: "right",
           },
