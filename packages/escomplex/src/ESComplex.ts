@@ -70,7 +70,7 @@ export class ESComplex {
    * @returns - A single module report.
    */
   analyzeModule(
-    source: String,
+    source: string,
     options = {},
     parserOptions = void 0,
     parserOverride = void 0

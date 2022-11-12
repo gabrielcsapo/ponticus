@@ -5,8 +5,7 @@
   "description": "Produce a complexity analysis report",
   "version": "0.0.1",
   "scripts": {
-    "build": "tsc -b -f",
-    "watch": "tsc -b -w",
+    "build": "swc src -d dist && swc src -d cjs --config module.type=commonjs",
     "lint": "eslint src/*.ts",
     "test": "vitest"
   },
