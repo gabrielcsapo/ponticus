@@ -1,4 +1,5 @@
-import * as babelParser from "@babel/parser";
+import { type ParserOptions, parse as babelParse } from "@babel/parser";
+import { type PluginEvent } from "@ponticus/plugin-manager";
 
 /**
  * Default babel parser options applying most available plugins.
@@ -7,10 +8,8 @@ import * as babelParser from "@babel/parser";
  * - that both decorators and decorators-legacy can not be used simultaneously.
  * - that both 'flow' and 'typescript' can not be used simultaneously
  *
- * @type {{plugins: string[]}}
- * @ignore
  */
-const s_DEFAULT_BABELPARSER_OPTIONS = {
+const s_DEFAULT_BABELPARSER_OPTIONS: ParserOptions = {
   plugins: [
     "asyncGenerators",
     "bigInt",
@@ -45,14 +44,12 @@ export default class BabelParser {
   /**
    * Parses the given source with Babel parser.
    *
-   * @param {string}   source - Javascript source code to parse.
-   * @param {object}   [options] - Overrides default babel parser options.
-   * @param {object}   [override] - Provides helper directives to override options to simplify modification of default
-   *                                Babel parser options.
+   * @param source - Javascript source code to parse.
+   * @param options - Overrides default babel parser options.
+   * @param override - Provides helper directives to override options to simplify modification of default Babel parser options.
    *
-   * @returns {object}
    */
-  static parse(source, options = void 0, override = void 0) {
+  static parse(source: string, options?: ParserOptions, override?: any) {
     // Make a copy of the default options.
     const defaultOptions = JSON.parse(
       JSON.stringify(s_DEFAULT_BABELPARSER_OPTIONS)
@@ -91,13 +88,15 @@ export default class BabelParser {
       }
     }
 
-    options = typeof options === "object" ? options : defaultOptions;
-    options.sourceType =
-      typeof options.sourceType === "string"
-        ? options.sourceType
+    let compiledOptions =
+      typeof options === "object" ? options : defaultOptions;
+
+    compiledOptions.sourceType =
+      typeof compiledOptions.sourceType === "string"
+        ? compiledOptions.sourceType
         : "unambiguous";
 
-    return babelParser.parse(source, options);
+    return babelParse(source, compiledOptions);
   }
 }
 
@@ -107,10 +106,9 @@ export default class BabelParser {
  * `typhonjs:babel:parser:file:parse`: Invokes `parseFile`.
  * `typhonjs:babel:parser:source:parse`: Invokes `parseSource`.
  *
- * @param {PluginEvent} ev - The plugin event.
- * @ignore
+ * @param  ev - The plugin event.
  */
-export function onPluginLoad(ev) {
+export function onPluginLoad(ev: PluginEvent) {
   const eventbus = ev.eventbus;
 
   eventbus.on("typhonjs:babel:parser:parse", BabelParser.parse, BabelParser);

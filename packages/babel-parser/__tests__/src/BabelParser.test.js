@@ -1,6 +1,6 @@
 import { test, describe, expect } from "vitest";
 
-import BabelParser from "../../src/BabelParser.js";
+import BabelParser from "../../src/BabelParser.ts";
 
 describe("babel-parser:", () => {
   describe("BabelParser:", () => {
