@@ -1,18 +1,27 @@
 {
   "name": "@ponticus/escomplex-plugin-formats-xml",
   "version": "0.0.1",
-  "homepage": "https://github.com/gabrielcsapo/@ponticus/escomplex-commons/",
-  "description": "Provides a plugin for typhonjs-escomplex project result / module report transformation to XML.",
+  "homepage": "https://github.com/gabrielcsapo/ponticus",
+  "description": "Provides a plugin for @ponticus/escomplex project result / module report transformation to XML.",
   "type": "module",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
   "exports": {
     ".": "./dist/index.js"
   },
+  "scripts": {
+    "build": "swc src -d dist && tsc",
+    "lint": "eslint .",
+    "prepublish": "npm run build",
+    "test": "vitest"
+  },
+  "keywords": [
+    "escomplex",
+    "plugin",
+    "format",
+    "xml"
+  ],
+  "types": "./dist/dts/index.d.ts",
   "dependencies": {
-    "js2xmlparser": "^1.0.0",
+    "js2xmlparser": "^5.0.0",
     "@ponticus/escomplex-commons": "^0.0.1"
   },
   "devDependencies": {
@@ -23,29 +32,6 @@
     "eslint": "^8.27.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-tsdoc": "^0.2.17",
-    "prettier": "^2.7.1",
-    "vitest": "^0.24.5"
-  },
-  "scripts": {
-    "build": "swc src -d dist && swc src -d cjs --config module.type=commonjs",
-    "lint": "eslint .",
-    "prepublish": "npm run build",
-    "test": "vitest"
-  },
-  "keywords": [
-    "typhonjs",
-    "escomplex",
-    "plugin",
-    "format",
-    "xml"
-  ],
-  "files": [
-    "dist",
-    "src",
-    "AUTHORS.md"
-  ],
-  "directories": {},
-  "bugs": {
-    "url": "https://github.com/typhonjs-node-escomplex/escomplex-plugin-formats-xml/issues"
+    "vitest": "^0.25.1"
   }
 }

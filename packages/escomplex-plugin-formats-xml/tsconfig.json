@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig",
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationDir": "dist/dts",
+    "rootDir": "src"
+  },
+  "include": ["src/**/*"]
+}

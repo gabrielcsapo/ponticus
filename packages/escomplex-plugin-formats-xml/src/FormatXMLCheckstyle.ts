@@ -1,6 +1,10 @@
+// @ts-ignore
 import { TransformFormat } from "@ponticus/escomplex-commons";
+// TODO: import ModuleReport, ProjectResult from escomplex-commons when that is converted
+type ModuleReport = any;
+type ProjectResult = any;
 
-import js2xmlparser from "js2xmlparser";
+import { parse } from "js2xmlparser";
 
 /**
  * Provides a format transform for ESComplex ModuleReport / ProjectResult instances converting them to Checkstyle XML.
@@ -16,14 +20,27 @@ import js2xmlparser from "js2xmlparser";
  */
 export default class FormatXMLCheckstyle {
   /**
+   * @internal
+   */
+  _formatName: string;
+  /**
+   * @internal
+   */
+  _formatType: string;
+  /**
+   * @internal
+   */
+  _jsonFormatName: string;
+
+  /**
    * Instantiates FormatXML with a given formatName which should start with `xml` and an associated JSON format
    * type name to use to create the intermediate data to be serialized to XML.
    *
-   * @param {string}   formatName -
-   * @param {string}   formatType -
-   * @param {string}   jsonFormatName -
+   * @param formatName
+   * @param formatType
+   * @param jsonFormatName
    */
-  constructor(formatName, formatType, jsonFormatName) {
+  constructor(formatName: string, formatType: string, jsonFormatName: string) {
     this._formatName = formatName;
     this._formatType = formatType;
     this._jsonFormatName = jsonFormatName;
@@ -32,13 +49,11 @@ export default class FormatXMLCheckstyle {
   /**
    * Formats a module report as a JSON string.
    *
-   * @param {ModuleReport}   report - A module report.
+   * @param report - A module report.
+   * @param options - (Optional) One or more optional parameters passed to the formatter.
    *
-   * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
-   *
-   * @returns {string}
    */
-  formatReport(report, options) {
+  formatReport(report: ModuleReport, options?: any): string {
     const jsonString = TransformFormat.format(
       report,
       this._jsonFormatName,
@@ -49,14 +64,14 @@ export default class FormatXMLCheckstyle {
 
     // Reformat JSON checkstyle format moving data to `@` entries which `js2xmlparser` converts to element attributes.
     if (Array.isArray(jsonObject.file)) {
-      jsonObject.file.forEach((entry) => {
+      jsonObject.file.forEach((entry: any) => {
         // Convert name to an attribute.
         entry["@"] = { name: entry.name };
         delete entry.name;
 
         // Map any error entries to error attributes.
         if (Array.isArray(entry.error)) {
-          entry.error = entry.error.map((errorEntry) => {
+          entry.error = entry.error.map((errorEntry: any) => {
             return { "@": errorEntry };
           });
         }
@@ -69,19 +84,17 @@ export default class FormatXMLCheckstyle {
       delete jsonObject.version;
     }
 
-    return js2xmlparser("checkstyle", jsonObject);
+    return parse("checkstyle", jsonObject);
   }
 
   /**
    * Formats a project result as XML.
    *
-   * @param {ProjectResult}  result - A project result.
+   * @param result - A project result.
+   * @param options - (Optional) One or more optional parameters passed to the formatter.
    *
-   * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
-   *
-   * @returns {string}
    */
-  formatResult(result, options) {
+  formatResult(result: ProjectResult, options?: any): string {
     const jsonString = TransformFormat.format(
       result,
       this._jsonFormatName,
@@ -92,14 +105,14 @@ export default class FormatXMLCheckstyle {
 
     // Reformat JSON checkstyle format moving data to `@` entries which `js2xmlparser` converts to element attributes.
     if (Array.isArray(jsonObject.file)) {
-      jsonObject.file.forEach((entry) => {
+      jsonObject.file.forEach((entry: any) => {
         // Convert name to an attribute.
         entry["@"] = { name: entry.name };
         delete entry.name;
 
         // Map any error entries to error attributes.
         if (Array.isArray(entry.error)) {
-          entry.error = entry.error.map((errorEntry) => {
+          entry.error = entry.error.map((errorEntry: any) => {
             return { "@": errorEntry };
           });
         }
@@ -112,42 +125,34 @@ export default class FormatXMLCheckstyle {
       delete jsonObject.version;
     }
 
-    return js2xmlparser("checkstyle", jsonObject);
+    return parse("checkstyle", jsonObject);
   }
 
   /**
    * Gets the file extension.
-   *
-   * @returns {string}
    */
-  get extension() {
+  get extension(): string {
     return "xml";
   }
 
   /**
    * Gets the format name.
-   *
-   * @returns {string}
    */
-  get name() {
+  get name(): string {
     return this._formatName;
   }
 
   /**
    * Gets the format type.
-   *
-   * @returns {string}
    */
-  get type() {
+  get type(): string {
     return "checkstyle";
   }
 
   /**
    * Returns whether a given ReportType is supported by this format transform.
-   *
-   * @returns {boolean}
    */
-  isSupported() {
+  isSupported(): boolean {
     return true;
   }
 }

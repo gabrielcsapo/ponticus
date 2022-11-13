@@ -19,6 +19,7 @@
     { "path": "packages/escomplex-module" },
     { "path": "packages/plugin-manager" },
     { "path": "packages/babel-parser" },
-    { "path": "packages/ast-walker" }
+    { "path": "packages/ast-walker" },
+    { "path": "packages/escomplex-plugin-formats-xml" }
   ]
 }
