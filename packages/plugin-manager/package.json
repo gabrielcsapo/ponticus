@@ -22,9 +22,6 @@
     "eslint-config-prettier": "^8.5.0",
     "vitest": "^0.24.5"
   },
-  "dependencies": {
-    "@ponticus/backbone-esnext-events": "^0.0.1"
-  },
   "scripts": {
     "build": "swc src -d dist",
     "lint": "eslint .",

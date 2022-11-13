@@ -1184,19 +1184,9 @@ if (testconfig.modules["moduleES6"]) {
           });
 
           test("aggregate has correct Halstead operand identifiers", () => {
-            // Fails for esprima; see below.
-            // assert.strictEqual(JSON.stringify(report.aggregate.halstead.operands.identifiers),
-            //  '["s_FOO","x","1","y","2"]');
-
-            const identifiers = report.aggregate.halstead.operands.identifiers;
-
-            // Must test individually as esprima default values don't use AssignmentPattern.
-            expect(identifiers.length).toBe(5);
-            expect(identifiers.indexOf("s_FOO")).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf("x")).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf("1")).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf("y")).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf("2")).toBeGreaterThanOrEqual(0);
+            expect(
+              JSON.stringify(report.aggregate.halstead.operands.identifiers)
+            ).toBe('["s_FOO","x","1","y","2"]');
           });
 
           test("aggregate has correct Halstead operator identifiers", () => {
@@ -2343,19 +2333,9 @@ if (testconfig.modules["moduleES6"]) {
           });
 
           test("aggregate has correct Halstead operand identifiers", () => {
-            // Fails for esprima; see below.
-            // assert.strictEqual(JSON.stringify(report.aggregate.halstead.operands.identifiers),
-            //  '["baz","\\"bar\\"","foo","\\"biz\\"","fuz"]');
-
-            const identifiers = report.aggregate.halstead.operands.identifiers;
-
-            // Must test individually as esprima has child nodes out of order (quasis before expressions)
-            expect(identifiers.length).toBe(5);
-            expect(identifiers.indexOf("baz")).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf('"bar"')).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf("foo")).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf('"biz"')).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf("fuz")).toBeGreaterThanOrEqual(0);
+            expect(
+              JSON.stringify(report.aggregate.halstead.operands.identifiers)
+            ).toBe('["baz","\\"bar\\"","foo","\\"biz\\"","fuz"]');
           });
 
           test("aggregate has correct Halstead operator identifiers", () => {
@@ -2443,20 +2423,9 @@ if (testconfig.modules["moduleES6"]) {
           });
 
           test("aggregate has correct Halstead operand identifiers", () => {
-            // Fails for esprima; see below.
-            // assert.strictEqual(JSON.stringify(report.aggregate.halstead.operands.identifiers),
-            //  '["baz","\\"bar\\"","foo","JSON","stringify","fuz"]');
-
-            const identifiers = report.aggregate.halstead.operands.identifiers;
-
-            // Must test individually as esprima has child nodes out of order (quasis before expressions)
-            expect(identifiers.length).toBe(6);
-            expect(identifiers.indexOf("baz")).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf('"bar"')).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf("foo")).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf("JSON")).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf("stringify")).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf("fuz")).toBeGreaterThanOrEqual(0);
+            expect(
+              JSON.stringify(report.aggregate.halstead.operands.identifiers)
+            ).toBe('["baz","\\"bar\\"","foo","JSON","stringify","fuz"]');
           });
 
           test("aggregate has correct Halstead operator identifiers", () => {
@@ -2542,17 +2511,9 @@ if (testconfig.modules["moduleES6"]) {
           });
 
           test("aggregate has correct Halstead operand identifiers", () => {
-            // Fails for esprima; see below.
-            // assert.strictEqual(JSON.stringify(report.aggregate.halstead.operands.identifiers),
-            //  '["foo","tagged","bar"]');
-
-            const identifiers = report.aggregate.halstead.operands.identifiers;
-
-            // Must test individually as esprima has child nodes out of order (quasis before expressions)
-            expect(identifiers.length).toBe(3);
-            expect(identifiers.indexOf("foo")).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf("tagged")).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf("bar")).toBeGreaterThanOrEqual(0);
+            expect(
+              JSON.stringify(report.aggregate.halstead.operands.identifiers)
+            ).toBe('["foo","tagged","bar"]');
           });
 
           test("aggregate has correct Halstead operator identifiers", () => {
@@ -2733,19 +2694,9 @@ if (testconfig.modules["moduleES6"]) {
           });
 
           test("aggregate has correct Halstead operand identifiers", () => {
-            // Fails for esprima; see below.
-            // assert.strictEqual(JSON.stringify(report.aggregate.halstead.operands.identifiers),
-            //  '["baz","\\"bar\\"","foo","\\"biz\\"","fuz"]');
-
-            const identifiers = report.aggregate.halstead.operands.identifiers;
-
-            // Must test individually as esprima has child nodes out of order (quasis before expressions)
-            expect(identifiers.length).toBe(5);
-            expect(identifiers.indexOf("baz")).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf('"bar"')).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf("foo")).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf('"biz"')).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf("fuz")).toBeGreaterThanOrEqual(0);
+            expect(
+              JSON.stringify(report.aggregate.halstead.operands.identifiers)
+            ).toEqual('["baz","\\"bar\\"","foo","\\"biz\\"","fuz"]');
           });
 
           test("aggregate has correct Halstead operator identifiers", () => {
@@ -2834,20 +2785,9 @@ if (testconfig.modules["moduleES6"]) {
           });
 
           test("aggregate has correct Halstead operand identifiers", () => {
-            // Fails for esprima; see below.
-            // assert.strictEqual(JSON.stringify(report.aggregate.halstead.operands.identifiers),
-            //  '["baz","\\"bar\\"","foo","JSON","stringify","fuz"]');
-
-            const identifiers = report.aggregate.halstead.operands.identifiers;
-
-            // Must test individually as esprima has child nodes out of order (quasis before expressions)
-            expect(identifiers.length).toBe(6);
-            expect(identifiers.indexOf("baz")).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf('"bar"')).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf("foo")).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf("JSON")).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf("stringify")).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf("fuz")).toBeGreaterThanOrEqual(0);
+            expect(
+              JSON.stringify(report.aggregate.halstead.operands.identifiers)
+            ).toEqual('["baz","\\"bar\\"","foo","JSON","stringify","fuz"]');
           });
 
           test("aggregate has correct Halstead operator identifiers", () => {
@@ -2935,17 +2875,9 @@ if (testconfig.modules["moduleES6"]) {
           });
 
           test("aggregate has correct Halstead operand identifiers", () => {
-            // Fails for esprima; see below.
-            // assert.strictEqual(JSON.stringify(report.aggregate.halstead.operands.identifiers),
-            //  '["foo","tagged","bar"]');
-
-            const identifiers = report.aggregate.halstead.operands.identifiers;
-
-            // Must test individually as esprima has child nodes out of order (quasis before expressions)
-            expect(identifiers.length).toBe(3);
-            expect(identifiers.indexOf("foo")).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf("tagged")).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf("bar")).toBeGreaterThanOrEqual(0);
+            expect(
+              JSON.stringify(report.aggregate.halstead.operands.identifiers)
+            ).toEqual('["foo","tagged","bar"]');
           });
 
           test("aggregate has correct Halstead operator identifiers", () => {
@@ -3735,7 +3667,7 @@ if (testconfig.modules["moduleES6"]) {
           });
         });
 
-        describe("FunctionDeclaration `defaults` (esprima) / AssignmentPattern (acorn, babylon, espree):", () => {
+        describe("AssignmentPattern (babylon):", () => {
           let report;
 
           beforeEach(() => {
@@ -3749,33 +3681,15 @@ if (testconfig.modules["moduleES6"]) {
           });
 
           test("aggregate has correct Halstead operand identifiers", () => {
-            // Fails for esprima; see below.
-            // assert.strictEqual(JSON.stringify(report.aggregate.halstead.operands.identifiers),
-            //  '["foo","first","bar","\\"baz\\"","items"]');
-
-            const identifiers = report.aggregate.halstead.operands.identifiers;
-
-            // Must test individually as esprima default values don't use AssignmentPattern.
-            expect(identifiers.length).toBe(5);
-            expect(identifiers.indexOf("foo")).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf("first")).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf("bar")).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf('"baz"')).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf("items")).toBeGreaterThanOrEqual(0);
+            expect(
+              JSON.stringify(report.aggregate.halstead.operands.identifiers)
+            ).toEqual('["foo","first","bar","\\"baz\\"","items"]');
           });
 
           test("aggregate has correct Halstead operator identifiers", () => {
-            // Fails for esprima; see below.
-            // assert.strictEqual(JSON.stringify(report.aggregate.halstead.operators.identifiers),
-            //  '["function","=","... (rest)"]');
-
-            const identifiers = report.aggregate.halstead.operators.identifiers;
-
-            // Must test individually as esprima default values don't use AssignmentPattern.
-            expect(identifiers.length).toBe(3);
-            expect(identifiers.indexOf("function")).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf("=")).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf("... (rest)")).toBeGreaterThanOrEqual(0);
+            expect(
+              JSON.stringify(report.aggregate.halstead.operators.identifiers)
+            ).toEqual('["function","=","... (rest)"]');
           });
 
           test("aggregate has correct logical lines of code", () => {
@@ -11856,17 +11770,9 @@ if (testconfig.modules["moduleES6"]) {
           });
 
           test("aggregate has correct Halstead operand identifiers", () => {
-            // Fails for esprima; see below.
-            // assert.strictEqual(JSON.stringify(report.aggregate.halstead.operands.identifiers),
-            //  '["foo","bar","\\"module\\""]');
-
-            const identifiers = report.aggregate.halstead.operands.identifiers;
-
-            // Must test individually as esprima `local` node comes before `imported`.
-            expect(identifiers.length).toBe(3);
-            expect(identifiers.indexOf("foo")).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf("bar")).toBeGreaterThanOrEqual(0);
-            expect(identifiers.indexOf('"module"')).toBeGreaterThanOrEqual(0);
+            expect(
+              JSON.stringify(report.aggregate.halstead.operands.identifiers)
+            ).toEqual('["foo","bar","\\"module\\""]');
           });
 
           test("aggregate has correct Halstead operator identifiers", () => {

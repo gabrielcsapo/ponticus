@@ -1,31 +1,913 @@
 // Vitest Snapshot v1
 
-exports[`(acorn) project: > local source + NPM module @ponticus/escomplex-commons and escomplex-module test w/ dependencies: > adjacency list is correct 1`] = `"[{\\"row\\":0,\\"cols\\":[2]},{\\"row\\":1,\\"cols\\":[0]},{\\"row\\":5,\\"cols\\":[39]},{\\"row\\":7,\\"cols\\":[38]},{\\"row\\":8,\\"cols\\":[7,13]},{\\"row\\":10,\\"cols\\":[9]},{\\"row\\":11,\\"cols\\":[10]},{\\"row\\":12,\\"cols\\":[5,7,8,10,38,39,42]},{\\"row\\":14,\\"cols\\":[5,8]},{\\"row\\":15,\\"cols\\":[5,7,8,10,12,38,39,41,42]},{\\"row\\":16,\\"cols\\":[17,18,20]},{\\"row\\":17,\\"cols\\":[19]},{\\"row\\":21,\\"cols\\":[11,15,38,39,41,42,43]},{\\"row\\":23,\\"cols\\":[39,42]},{\\"row\\":24,\\"cols\\":[39,42]},{\\"row\\":25,\\"cols\\":[39]},{\\"row\\":26,\\"cols\\":[33,43]},{\\"row\\":27,\\"cols\\":[34]},{\\"row\\":28,\\"cols\\":[35,43]},{\\"row\\":29,\\"cols\\":[36,43]},{\\"row\\":30,\\"cols\\":[37]},{\\"row\\":31,\\"cols\\":[39,42,43]},{\\"row\\":32,\\"cols\\":[39,42]},{\\"row\\":33,\\"cols\\":[31,38,39,43]},{\\"row\\":34,\\"cols\\":[32]},{\\"row\\":35,\\"cols\\":[31,39,43]},{\\"row\\":36,\\"cols\\":[31,39,43]},{\\"row\\":37,\\"cols\\":[32]},{\\"row\\":38,\\"cols\\":[22,23,24,25,26,27,28,29,30,33,34,35,36,37,39]},{\\"row\\":39,\\"cols\\":[40]},{\\"row\\":41,\\"cols\\":[42]},{\\"row\\":43,\\"cols\\":[42]},{\\"row\\":44,\\"cols\\":[46]},{\\"row\\":45,\\"cols\\":[44]}]"`;
+exports[`(babelParser) project: > local source + NPM module @ponticus/escomplex-commons and escomplex-module test w/ dependencies: > adjacency list is correct 1`] = `"[{\\"row\\":0,\\"cols\\":[34]},{\\"row\\":2,\\"cols\\":[33]},{\\"row\\":3,\\"cols\\":[2,8]},{\\"row\\":5,\\"cols\\":[4,37]},{\\"row\\":6,\\"cols\\":[5,37]},{\\"row\\":7,\\"cols\\":[0,2,3,5,33,34,37]},{\\"row\\":9,\\"cols\\":[0,3,37]},{\\"row\\":10,\\"cols\\":[0,2,3,5,7,33,34,36,37]},{\\"row\\":11,\\"cols\\":[12,13,15]},{\\"row\\":12,\\"cols\\":[14]},{\\"row\\":16,\\"cols\\":[6,10,33,34,36,37,38]},{\\"row\\":18,\\"cols\\":[34,37]},{\\"row\\":19,\\"cols\\":[34,37]},{\\"row\\":20,\\"cols\\":[34]},{\\"row\\":21,\\"cols\\":[28,38]},{\\"row\\":22,\\"cols\\":[29]},{\\"row\\":23,\\"cols\\":[30,38]},{\\"row\\":24,\\"cols\\":[31,38]},{\\"row\\":25,\\"cols\\":[32]},{\\"row\\":26,\\"cols\\":[34,37,38]},{\\"row\\":27,\\"cols\\":[34,37]},{\\"row\\":28,\\"cols\\":[26,33,34,38]},{\\"row\\":29,\\"cols\\":[27]},{\\"row\\":30,\\"cols\\":[26,34,38]},{\\"row\\":31,\\"cols\\":[26,34,38]},{\\"row\\":32,\\"cols\\":[27]},{\\"row\\":33,\\"cols\\":[17,18,19,20,21,22,23,24,25,28,29,30,31,32,34]},{\\"row\\":34,\\"cols\\":[35]},{\\"row\\":36,\\"cols\\":[37]},{\\"row\\":38,\\"cols\\":[37]}]"`;
 
-exports[`(acorn) project: > local source + NPM module @ponticus/escomplex-commons and escomplex-module test w/ dependencies: > visibility list is correct 1`] = `"[{\\"row\\":0,\\"cols\\":[0,2]},{\\"row\\":1,\\"cols\\":[0,1,2]},{\\"row\\":2,\\"cols\\":[2]},{\\"row\\":3,\\"cols\\":[3]},{\\"row\\":4,\\"cols\\":[4]},{\\"row\\":5,\\"cols\\":[5,39,40]},{\\"row\\":6,\\"cols\\":[6]},{\\"row\\":7,\\"cols\\":[7,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":8,\\"cols\\":[7,8,13,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":9,\\"cols\\":[9]},{\\"row\\":10,\\"cols\\":[9,10]},{\\"row\\":11,\\"cols\\":[9,10,11]},{\\"row\\":12,\\"cols\\":[5,7,8,9,10,12,13,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":13,\\"cols\\":[13]},{\\"row\\":14,\\"cols\\":[5,7,8,13,14,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":15,\\"cols\\":[5,7,8,9,10,12,13,15,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43]},{\\"row\\":16,\\"cols\\":[16,17,18,19,20]},{\\"row\\":17,\\"cols\\":[17,19]},{\\"row\\":18,\\"cols\\":[18]},{\\"row\\":19,\\"cols\\":[19]},{\\"row\\":20,\\"cols\\":[20]},{\\"row\\":21,\\"cols\\":[5,7,8,9,10,11,12,13,15,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43]},{\\"row\\":22,\\"cols\\":[22]},{\\"row\\":23,\\"cols\\":[23,39,40,42]},{\\"row\\":24,\\"cols\\":[24,39,40,42]},{\\"row\\":25,\\"cols\\":[25,39,40]},{\\"row\\":26,\\"cols\\":[22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":27,\\"cols\\":[27,32,34,39,40,42]},{\\"row\\":28,\\"cols\\":[28,31,35,39,40,42,43]},{\\"row\\":29,\\"cols\\":[29,31,36,39,40,42,43]},{\\"row\\":30,\\"cols\\":[30,32,37,39,40,42]},{\\"row\\":31,\\"cols\\":[31,39,40,42,43]},{\\"row\\":32,\\"cols\\":[32,39,40,42]},{\\"row\\":33,\\"cols\\":[22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":34,\\"cols\\":[32,34,39,40,42]},{\\"row\\":35,\\"cols\\":[31,35,39,40,42,43]},{\\"row\\":36,\\"cols\\":[31,36,39,40,42,43]},{\\"row\\":37,\\"cols\\":[32,37,39,40,42]},{\\"row\\":38,\\"cols\\":[22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":39,\\"cols\\":[39,40]},{\\"row\\":40,\\"cols\\":[40]},{\\"row\\":41,\\"cols\\":[41,42]},{\\"row\\":42,\\"cols\\":[42]},{\\"row\\":43,\\"cols\\":[42,43]},{\\"row\\":44,\\"cols\\":[44,46]},{\\"row\\":45,\\"cols\\":[44,45,46]},{\\"row\\":46,\\"cols\\":[46]}]"`;
+exports[`(babelParser) project: > local source + NPM module @ponticus/escomplex-commons and escomplex-module test w/ dependencies: > modules are in correct order 1`] = `
+[
+  {
+    "filePath": "escomplex-commons/src/analyze/AnalyzeError.js",
+    "srcPath": "escomplex-commons/src/analyze/AnalyzeError.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js",
+    "srcPath": "escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/AbstractReport.js",
+    "srcPath": "escomplex-commons/src/module/report/AbstractReport.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/AggregateReport.js",
+    "srcPath": "escomplex-commons/src/module/report/AggregateReport.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/averages/HalsteadAverage.js",
+    "srcPath": "escomplex-commons/src/module/report/averages/HalsteadAverage.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/averages/MethodAverage.js",
+    "srcPath": "escomplex-commons/src/module/report/averages/MethodAverage.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/averages/ModuleAverage.js",
+    "srcPath": "escomplex-commons/src/module/report/averages/ModuleAverage.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/ClassReport.js",
+    "srcPath": "escomplex-commons/src/module/report/ClassReport.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/HalsteadData.js",
+    "srcPath": "escomplex-commons/src/module/report/HalsteadData.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/MethodReport.js",
+    "srcPath": "escomplex-commons/src/module/report/MethodReport.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/ModuleReport.js",
+    "srcPath": "escomplex-commons/src/module/report/ModuleReport.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/traits/actualize.js",
+    "srcPath": "escomplex-commons/src/module/traits/actualize.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/traits/HalsteadArray.js",
+    "srcPath": "escomplex-commons/src/module/traits/HalsteadArray.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/traits/Trait.js",
+    "srcPath": "escomplex-commons/src/module/traits/Trait.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/traits/TraitHalstead.js",
+    "srcPath": "escomplex-commons/src/module/traits/TraitHalstead.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/traits/TraitUtil.js",
+    "srcPath": "escomplex-commons/src/module/traits/TraitUtil.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/project/report/ProjectReport.js",
+    "srcPath": "escomplex-commons/src/project/report/ProjectReport.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/json/FormatJSON.js",
+    "srcPath": "escomplex-commons/src/transform/formats/json/FormatJSON.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js",
+    "srcPath": "escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js",
+    "srcPath": "escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/json/FormatJSONModules.js",
+    "srcPath": "escomplex-commons/src/transform/formats/json/FormatJSONModules.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js",
+    "srcPath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js",
+    "srcPath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js",
+    "srcPath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js",
+    "srcPath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js",
+    "srcPath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/text/AbstractFormatText.js",
+    "srcPath": "escomplex-commons/src/transform/formats/text/AbstractFormatText.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js",
+    "srcPath": "escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/text/FormatText.js",
+    "srcPath": "escomplex-commons/src/transform/formats/text/FormatText.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js",
+    "srcPath": "escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/text/FormatTextMinimal.js",
+    "srcPath": "escomplex-commons/src/transform/formats/text/FormatTextMinimal.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/text/FormatTextModules.js",
+    "srcPath": "escomplex-commons/src/transform/formats/text/FormatTextModules.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/text/FormatTextVisibility.js",
+    "srcPath": "escomplex-commons/src/transform/formats/text/FormatTextVisibility.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/TransformFormat.js",
+    "srcPath": "escomplex-commons/src/transform/TransformFormat.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/types/ReportType.js",
+    "srcPath": "escomplex-commons/src/types/ReportType.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/utils/Enum.js",
+    "srcPath": "escomplex-commons/src/utils/Enum.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/utils/MathUtil.js",
+    "srcPath": "escomplex-commons/src/utils/MathUtil.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/utils/ObjectUtil.js",
+    "srcPath": "escomplex-commons/src/utils/ObjectUtil.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/utils/StringUtil.js",
+    "srcPath": "escomplex-commons/src/utils/StringUtil.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-module/src/ESComplexModule.ts",
+    "srcPath": "escomplex-module/src/ESComplexModule.ts",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-module/src/index.ts",
+    "srcPath": "escomplex-module/src/index.ts",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-module/src/Plugins.ts",
+    "srcPath": "escomplex-module/src/Plugins.ts",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-project/__tests__/fixture/testImportNPMAlias.js",
+    "srcPath": "escomplex-project/__tests__/fixture/testImportNPMAlias.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-project/__tests__/fixture/testRequireNPMAlias.js",
+    "srcPath": "escomplex-project/__tests__/fixture/testRequireNPMAlias.js",
+    "srcPathAlias": undefined,
+  },
+]
+`;
 
-exports[`(acorn) project: > local source + NPM module @ponticus/escomplex-commons test w/ serializeModules false: > modules only contains object hash w/ filePath, srcPath and srcPathAlias entries 1`] = `"[{\\"filePath\\":\\"./src/ESComplexProject.js\\",\\"srcPath\\":\\"./src/ESComplexProject.js\\"},{\\"filePath\\":\\"./src/index.js\\",\\"srcPath\\":\\"./src/index.js\\"},{\\"filePath\\":\\"./src/Plugins.js\\",\\"srcPath\\":\\"./src/Plugins.js\\"},{\\"filePath\\":\\"./test/fixture/testImportNPMAlias.js\\",\\"srcPath\\":\\"./test/fixture/testImportNPMAlias.js\\"},{\\"filePath\\":\\"./test/fixture/testRequireNPMAlias.js\\",\\"srcPath\\":\\"./test/fixture/testRequireNPMAlias.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/analyze/AnalyzeError.js\\",\\"srcPath\\":\\"escomplex-commons/src/analyze/AnalyzeError.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/AbstractReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/AbstractReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/AggregateMethodReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/AggregateMethodReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/averages/HalsteadAverage.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/averages/HalsteadAverage.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/averages/MethodAverage.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/averages/MethodAverage.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/averages/ModuleAverage.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/averages/ModuleAverage.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/ClassReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/ClassReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/HalsteadData.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/HalsteadData.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/MethodReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/MethodReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/ModuleReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/ModuleReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/traits/actualize.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/actualize.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/traits/HalsteadArray.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/HalsteadArray.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/traits/Trait.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/Trait.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/traits/TraitHalstead.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/TraitHalstead.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/traits/TraitUtil.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/TraitUtil.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/project/report/ProjectReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/project/report/ProjectReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/json/FormatJSON.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSON.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSONModules.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/AbstractFormatText.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/FormatText.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatText.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/FormatTextModules.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextModules.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/TransformFormat.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/TransformFormat.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/types/ReportType.js\\",\\"srcPath\\":\\"escomplex-commons/src/types/ReportType.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/utils/Enum.js\\",\\"srcPath\\":\\"escomplex-commons/src/utils/Enum.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/utils/MathUtil.js\\",\\"srcPath\\":\\"escomplex-commons/src/utils/MathUtil.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/utils/ObjectUtil.js\\",\\"srcPath\\":\\"escomplex-commons/src/utils/ObjectUtil.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/utils/StringUtil.js\\",\\"srcPath\\":\\"escomplex-commons/src/utils/StringUtil.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-module/src/ESComplexModule.js\\",\\"srcPath\\":\\"escomplex-module/src/ESComplexModule.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-module/src/index.js\\",\\"srcPath\\":\\"escomplex-module/src/index.js\\",\\"srcPathAlias\\":\\"escomplex-module\\"},{\\"filePath\\":\\"./node_modules/escomplex-module/src/Plugins.js\\",\\"srcPath\\":\\"escomplex-module/src/Plugins.js\\"}]"`;
+exports[`(babelParser) project: > local source + NPM module @ponticus/escomplex-commons and escomplex-module test w/ dependencies: > visibility list is correct 1`] = `"[{\\"row\\":0,\\"cols\\":[0,34,35]},{\\"row\\":1,\\"cols\\":[1]},{\\"row\\":2,\\"cols\\":[2,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,37,38]},{\\"row\\":3,\\"cols\\":[2,3,8,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,37,38]},{\\"row\\":4,\\"cols\\":[4]},{\\"row\\":5,\\"cols\\":[4,5,37]},{\\"row\\":6,\\"cols\\":[4,5,6,37]},{\\"row\\":7,\\"cols\\":[0,2,3,4,5,7,8,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,37,38]},{\\"row\\":8,\\"cols\\":[8]},{\\"row\\":9,\\"cols\\":[0,2,3,8,9,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,37,38]},{\\"row\\":10,\\"cols\\":[0,2,3,4,5,7,8,10,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38]},{\\"row\\":11,\\"cols\\":[11,12,13,14,15]},{\\"row\\":12,\\"cols\\":[12,14]},{\\"row\\":13,\\"cols\\":[13]},{\\"row\\":14,\\"cols\\":[14]},{\\"row\\":15,\\"cols\\":[15]},{\\"row\\":16,\\"cols\\":[0,2,3,4,5,6,7,8,10,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38]},{\\"row\\":17,\\"cols\\":[17]},{\\"row\\":18,\\"cols\\":[18,34,35,37]},{\\"row\\":19,\\"cols\\":[19,34,35,37]},{\\"row\\":20,\\"cols\\":[20,34,35]},{\\"row\\":21,\\"cols\\":[17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,37,38]},{\\"row\\":22,\\"cols\\":[22,27,29,34,35,37]},{\\"row\\":23,\\"cols\\":[23,26,30,34,35,37,38]},{\\"row\\":24,\\"cols\\":[24,26,31,34,35,37,38]},{\\"row\\":25,\\"cols\\":[25,27,32,34,35,37]},{\\"row\\":26,\\"cols\\":[26,34,35,37,38]},{\\"row\\":27,\\"cols\\":[27,34,35,37]},{\\"row\\":28,\\"cols\\":[17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,37,38]},{\\"row\\":29,\\"cols\\":[27,29,34,35,37]},{\\"row\\":30,\\"cols\\":[26,30,34,35,37,38]},{\\"row\\":31,\\"cols\\":[26,31,34,35,37,38]},{\\"row\\":32,\\"cols\\":[27,32,34,35,37]},{\\"row\\":33,\\"cols\\":[17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,37,38]},{\\"row\\":34,\\"cols\\":[34,35]},{\\"row\\":35,\\"cols\\":[35]},{\\"row\\":36,\\"cols\\":[36,37]},{\\"row\\":37,\\"cols\\":[37]},{\\"row\\":38,\\"cols\\":[37,38]},{\\"row\\":39,\\"cols\\":[39]},{\\"row\\":40,\\"cols\\":[40]},{\\"row\\":41,\\"cols\\":[41]},{\\"row\\":42,\\"cols\\":[42]},{\\"row\\":43,\\"cols\\":[43]}]"`;
 
-exports[`(babelParser) project: > local source + NPM module @ponticus/escomplex-commons and escomplex-module test w/ dependencies: > adjacency list is correct 1`] = `"[{\\"row\\":0,\\"cols\\":[2]},{\\"row\\":1,\\"cols\\":[0]},{\\"row\\":5,\\"cols\\":[39]},{\\"row\\":7,\\"cols\\":[38]},{\\"row\\":8,\\"cols\\":[7,13]},{\\"row\\":10,\\"cols\\":[9]},{\\"row\\":11,\\"cols\\":[10]},{\\"row\\":12,\\"cols\\":[5,7,8,10,38,39,42]},{\\"row\\":14,\\"cols\\":[5,8]},{\\"row\\":15,\\"cols\\":[5,7,8,10,12,38,39,41,42]},{\\"row\\":16,\\"cols\\":[17,18,20]},{\\"row\\":17,\\"cols\\":[19]},{\\"row\\":21,\\"cols\\":[11,15,38,39,41,42,43]},{\\"row\\":23,\\"cols\\":[39,42]},{\\"row\\":24,\\"cols\\":[39,42]},{\\"row\\":25,\\"cols\\":[39]},{\\"row\\":26,\\"cols\\":[33,43]},{\\"row\\":27,\\"cols\\":[34]},{\\"row\\":28,\\"cols\\":[35,43]},{\\"row\\":29,\\"cols\\":[36,43]},{\\"row\\":30,\\"cols\\":[37]},{\\"row\\":31,\\"cols\\":[39,42,43]},{\\"row\\":32,\\"cols\\":[39,42]},{\\"row\\":33,\\"cols\\":[31,38,39,43]},{\\"row\\":34,\\"cols\\":[32]},{\\"row\\":35,\\"cols\\":[31,39,43]},{\\"row\\":36,\\"cols\\":[31,39,43]},{\\"row\\":37,\\"cols\\":[32]},{\\"row\\":38,\\"cols\\":[22,23,24,25,26,27,28,29,30,33,34,35,36,37,39]},{\\"row\\":39,\\"cols\\":[40]},{\\"row\\":41,\\"cols\\":[42]},{\\"row\\":43,\\"cols\\":[42]},{\\"row\\":44,\\"cols\\":[46]},{\\"row\\":45,\\"cols\\":[44]}]"`;
+exports[`(babelParser) project: > local source + NPM module @ponticus/escomplex-commons test w/ serializeModules false: > modules are in correct order 1`] = `
+[
+  {
+    "filePath": "escomplex-commons/src/analyze/AnalyzeError.js",
+    "srcPath": "escomplex-commons/src/analyze/AnalyzeError.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js",
+    "srcPath": "escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/AbstractReport.js",
+    "srcPath": "escomplex-commons/src/module/report/AbstractReport.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/AggregateReport.js",
+    "srcPath": "escomplex-commons/src/module/report/AggregateReport.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/averages/HalsteadAverage.js",
+    "srcPath": "escomplex-commons/src/module/report/averages/HalsteadAverage.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/averages/MethodAverage.js",
+    "srcPath": "escomplex-commons/src/module/report/averages/MethodAverage.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/averages/ModuleAverage.js",
+    "srcPath": "escomplex-commons/src/module/report/averages/ModuleAverage.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/ClassReport.js",
+    "srcPath": "escomplex-commons/src/module/report/ClassReport.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/HalsteadData.js",
+    "srcPath": "escomplex-commons/src/module/report/HalsteadData.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/MethodReport.js",
+    "srcPath": "escomplex-commons/src/module/report/MethodReport.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/ModuleReport.js",
+    "srcPath": "escomplex-commons/src/module/report/ModuleReport.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/traits/actualize.js",
+    "srcPath": "escomplex-commons/src/module/traits/actualize.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/traits/HalsteadArray.js",
+    "srcPath": "escomplex-commons/src/module/traits/HalsteadArray.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/traits/Trait.js",
+    "srcPath": "escomplex-commons/src/module/traits/Trait.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/traits/TraitHalstead.js",
+    "srcPath": "escomplex-commons/src/module/traits/TraitHalstead.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/traits/TraitUtil.js",
+    "srcPath": "escomplex-commons/src/module/traits/TraitUtil.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/project/report/ProjectReport.js",
+    "srcPath": "escomplex-commons/src/project/report/ProjectReport.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/json/FormatJSON.js",
+    "srcPath": "escomplex-commons/src/transform/formats/json/FormatJSON.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js",
+    "srcPath": "escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js",
+    "srcPath": "escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/json/FormatJSONModules.js",
+    "srcPath": "escomplex-commons/src/transform/formats/json/FormatJSONModules.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js",
+    "srcPath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js",
+    "srcPath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js",
+    "srcPath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js",
+    "srcPath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js",
+    "srcPath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/text/AbstractFormatText.js",
+    "srcPath": "escomplex-commons/src/transform/formats/text/AbstractFormatText.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js",
+    "srcPath": "escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/text/FormatText.js",
+    "srcPath": "escomplex-commons/src/transform/formats/text/FormatText.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js",
+    "srcPath": "escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/text/FormatTextMinimal.js",
+    "srcPath": "escomplex-commons/src/transform/formats/text/FormatTextMinimal.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/text/FormatTextModules.js",
+    "srcPath": "escomplex-commons/src/transform/formats/text/FormatTextModules.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/text/FormatTextVisibility.js",
+    "srcPath": "escomplex-commons/src/transform/formats/text/FormatTextVisibility.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/TransformFormat.js",
+    "srcPath": "escomplex-commons/src/transform/TransformFormat.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/types/ReportType.js",
+    "srcPath": "escomplex-commons/src/types/ReportType.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/utils/Enum.js",
+    "srcPath": "escomplex-commons/src/utils/Enum.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/utils/MathUtil.js",
+    "srcPath": "escomplex-commons/src/utils/MathUtil.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/utils/ObjectUtil.js",
+    "srcPath": "escomplex-commons/src/utils/ObjectUtil.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/utils/StringUtil.js",
+    "srcPath": "escomplex-commons/src/utils/StringUtil.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-module/src/ESComplexModule.ts",
+    "srcPath": "escomplex-module/src/ESComplexModule.ts",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-module/src/index.ts",
+    "srcPath": "escomplex-module/src/index.ts",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-module/src/Plugins.ts",
+    "srcPath": "escomplex-module/src/Plugins.ts",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-project/__tests__/fixture/testImportNPMAlias.js",
+    "srcPath": "escomplex-project/__tests__/fixture/testImportNPMAlias.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-project/__tests__/fixture/testRequireNPMAlias.js",
+    "srcPath": "escomplex-project/__tests__/fixture/testRequireNPMAlias.js",
+    "srcPathAlias": undefined,
+  },
+]
+`;
 
-exports[`(babelParser) project: > local source + NPM module @ponticus/escomplex-commons and escomplex-module test w/ dependencies: > visibility list is correct 1`] = `"[{\\"row\\":0,\\"cols\\":[0,2]},{\\"row\\":1,\\"cols\\":[0,1,2]},{\\"row\\":2,\\"cols\\":[2]},{\\"row\\":3,\\"cols\\":[3]},{\\"row\\":4,\\"cols\\":[4]},{\\"row\\":5,\\"cols\\":[5,39,40]},{\\"row\\":6,\\"cols\\":[6]},{\\"row\\":7,\\"cols\\":[7,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":8,\\"cols\\":[7,8,13,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":9,\\"cols\\":[9]},{\\"row\\":10,\\"cols\\":[9,10]},{\\"row\\":11,\\"cols\\":[9,10,11]},{\\"row\\":12,\\"cols\\":[5,7,8,9,10,12,13,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":13,\\"cols\\":[13]},{\\"row\\":14,\\"cols\\":[5,7,8,13,14,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":15,\\"cols\\":[5,7,8,9,10,12,13,15,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43]},{\\"row\\":16,\\"cols\\":[16,17,18,19,20]},{\\"row\\":17,\\"cols\\":[17,19]},{\\"row\\":18,\\"cols\\":[18]},{\\"row\\":19,\\"cols\\":[19]},{\\"row\\":20,\\"cols\\":[20]},{\\"row\\":21,\\"cols\\":[5,7,8,9,10,11,12,13,15,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43]},{\\"row\\":22,\\"cols\\":[22]},{\\"row\\":23,\\"cols\\":[23,39,40,42]},{\\"row\\":24,\\"cols\\":[24,39,40,42]},{\\"row\\":25,\\"cols\\":[25,39,40]},{\\"row\\":26,\\"cols\\":[22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":27,\\"cols\\":[27,32,34,39,40,42]},{\\"row\\":28,\\"cols\\":[28,31,35,39,40,42,43]},{\\"row\\":29,\\"cols\\":[29,31,36,39,40,42,43]},{\\"row\\":30,\\"cols\\":[30,32,37,39,40,42]},{\\"row\\":31,\\"cols\\":[31,39,40,42,43]},{\\"row\\":32,\\"cols\\":[32,39,40,42]},{\\"row\\":33,\\"cols\\":[22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":34,\\"cols\\":[32,34,39,40,42]},{\\"row\\":35,\\"cols\\":[31,35,39,40,42,43]},{\\"row\\":36,\\"cols\\":[31,36,39,40,42,43]},{\\"row\\":37,\\"cols\\":[32,37,39,40,42]},{\\"row\\":38,\\"cols\\":[22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":39,\\"cols\\":[39,40]},{\\"row\\":40,\\"cols\\":[40]},{\\"row\\":41,\\"cols\\":[41,42]},{\\"row\\":42,\\"cols\\":[42]},{\\"row\\":43,\\"cols\\":[42,43]},{\\"row\\":44,\\"cols\\":[44,46]},{\\"row\\":45,\\"cols\\":[44,45,46]},{\\"row\\":46,\\"cols\\":[46]}]"`;
+exports[`(babelParser) project: > local source + NPM module @ponticus/escomplex-commons test w/ serializeModules false: > modules only contains object hash w/ filePath, srcPath and srcPathAlias entries 1`] = `"[{\\"filePath\\":\\"escomplex-commons/src/analyze/AnalyzeError.js\\",\\"srcPath\\":\\"escomplex-commons/src/analyze/AnalyzeError.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/report/AbstractReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/AbstractReport.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/report/AggregateReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/AggregateReport.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/report/averages/HalsteadAverage.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/averages/HalsteadAverage.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/report/averages/MethodAverage.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/averages/MethodAverage.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/report/averages/ModuleAverage.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/averages/ModuleAverage.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/report/ClassReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/ClassReport.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/report/HalsteadData.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/HalsteadData.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/report/MethodReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/MethodReport.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/report/ModuleReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/ModuleReport.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/traits/actualize.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/actualize.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/traits/HalsteadArray.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/HalsteadArray.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/traits/Trait.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/Trait.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/traits/TraitHalstead.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/TraitHalstead.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/traits/TraitUtil.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/TraitUtil.js\\"},{\\"filePath\\":\\"escomplex-commons/src/project/report/ProjectReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/project/report/ProjectReport.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSON.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSON.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSONModules.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSONModules.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/text/AbstractFormatText.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/AbstractFormatText.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/text/FormatText.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatText.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextModules.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextModules.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/TransformFormat.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/TransformFormat.js\\"},{\\"filePath\\":\\"escomplex-commons/src/types/ReportType.js\\",\\"srcPath\\":\\"escomplex-commons/src/types/ReportType.js\\"},{\\"filePath\\":\\"escomplex-commons/src/utils/Enum.js\\",\\"srcPath\\":\\"escomplex-commons/src/utils/Enum.js\\"},{\\"filePath\\":\\"escomplex-commons/src/utils/MathUtil.js\\",\\"srcPath\\":\\"escomplex-commons/src/utils/MathUtil.js\\"},{\\"filePath\\":\\"escomplex-commons/src/utils/ObjectUtil.js\\",\\"srcPath\\":\\"escomplex-commons/src/utils/ObjectUtil.js\\"},{\\"filePath\\":\\"escomplex-commons/src/utils/StringUtil.js\\",\\"srcPath\\":\\"escomplex-commons/src/utils/StringUtil.js\\"},{\\"filePath\\":\\"escomplex-module/src/ESComplexModule.ts\\",\\"srcPath\\":\\"escomplex-module/src/ESComplexModule.ts\\"},{\\"filePath\\":\\"escomplex-module/src/index.ts\\",\\"srcPath\\":\\"escomplex-module/src/index.ts\\"},{\\"filePath\\":\\"escomplex-module/src/Plugins.ts\\",\\"srcPath\\":\\"escomplex-module/src/Plugins.ts\\"},{\\"filePath\\":\\"escomplex-project/__tests__/fixture/testImportNPMAlias.js\\",\\"srcPath\\":\\"escomplex-project/__tests__/fixture/testImportNPMAlias.js\\"},{\\"filePath\\":\\"escomplex-project/__tests__/fixture/testRequireNPMAlias.js\\",\\"srcPath\\":\\"escomplex-project/__tests__/fixture/testRequireNPMAlias.js\\"}]"`;
 
-exports[`(babelParser) project: > local source + NPM module @ponticus/escomplex-commons test w/ serializeModules false: > modules only contains object hash w/ filePath, srcPath and srcPathAlias entries 1`] = `"[{\\"filePath\\":\\"./src/ESComplexProject.js\\",\\"srcPath\\":\\"./src/ESComplexProject.js\\"},{\\"filePath\\":\\"./src/index.js\\",\\"srcPath\\":\\"./src/index.js\\"},{\\"filePath\\":\\"./src/Plugins.js\\",\\"srcPath\\":\\"./src/Plugins.js\\"},{\\"filePath\\":\\"./test/fixture/testImportNPMAlias.js\\",\\"srcPath\\":\\"./test/fixture/testImportNPMAlias.js\\"},{\\"filePath\\":\\"./test/fixture/testRequireNPMAlias.js\\",\\"srcPath\\":\\"./test/fixture/testRequireNPMAlias.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/analyze/AnalyzeError.js\\",\\"srcPath\\":\\"escomplex-commons/src/analyze/AnalyzeError.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/AbstractReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/AbstractReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/AggregateMethodReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/AggregateMethodReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/averages/HalsteadAverage.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/averages/HalsteadAverage.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/averages/MethodAverage.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/averages/MethodAverage.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/averages/ModuleAverage.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/averages/ModuleAverage.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/ClassReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/ClassReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/HalsteadData.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/HalsteadData.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/MethodReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/MethodReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/ModuleReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/ModuleReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/traits/actualize.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/actualize.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/traits/HalsteadArray.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/HalsteadArray.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/traits/Trait.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/Trait.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/traits/TraitHalstead.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/TraitHalstead.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/traits/TraitUtil.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/TraitUtil.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/project/report/ProjectReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/project/report/ProjectReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/json/FormatJSON.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSON.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSONModules.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/AbstractFormatText.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/FormatText.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatText.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/FormatTextModules.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextModules.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/TransformFormat.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/TransformFormat.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/types/ReportType.js\\",\\"srcPath\\":\\"escomplex-commons/src/types/ReportType.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/utils/Enum.js\\",\\"srcPath\\":\\"escomplex-commons/src/utils/Enum.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/utils/MathUtil.js\\",\\"srcPath\\":\\"escomplex-commons/src/utils/MathUtil.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/utils/ObjectUtil.js\\",\\"srcPath\\":\\"escomplex-commons/src/utils/ObjectUtil.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/utils/StringUtil.js\\",\\"srcPath\\":\\"escomplex-commons/src/utils/StringUtil.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-module/src/ESComplexModule.js\\",\\"srcPath\\":\\"escomplex-module/src/ESComplexModule.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-module/src/index.js\\",\\"srcPath\\":\\"escomplex-module/src/index.js\\",\\"srcPathAlias\\":\\"escomplex-module\\"},{\\"filePath\\":\\"./node_modules/escomplex-module/src/Plugins.js\\",\\"srcPath\\":\\"escomplex-module/src/Plugins.js\\"}]"`;
+exports[`(babylon) project: > local source + NPM module @ponticus/escomplex-commons and escomplex-module test w/ dependencies: > adjacency list is correct 1`] = `"[{\\"row\\":0,\\"cols\\":[34]},{\\"row\\":2,\\"cols\\":[33]},{\\"row\\":3,\\"cols\\":[2,8]},{\\"row\\":5,\\"cols\\":[4,37]},{\\"row\\":6,\\"cols\\":[5,37]},{\\"row\\":7,\\"cols\\":[0,2,3,5,33,34,37]},{\\"row\\":9,\\"cols\\":[0,3,37]},{\\"row\\":10,\\"cols\\":[0,2,3,5,7,33,34,36,37]},{\\"row\\":11,\\"cols\\":[12,13,15]},{\\"row\\":12,\\"cols\\":[14]},{\\"row\\":16,\\"cols\\":[6,10,33,34,36,37,38]},{\\"row\\":18,\\"cols\\":[34,37]},{\\"row\\":19,\\"cols\\":[34,37]},{\\"row\\":20,\\"cols\\":[34]},{\\"row\\":21,\\"cols\\":[28,38]},{\\"row\\":22,\\"cols\\":[29]},{\\"row\\":23,\\"cols\\":[30,38]},{\\"row\\":24,\\"cols\\":[31,38]},{\\"row\\":25,\\"cols\\":[32]},{\\"row\\":26,\\"cols\\":[34,37,38]},{\\"row\\":27,\\"cols\\":[34,37]},{\\"row\\":28,\\"cols\\":[26,33,34,38]},{\\"row\\":29,\\"cols\\":[27]},{\\"row\\":30,\\"cols\\":[26,34,38]},{\\"row\\":31,\\"cols\\":[26,34,38]},{\\"row\\":32,\\"cols\\":[27]},{\\"row\\":33,\\"cols\\":[17,18,19,20,21,22,23,24,25,28,29,30,31,32,34]},{\\"row\\":34,\\"cols\\":[35]},{\\"row\\":36,\\"cols\\":[37]},{\\"row\\":38,\\"cols\\":[37]}]"`;
 
-exports[`(babylon) project: > local source + NPM module @ponticus/escomplex-commons and escomplex-module test w/ dependencies: > adjacency list is correct 1`] = `"[{\\"row\\":0,\\"cols\\":[2]},{\\"row\\":1,\\"cols\\":[0]},{\\"row\\":5,\\"cols\\":[39]},{\\"row\\":7,\\"cols\\":[38]},{\\"row\\":8,\\"cols\\":[7,13]},{\\"row\\":10,\\"cols\\":[9]},{\\"row\\":11,\\"cols\\":[10]},{\\"row\\":12,\\"cols\\":[5,7,8,10,38,39,42]},{\\"row\\":14,\\"cols\\":[5,8]},{\\"row\\":15,\\"cols\\":[5,7,8,10,12,38,39,41,42]},{\\"row\\":16,\\"cols\\":[17,18,20]},{\\"row\\":17,\\"cols\\":[19]},{\\"row\\":21,\\"cols\\":[11,15,38,39,41,42,43]},{\\"row\\":23,\\"cols\\":[39,42]},{\\"row\\":24,\\"cols\\":[39,42]},{\\"row\\":25,\\"cols\\":[39]},{\\"row\\":26,\\"cols\\":[33,43]},{\\"row\\":27,\\"cols\\":[34]},{\\"row\\":28,\\"cols\\":[35,43]},{\\"row\\":29,\\"cols\\":[36,43]},{\\"row\\":30,\\"cols\\":[37]},{\\"row\\":31,\\"cols\\":[39,42,43]},{\\"row\\":32,\\"cols\\":[39,42]},{\\"row\\":33,\\"cols\\":[31,38,39,43]},{\\"row\\":34,\\"cols\\":[32]},{\\"row\\":35,\\"cols\\":[31,39,43]},{\\"row\\":36,\\"cols\\":[31,39,43]},{\\"row\\":37,\\"cols\\":[32]},{\\"row\\":38,\\"cols\\":[22,23,24,25,26,27,28,29,30,33,34,35,36,37,39]},{\\"row\\":39,\\"cols\\":[40]},{\\"row\\":41,\\"cols\\":[42]},{\\"row\\":43,\\"cols\\":[42]},{\\"row\\":44,\\"cols\\":[46]},{\\"row\\":45,\\"cols\\":[44]}]"`;
+exports[`(babylon) project: > local source + NPM module @ponticus/escomplex-commons and escomplex-module test w/ dependencies: > modules are in correct order 1`] = `
+[
+  {
+    "filePath": "escomplex-commons/src/analyze/AnalyzeError.js",
+    "srcPath": "escomplex-commons/src/analyze/AnalyzeError.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js",
+    "srcPath": "escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/AbstractReport.js",
+    "srcPath": "escomplex-commons/src/module/report/AbstractReport.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/AggregateReport.js",
+    "srcPath": "escomplex-commons/src/module/report/AggregateReport.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/averages/HalsteadAverage.js",
+    "srcPath": "escomplex-commons/src/module/report/averages/HalsteadAverage.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/averages/MethodAverage.js",
+    "srcPath": "escomplex-commons/src/module/report/averages/MethodAverage.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/averages/ModuleAverage.js",
+    "srcPath": "escomplex-commons/src/module/report/averages/ModuleAverage.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/ClassReport.js",
+    "srcPath": "escomplex-commons/src/module/report/ClassReport.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/HalsteadData.js",
+    "srcPath": "escomplex-commons/src/module/report/HalsteadData.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/MethodReport.js",
+    "srcPath": "escomplex-commons/src/module/report/MethodReport.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/ModuleReport.js",
+    "srcPath": "escomplex-commons/src/module/report/ModuleReport.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/traits/actualize.js",
+    "srcPath": "escomplex-commons/src/module/traits/actualize.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/traits/HalsteadArray.js",
+    "srcPath": "escomplex-commons/src/module/traits/HalsteadArray.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/traits/Trait.js",
+    "srcPath": "escomplex-commons/src/module/traits/Trait.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/traits/TraitHalstead.js",
+    "srcPath": "escomplex-commons/src/module/traits/TraitHalstead.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/traits/TraitUtil.js",
+    "srcPath": "escomplex-commons/src/module/traits/TraitUtil.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/project/report/ProjectReport.js",
+    "srcPath": "escomplex-commons/src/project/report/ProjectReport.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/json/FormatJSON.js",
+    "srcPath": "escomplex-commons/src/transform/formats/json/FormatJSON.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js",
+    "srcPath": "escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js",
+    "srcPath": "escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/json/FormatJSONModules.js",
+    "srcPath": "escomplex-commons/src/transform/formats/json/FormatJSONModules.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js",
+    "srcPath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js",
+    "srcPath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js",
+    "srcPath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js",
+    "srcPath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js",
+    "srcPath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/text/AbstractFormatText.js",
+    "srcPath": "escomplex-commons/src/transform/formats/text/AbstractFormatText.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js",
+    "srcPath": "escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/text/FormatText.js",
+    "srcPath": "escomplex-commons/src/transform/formats/text/FormatText.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js",
+    "srcPath": "escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/text/FormatTextMinimal.js",
+    "srcPath": "escomplex-commons/src/transform/formats/text/FormatTextMinimal.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/text/FormatTextModules.js",
+    "srcPath": "escomplex-commons/src/transform/formats/text/FormatTextModules.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/text/FormatTextVisibility.js",
+    "srcPath": "escomplex-commons/src/transform/formats/text/FormatTextVisibility.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/TransformFormat.js",
+    "srcPath": "escomplex-commons/src/transform/TransformFormat.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/types/ReportType.js",
+    "srcPath": "escomplex-commons/src/types/ReportType.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/utils/Enum.js",
+    "srcPath": "escomplex-commons/src/utils/Enum.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/utils/MathUtil.js",
+    "srcPath": "escomplex-commons/src/utils/MathUtil.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/utils/ObjectUtil.js",
+    "srcPath": "escomplex-commons/src/utils/ObjectUtil.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/utils/StringUtil.js",
+    "srcPath": "escomplex-commons/src/utils/StringUtil.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-module/src/ESComplexModule.ts",
+    "srcPath": "escomplex-module/src/ESComplexModule.ts",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-module/src/index.ts",
+    "srcPath": "escomplex-module/src/index.ts",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-module/src/Plugins.ts",
+    "srcPath": "escomplex-module/src/Plugins.ts",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-project/__tests__/fixture/testImportNPMAlias.js",
+    "srcPath": "escomplex-project/__tests__/fixture/testImportNPMAlias.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-project/__tests__/fixture/testRequireNPMAlias.js",
+    "srcPath": "escomplex-project/__tests__/fixture/testRequireNPMAlias.js",
+    "srcPathAlias": undefined,
+  },
+]
+`;
 
-exports[`(babylon) project: > local source + NPM module @ponticus/escomplex-commons and escomplex-module test w/ dependencies: > visibility list is correct 1`] = `"[{\\"row\\":0,\\"cols\\":[0,2]},{\\"row\\":1,\\"cols\\":[0,1,2]},{\\"row\\":2,\\"cols\\":[2]},{\\"row\\":3,\\"cols\\":[3]},{\\"row\\":4,\\"cols\\":[4]},{\\"row\\":5,\\"cols\\":[5,39,40]},{\\"row\\":6,\\"cols\\":[6]},{\\"row\\":7,\\"cols\\":[7,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":8,\\"cols\\":[7,8,13,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":9,\\"cols\\":[9]},{\\"row\\":10,\\"cols\\":[9,10]},{\\"row\\":11,\\"cols\\":[9,10,11]},{\\"row\\":12,\\"cols\\":[5,7,8,9,10,12,13,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":13,\\"cols\\":[13]},{\\"row\\":14,\\"cols\\":[5,7,8,13,14,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":15,\\"cols\\":[5,7,8,9,10,12,13,15,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43]},{\\"row\\":16,\\"cols\\":[16,17,18,19,20]},{\\"row\\":17,\\"cols\\":[17,19]},{\\"row\\":18,\\"cols\\":[18]},{\\"row\\":19,\\"cols\\":[19]},{\\"row\\":20,\\"cols\\":[20]},{\\"row\\":21,\\"cols\\":[5,7,8,9,10,11,12,13,15,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43]},{\\"row\\":22,\\"cols\\":[22]},{\\"row\\":23,\\"cols\\":[23,39,40,42]},{\\"row\\":24,\\"cols\\":[24,39,40,42]},{\\"row\\":25,\\"cols\\":[25,39,40]},{\\"row\\":26,\\"cols\\":[22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":27,\\"cols\\":[27,32,34,39,40,42]},{\\"row\\":28,\\"cols\\":[28,31,35,39,40,42,43]},{\\"row\\":29,\\"cols\\":[29,31,36,39,40,42,43]},{\\"row\\":30,\\"cols\\":[30,32,37,39,40,42]},{\\"row\\":31,\\"cols\\":[31,39,40,42,43]},{\\"row\\":32,\\"cols\\":[32,39,40,42]},{\\"row\\":33,\\"cols\\":[22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":34,\\"cols\\":[32,34,39,40,42]},{\\"row\\":35,\\"cols\\":[31,35,39,40,42,43]},{\\"row\\":36,\\"cols\\":[31,36,39,40,42,43]},{\\"row\\":37,\\"cols\\":[32,37,39,40,42]},{\\"row\\":38,\\"cols\\":[22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":39,\\"cols\\":[39,40]},{\\"row\\":40,\\"cols\\":[40]},{\\"row\\":41,\\"cols\\":[41,42]},{\\"row\\":42,\\"cols\\":[42]},{\\"row\\":43,\\"cols\\":[42,43]},{\\"row\\":44,\\"cols\\":[44,46]},{\\"row\\":45,\\"cols\\":[44,45,46]},{\\"row\\":46,\\"cols\\":[46]}]"`;
+exports[`(babylon) project: > local source + NPM module @ponticus/escomplex-commons and escomplex-module test w/ dependencies: > visibility list is correct 1`] = `"[{\\"row\\":0,\\"cols\\":[0,34,35]},{\\"row\\":1,\\"cols\\":[1]},{\\"row\\":2,\\"cols\\":[2,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,37,38]},{\\"row\\":3,\\"cols\\":[2,3,8,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,37,38]},{\\"row\\":4,\\"cols\\":[4]},{\\"row\\":5,\\"cols\\":[4,5,37]},{\\"row\\":6,\\"cols\\":[4,5,6,37]},{\\"row\\":7,\\"cols\\":[0,2,3,4,5,7,8,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,37,38]},{\\"row\\":8,\\"cols\\":[8]},{\\"row\\":9,\\"cols\\":[0,2,3,8,9,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,37,38]},{\\"row\\":10,\\"cols\\":[0,2,3,4,5,7,8,10,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38]},{\\"row\\":11,\\"cols\\":[11,12,13,14,15]},{\\"row\\":12,\\"cols\\":[12,14]},{\\"row\\":13,\\"cols\\":[13]},{\\"row\\":14,\\"cols\\":[14]},{\\"row\\":15,\\"cols\\":[15]},{\\"row\\":16,\\"cols\\":[0,2,3,4,5,6,7,8,10,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38]},{\\"row\\":17,\\"cols\\":[17]},{\\"row\\":18,\\"cols\\":[18,34,35,37]},{\\"row\\":19,\\"cols\\":[19,34,35,37]},{\\"row\\":20,\\"cols\\":[20,34,35]},{\\"row\\":21,\\"cols\\":[17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,37,38]},{\\"row\\":22,\\"cols\\":[22,27,29,34,35,37]},{\\"row\\":23,\\"cols\\":[23,26,30,34,35,37,38]},{\\"row\\":24,\\"cols\\":[24,26,31,34,35,37,38]},{\\"row\\":25,\\"cols\\":[25,27,32,34,35,37]},{\\"row\\":26,\\"cols\\":[26,34,35,37,38]},{\\"row\\":27,\\"cols\\":[27,34,35,37]},{\\"row\\":28,\\"cols\\":[17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,37,38]},{\\"row\\":29,\\"cols\\":[27,29,34,35,37]},{\\"row\\":30,\\"cols\\":[26,30,34,35,37,38]},{\\"row\\":31,\\"cols\\":[26,31,34,35,37,38]},{\\"row\\":32,\\"cols\\":[27,32,34,35,37]},{\\"row\\":33,\\"cols\\":[17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,37,38]},{\\"row\\":34,\\"cols\\":[34,35]},{\\"row\\":35,\\"cols\\":[35]},{\\"row\\":36,\\"cols\\":[36,37]},{\\"row\\":37,\\"cols\\":[37]},{\\"row\\":38,\\"cols\\":[37,38]},{\\"row\\":39,\\"cols\\":[39]},{\\"row\\":40,\\"cols\\":[40]},{\\"row\\":41,\\"cols\\":[41]},{\\"row\\":42,\\"cols\\":[42]},{\\"row\\":43,\\"cols\\":[43]}]"`;
 
-exports[`(babylon) project: > local source + NPM module @ponticus/escomplex-commons test w/ serializeModules false: > modules only contains object hash w/ filePath, srcPath and srcPathAlias entries 1`] = `"[{\\"filePath\\":\\"./src/ESComplexProject.js\\",\\"srcPath\\":\\"./src/ESComplexProject.js\\"},{\\"filePath\\":\\"./src/index.js\\",\\"srcPath\\":\\"./src/index.js\\"},{\\"filePath\\":\\"./src/Plugins.js\\",\\"srcPath\\":\\"./src/Plugins.js\\"},{\\"filePath\\":\\"./test/fixture/testImportNPMAlias.js\\",\\"srcPath\\":\\"./test/fixture/testImportNPMAlias.js\\"},{\\"filePath\\":\\"./test/fixture/testRequireNPMAlias.js\\",\\"srcPath\\":\\"./test/fixture/testRequireNPMAlias.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/analyze/AnalyzeError.js\\",\\"srcPath\\":\\"escomplex-commons/src/analyze/AnalyzeError.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/AbstractReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/AbstractReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/AggregateMethodReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/AggregateMethodReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/averages/HalsteadAverage.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/averages/HalsteadAverage.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/averages/MethodAverage.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/averages/MethodAverage.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/averages/ModuleAverage.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/averages/ModuleAverage.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/ClassReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/ClassReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/HalsteadData.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/HalsteadData.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/MethodReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/MethodReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/ModuleReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/ModuleReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/traits/actualize.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/actualize.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/traits/HalsteadArray.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/HalsteadArray.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/traits/Trait.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/Trait.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/traits/TraitHalstead.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/TraitHalstead.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/traits/TraitUtil.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/TraitUtil.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/project/report/ProjectReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/project/report/ProjectReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/json/FormatJSON.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSON.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSONModules.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/AbstractFormatText.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/FormatText.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatText.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/FormatTextModules.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextModules.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/TransformFormat.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/TransformFormat.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/types/ReportType.js\\",\\"srcPath\\":\\"escomplex-commons/src/types/ReportType.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/utils/Enum.js\\",\\"srcPath\\":\\"escomplex-commons/src/utils/Enum.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/utils/MathUtil.js\\",\\"srcPath\\":\\"escomplex-commons/src/utils/MathUtil.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/utils/ObjectUtil.js\\",\\"srcPath\\":\\"escomplex-commons/src/utils/ObjectUtil.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/utils/StringUtil.js\\",\\"srcPath\\":\\"escomplex-commons/src/utils/StringUtil.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-module/src/ESComplexModule.js\\",\\"srcPath\\":\\"escomplex-module/src/ESComplexModule.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-module/src/index.js\\",\\"srcPath\\":\\"escomplex-module/src/index.js\\",\\"srcPathAlias\\":\\"escomplex-module\\"},{\\"filePath\\":\\"./node_modules/escomplex-module/src/Plugins.js\\",\\"srcPath\\":\\"escomplex-module/src/Plugins.js\\"}]"`;
+exports[`(babylon) project: > local source + NPM module @ponticus/escomplex-commons test w/ serializeModules false: > modules are in correct order 1`] = `
+[
+  {
+    "filePath": "escomplex-commons/src/analyze/AnalyzeError.js",
+    "srcPath": "escomplex-commons/src/analyze/AnalyzeError.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js",
+    "srcPath": "escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/AbstractReport.js",
+    "srcPath": "escomplex-commons/src/module/report/AbstractReport.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/AggregateReport.js",
+    "srcPath": "escomplex-commons/src/module/report/AggregateReport.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/averages/HalsteadAverage.js",
+    "srcPath": "escomplex-commons/src/module/report/averages/HalsteadAverage.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/averages/MethodAverage.js",
+    "srcPath": "escomplex-commons/src/module/report/averages/MethodAverage.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/averages/ModuleAverage.js",
+    "srcPath": "escomplex-commons/src/module/report/averages/ModuleAverage.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/ClassReport.js",
+    "srcPath": "escomplex-commons/src/module/report/ClassReport.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/HalsteadData.js",
+    "srcPath": "escomplex-commons/src/module/report/HalsteadData.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/MethodReport.js",
+    "srcPath": "escomplex-commons/src/module/report/MethodReport.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/report/ModuleReport.js",
+    "srcPath": "escomplex-commons/src/module/report/ModuleReport.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/traits/actualize.js",
+    "srcPath": "escomplex-commons/src/module/traits/actualize.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/traits/HalsteadArray.js",
+    "srcPath": "escomplex-commons/src/module/traits/HalsteadArray.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/traits/Trait.js",
+    "srcPath": "escomplex-commons/src/module/traits/Trait.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/traits/TraitHalstead.js",
+    "srcPath": "escomplex-commons/src/module/traits/TraitHalstead.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/module/traits/TraitUtil.js",
+    "srcPath": "escomplex-commons/src/module/traits/TraitUtil.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/project/report/ProjectReport.js",
+    "srcPath": "escomplex-commons/src/project/report/ProjectReport.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/json/FormatJSON.js",
+    "srcPath": "escomplex-commons/src/transform/formats/json/FormatJSON.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js",
+    "srcPath": "escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js",
+    "srcPath": "escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/json/FormatJSONModules.js",
+    "srcPath": "escomplex-commons/src/transform/formats/json/FormatJSONModules.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js",
+    "srcPath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js",
+    "srcPath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js",
+    "srcPath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js",
+    "srcPath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js",
+    "srcPath": "escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/text/AbstractFormatText.js",
+    "srcPath": "escomplex-commons/src/transform/formats/text/AbstractFormatText.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js",
+    "srcPath": "escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/text/FormatText.js",
+    "srcPath": "escomplex-commons/src/transform/formats/text/FormatText.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js",
+    "srcPath": "escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/text/FormatTextMinimal.js",
+    "srcPath": "escomplex-commons/src/transform/formats/text/FormatTextMinimal.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/text/FormatTextModules.js",
+    "srcPath": "escomplex-commons/src/transform/formats/text/FormatTextModules.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/formats/text/FormatTextVisibility.js",
+    "srcPath": "escomplex-commons/src/transform/formats/text/FormatTextVisibility.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/transform/TransformFormat.js",
+    "srcPath": "escomplex-commons/src/transform/TransformFormat.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/types/ReportType.js",
+    "srcPath": "escomplex-commons/src/types/ReportType.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/utils/Enum.js",
+    "srcPath": "escomplex-commons/src/utils/Enum.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/utils/MathUtil.js",
+    "srcPath": "escomplex-commons/src/utils/MathUtil.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/utils/ObjectUtil.js",
+    "srcPath": "escomplex-commons/src/utils/ObjectUtil.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-commons/src/utils/StringUtil.js",
+    "srcPath": "escomplex-commons/src/utils/StringUtil.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-module/src/ESComplexModule.ts",
+    "srcPath": "escomplex-module/src/ESComplexModule.ts",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-module/src/index.ts",
+    "srcPath": "escomplex-module/src/index.ts",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-module/src/Plugins.ts",
+    "srcPath": "escomplex-module/src/Plugins.ts",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-project/__tests__/fixture/testImportNPMAlias.js",
+    "srcPath": "escomplex-project/__tests__/fixture/testImportNPMAlias.js",
+    "srcPathAlias": undefined,
+  },
+  {
+    "filePath": "escomplex-project/__tests__/fixture/testRequireNPMAlias.js",
+    "srcPath": "escomplex-project/__tests__/fixture/testRequireNPMAlias.js",
+    "srcPathAlias": undefined,
+  },
+]
+`;
 
-exports[`(espree) project: > local source + NPM module @ponticus/escomplex-commons and escomplex-module test w/ dependencies: > adjacency list is correct 1`] = `"[{\\"row\\":0,\\"cols\\":[2]},{\\"row\\":1,\\"cols\\":[0]},{\\"row\\":5,\\"cols\\":[39]},{\\"row\\":7,\\"cols\\":[38]},{\\"row\\":8,\\"cols\\":[7,13]},{\\"row\\":10,\\"cols\\":[9]},{\\"row\\":11,\\"cols\\":[10]},{\\"row\\":12,\\"cols\\":[5,7,8,10,38,39,42]},{\\"row\\":14,\\"cols\\":[5,8]},{\\"row\\":15,\\"cols\\":[5,7,8,10,12,38,39,41,42]},{\\"row\\":16,\\"cols\\":[17,18,20]},{\\"row\\":17,\\"cols\\":[19]},{\\"row\\":21,\\"cols\\":[11,15,38,39,41,42,43]},{\\"row\\":23,\\"cols\\":[39,42]},{\\"row\\":24,\\"cols\\":[39,42]},{\\"row\\":25,\\"cols\\":[39]},{\\"row\\":26,\\"cols\\":[33,43]},{\\"row\\":27,\\"cols\\":[34]},{\\"row\\":28,\\"cols\\":[35,43]},{\\"row\\":29,\\"cols\\":[36,43]},{\\"row\\":30,\\"cols\\":[37]},{\\"row\\":31,\\"cols\\":[39,42,43]},{\\"row\\":32,\\"cols\\":[39,42]},{\\"row\\":33,\\"cols\\":[31,38,39,43]},{\\"row\\":34,\\"cols\\":[32]},{\\"row\\":35,\\"cols\\":[31,39,43]},{\\"row\\":36,\\"cols\\":[31,39,43]},{\\"row\\":37,\\"cols\\":[32]},{\\"row\\":38,\\"cols\\":[22,23,24,25,26,27,28,29,30,33,34,35,36,37,39]},{\\"row\\":39,\\"cols\\":[40]},{\\"row\\":41,\\"cols\\":[42]},{\\"row\\":43,\\"cols\\":[42]},{\\"row\\":44,\\"cols\\":[46]},{\\"row\\":45,\\"cols\\":[44]}]"`;
-
-exports[`(espree) project: > local source + NPM module @ponticus/escomplex-commons and escomplex-module test w/ dependencies: > visibility list is correct 1`] = `"[{\\"row\\":0,\\"cols\\":[0,2]},{\\"row\\":1,\\"cols\\":[0,1,2]},{\\"row\\":2,\\"cols\\":[2]},{\\"row\\":3,\\"cols\\":[3]},{\\"row\\":4,\\"cols\\":[4]},{\\"row\\":5,\\"cols\\":[5,39,40]},{\\"row\\":6,\\"cols\\":[6]},{\\"row\\":7,\\"cols\\":[7,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":8,\\"cols\\":[7,8,13,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":9,\\"cols\\":[9]},{\\"row\\":10,\\"cols\\":[9,10]},{\\"row\\":11,\\"cols\\":[9,10,11]},{\\"row\\":12,\\"cols\\":[5,7,8,9,10,12,13,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":13,\\"cols\\":[13]},{\\"row\\":14,\\"cols\\":[5,7,8,13,14,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":15,\\"cols\\":[5,7,8,9,10,12,13,15,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43]},{\\"row\\":16,\\"cols\\":[16,17,18,19,20]},{\\"row\\":17,\\"cols\\":[17,19]},{\\"row\\":18,\\"cols\\":[18]},{\\"row\\":19,\\"cols\\":[19]},{\\"row\\":20,\\"cols\\":[20]},{\\"row\\":21,\\"cols\\":[5,7,8,9,10,11,12,13,15,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43]},{\\"row\\":22,\\"cols\\":[22]},{\\"row\\":23,\\"cols\\":[23,39,40,42]},{\\"row\\":24,\\"cols\\":[24,39,40,42]},{\\"row\\":25,\\"cols\\":[25,39,40]},{\\"row\\":26,\\"cols\\":[22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":27,\\"cols\\":[27,32,34,39,40,42]},{\\"row\\":28,\\"cols\\":[28,31,35,39,40,42,43]},{\\"row\\":29,\\"cols\\":[29,31,36,39,40,42,43]},{\\"row\\":30,\\"cols\\":[30,32,37,39,40,42]},{\\"row\\":31,\\"cols\\":[31,39,40,42,43]},{\\"row\\":32,\\"cols\\":[32,39,40,42]},{\\"row\\":33,\\"cols\\":[22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":34,\\"cols\\":[32,34,39,40,42]},{\\"row\\":35,\\"cols\\":[31,35,39,40,42,43]},{\\"row\\":36,\\"cols\\":[31,36,39,40,42,43]},{\\"row\\":37,\\"cols\\":[32,37,39,40,42]},{\\"row\\":38,\\"cols\\":[22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":39,\\"cols\\":[39,40]},{\\"row\\":40,\\"cols\\":[40]},{\\"row\\":41,\\"cols\\":[41,42]},{\\"row\\":42,\\"cols\\":[42]},{\\"row\\":43,\\"cols\\":[42,43]},{\\"row\\":44,\\"cols\\":[44,46]},{\\"row\\":45,\\"cols\\":[44,45,46]},{\\"row\\":46,\\"cols\\":[46]}]"`;
-
-exports[`(espree) project: > local source + NPM module @ponticus/escomplex-commons test w/ serializeModules false: > modules only contains object hash w/ filePath, srcPath and srcPathAlias entries 1`] = `"[{\\"filePath\\":\\"./src/ESComplexProject.js\\",\\"srcPath\\":\\"./src/ESComplexProject.js\\"},{\\"filePath\\":\\"./src/index.js\\",\\"srcPath\\":\\"./src/index.js\\"},{\\"filePath\\":\\"./src/Plugins.js\\",\\"srcPath\\":\\"./src/Plugins.js\\"},{\\"filePath\\":\\"./test/fixture/testImportNPMAlias.js\\",\\"srcPath\\":\\"./test/fixture/testImportNPMAlias.js\\"},{\\"filePath\\":\\"./test/fixture/testRequireNPMAlias.js\\",\\"srcPath\\":\\"./test/fixture/testRequireNPMAlias.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/analyze/AnalyzeError.js\\",\\"srcPath\\":\\"escomplex-commons/src/analyze/AnalyzeError.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/AbstractReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/AbstractReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/AggregateMethodReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/AggregateMethodReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/averages/HalsteadAverage.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/averages/HalsteadAverage.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/averages/MethodAverage.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/averages/MethodAverage.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/averages/ModuleAverage.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/averages/ModuleAverage.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/ClassReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/ClassReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/HalsteadData.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/HalsteadData.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/MethodReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/MethodReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/ModuleReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/ModuleReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/traits/actualize.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/actualize.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/traits/HalsteadArray.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/HalsteadArray.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/traits/Trait.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/Trait.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/traits/TraitHalstead.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/TraitHalstead.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/traits/TraitUtil.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/TraitUtil.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/project/report/ProjectReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/project/report/ProjectReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/json/FormatJSON.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSON.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSONModules.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/AbstractFormatText.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/FormatText.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatText.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/FormatTextModules.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextModules.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/TransformFormat.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/TransformFormat.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/types/ReportType.js\\",\\"srcPath\\":\\"escomplex-commons/src/types/ReportType.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/utils/Enum.js\\",\\"srcPath\\":\\"escomplex-commons/src/utils/Enum.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/utils/MathUtil.js\\",\\"srcPath\\":\\"escomplex-commons/src/utils/MathUtil.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/utils/ObjectUtil.js\\",\\"srcPath\\":\\"escomplex-commons/src/utils/ObjectUtil.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/utils/StringUtil.js\\",\\"srcPath\\":\\"escomplex-commons/src/utils/StringUtil.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-module/src/ESComplexModule.js\\",\\"srcPath\\":\\"escomplex-module/src/ESComplexModule.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-module/src/index.js\\",\\"srcPath\\":\\"escomplex-module/src/index.js\\",\\"srcPathAlias\\":\\"escomplex-module\\"},{\\"filePath\\":\\"./node_modules/escomplex-module/src/Plugins.js\\",\\"srcPath\\":\\"escomplex-module/src/Plugins.js\\"}]"`;
-
-exports[`(esprima) project: > local source + NPM module @ponticus/escomplex-commons and escomplex-module test w/ dependencies: > adjacency list is correct 1`] = `"[{\\"row\\":0,\\"cols\\":[2]},{\\"row\\":1,\\"cols\\":[0]},{\\"row\\":5,\\"cols\\":[39]},{\\"row\\":7,\\"cols\\":[38]},{\\"row\\":8,\\"cols\\":[7,13]},{\\"row\\":10,\\"cols\\":[9]},{\\"row\\":11,\\"cols\\":[10]},{\\"row\\":12,\\"cols\\":[5,7,8,10,38,39,42]},{\\"row\\":14,\\"cols\\":[5,8]},{\\"row\\":15,\\"cols\\":[5,7,8,10,12,38,39,41,42]},{\\"row\\":16,\\"cols\\":[17,18,20]},{\\"row\\":17,\\"cols\\":[19]},{\\"row\\":21,\\"cols\\":[11,15,38,39,41,42,43]},{\\"row\\":23,\\"cols\\":[39,42]},{\\"row\\":24,\\"cols\\":[39,42]},{\\"row\\":25,\\"cols\\":[39]},{\\"row\\":26,\\"cols\\":[33,43]},{\\"row\\":27,\\"cols\\":[34]},{\\"row\\":28,\\"cols\\":[35,43]},{\\"row\\":29,\\"cols\\":[36,43]},{\\"row\\":30,\\"cols\\":[37]},{\\"row\\":31,\\"cols\\":[39,42,43]},{\\"row\\":32,\\"cols\\":[39,42]},{\\"row\\":33,\\"cols\\":[31,38,39,43]},{\\"row\\":34,\\"cols\\":[32]},{\\"row\\":35,\\"cols\\":[31,39,43]},{\\"row\\":36,\\"cols\\":[31,39,43]},{\\"row\\":37,\\"cols\\":[32]},{\\"row\\":38,\\"cols\\":[22,23,24,25,26,27,28,29,30,33,34,35,36,37,39]},{\\"row\\":39,\\"cols\\":[40]},{\\"row\\":41,\\"cols\\":[42]},{\\"row\\":43,\\"cols\\":[42]},{\\"row\\":44,\\"cols\\":[46]},{\\"row\\":45,\\"cols\\":[44]}]"`;
-
-exports[`(esprima) project: > local source + NPM module @ponticus/escomplex-commons and escomplex-module test w/ dependencies: > visibility list is correct 1`] = `"[{\\"row\\":0,\\"cols\\":[0,2]},{\\"row\\":1,\\"cols\\":[0,1,2]},{\\"row\\":2,\\"cols\\":[2]},{\\"row\\":3,\\"cols\\":[3]},{\\"row\\":4,\\"cols\\":[4]},{\\"row\\":5,\\"cols\\":[5,39,40]},{\\"row\\":6,\\"cols\\":[6]},{\\"row\\":7,\\"cols\\":[7,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":8,\\"cols\\":[7,8,13,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":9,\\"cols\\":[9]},{\\"row\\":10,\\"cols\\":[9,10]},{\\"row\\":11,\\"cols\\":[9,10,11]},{\\"row\\":12,\\"cols\\":[5,7,8,9,10,12,13,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":13,\\"cols\\":[13]},{\\"row\\":14,\\"cols\\":[5,7,8,13,14,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":15,\\"cols\\":[5,7,8,9,10,12,13,15,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43]},{\\"row\\":16,\\"cols\\":[16,17,18,19,20]},{\\"row\\":17,\\"cols\\":[17,19]},{\\"row\\":18,\\"cols\\":[18]},{\\"row\\":19,\\"cols\\":[19]},{\\"row\\":20,\\"cols\\":[20]},{\\"row\\":21,\\"cols\\":[5,7,8,9,10,11,12,13,15,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43]},{\\"row\\":22,\\"cols\\":[22]},{\\"row\\":23,\\"cols\\":[23,39,40,42]},{\\"row\\":24,\\"cols\\":[24,39,40,42]},{\\"row\\":25,\\"cols\\":[25,39,40]},{\\"row\\":26,\\"cols\\":[22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":27,\\"cols\\":[27,32,34,39,40,42]},{\\"row\\":28,\\"cols\\":[28,31,35,39,40,42,43]},{\\"row\\":29,\\"cols\\":[29,31,36,39,40,42,43]},{\\"row\\":30,\\"cols\\":[30,32,37,39,40,42]},{\\"row\\":31,\\"cols\\":[31,39,40,42,43]},{\\"row\\":32,\\"cols\\":[32,39,40,42]},{\\"row\\":33,\\"cols\\":[22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":34,\\"cols\\":[32,34,39,40,42]},{\\"row\\":35,\\"cols\\":[31,35,39,40,42,43]},{\\"row\\":36,\\"cols\\":[31,36,39,40,42,43]},{\\"row\\":37,\\"cols\\":[32,37,39,40,42]},{\\"row\\":38,\\"cols\\":[22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42,43]},{\\"row\\":39,\\"cols\\":[39,40]},{\\"row\\":40,\\"cols\\":[40]},{\\"row\\":41,\\"cols\\":[41,42]},{\\"row\\":42,\\"cols\\":[42]},{\\"row\\":43,\\"cols\\":[42,43]},{\\"row\\":44,\\"cols\\":[44,46]},{\\"row\\":45,\\"cols\\":[44,45,46]},{\\"row\\":46,\\"cols\\":[46]}]"`;
-
-exports[`(esprima) project: > local source + NPM module @ponticus/escomplex-commons test w/ serializeModules false: > modules only contains object hash w/ filePath, srcPath and srcPathAlias entries 1`] = `"[{\\"filePath\\":\\"./src/ESComplexProject.js\\",\\"srcPath\\":\\"./src/ESComplexProject.js\\"},{\\"filePath\\":\\"./src/index.js\\",\\"srcPath\\":\\"./src/index.js\\"},{\\"filePath\\":\\"./src/Plugins.js\\",\\"srcPath\\":\\"./src/Plugins.js\\"},{\\"filePath\\":\\"./test/fixture/testImportNPMAlias.js\\",\\"srcPath\\":\\"./test/fixture/testImportNPMAlias.js\\"},{\\"filePath\\":\\"./test/fixture/testRequireNPMAlias.js\\",\\"srcPath\\":\\"./test/fixture/testRequireNPMAlias.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/analyze/AnalyzeError.js\\",\\"srcPath\\":\\"escomplex-commons/src/analyze/AnalyzeError.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/AbstractReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/AbstractReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/AggregateMethodReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/AggregateMethodReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/averages/HalsteadAverage.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/averages/HalsteadAverage.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/averages/MethodAverage.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/averages/MethodAverage.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/averages/ModuleAverage.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/averages/ModuleAverage.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/ClassReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/ClassReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/HalsteadData.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/HalsteadData.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/MethodReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/MethodReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/report/ModuleReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/ModuleReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/traits/actualize.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/actualize.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/traits/HalsteadArray.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/HalsteadArray.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/traits/Trait.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/Trait.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/traits/TraitHalstead.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/TraitHalstead.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/module/traits/TraitUtil.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/TraitUtil.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/project/report/ProjectReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/project/report/ProjectReport.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/json/FormatJSON.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSON.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSONModules.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/AbstractFormatText.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/FormatText.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatText.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/FormatTextModules.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextModules.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/transform/TransformFormat.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/TransformFormat.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/types/ReportType.js\\",\\"srcPath\\":\\"escomplex-commons/src/types/ReportType.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/utils/Enum.js\\",\\"srcPath\\":\\"escomplex-commons/src/utils/Enum.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/utils/MathUtil.js\\",\\"srcPath\\":\\"escomplex-commons/src/utils/MathUtil.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/utils/ObjectUtil.js\\",\\"srcPath\\":\\"escomplex-commons/src/utils/ObjectUtil.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-commons/src/utils/StringUtil.js\\",\\"srcPath\\":\\"escomplex-commons/src/utils/StringUtil.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-module/src/ESComplexModule.js\\",\\"srcPath\\":\\"escomplex-module/src/ESComplexModule.js\\"},{\\"filePath\\":\\"./node_modules/escomplex-module/src/index.js\\",\\"srcPath\\":\\"escomplex-module/src/index.js\\",\\"srcPathAlias\\":\\"escomplex-module\\"},{\\"filePath\\":\\"./node_modules/escomplex-module/src/Plugins.js\\",\\"srcPath\\":\\"escomplex-module/src/Plugins.js\\"}]"`;
+exports[`(babylon) project: > local source + NPM module @ponticus/escomplex-commons test w/ serializeModules false: > modules only contains object hash w/ filePath, srcPath and srcPathAlias entries 1`] = `"[{\\"filePath\\":\\"escomplex-commons/src/analyze/AnalyzeError.js\\",\\"srcPath\\":\\"escomplex-commons/src/analyze/AnalyzeError.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/report/AbstractReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/AbstractReport.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/report/AggregateReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/AggregateReport.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/report/averages/HalsteadAverage.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/averages/HalsteadAverage.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/report/averages/MethodAverage.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/averages/MethodAverage.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/report/averages/ModuleAverage.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/averages/ModuleAverage.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/report/ClassReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/ClassReport.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/report/HalsteadData.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/HalsteadData.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/report/MethodReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/MethodReport.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/report/ModuleReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/report/ModuleReport.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/traits/actualize.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/actualize.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/traits/HalsteadArray.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/HalsteadArray.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/traits/Trait.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/Trait.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/traits/TraitHalstead.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/TraitHalstead.js\\"},{\\"filePath\\":\\"escomplex-commons/src/module/traits/TraitUtil.js\\",\\"srcPath\\":\\"escomplex-commons/src/module/traits/TraitUtil.js\\"},{\\"filePath\\":\\"escomplex-commons/src/project/report/ProjectReport.js\\",\\"srcPath\\":\\"escomplex-commons/src/project/report/ProjectReport.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSON.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSON.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSONModules.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/json/FormatJSONModules.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/text/AbstractFormatText.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/AbstractFormatText.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/text/FormatText.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatText.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextModules.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextModules.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\\"},{\\"filePath\\":\\"escomplex-commons/src/transform/TransformFormat.js\\",\\"srcPath\\":\\"escomplex-commons/src/transform/TransformFormat.js\\"},{\\"filePath\\":\\"escomplex-commons/src/types/ReportType.js\\",\\"srcPath\\":\\"escomplex-commons/src/types/ReportType.js\\"},{\\"filePath\\":\\"escomplex-commons/src/utils/Enum.js\\",\\"srcPath\\":\\"escomplex-commons/src/utils/Enum.js\\"},{\\"filePath\\":\\"escomplex-commons/src/utils/MathUtil.js\\",\\"srcPath\\":\\"escomplex-commons/src/utils/MathUtil.js\\"},{\\"filePath\\":\\"escomplex-commons/src/utils/ObjectUtil.js\\",\\"srcPath\\":\\"escomplex-commons/src/utils/ObjectUtil.js\\"},{\\"filePath\\":\\"escomplex-commons/src/utils/StringUtil.js\\",\\"srcPath\\":\\"escomplex-commons/src/utils/StringUtil.js\\"},{\\"filePath\\":\\"escomplex-module/src/ESComplexModule.ts\\",\\"srcPath\\":\\"escomplex-module/src/ESComplexModule.ts\\"},{\\"filePath\\":\\"escomplex-module/src/index.ts\\",\\"srcPath\\":\\"escomplex-module/src/index.ts\\"},{\\"filePath\\":\\"escomplex-module/src/Plugins.ts\\",\\"srcPath\\":\\"escomplex-module/src/Plugins.ts\\"},{\\"filePath\\":\\"escomplex-project/__tests__/fixture/testImportNPMAlias.js\\",\\"srcPath\\":\\"escomplex-project/__tests__/fixture/testImportNPMAlias.js\\"},{\\"filePath\\":\\"escomplex-project/__tests__/fixture/testRequireNPMAlias.js\\",\\"srcPath\\":\\"escomplex-project/__tests__/fixture/testRequireNPMAlias.js\\"}]"`;

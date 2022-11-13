@@ -2468,9 +2468,8 @@ if (testconfig.modules["moduleCore"]) {
 
         test("report has correct line start / end", () => {
           switch (parser.name) {
-            // acorn, babelParser & babylon sets the start location at line 1 (first comment) instead of
+            // babelParser & babylon sets the start location at line 1 (first comment) instead of
             // line 4 (first line of code).
-            case "acorn":
             case "babelParser":
             case "babylon":
               expect(report.lineStart).toBe(1);
@@ -2484,9 +2483,8 @@ if (testconfig.modules["moduleCore"]) {
 
         test("aggregate has correct physical lines of code", () => {
           switch (parser.name) {
-            // acorn, babelParser & babylon sets the start location at line 1 (first comment) instead of
+            // babelParser & babylon sets the start location at line 1 (first comment) instead of
             // line 4 (first line of code).
-            case "acorn":
             case "babelParser":
             case "babylon":
               expect(report.aggregate.sloc.physical).toBe(14);

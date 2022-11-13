@@ -25,15 +25,12 @@
     "@swc/cli": "^0.1.57",
     "@swc/core": "^1.3.14",
     "eslint-config-prettier": "^8.5.0",
-    "vitest": "^0.24.5",
+    "vitest": "^0.25.1",
     "@ponticus/escomplex-test-data": "0.0.1",
-    "@typhonjs/babel-parser": "^0.2.0",
-    "acorn": "^8.8.0",
+    "@ponticus/babel-parser": "^0.0.1",
     "babylon": "^6.18.0",
     "eslint": "^8.26.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "espree": "^9.4.0",
-    "esprima": "^4.0.1"
+    "eslint-plugin-prettier": "^4.2.1"
   },
   "scripts": {
     "build": "swc src -d dist",

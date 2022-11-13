@@ -19,11 +19,8 @@ export const modules = {
  * Defines which parsers to use in testing.
  */
 export const parsers = {
-  acorn: true,
   babelParser: true,
   babylon: true,
-  espree: true,
-  esprima: true,
 };
 
 /**

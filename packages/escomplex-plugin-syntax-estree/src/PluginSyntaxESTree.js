@@ -497,7 +497,6 @@ export default class PluginSyntaxESTree extends AbstractSyntaxLoader {
           });
         }
 
-        // Esprima default values; param default values are stored in a non-standard `defaults` node.
         if (Array.isArray(node.defaults)) {
           node.defaults.forEach((value) => {
             if (value !== null && typeof value === "object") {
@@ -523,41 +522,6 @@ export default class PluginSyntaxESTree extends AbstractSyntaxLoader {
       }
     );
   }
-
-  // FunctionDeclaration()
-  // {
-  //   return actualize(1, 0, (node, parent) =>
-  //   {
-  //      const operators = parent && parent.type === 'MethodDefinition' && typeof parent.computed === 'boolean' &&
-  //       parent.computed ? [...ASTGenerator.parse(parent.key).operators] : [];
-  //
-  //       if (parent && parent.type === 'MethodDefinition')
-  //       {
-  //          if (typeof node.generator === 'boolean' && node.generator)
-  //          {
-  //             operators.push('function*');
-  //          }
-  //       }
-  //       else
-  //       {
-  //          operators.push(typeof node.generator === 'boolean' && node.generator ? 'function*' : 'function');
-  //       }
-  //
-  //       return operators;
-  //   },
-  //   (node, parent) => { return s_SAFE_COMPUTED_OPERANDS(node, parent); },
-  //   'id',
-  //   (node, parent) =>
-  //   {
-  //      return {
-  //         type: 'method',
-  //         name: s_SAFE_COMPUTED_NAME(node, parent),
-  //         lineStart: node.loc.start.line,
-  //         lineEnd: node.loc.end.line,
-  //         paramCount: node.params.length
-  //      };
-  //   });
-  // }
 
   /**
    * ES5 Node
@@ -614,7 +578,6 @@ export default class PluginSyntaxESTree extends AbstractSyntaxLoader {
           });
         }
 
-        // Esprima default values; param default values are stored in a non-standard `defaults` node.
         if (Array.isArray(node.defaults)) {
           node.defaults.forEach((value) => {
             if (value !== null && typeof value === "object") {
