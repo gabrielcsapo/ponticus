@@ -66,6 +66,7 @@ const config = {
           "packages/escomplex",
           "packages/escomplex-module",
           "packages/plugin-manager",
+          "packages/babel-parser",
         ],
         debug: true,
       },
