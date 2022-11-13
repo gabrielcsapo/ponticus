@@ -25,7 +25,7 @@
     "eslint-config-prettier": "^8.5.0",
     "vitest": "^0.25.1",
     "@ponticus/ast-walker": "^0.0.1",
-    "eslint": "^8.26.0",
+    "eslint": "^8.27.0",
     "eslint-plugin-prettier": "^4.2.1",
     "sort-object": "^3.0.3"
   },

@@ -23,7 +23,7 @@
     "@swc/core": "^1.3.14",
     "vitest": "^0.25.1",
     "@ponticus/escomplex-test-data": "0.0.1",
-    "eslint": "^8.26.0",
+    "eslint": "^8.27.0",
     "eslint-config-prettier": "^8.5.0"
   },
   "scripts": {
