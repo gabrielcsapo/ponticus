@@ -8,13 +8,21 @@
     "url": "https://github.com/gabrielcsapo/ponticus.git"
   },
   "type": "module",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
+  "scripts": {
+    "build": "swc src -d dist && tsc",
+    "lint": "eslint .",
+    "prepublish": "npm run build",
+    "test": "vitest"
   },
+  "keywords": [
+    "babel",
+    "parser",
+    "AST"
+  ],
   "exports": {
     ".": "./dist/index.js"
   },
+  "types": "./dist/dts/index.d.ts",
   "dependencies": {
     "@babel/parser": "^7.20.3"
   },
@@ -30,17 +38,6 @@
     "eslint-plugin-tsdoc": "^0.2.17",
     "vitest": "^0.24.5"
   },
-  "scripts": {
-    "build": "swc src -d dist",
-    "lint": "eslint .",
-    "prepublish": "npm run build",
-    "test": "vitest"
-  },
-  "keywords": [
-    "babel",
-    "parser",
-    "AST"
-  ],
   "volta": {
     "node": "16.15.0"
   }

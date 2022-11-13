@@ -109,7 +109,5 @@ export default class BabelParser {
  * @param  ev - The plugin event.
  */
 export function onPluginLoad(ev: PluginEvent) {
-  const eventbus = ev.eventbus;
-
-  eventbus.on("typhonjs:babel:parser:parse", BabelParser.parse, BabelParser);
+  ev.eventbus?.on("typhonjs:babel:parser:parse", BabelParser.parse);
 }

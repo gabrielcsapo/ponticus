@@ -6,7 +6,7 @@ import { PluginSyntaxBabylon } from "@ponticus/escomplex-plugin-syntax-babylon";
 import { ModuleReport } from "@ponticus/escomplex-commons";
 // TODO: import ModuleScopeControl from escomplex-commons
 type ModuleScopeControl = any;
-// @ts-ignore
+
 import { PluginManager } from "@ponticus/plugin-manager";
 
 type Scope = {
@@ -94,9 +94,9 @@ export default class Plugins {
       settings,
     });
 
-    settings = event !== null ? event.settings : settings;
+    settings = event !== undefined ? event.settings : settings;
     Object.freeze(settings);
-    return event !== null ? event.settings : settings;
+    return event !== undefined ? event.settings : settings;
   }
 
   /**
@@ -116,10 +116,10 @@ export default class Plugins {
     moduleReport: ModuleReport,
     scopeControl: ModuleScopeControl,
     ignoreKeys: string[],
-    syntaxes,
-    settings,
-    node,
-    parent
+    syntaxes: any,
+    settings: any,
+    node: any,
+    parent: any
   ): string[] | null {
     const event = this._pluginManager.invokeSyncEvent("onEnterNode", void 0, {
       moduleReport,
@@ -131,7 +131,7 @@ export default class Plugins {
       parent,
     });
 
-    return event !== null ? event.ignoreKeys : [];
+    return event !== undefined ? event.ignoreKeys : [];
   }
 
   /**
@@ -147,10 +147,10 @@ export default class Plugins {
   onExitNode(
     moduleReport: ModuleReport,
     scopeControl: ModuleScopeControl,
-    syntaxes,
-    settings,
-    node,
-    parent
+    syntaxes: any,
+    settings: any,
+    node: any,
+    parent: any
   ) {
     this._pluginManager.invokeSyncEvent("onExitNode", void 0, {
       moduleReport,
@@ -176,7 +176,7 @@ export default class Plugins {
       settings,
       syntaxes,
     });
-    return event !== null ? event.syntaxes : syntaxes;
+    return event !== undefined ? event.syntaxes : syntaxes;
   }
 
   /**
@@ -188,7 +188,11 @@ export default class Plugins {
    *
    * @returns The ModuleReport being processed.
    */
-  onModuleStart(ast, syntaxes, settings): ModuleReport {
+  onModuleStart(
+    ast: { loc: { start: { line: any }; end: { line: any } } },
+    syntaxes: any,
+    settings: any
+  ): ModuleReport {
     const moduleReport = new ModuleReport(
       ast.loc.start.line,
       ast.loc.end.line,
@@ -215,8 +219,8 @@ export default class Plugins {
    */
   onModuleAverage(
     moduleReport: ModuleReport,
-    syntaxes,
-    settings
+    syntaxes: any,
+    settings: any
   ): ModuleReport {
     this._pluginManager.invokeSyncEvent("onModuleAverage", void 0, {
       moduleReport,
@@ -237,8 +241,8 @@ export default class Plugins {
    */
   onModuleCalculate(
     moduleReport: ModuleReport,
-    syntaxes,
-    settings
+    syntaxes: any,
+    settings: any
   ): ModuleReport {
     this._pluginManager.invokeSyncEvent("onModuleCalculate", void 0, {
       moduleReport,
@@ -257,7 +261,11 @@ export default class Plugins {
    *
    * @returns The ModuleReport being processed.
    */
-  onModuleEnd(moduleReport: ModuleReport, syntaxes, settings): ModuleReport {
+  onModuleEnd(
+    moduleReport: ModuleReport,
+    syntaxes: any,
+    settings: any
+  ): ModuleReport {
     this._pluginManager.invokeSyncEvent("onModuleEnd", void 0, {
       moduleReport,
       syntaxes,
@@ -278,8 +286,8 @@ export default class Plugins {
    */
   onModulePostAverage(
     moduleReport: ModuleReport,
-    syntaxes,
-    settings
+    syntaxes: any,
+    settings: any
   ): ModuleReport {
     this._pluginManager.invokeSyncEvent("onModulePostAverage", void 0, {
       moduleReport,
@@ -304,9 +312,9 @@ export default class Plugins {
     moduleReport: ModuleReport,
     scopeControl: ModuleScopeControl,
     newScope: Scope,
-    settings,
-    node,
-    parent
+    settings: any,
+    node: any,
+    parent: any
   ) {
     this._pluginManager.invokeSyncEvent("onModulePostScopeCreated", void 0, {
       moduleReport,
@@ -333,9 +341,9 @@ export default class Plugins {
     moduleReport: ModuleReport,
     scopeControl: ModuleScopeControl,
     scope: Scope,
-    settings,
-    node,
-    parent
+    settings: any,
+    node: any,
+    parent: any
   ) {
     this._pluginManager.invokeSyncEvent("onModulePostScopePopped", void 0, {
       moduleReport,
@@ -362,9 +370,9 @@ export default class Plugins {
     moduleReport: ModuleReport,
     scopeControl: ModuleScopeControl,
     newScope: Scope,
-    settings,
-    node,
-    parent
+    settings: any,
+    node: any,
+    parent: any
   ) {
     this._pluginManager.invokeSyncEvent("onModulePreScopeCreated", void 0, {
       moduleReport,
@@ -391,9 +399,9 @@ export default class Plugins {
     moduleReport: ModuleReport,
     scopeControl: ModuleScopeControl,
     scope: Scope,
-    settings,
-    node,
-    parent
+    settings: any,
+    node: any,
+    parent: any
   ) {
     this._pluginManager.invokeSyncEvent("onModulePreScopePopped", void 0, {
       moduleReport,

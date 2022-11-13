@@ -5,10 +5,14 @@
   "description": "Produce a complexity analysis report",
   "version": "0.0.1",
   "scripts": {
-    "build": "swc src -d dist && swc src -d cjs --config module.type=commonjs",
+    "build": "swc src -d dist && tsc",
     "lint": "eslint src/*.ts",
     "test": "vitest"
   },
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "types": "dist/dts/index.d.ts",
   "devDependencies": {
     "@babel/core": "^7.18.5",
     "@babel/preset-env": "^7.18.2",
@@ -25,10 +29,5 @@
   "dependencies": {
     "lodash": "^4.17.21",
     "@ponticus/escomplex": "0.0.1"
-  },
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "/dist"
-  ]
+  }
 }

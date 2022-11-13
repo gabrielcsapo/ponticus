@@ -45,7 +45,27 @@ export class ESComplex {
    *    (Array<Object>)   plugins - A list of ESComplexProject plugins that have already been instantiated.
    * ```
    */
-  constructor(options = {}) {
+  constructor(
+    options: {
+      module: {
+        loadDefaultPlugins: boolean;
+        plugins: any[];
+      };
+      project: {
+        loadDefaultPlugins: boolean;
+        plugins: any[];
+      };
+    } = {
+      module: {
+        loadDefaultPlugins: true,
+        plugins: [],
+      },
+      project: {
+        loadDefaultPlugins: true,
+        plugins: [],
+      },
+    }
+  ) {
     /* istanbul ignore if */
     if (typeof options !== "object") {
       throw new TypeError(`ctor error: 'options' is not an 'object'.`);
@@ -116,7 +136,7 @@ export class ESComplex {
    */
   analyzeProject(
     sources: any[],
-    options = {},
+    options: any = {},
     parserOptions = void 0,
     parserOverride = void 0
   ) {
@@ -130,7 +150,7 @@ export class ESComplex {
             srcPath: source.srcPath,
             srcPathAlias: source.srcPathAlias,
           };
-        } catch (error) {
+        } catch (error: any) {
           /* istanbul ignore if */
           if (options.ignoreErrors) {
             return null;

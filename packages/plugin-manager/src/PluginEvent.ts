@@ -36,6 +36,21 @@ export default class PluginEvent {
   pluginOptions: any;
 
   /**
+   * settings for the plugin instance
+   */
+  settings: any;
+
+  /**
+   * list of keys to ignore
+   */
+  ignoreKeys: any;
+
+  /**
+   * All loaded trait syntaxes for AST nodes
+   */
+  syntaxes: any;
+
+  /**
    * Initializes PluginEvent.
    *
    * @param copyProps - Event data to copy.
