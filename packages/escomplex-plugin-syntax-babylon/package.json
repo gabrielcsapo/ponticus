@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@ponticus/escomplex-commons": "^0.0.1",
-    "escomplex-plugin-syntax-estree": "^0.1.0"
+    "@ponticus/escomplex-plugin-syntax-estree": "^0.0.1"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.57",
@@ -26,8 +26,7 @@
     "vitest": "^0.25.1",
     "@ponticus/ast-walker": "^0.0.1",
     "eslint": "^8.27.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "sort-object": "^3.0.3"
+    "eslint-plugin-prettier": "^4.2.1"
   },
   "scripts": {
     "build": "swc src -d dist",
