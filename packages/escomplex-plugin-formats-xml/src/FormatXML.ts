@@ -50,7 +50,7 @@ export default class FormatXML {
       options
     );
 
-    return parse("module", jsonObject);
+    return parse("module", JSON.parse(jsonObject));
   }
 
   /**
@@ -66,7 +66,7 @@ export default class FormatXML {
       options
     );
 
-    return parse("project", jsonObject);
+    return parse("project", JSON.parse(jsonObject));
   }
 
   /**
