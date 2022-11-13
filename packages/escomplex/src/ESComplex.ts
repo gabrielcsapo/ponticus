@@ -1,9 +1,6 @@
 import path from "path";
 
-// @ts-ignore
 import { BabelParser } from "@ponticus/babel-parser";
-
-// @ts-ignore
 import { ESComplexModule } from "@ponticus/escomplex-module";
 // @ts-ignore
 import { ESComplexProject } from "@ponticus/escomplex-project";
@@ -23,13 +20,13 @@ export class ESComplex {
    * An instance of ESComplexModule.
    * @internal
    */
-  _escomplexModule = ESComplexModule;
+  _escomplexModule: ESComplexModule;
 
   /**
    * An instance of ESComplexProject.
    * @internal
    */
-  _escomplexProject = ESComplexProject;
+  _escomplexProject: ESComplexProject;
 
   /**
    * Initializes ESComplex.

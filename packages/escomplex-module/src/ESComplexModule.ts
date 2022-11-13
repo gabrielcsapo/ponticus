@@ -1,4 +1,3 @@
-// @ts-ignore
 import { ASTWalker } from "@ponticus/ast-walker";
 // @ts-ignore
 import {

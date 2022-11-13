@@ -1,10 +1,11 @@
+import { type PluginEvent } from "@ponticus/plugin-manager";
+
 import ASTWalker from "./ASTWalker.js";
 
 export { ASTWalker };
 
 /**
  * Default walker instance.
- * @type {ASTWalker}
  */
 const walker = new ASTWalker();
 
@@ -16,14 +17,10 @@ export default walker;
 /**
  * Wires up walker on the plugin eventbus.
  *
- * @param {PluginEvent} ev - The plugin event.
+ * @param ev - The plugin event.
  *
- * @see https://www.npmjs.com/package/typhonjs-plugin-manager
- * @ignore
  */
-export function onPluginLoad(ev) {
-  const eventbus = ev.eventbus;
-
+export function onPluginLoad(ev: PluginEvent) {
   let eventPrepend = "typhonjs";
 
   const options = ev.pluginOptions;
@@ -36,5 +33,5 @@ export function onPluginLoad(ev) {
     }
   }
 
-  eventbus.on(`${eventPrepend}:ast:walker:traverse`, walker.traverse, walker);
+  ev.eventbus?.on(`${eventPrepend}:ast:walker:traverse`, walker.traverse);
 }
