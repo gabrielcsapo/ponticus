@@ -19,6 +19,7 @@
     "format",
     "xml"
   ],
+  "types": "./dist/dts/index.d.ts",
   "dependencies": {
     "js2xmlparser": "^5.0.0",
     "@ponticus/escomplex-commons": "^0.0.1"
