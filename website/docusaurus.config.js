@@ -68,6 +68,7 @@ const config = {
           "packages/plugin-manager",
           "packages/babel-parser",
           "packages/ast-walker",
+          "packages/escomplex-plugin-formats-xml",
         ],
         debug: true,
       },

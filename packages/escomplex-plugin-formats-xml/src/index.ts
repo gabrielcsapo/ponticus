@@ -1,3 +1,4 @@
+// @ts-ignore
 import { TransformFormat } from "@ponticus/escomplex-commons";
 
 import FormatXML from "./FormatXML";
@@ -7,7 +8,7 @@ import FormatXMLCheckstyle from "./FormatXMLCheckstyle";
  * Iterates through all `json` formats creating a FormatXML instance for each one. `checkstyle` format types need to
  * be transformed and are processed by `FormatXMLCheckstyle`.
  */
-TransformFormat.forEachExt("json", (jsonFormat, jsonFormatName) => {
+TransformFormat.forEachExt("json", (jsonFormat: any, jsonFormatName: any) => {
   // Create format name by substituting any leading `json` string for `xml`.
   let formatName = jsonFormatName.replace(/^json/, "xml");
 
