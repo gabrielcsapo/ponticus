@@ -2,7 +2,7 @@ import { test, describe, expect } from "vitest";
 
 import { readFileSync } from "fs";
 
-import walker from "../../src/index.js";
+import walker from "../../src/index.ts";
 
 describe("AST Walker:", () => {
   describe("walker:", () => {

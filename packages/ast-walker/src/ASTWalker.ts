@@ -12,10 +12,10 @@ export default class ASTWalker {
   /**
    * Traverses the ast tree provided and invokes `callbacks.enterNode` / `callbacks.exitNode`
    *
-   * @param {object|Array}   ast - An AST Tree object hash or an array of nodes.
-   * @param {object}         callbacks - An object hash containing a function for `enterNode` and / or `exitNode` keys.
+   * @param ast - An AST Tree object hash or an array of nodes.
+   * @param callbacks - An object hash containing a function for `enterNode` and / or `exitNode` keys.
    */
-  traverse(ast, callbacks) {
+  traverse(ast: any | any[], callbacks: any) {
     if (typeof callbacks !== "object") {
       throw new TypeError("Invalid callbacks");
     }
@@ -43,13 +43,13 @@ export default class ASTWalker {
    * `enterNode` may return an array of strings indicating children keys to ignore / skip. If `enterNode` returns
    * `null` children nodes are skipped entirely.
    *
-   * @param {object}   node - AST node being visited.
-   * @param {object}   parent - The parent node.
-   * @param {object}   callbacks - An object hash containing a function for `enterNode` and / or `exitNode` keys.
+   * @param node - AST node being visited.
+   * @param parent - The parent node.
+   * @param callbacks - An object hash containing a function for `enterNode` and / or `exitNode` keys.
    *
-   * @private
+   * @internal
    */
-  _visitNode(node, parent, callbacks) {
+  _visitNode(node: any, parent: any, callbacks: any) {
     if (
       node !== null &&
       typeof node === "object" &&
@@ -74,13 +74,13 @@ export default class ASTWalker {
   /**
    * Visits all nodes in the given array.
    *
-   * @param {Array}    nodes - An array of nodes to visit.
-   * @param {object}   parent - The parent node.
-   * @param {object}   callbacks - An object hash containing a function for `enterNode` and / or `exitNode` keys.
+   * @param nodes - An array of nodes to visit.
+   * @param parent - The parent node.
+   * @param callbacks - An object hash containing a function for `enterNode` and / or `exitNode` keys.
    *
-   * @private
+   * @internal
    */
-  _visitNodes(nodes, parent, callbacks) {
+  _visitNodes(nodes: any[], parent: any, callbacks: any) {
     nodes.forEach((node) => {
       this._visitNode(node, parent, callbacks);
     }, this);
@@ -89,13 +89,13 @@ export default class ASTWalker {
   /**
    * Visits all children nodes from a given node.
    *
-   * @param {object}   node - Current AST node being visited.
-   * @param {Array}    ignoreNodeKeys - A set of keys to ignore.
-   * @param {object}   callbacks - An object hash containing a function for `enterNode` and / or `exitNode` keys.
+   * @param node - Current AST node being visited.
+   * @param ignoreNodeKeys - A set of keys to ignore.
+   * @param callbacks - An object hash containing a function for `enterNode` and / or `exitNode` keys.
    *
-   * @private
+   * @internal
    */
-  _visitChildren(node, ignoreNodeKeys, callbacks) {
+  _visitChildren(node: any, ignoreNodeKeys: any[], callbacks: any) {
     ignoreNodeKeys = Array.isArray(ignoreNodeKeys) ? ignoreNodeKeys : [];
 
     // Visit all node keys which are an array or an object.
@@ -114,13 +114,13 @@ export default class ASTWalker {
   /**
    * Visits all children nodes from the given child object or array.
    *
-   * @param {Array|object}   child - Child key to visit.
-   * @param {object}         parent - The parent node.
-   * @param {object}         callbacks - An object hash containing a function for `enterNode` and / or `exitNode` keys.
+   * @param child - Child key to visit.
+   * @param  parent - The parent node.
+   * @param callbacks - An object hash containing a function for `enterNode` and / or `exitNode` keys.
    *
-   * @private
+   * @internal
    */
-  _visitChild(child, parent, callbacks) {
+  _visitChild(child: any | any[], parent: any, callbacks: any) {
     const visitor = Array.isArray(child) ? this._visitNodes : this._visitNode;
     visitor.call(this, child, parent, callbacks);
   }
