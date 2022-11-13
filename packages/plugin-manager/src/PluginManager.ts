@@ -13,15 +13,15 @@ type PluginConfig = {
   /**
    * Defines the target NPM module to load or defines a local file (full path or relative to current working directory to load.
    */
-  target: string;
+  target?: string;
   /**
    * Defines an existing object instance to use as the plugin.
    */
-  instance: string;
+  instance?: string;
   /**
    * Defines an object of options for the plugin.
    */
-  options: any;
+  options?: any;
 };
 
 type PluginData = {
@@ -266,7 +266,7 @@ export default class PluginManager {
    * Stores the prepend string for eventbus registration.
    * @internal
    */
-  _eventPrepend: string;
+  _eventPrepend: string | undefined;
 
   /**
    * Instantiates PluginManager
@@ -297,7 +297,7 @@ export default class PluginManager {
       throwNoMethod: false,
       throwNoPlugin: false,
     },
-    extraEventData = void 0
+    extraEventData?: string
   ) {
     if (typeof options !== "object") {
       throw new TypeError(`'options' is not an object.`);
@@ -1296,7 +1296,10 @@ export default class PluginManager {
     if (values) {
       for (const entry of values) {
         if (allPlugins || entry.enabled === enabled) {
-          results.push(this.getPluginData(entry.name));
+          const pluginData = this.getPluginData(entry.name);
+          if (pluginData) {
+            results.push(pluginData);
+          }
         }
       }
     }
@@ -1592,7 +1595,8 @@ export default class PluginManager {
     const plugin = this._pluginMap?.get(pluginName);
 
     return (
-      plugin instanceof PluginEntry && typeof plugin[methodName] === "function"
+      plugin instanceof PluginEntry &&
+      typeof (plugin as any)[methodName] === "function"
     );
   }
 
@@ -2083,7 +2087,7 @@ export default class PluginManager {
         {},
         {},
         this._extraEventData,
-        this._pluginMap.keys(),
+        Array.from(this._pluginMap.keys() || []),
         this._pluginMap,
         this._options,
         false
@@ -2113,7 +2117,7 @@ export default class PluginManager {
         {},
         {},
         this._extraEventData,
-        this._pluginMap.keys(),
+        Array.from(this._pluginMap.keys() || []),
         this._pluginMap,
         this._options,
         false
@@ -2408,7 +2412,7 @@ export default class PluginManager {
         {},
         {},
         this._extraEventData,
-        this._pluginMap.keys(),
+        Array.from(this._pluginMap.keys() || []),
         this._pluginMap,
         this._options,
         false
@@ -2438,7 +2442,7 @@ export default class PluginManager {
         {},
         {},
         this._extraEventData,
-        this._pluginMap.keys(),
+        Array.from(this._pluginMap.keys() || []),
         this._pluginMap,
         this._options,
         false
@@ -3101,10 +3105,10 @@ const s_INVOKE_ASYNC_EVENTS = async (
   methodName: string,
   copyProps = {},
   passthruProps = {},
-  extraEventData,
+  extraEventData: any,
   nameOrList: string | string[],
   pluginMap: Map<string, PluginEntry> | undefined,
-  options,
+  options: any,
   performErrorCheck: boolean = true
 ): Promise<PluginEvent> => {
   if (typeof methodName !== "string") {
@@ -3230,10 +3234,10 @@ const s_INVOKE_SYNC_EVENTS = (
   methodName: string,
   copyProps = {},
   passthruProps = {},
-  extraEventData,
+  extraEventData: any,
   nameOrList: string | string[],
   pluginMap: Map<string, PluginEntry> | undefined,
-  options,
+  options: any,
   performErrorCheck: boolean = true
 ): PluginEvent => {
   if (typeof methodName !== "string") {
@@ -3326,7 +3330,7 @@ const s_INVOKE_SYNC_EVENTS = (
  * @param  obj - object to walks.
  *
  */
-const s_GET_ALL_PROPERTY_NAMES = (obj): string[] => {
+const s_GET_ALL_PROPERTY_NAMES = (obj: any): string[] => {
   const props: string[] = [];
 
   do {
