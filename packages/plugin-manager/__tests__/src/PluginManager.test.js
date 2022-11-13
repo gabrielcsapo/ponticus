@@ -2,7 +2,7 @@ import { test, describe, expect, beforeEach } from "vitest";
 
 import { EventEmitter } from "events";
 
-import PluginManager from "../../src/PluginManager.js";
+import PluginManager from "../../src/PluginManager.ts";
 
 /**
  * A plugin class
