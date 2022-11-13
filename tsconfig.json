@@ -16,6 +16,7 @@
   "references": [
     { "path": "packages/analyzer" },
     { "path": "packages/escomplex" },
-    { "path": "packages/escomplex-module" }
+    { "path": "packages/escomplex-module" },
+    { "path": "packages/plugin-manager" }
   ]
 }

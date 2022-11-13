@@ -62,9 +62,10 @@ const config = {
       {
         projectRoot: path.join(__dirname, ".."),
         packages: [
+          "packages/analyzer",
           "packages/escomplex",
           "packages/escomplex-module",
-          "packages/analyzer",
+          "packages/plugin-manager",
         ],
         debug: true,
       },
@@ -75,10 +76,6 @@ const config = {
     ({
       navbar: {
         title: "Ponticus",
-        logo: {
-          alt: "My Site Logo",
-          src: "img/logo.svg",
-        },
         items: [
           {
             type: "doc",
