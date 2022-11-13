@@ -8,9 +8,11 @@ import actualize from "./module/traits/actualize.js";
 import ObjectUtil from "./utils/ObjectUtil.js";
 import ModuleScopeControl from "./module/report/control/ModuleScopeControl.js";
 import MathUtil from "./utils/MathUtil.js";
+import TransformFormat from "./transform/TransformFormat.js";
 
 export {
   actualize,
+  TransformFormat,
   ObjectUtil,
   TraitUtil,
   MathUtil,
