@@ -2,7 +2,7 @@ import { test, describe, expect, beforeEach } from "vitest";
 
 import { EventEmitter } from "events";
 
-import PluginManager from "../../src/PluginManager.ts";
+import PluginManager from "../../src/PluginManager.js";
 
 /**
  * A plugin class
@@ -10,7 +10,7 @@ import PluginManager from "../../src/PluginManager.ts";
 class PluginTest {
   /**
    * Increments a result count.
-   * @param {PluginEvent} event - A plugin event.
+   * @param event - A plugin event (PluginEvent).
    */
   test(event) {
     event.data.result.count++;
@@ -19,7 +19,7 @@ class PluginTest {
 
   /**
    * Register event bindings
-   * @param {PluginEvent} ev - A plugin event.
+   * @param ev - A plugin event (PluginEvent).
    */
   onPluginLoad(ev) {
     if (ev.eventbus) {
@@ -54,7 +54,7 @@ const pluginTest = {
 class PluginTestNoName2 {
   /**
    * Increments a result count.
-   * @param {PluginEvent} event - A plugin event.
+   * @param event - A plugin event (PluginEvent).
    */
   test2(event) {
     event.data.result.count++;
@@ -74,7 +74,6 @@ class PluginTestAsync {
 
   /**
    * Provides a delayed promise.
-   * @returns {Promise}
    */
   onPluginLoad() {
     return new Promise((resolve) => {
@@ -84,9 +83,8 @@ class PluginTestAsync {
 
   /**
    * Returns a number result.
-   * @param {number} a - A number.
-   * @param {number} b - A number.
-   * @returns {Promise<number>}
+   * @param a - A number.
+   * @param b - A number.
    */
   test(a, b) {
     return new Promise((resolve) => {
@@ -96,8 +94,7 @@ class PluginTestAsync {
 
   /**
    * Increments a result count after a 1 second delay.
-   * @param {PluginEvent} event - A plugin event.
-   * @returns {Promise<PluginEvent>}
+   * @param event - A plugin event (PluginEvent).
    */
   test2(event) {
     return new Promise((resolve) => {
@@ -119,9 +116,8 @@ class PluginTestSync {
 
   /**
    * Returns a number result.
-   * @param {number} a - A number.
-   * @param {number} b - A number.
-   * @returns {number}
+   * @param a - A number.
+   * @param b - A number.
    */
   test(a, b) {
     return a + b + this.c;
