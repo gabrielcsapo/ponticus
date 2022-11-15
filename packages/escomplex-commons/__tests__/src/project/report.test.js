@@ -96,10 +96,25 @@ if (testconfig.modules["projectReport"]) {
 
           const reportKeys = Object.keys(result.modules[0]);
 
-          expect(reportKeys.length).toBe(3);
-          expect(reportKeys[0]).toBe("filePath");
-          expect(reportKeys[1]).toBe("srcPath");
-          expect(reportKeys[2]).toBe("srcPathAlias");
+          expect(reportKeys.length).toBe(14);
+          expect(reportKeys).toMatchInlineSnapshot(`
+            [
+              "aggregate",
+              "settings",
+              "classes",
+              "dependencies",
+              "errors",
+              "filePath",
+              "lineEnd",
+              "lineStart",
+              "maintainability",
+              "methods",
+              "aggregateAverage",
+              "methodAverage",
+              "srcPath",
+              "srcPathAlias",
+            ]
+          `);
 
           expect(result.modules[0].filePath).not.toBeDefined();
           expect(result.modules[0].srcPath).toBe("./a.js");
