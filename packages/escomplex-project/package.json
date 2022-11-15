@@ -3,15 +3,7 @@
   "version": "0.0.1",
   "description": "Provides project oriented AST processing for @ponticus/escomplex complexity reports.",
   "homepage": "https://github.com/gabrielcsapo/ponticus",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gabrielcsapo/ponticus.git"
-  },
   "type": "module",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
   "exports": {
     ".": "./dist/index.js"
   },
