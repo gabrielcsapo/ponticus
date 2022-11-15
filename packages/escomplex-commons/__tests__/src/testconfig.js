@@ -1,7 +1,5 @@
 /**
  * Defines which modules to run tests.
- *
- * @type {{}}
  */
 export const modules = {
   modulePlugin: true,
