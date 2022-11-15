@@ -3,7 +3,7 @@ import MethodReport from "./MethodReport.js";
 import ReportType from "../../types/ReportType.js";
 import TransformFormat from "../../transform/TransformFormat.js";
 
-import type NestedMethodReport from "./NestedMethodReport";
+import type NestedMethodReport from "./NestedMethodReport.js";
 import type Enum from "../../utils/Enum.js";
 
 /**

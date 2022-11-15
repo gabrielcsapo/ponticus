@@ -7,9 +7,8 @@
     "type": "git",
     "url": "https://github.com/gabrielcsapo/ponticus.git"
   },
-  "type": "module",
   "scripts": {
-    "build": "swc src -d dist && tsc",
+    "build": "swc src -d dist --config module.type=commonjs && tsc",
     "lint": "eslint .",
     "prepublish": "npm run build",
     "test": "vitest"
@@ -19,9 +18,7 @@
     "parser",
     "AST"
   ],
-  "exports": {
-    ".": "./dist/index.js"
-  },
+  "main": "./dist/index.js",
   "types": "./dist/dts/index.d.ts",
   "dependencies": {
     "@babel/parser": "^7.20.3"
@@ -39,6 +36,6 @@
     "vitest": "^0.25.1"
   },
   "volta": {
-    "node": "16.15.0"
+    "node": "18.12.1"
   }
 }

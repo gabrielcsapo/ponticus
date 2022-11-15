@@ -3,9 +3,7 @@
   "version": "0.0.1",
   "description": "Provides a plugin manager that dispatches events to loaded plugins.",
   "homepage": "https://github.com/gabrielcsapo/ponticus",
-  "exports": {
-    ".": "./dist/index.js"
-  },
+  "main": "./dist/index.js",
   "types": "./dist/dts/index.d.ts",
   "devDependencies": {
     "@swc/cli": "^0.1.57",
@@ -18,7 +16,7 @@
     "vitest": "^0.25.1"
   },
   "scripts": {
-    "build": "swc src -d dist && tsc",
+    "build": "swc src -d dist --config module.type=commonjs && tsc",
     "lint": "eslint .",
     "prepublish": "npm run build",
     "test": "vitest"
@@ -28,6 +26,6 @@
     "manager"
   ],
   "volta": {
-    "node": "16.15.0"
+    "node": "18.12.1"
   }
 }

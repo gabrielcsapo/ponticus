@@ -1,4 +1,4 @@
-import TransformFormat from "../../transform/TransformFormat";
+import TransformFormat from "../../transform/TransformFormat.js";
 import type AggregateReport from "./AggregateReport.js";
 
 /**

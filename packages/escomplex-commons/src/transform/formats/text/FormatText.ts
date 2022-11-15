@@ -1,7 +1,7 @@
 import AbstractFormatText from "./AbstractFormatText.js";
 
-import ReportType from "../../../types/ReportType";
-import { SafeEntry } from "../../../utils/StringUtil";
+import ReportType from "../../../types/ReportType.js";
+import { SafeEntry } from "../../../utils/StringUtil.js";
 import TransformFormat from "../../TransformFormat.js";
 import ProjectReport from "../../../project/report/ProjectReport.js";
 

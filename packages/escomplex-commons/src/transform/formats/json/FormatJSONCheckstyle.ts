@@ -1,7 +1,7 @@
-import ObjectUtil from "../../../utils/ObjectUtil";
-import ReportType from "../../../types/ReportType";
-import ModuleReport from "../../../module/report/ModuleReport";
-import ProjectReport from "../../../project/report/ProjectReport";
+import ObjectUtil from "../../../utils/ObjectUtil.js";
+import ReportType from "../../../types/ReportType.js";
+import ModuleReport from "../../../module/report/ModuleReport.js";
+import ProjectReport from "../../../project/report/ProjectReport.js";
 
 /**
  * Provides a format transform for ESComplex ModuleReport / ProjectReport instances converting them to JSON that

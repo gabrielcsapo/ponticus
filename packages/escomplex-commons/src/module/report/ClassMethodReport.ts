@@ -3,7 +3,7 @@ import MethodReport from "./MethodReport.js";
 import ReportType from "../../types/ReportType.js";
 import TransformFormat from "../../transform/TransformFormat.js";
 
-import type NestedMethodReport from "./NestedMethodReport";
+import type NestedMethodReport from "./NestedMethodReport.js";
 
 /**
  * Provides the class method report object which stores data pertaining to a single method / function.

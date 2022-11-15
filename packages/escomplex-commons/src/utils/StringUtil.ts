@@ -1,4 +1,4 @@
-import ObjectUtil from "./ObjectUtil";
+import ObjectUtil from "./ObjectUtil.js";
 
 /**
  * Provides common string utilities.

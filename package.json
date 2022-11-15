@@ -30,7 +30,7 @@
     "./website"
   ],
   "volta": {
-    "node": "16.15.0"
+    "node": "18.12.1"
   },
   "devDependencies": {
     "release-it": "^15.5.0",

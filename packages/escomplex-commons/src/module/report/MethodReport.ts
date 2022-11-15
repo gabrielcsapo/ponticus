@@ -1,11 +1,9 @@
 import AggregateReport from "./AggregateReport.js";
 import AnalyzeError from "../../analyze/AnalyzeError.js";
 
-import ObjectUtil from "../../utils/ObjectUtil";
+import ObjectUtil from "../../utils/ObjectUtil.js";
 import ClassMethodReport from "./ClassMethodReport.js";
 import ModuleMethodReport from "./ModuleMethodReport.js";
-import ReportType from "../../types/ReportType.js";
-import Enum from "../../utils/Enum.js";
 
 /**
  * Provides the method report object which stores data pertaining to a single method / function.

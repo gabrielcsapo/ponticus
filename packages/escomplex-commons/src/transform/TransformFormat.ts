@@ -1,23 +1,23 @@
-import FormatJSON from "./formats/json/FormatJSON";
-import FormatJSONCheckstyle from "./formats/json/FormatJSONCheckstyle";
-import FormatJSONMinimal from "./formats/json/FormatJSONMinimal";
-import FormatJSONModules from "./formats/json/FormatJSONModules";
-import FormatMarkdown from "./formats/markdown/FormatMarkdown";
-import FormatMarkdownAdjacency from "./formats/markdown/FormatMarkdownAdjacency";
-import FormatMarkdownMinimal from "./formats/markdown/FormatMarkdownMinimal";
-import FormatMarkdownModules from "./formats/markdown/FormatMarkdownModules";
-import FormatMarkdownVisibility from "./formats/markdown/FormatMarkdownVisibility";
-import FormatText from "./formats/text/FormatText";
-import FormatTextAdjacency from "./formats/text/FormatTextAdjacency";
-import FormatTextMinimal from "./formats/text/FormatTextMinimal";
-import FormatTextModules from "./formats/text/FormatTextModules";
-import FormatTextVisibility from "./formats/text/FormatTextVisibility";
+import FormatJSON from "./formats/json/FormatJSON.js";
+import FormatJSONCheckstyle from "./formats/json/FormatJSONCheckstyle.js";
+import FormatJSONMinimal from "./formats/json/FormatJSONMinimal.js";
+import FormatJSONModules from "./formats/json/FormatJSONModules.js";
+import FormatMarkdown from "./formats/markdown/FormatMarkdown.js";
+import FormatMarkdownAdjacency from "./formats/markdown/FormatMarkdownAdjacency.js";
+import FormatMarkdownMinimal from "./formats/markdown/FormatMarkdownMinimal.js";
+import FormatMarkdownModules from "./formats/markdown/FormatMarkdownModules.js";
+import FormatMarkdownVisibility from "./formats/markdown/FormatMarkdownVisibility.js";
+import FormatText from "./formats/text/FormatText.js";
+import FormatTextAdjacency from "./formats/text/FormatTextAdjacency.js";
+import FormatTextMinimal from "./formats/text/FormatTextMinimal.js";
+import FormatTextModules from "./formats/text/FormatTextModules.js";
+import FormatTextVisibility from "./formats/text/FormatTextVisibility.js";
 
-import ReportType from "../types/ReportType";
+import ReportType from "../types/ReportType.js";
 
-import type ClassReport from "../module/report/ClassReport";
-import type ModuleReport from "../module/report/ModuleReport";
-import type ProjectReport from "../project/report/ProjectReport";
+import type ClassReport from "../module/report/ClassReport.js";
+import type ModuleReport from "../module/report/ModuleReport.js";
+import type ProjectReport from "../project/report/ProjectReport.js";
 
 /**
  * Stores all transform formats.

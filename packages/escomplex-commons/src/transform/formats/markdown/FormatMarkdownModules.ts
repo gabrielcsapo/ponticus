@@ -1,6 +1,6 @@
 import FormatTextModules from "../text/FormatTextModules.js";
 
-import { SafeEntry } from "../../../utils/StringUtil";
+import { SafeEntry } from "../../../utils/StringUtil.js";
 
 /**
  * Provides a format transform for ModuleReport / ProjectReport instances converting them to markdown with just modules.

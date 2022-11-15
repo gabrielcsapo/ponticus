@@ -3,13 +3,10 @@
   "version": "0.0.1",
   "homepage": "https://github.com/gabrielcsapo/@ponticus/escomplex-commons/",
   "description": "Provides core common utilities for @ponticus/escomplex modules and plugins.",
-  "type": "module",
-  "exports": {
-    ".": "./dist/index.js"
-  },
+  "main": "./dist/index.js",
   "types": "./dist/dts/index.d.ts",
   "scripts": {
-    "build": "swc src -d dist && tsc",
+    "build": "swc src -d dist --config module.type=commonjs && tsc",
     "lint": "eslint .",
     "prepublish": "npm run build",
     "test": "vitest"
@@ -35,6 +32,6 @@
     "vitest": "^0.25.1"
   },
   "volta": {
-    "node": "16.15.0"
+    "node": "18.12.1"
   }
 }

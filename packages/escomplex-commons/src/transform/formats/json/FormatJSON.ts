@@ -1,7 +1,7 @@
-import type ClassReport from "../../../module/report/ClassReport";
-import type MethodReport from "../../../module/report/MethodReport";
-import type ModuleReport from "../../../module/report/ModuleReport";
-import type ProjectReport from "../../../project/report/ProjectReport";
+import type ClassReport from "../../../module/report/ClassReport.js";
+import type MethodReport from "../../../module/report/MethodReport.js";
+import type ModuleReport from "../../../module/report/ModuleReport.js";
+import type ProjectReport from "../../../project/report/ProjectReport.js";
 
 /**
  * Provides a format transform for ESComplex report instances converting them to a JSON string.

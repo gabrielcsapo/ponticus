@@ -1,5 +1,5 @@
-import ExpressionPrecedence from "./ExpressionPrecedence";
-import OperatorPrecedence from "./OperatorPrecedence";
+import ExpressionPrecedence from "./ExpressionPrecedence.js";
+import OperatorPrecedence from "./OperatorPrecedence.js";
 
 export default class ASTUtil {
   /**

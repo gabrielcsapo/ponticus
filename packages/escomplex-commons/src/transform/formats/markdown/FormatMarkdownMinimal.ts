@@ -1,6 +1,6 @@
 import FormatTextMinimal from "../text/FormatTextMinimal.js";
 
-import SU from "../../../utils/StringUtil";
+import SU from "../../../utils/StringUtil.js";
 
 /**
  * Provides a format transform for ModuleReport / ProjectReport instances converting them to markdown with

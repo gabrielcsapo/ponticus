@@ -1,7 +1,7 @@
 import AbstractFormatTest from "./AbstractFormatText.js";
 
-import ReportType from "../../../types/ReportType";
-import { SafeEntry } from "../../../utils/StringUtil";
+import ReportType from "../../../types/ReportType.js";
+import { SafeEntry } from "../../../utils/StringUtil.js";
 
 /**
  * Provides a format transform for ModuleReport / ProjectReport instances converting them to plain text with just

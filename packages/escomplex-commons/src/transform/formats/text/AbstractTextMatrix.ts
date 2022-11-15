@@ -1,6 +1,6 @@
-import ObjectUtil from "../../../utils/ObjectUtil";
-import ReportType from "../../../types/ReportType";
-import ProjectReport from "../../../project/report/ProjectReport";
+import ObjectUtil from "../../../utils/ObjectUtil.js";
+import ReportType from "../../../types/ReportType.js";
+import ProjectReport from "../../../project/report/ProjectReport.js";
 
 type Header = {
   entryPrepend?: string; // A string to prepend all entries.

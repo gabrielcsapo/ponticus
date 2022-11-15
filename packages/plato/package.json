@@ -9,13 +9,12 @@
     "type": "git",
     "url": "https://github.com/gabrielcsapo/ponticus.git"
   },
-  "type": "module",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "engines": {
-    "node": ">= 16.15.0"
+    "node": ">= 18.12.1"
   },
   "scripts": {
     "build": "rm -rf dist && cp -r lib dist && swc lib -d dist",
@@ -48,6 +47,6 @@
     "unixify": "^1.0.0"
   },
   "volta": {
-    "node": "16.15.0"
+    "node": "18.12.1"
   }
 }

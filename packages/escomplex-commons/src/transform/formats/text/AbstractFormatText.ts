@@ -1,11 +1,11 @@
-import ObjectUtil from "../../../utils/ObjectUtil";
-import ReportType from "../../../types/ReportType";
-import StringUtil, { SafeEntry } from "../../../utils/StringUtil";
-import ClassReport from "../../../module/report/ClassReport";
-import ModuleReport from "../../../module/report/ModuleReport";
-import ProjectReport from "../../../project/report/ProjectReport";
-import MethodReport from "../../../module/report/MethodReport";
-import ClassMethodReport from "../../../module/report/ClassMethodReport";
+import ObjectUtil from "../../../utils/ObjectUtil.js";
+import ReportType from "../../../types/ReportType.js";
+import StringUtil, { SafeEntry } from "../../../utils/StringUtil.js";
+import ClassReport from "../../../module/report/ClassReport.js";
+import ModuleReport from "../../../module/report/ModuleReport.js";
+import ProjectReport from "../../../project/report/ProjectReport.js";
+import MethodReport from "../../../module/report/MethodReport.js";
+import ClassMethodReport from "../../../module/report/ClassMethodReport.js";
 
 /**
  * Provides the base text format transform for ModuleReport / ProjectReport instances.

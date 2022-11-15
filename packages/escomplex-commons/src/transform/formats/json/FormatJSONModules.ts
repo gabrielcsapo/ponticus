@@ -1,8 +1,6 @@
-import ClassReport from "../../../module/report/ClassReport";
-import MethodReport from "../../../module/report/MethodReport";
-import ModuleReport from "../../../module/report/ModuleReport";
-import ProjectReport from "../../../project/report/ProjectReport";
-import ReportType from "../../../types/ReportType";
+import ModuleReport from "../../../module/report/ModuleReport.js";
+import ProjectReport from "../../../project/report/ProjectReport.js";
+import ReportType from "../../../types/ReportType.js";
 
 /**
  * Provides a format transform for ESComplex ModuleReport / ProjectReport instances converting them to JSON that
