@@ -42,11 +42,6 @@ const options = {
     desc: "Recursively search directories",
     type: "Boolean",
   },
-  l: {
-    long: "jshint",
-    desc: "Specify a jshintrc file for JSHint linting",
-    type: "String",
-  },
   t: {
     long: "title",
     desc: "Title of the report",
@@ -94,19 +89,6 @@ async function exec(options, done) {
     eslintrc: this.args.e && this.args.e.value,
   };
 
-  if (this.args.l) {
-    var jshintrc = {};
-    if (typeof this.args.l.value === "string") {
-      var json = await fs.readFile(this.args.l.value).toString();
-
-      jshintrc = JSON.parse(util.stripComments(json));
-    }
-    platoOptions.jshint = {
-      globals: jshintrc.globals || {},
-    };
-    delete jshintrc.globals;
-    platoOptions.jshint.options = jshintrc;
-  }
   return plato.inspect(files, outputDir, platoOptions, done);
 }
 

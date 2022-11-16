@@ -44,11 +44,6 @@ const options = {
     desc: "Recursively search directories",
     type: "Boolean",
   },
-  l: {
-    long: "jshint",
-    desc: "Specify a jshintrc file for JSHint linting",
-    type: "String",
-  },
   t: {
     long: "title",
     desc: "Title of the report",

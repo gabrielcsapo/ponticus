@@ -67,7 +67,6 @@ async function readJSON(file) {
 }
 
 function stripComments(str) {
-  /*jshint regexp:false */
   str = str || "";
 
   var multiline = /\/\*(?:(?!\*\/)|.|\n)*?\*\//g;
