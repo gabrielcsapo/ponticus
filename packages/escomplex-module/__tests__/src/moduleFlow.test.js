@@ -5,7 +5,7 @@ import * as testconfig from "./testconfig";
 
 if (testconfig.modules["moduleFlow"]) {
   parsers.forEach((parser) => {
-    if (parser.name !== "babylon" && parser.name !== "babelParser") {
+    if (parser.name !== "babelParser") {
       return;
     }
 

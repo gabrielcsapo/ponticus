@@ -17,7 +17,6 @@
     "vitest": "^0.25.1",
     "@ponticus/escomplex-test-data": "0.0.1",
     "@ponticus/babel-parser": "^0.0.1",
-    "babylon": "^6.18.0",
     "eslint": "^8.27.0",
     "eslint-plugin-prettier": "^4.2.1"
   },
