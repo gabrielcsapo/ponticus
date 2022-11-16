@@ -2,11 +2,13 @@ import FormatJSON from "./formats/json/FormatJSON.js";
 import FormatJSONCheckstyle from "./formats/json/FormatJSONCheckstyle.js";
 import FormatJSONMinimal from "./formats/json/FormatJSONMinimal.js";
 import FormatJSONModules from "./formats/json/FormatJSONModules.js";
+
 import FormatMarkdown from "./formats/markdown/FormatMarkdown.js";
 import FormatMarkdownAdjacency from "./formats/markdown/FormatMarkdownAdjacency.js";
 import FormatMarkdownMinimal from "./formats/markdown/FormatMarkdownMinimal.js";
 import FormatMarkdownModules from "./formats/markdown/FormatMarkdownModules.js";
 import FormatMarkdownVisibility from "./formats/markdown/FormatMarkdownVisibility.js";
+
 import FormatText from "./formats/text/FormatText.js";
 import FormatTextAdjacency from "./formats/text/FormatTextAdjacency.js";
 import FormatTextMinimal from "./formats/text/FormatTextMinimal.js";
