@@ -196,7 +196,7 @@ pluginData.forEach((plugin) => {
 
         moduleReport.finalize();
 
-        expect(JSON.stringify(moduleReport)).toMatchSnapshot();
+        expect(moduleReport).toMatchSnapshot();
       });
     });
   });
