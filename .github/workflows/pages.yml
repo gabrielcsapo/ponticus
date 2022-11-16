@@ -31,7 +31,7 @@ jobs:
       - uses: volta-cli/action@v1
       - run: npm install
       - run: npm run build
-      - run: DEBUG=* ./packages/plato/bin/plato.js -q -x="*/*.d.ts*" --dir="website/static/report" -r "packages/**/**.ts"
+      - run: DEBUG=* ./packages/plato/dist/bin/plato.js -q -x "*/*.d.ts*" -o "website/static/report" -r --files "packages/**/**.ts"
       - run: cd website && npm run fullBuild
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1

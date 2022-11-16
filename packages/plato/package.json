@@ -2,22 +2,12 @@
   "name": "@ponticus/plato",
   "description": "JavaScript source analysis and visualizer",
   "version": "0.0.1",
-  "bin": "bin/plato",
-  "license": "MIT",
-  "homepage": "https://github.com/gabrielcsapo/ponticus",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gabrielcsapo/ponticus.git"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
+  "bin": "./dist/bin/plato",
   "engines": {
     "node": ">= 18.12.1"
   },
   "scripts": {
-    "build": "rm -rf dist && cp -r lib dist && swc lib -d dist",
+    "build": "swc src -d dist --config module.type=commonjs && tsc",
     "test": "echo 'TODO: Replace Grunt'",
     "lint": "eslint ."
   },
@@ -37,15 +27,14 @@
   ],
   "dependencies": {
     "@ponticus/escomplex": "0.0.1",
+    "commander": "^9.4.1",
     "debug": "^4.3.4",
     "eslint": "^8.27.0",
     "eslint-plugin-react": "^7.31.10",
     "fs-extra": "^10.1.0",
     "globby": "^13.1.2",
     "lodash": "^4.17.21",
-    "mkdirp": "^1.0.4",
-    "posix-getopt": "^1.2.1",
-    "unixify": "^1.0.0"
+    "mkdirp": "^1.0.4"
   },
   "volta": {
     "node": "18.12.1"
