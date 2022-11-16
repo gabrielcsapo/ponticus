@@ -4,6 +4,7 @@
   "repository": "https://github.com/gabrielcsapo/ponticus",
   "private": true,
   "scripts": {
+    "postinstall": "npm run build --workspaces --if-present",
     "build": "npm run build --workspaces --if-present",
     "test": "CI=true npm run test --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present",
