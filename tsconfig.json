@@ -3,6 +3,7 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
+    "declarationMap": true,
     "module": "commonjs",
     "target": "esnext",
     "lib": ["esnext"],
