@@ -5,13 +5,11 @@
   "description": "Produce a complexity analysis report",
   "version": "0.0.1",
   "scripts": {
-    "build": "swc src -d dist && tsc",
+    "build": "swc src -d dist --config module.type=commonjs && tsc",
     "lint": "eslint src/*.ts",
     "test": "vitest"
   },
-  "exports": {
-    ".": "./dist/index.js"
-  },
+  "main": "./dist/index.js",
   "types": "dist/dts/index.d.ts",
   "devDependencies": {
     "@babel/core": "^7.18.5",

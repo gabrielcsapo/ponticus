@@ -20,7 +20,6 @@ export const modules = {
  */
 export const parsers = {
   babelParser: true,
-  babylon: true,
 };
 
 /**

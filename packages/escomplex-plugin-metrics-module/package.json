@@ -7,14 +7,11 @@
     "url": "https://github.com/gabrielcsapo/ponticus.git"
   },
   "description": "Provides the core module metric / report generation plugin for @ponticus/escomplex module processing.",
-  "type": "module",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "exports": {
-    ".": "./dist/index.js"
-  },
+  "main": "./dist/index.js",
   "dependencies": {
     "@ponticus/escomplex-commons": "^0.0.1"
   },
@@ -28,7 +25,7 @@
     "eslint-plugin-prettier": "^4.2.1"
   },
   "scripts": {
-    "build": "swc src -d dist",
+    "build": "swc src -d dist --config module.type=commonjs",
     "lint": "eslint .",
     "prepublish": "npm run build",
     "test": "vitest"
@@ -40,6 +37,6 @@
     "module"
   ],
   "volta": {
-    "node": "16.15.0"
+    "node": "18.12.1"
   }
 }

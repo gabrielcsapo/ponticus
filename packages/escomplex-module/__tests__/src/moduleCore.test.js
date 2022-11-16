@@ -2467,31 +2467,12 @@ if (testconfig.modules["moduleCore"]) {
         });
 
         test("report has correct line start / end", () => {
-          switch (parser.name) {
-            // babelParser & babylon sets the start location at line 1 (first comment) instead of
-            // line 4 (first line of code).
-            case "babelParser":
-            case "babylon":
-              expect(report.lineStart).toBe(1);
-              expect(report.lineEnd).toBe(14);
-              break;
-            default:
-              expect(report.lineStart).toBe(4);
-              expect(report.lineEnd).toBe(14);
-          }
+          expect(report.lineStart).toBe(1);
+          expect(report.lineEnd).toBe(14);
         });
 
         test("aggregate has correct physical lines of code", () => {
-          switch (parser.name) {
-            // babelParser & babylon sets the start location at line 1 (first comment) instead of
-            // line 4 (first line of code).
-            case "babelParser":
-            case "babylon":
-              expect(report.aggregate.sloc.physical).toBe(14);
-              break;
-            default:
-              expect(report.aggregate.sloc.physical).toBe(11);
-          }
+          expect(report.aggregate.sloc.physical).toBe(14);
         });
 
         test("aggregate has correct Halstead operand identifiers", () => {

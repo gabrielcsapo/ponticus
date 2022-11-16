@@ -3,11 +3,11 @@ import { test, describe, expect } from "vitest";
 import ModuleReport from "../../../../src/module/report/ModuleReport";
 import ProjectReport from "../../../../src/project/report/ProjectReport";
 
-import FormatText from "../../../../src/transform/formats/text/FormatText.js";
-import FormatTextAdjacency from "../../../../src/transform/formats/text/FormatTextAdjacency.js";
-import FormatTextMinimal from "../../../../src/transform/formats/text/FormatTextMinimal.js";
-import FormatTextModules from "../../../../src/transform/formats/text/FormatTextModules.js";
-import FormatTextVisibility from "../../../../src/transform/formats/text/FormatTextVisibility.js";
+import FormatText from "../../../../src/transform/formats/text/FormatText";
+import FormatTextAdjacency from "../../../../src/transform/formats/text/FormatTextAdjacency";
+import FormatTextMinimal from "../../../../src/transform/formats/text/FormatTextMinimal";
+import FormatTextModules from "../../../../src/transform/formats/text/FormatTextModules";
+import FormatTextVisibility from "../../../../src/transform/formats/text/FormatTextVisibility";
 
 const formats = [
   new FormatText(),

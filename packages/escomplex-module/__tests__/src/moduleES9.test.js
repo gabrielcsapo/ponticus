@@ -9,7 +9,7 @@ import * as testconfig from "./testconfig";
  */
 if (testconfig.modules["moduleES9"]) {
   parsers.forEach((parser) => {
-    if (parser.name !== "babylon" && parser.name !== "babelParser") {
+    if (parser.name !== "babelParser") {
       return;
     }
 

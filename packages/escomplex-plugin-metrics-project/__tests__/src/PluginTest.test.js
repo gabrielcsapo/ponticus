@@ -55,8 +55,6 @@ pluginData.forEach((plugin) => {
     describe("project results:", () => {
       const instance = new plugin.PluginClass();
 
-      const resultsAfter = require("@ponticus/escomplex-test-data/files/large-project/json/project");
-
       const resultsBefore = ProjectReport.parse(
         require("@ponticus/escomplex-test-data/files/large-project/json/project-no-calculation")
       );
@@ -89,9 +87,7 @@ pluginData.forEach((plugin) => {
 
         resultsBefore.finalize();
 
-        expect(JSON.stringify(resultsBefore)).toBe(
-          JSON.stringify(resultsAfter)
-        );
+        expect(resultsBefore).toMatchSnapshot();
       });
     });
   });

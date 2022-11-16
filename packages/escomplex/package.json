@@ -7,14 +7,10 @@
     "type": "git",
     "url": "https://github.com/gabrielcsapo/ponticus.git"
   },
-  "type": "module",
-  "exports": {
-    "import": "./dist/index.js",
-    "require": "./cjs/index.js"
-  },
+  "main": "./dist/index.js",
   "types": "./dist/dts/index.d.ts",
   "scripts": {
-    "build": "swc src -d dist && swc src -d cjs --config module.type=commonjs && tsc",
+    "build": "swc src -d dist --config module.type=commonjs && swc src -d cjs --config module.type=commonjs && tsc",
     "lint": "eslint .",
     "prepublish": "npm run build",
     "test": "vitest"
@@ -54,6 +50,6 @@
     "vitest": "^0.25.1"
   },
   "volta": {
-    "node": "16.15.0"
+    "node": "18.12.1"
   }
 }

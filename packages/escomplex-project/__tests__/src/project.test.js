@@ -19,46 +19,45 @@ parsers.forEach((Parser) => {
     "escomplex-module/src/ESComplexModule.ts",
     "escomplex-module/src/index.ts",
     "escomplex-module/src/Plugins.ts",
-
-    "escomplex-commons/src/utils/Enum.js",
-    "escomplex-commons/src/utils/MathUtil.js",
-    "escomplex-commons/src/utils/StringUtil.js",
-    "escomplex-commons/src/utils/ObjectUtil.js",
-    "escomplex-commons/src/project/report/ProjectReport.js",
-    "escomplex-commons/src/types/ReportType.js",
-    "escomplex-commons/src/transform/TransformFormat.js",
-    "escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js",
-    "escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js",
-    "escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js",
-    "escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js",
-    "escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js",
-    "escomplex-commons/src/transform/formats/text/AbstractFormatText.js",
-    "escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js",
-    "escomplex-commons/src/transform/formats/text/FormatText.js",
-    "escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js",
-    "escomplex-commons/src/transform/formats/text/FormatTextMinimal.js",
-    "escomplex-commons/src/transform/formats/text/FormatTextModules.js",
-    "escomplex-commons/src/transform/formats/text/FormatTextVisibility.js",
-    "escomplex-commons/src/transform/formats/json/FormatJSON.js",
-    "escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js",
-    "escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js",
-    "escomplex-commons/src/transform/formats/json/FormatJSONModules.js",
-    "escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js",
-    "escomplex-commons/src/module/report/AbstractReport.js",
-    "escomplex-commons/src/module/report/AggregateReport.js",
-    "escomplex-commons/src/module/report/ClassReport.js",
-    "escomplex-commons/src/module/report/HalsteadData.js",
-    "escomplex-commons/src/module/report/MethodReport.js",
-    "escomplex-commons/src/module/report/ModuleReport.js",
-    "escomplex-commons/src/module/report/averages/ModuleAverage.js",
-    "escomplex-commons/src/module/report/averages/HalsteadAverage.js",
-    "escomplex-commons/src/module/report/averages/MethodAverage.js",
-    "escomplex-commons/src/module/traits/actualize.js",
-    "escomplex-commons/src/module/traits/HalsteadArray.js",
-    "escomplex-commons/src/module/traits/TraitUtil.js",
-    "escomplex-commons/src/module/traits/Trait.js",
-    "escomplex-commons/src/module/traits/TraitHalstead.js",
-    "escomplex-commons/src/analyze/AnalyzeError.js",
+    "escomplex-commons/src/utils/Enum.ts",
+    "escomplex-commons/src/utils/MathUtil.ts",
+    "escomplex-commons/src/utils/StringUtil.ts",
+    "escomplex-commons/src/utils/ObjectUtil.ts",
+    "escomplex-commons/src/project/report/ProjectReport.ts",
+    "escomplex-commons/src/types/ReportType.ts",
+    "escomplex-commons/src/transform/TransformFormat.ts",
+    "escomplex-commons/src/transform/formats/markdown/FormatMarkdown.ts",
+    "escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.ts",
+    "escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.ts",
+    "escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.ts",
+    "escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.ts",
+    "escomplex-commons/src/transform/formats/text/AbstractFormatText.ts",
+    "escomplex-commons/src/transform/formats/text/AbstractTextMatrix.ts",
+    "escomplex-commons/src/transform/formats/text/FormatText.ts",
+    "escomplex-commons/src/transform/formats/text/FormatTextAdjacency.ts",
+    "escomplex-commons/src/transform/formats/text/FormatTextMinimal.ts",
+    "escomplex-commons/src/transform/formats/text/FormatTextModules.ts",
+    "escomplex-commons/src/transform/formats/text/FormatTextVisibility.ts",
+    "escomplex-commons/src/transform/formats/json/FormatJSON.ts",
+    "escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.ts",
+    "escomplex-commons/src/transform/formats/json/FormatJSONMinimal.ts",
+    "escomplex-commons/src/transform/formats/json/FormatJSONModules.ts",
+    "escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.ts",
+    "escomplex-commons/src/module/report/AbstractReport.ts",
+    "escomplex-commons/src/module/report/AggregateReport.ts",
+    "escomplex-commons/src/module/report/ClassReport.ts",
+    "escomplex-commons/src/module/report/HalsteadData.ts",
+    "escomplex-commons/src/module/report/MethodReport.ts",
+    "escomplex-commons/src/module/report/ModuleReport.ts",
+    "escomplex-commons/src/module/report/averages/ModuleAverage.ts",
+    "escomplex-commons/src/module/report/averages/HalsteadAverage.ts",
+    "escomplex-commons/src/module/report/averages/MethodAverage.ts",
+    "escomplex-commons/src/module/traits/actualize.ts",
+    "escomplex-commons/src/module/traits/HalsteadArray.ts",
+    "escomplex-commons/src/module/traits/TraitUtil.ts",
+    "escomplex-commons/src/module/traits/Trait.ts",
+    "escomplex-commons/src/module/traits/TraitHalstead.ts",
+    "escomplex-commons/src/analyze/AnalyzeError.ts",
 
     "escomplex-project/__tests__/fixture/testImportNPMAlias.js",
     "escomplex-project/__tests__/fixture/testRequireNPMAlias.js",
@@ -545,8 +544,8 @@ parsers.forEach((Parser) => {
         expect(reportsOnly.moduleAverage.methodAverage.sloc.logical).toBe(0);
         expect(reportsOnly.moduleAverage.maintainability).toBe(0);
         expect(reportsOnly.coreSize).toBe(0);
-        expect(reportsOnly.adjacencyList).not.toBeDefined();
-        expect(reportsOnly.visibilityList).not.toBeDefined();
+        expect(reportsOnly.adjacencyList).toStrictEqual([]);
+        expect(reportsOnly.visibilityList).toStrictEqual([]);
       });
 
       test("should have default coreSize and visibilityMatrix if we call with noCoreSize", () => {
@@ -555,7 +554,7 @@ parsers.forEach((Parser) => {
         });
 
         expect(results.coreSize).toBe(0);
-        expect(results.visibilityList).not.toBeDefined();
+        expect(results.visibilityList).toStrictEqual([]);
 
         // make sure we still have a few things though
         expect(results.adjacencyList).toBeTruthy();
@@ -574,7 +573,7 @@ parsers.forEach((Parser) => {
           noCoreSize: true,
         });
         expect(results.coreSize).toBe(0);
-        expect(results.visibilityList).not.toBeDefined();
+        expect(results.visibilityList).toStrictEqual([]);
 
         // make sure we still have a few things though
         expect(results.adjacencyList).toBeTruthy();
@@ -605,10 +604,6 @@ parsers.forEach((Parser) => {
 
       test("modules are in correct order", () => {
         expect(result.modules).toMatchSnapshot();
-      });
-
-      test("modules only contains object hash w/ filePath, srcPath and srcPathAlias entries", () => {
-        expect(JSON.stringify(result.modules)).toMatchSnapshot();
       });
     });
 

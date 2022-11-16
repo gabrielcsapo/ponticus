@@ -8,7 +8,7 @@ import ProjectReport from "../../../src/project/report/ProjectReport";
 
 import TransformFormat from "../../../src/transform/TransformFormat";
 
-import ReportType from "../../../src/types/ReportType.js";
+import ReportType from "../../../src/types/ReportType";
 
 describe("TransformFormat:", () => {
   test("should be able to return a list of report formats for all report types", () => {

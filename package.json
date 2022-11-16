@@ -12,13 +12,13 @@
   "license": "ISC",
   "workspaces": [
     "packages/plugin-manager",
+    "packages/escomplex-commons",
     "packages/ast-walker",
     "packages/babel-parser",
     "packages/escomplex-project",
     "packages/escomplex-module",
     "packages/escomplex",
     "packages/analyzer",
-    "packages/escomplex-commons",
     "packages/escomplex-plugin-formats-xml",
     "packages/escomplex-plugin-metrics-module",
     "packages/escomplex-plugin-metrics-project",
@@ -30,7 +30,7 @@
     "./website"
   ],
   "volta": {
-    "node": "16.15.0"
+    "node": "18.12.1"
   },
   "devDependencies": {
     "release-it": "^15.5.0",

@@ -2,8 +2,8 @@
 
 "use strict";
 
-import cli from "../lib/cli.js";
-import info from "../lib/info.js";
+const cli = require("../dist/cli.js").default;
+const info = require("../dist/info.js").default;
 
 if (cli.args.v) {
   info.version();

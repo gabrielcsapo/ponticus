@@ -3,12 +3,9 @@
   "version": "0.0.1",
   "homepage": "https://github.com/gabrielcsapo/ponticus",
   "description": "Provides a plugin for @ponticus/escomplex project result / module report transformation to XML.",
-  "type": "module",
-  "exports": {
-    ".": "./dist/index.js"
-  },
+  "main": "./dist/index.js",
   "scripts": {
-    "build": "swc src -d dist && tsc",
+    "build": "swc src -d dist --config module.type=commonjs && tsc",
     "lint": "eslint .",
     "prepublish": "npm run build",
     "test": "vitest"

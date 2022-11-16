@@ -3,18 +3,7 @@
   "version": "0.0.1",
   "description": "Provides project oriented AST processing for @ponticus/escomplex complexity reports.",
   "homepage": "https://github.com/gabrielcsapo/ponticus",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gabrielcsapo/ponticus.git"
-  },
-  "type": "module",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
-  "exports": {
-    ".": "./dist/index.js"
-  },
+  "main": "./dist/index.js",
   "dependencies": {
     "@ponticus/escomplex-commons": "^0.0.1",
     "@ponticus/escomplex-module": "^0.0.1",
@@ -28,12 +17,11 @@
     "vitest": "^0.25.1",
     "@ponticus/escomplex-test-data": "0.0.1",
     "@ponticus/babel-parser": "^0.0.1",
-    "babylon": "^6.18.0",
     "eslint": "^8.27.0",
     "eslint-plugin-prettier": "^4.2.1"
   },
   "scripts": {
-    "build": "swc src -d dist",
+    "build": "swc src -d dist --config module.type=commonjs",
     "lint": "eslint .",
     "prepublish": "npm run build",
     "test": "vitest"
@@ -57,6 +45,6 @@
     "es10"
   ],
   "volta": {
-    "node": "16.15.0"
+    "node": "18.12.1"
   }
 }

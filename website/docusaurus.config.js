@@ -69,6 +69,7 @@ const config = {
           "packages/babel-parser",
           "packages/ast-walker",
           "packages/escomplex-plugin-formats-xml",
+          "packages/escomplex-commons",
         ],
         debug: true,
       },
