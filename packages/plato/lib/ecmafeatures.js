@@ -45,6 +45,6 @@ export default {
   jsx: true,
   // enable return in global scope
   globalReturn: true,
-
+  typescript: true,
   experimentalObjectRestSpread: true,
 };

@@ -26,6 +26,7 @@ import _ from "lodash";
 import fastglob from "fast-glob";
 import unixify from "unixify";
 import mkdirp from "mkdirp";
+import debug from "debug";
 
 import ecmaFeatures from "./ecmafeatures.js";
 import eslintBase from "./eslintbase.js";
@@ -34,7 +35,6 @@ import eslintBase from "./eslintbase.js";
 import util from "./util.js";
 import OverviewHistory from "./models/OverviewHistory.js";
 import FileHistory from "./models/FileHistory.js";
-import Logger from "./logger.js";
 
 import ComplexityReporter from "./reporters/complexity/index.js";
 import ESLintReporter from "./reporters/eslint/index.js";
@@ -52,7 +52,7 @@ var fileTemplate = __dirname + "/templates/file.html";
 var assets = __dirname + "/assets/";
 var fileDir = "files";
 
-var log = new Logger(Logger.WARNING);
+const log = debug("ponticus:plato");
 
 async function inspect(files, outputDir, options, done) {
   let _inputPattern = files;
@@ -78,7 +78,7 @@ async function inspect(files, outputDir, options, done) {
     return;
   }
 
-  // console.log(`Processing ${files.length} files from ${_inputPattern}`);
+  console.log(`Processing ${files.length} files from ${_inputPattern}`);
 
   var flags = {
     complexity: {
@@ -137,14 +137,11 @@ async function inspect(files, outputDir, options, done) {
     } else if (_eslint.ecmaFeatures) {
       flags.complexity.ecmaFeatures = _eslint.ecmaFeatures;
     }
+
     // create the eslint reporter once
     reporters.eslint = new ESLintReporter(_eslint);
   }
   reporters.complexity = new ComplexityReporter(flags.complexity);
-
-  if (options.q) {
-    log.level = Logger.ERROR;
-  }
 
   if (options.date) {
     // if we think we were given seconds
@@ -165,7 +162,6 @@ async function inspect(files, outputDir, options, done) {
     var reportFilePrefix = path.join(outputDir, "report");
     var overview = path.join(outputDir, "index.html");
     var wallDisplay = path.join(outputDir, "display.html");
-
     await fs.copy(assets, path.join(outputDir, "assets"));
     var overviewReport = getOverviewReport(reports);
     await updateHistoricalOverview(reportFilePrefix, overviewReport, options);
@@ -197,34 +193,38 @@ async function runReports(files, options, flags, fileOutputDir) {
   var commonBasePath = util.findCommonBase(files);
   let reports = files.map(async function reportEachFile(file) {
     if (options.exclude && options.exclude.test(file)) {
+      log("exclude", file);
       return;
     }
+    log("processing", file);
 
     let fileState = await fs.stat(file);
     if (options.recurse && fileState.isDirectory()) {
+      debug("traversing directory", fileState);
       files = (await fs.readdir(file)).map((innerFile) =>
         path.join(file, innerFile)
       );
       return runReports(files);
-    } else if (file.match(/\.jsx?$/)) {
-      log.info('Reading "%s"', file);
+    } else if (file.match(/\.(js|jsx|mjs|es6|ts|tsx)$/)) {
+      log('Reading "%s"', file);
 
       var fileShort = file.replace(commonBasePath, "");
       var fileSafe = fileShort.replace(/[^a-zA-Z0-9]/g, "_");
       var source = (await fs.readFile(file)).toString();
       var trimmedSource = source.trim();
       if (!trimmedSource) {
-        log.info('Not parsing empty file "%s"', file);
+        log('Not parsing empty file "%s"', file);
         return;
       }
 
       if (options.recurse && fs.statSync(file).isDirectory()) {
+        debug("traversing directory", fileState);
         files = fs.readdirSync(file).map(function resolveFile(innerFile) {
           return path.join(file, innerFile);
         });
         await runReports(files);
       } else if (file.match(/\.(js|jsx|mjs|es6|ts|tsx)$/)) {
-        log.info('Reading "%s"', file);
+        log('Reading "%s"', file);
 
         // eslint-disable-next-line no-redeclare
         var fileShort = file.replace(commonBasePath, "");
@@ -235,7 +235,7 @@ async function runReports(files, options, flags, fileOutputDir) {
         // eslint-disable-next-line no-redeclare
         var trimmedSource = source.trim();
         if (!trimmedSource) {
-          log.info('Not parsing empty file "%s"', file);
+          log('Not parsing empty file "%s"', file);
           return;
         }
 
@@ -257,7 +257,6 @@ async function runReports(files, options, flags, fileOutputDir) {
           },
         };
 
-        var error = false;
         for await (let name of Object.keys(reporters)) {
           if (!flags[name]) {
             return;
@@ -269,15 +268,11 @@ async function runReports(files, options, flags, fileOutputDir) {
               report.info
             );
           } catch (e) {
-            error = true;
-            log.error("Error reading file %s: ", file, e.toString());
-            log.error(e.stack);
+            log("Error reading file %s: ", file, e.toString());
+            log(e.stack);
           }
         }
 
-        if (error) {
-          return;
-        }
         if (fileOutputDir) {
           var outdir = path.join(fileOutputDir, report.info.fileSafe);
           let outdirExists = await fs
@@ -293,7 +288,10 @@ async function runReports(files, options, flags, fileOutputDir) {
       }
     }
   });
-  return Promise.all(reports).then((r) => r.filter((r) => !!r));
+
+  return Promise.all(reports)
+    .then((r) => r.filter((r) => !!r))
+    .catch((e) => console.log(e));
 }
 
 async function updateHistoricalOverview(outfilePrefix, overview, options) {

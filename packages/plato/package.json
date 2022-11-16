@@ -37,6 +37,7 @@
   ],
   "dependencies": {
     "@ponticus/escomplex": "0.0.1",
+    "debug": "^4.3.4",
     "eslint": "^8.27.0",
     "eslint-plugin-react": "^7.31.10",
     "fs-extra": "^10.1.0",

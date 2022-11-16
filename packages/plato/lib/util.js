@@ -3,11 +3,9 @@
 // node api
 import fs from "fs-extra";
 import path from "path";
+import debug from "debug";
 
-// local lib
-import Logger from "./logger.js";
-
-const log = new Logger(Logger.WARNING);
+const log = debug("ponticus:plato");
 
 function findCommonBase(files) {
   if (!files || files.length === 0 || files.length === 1) {
@@ -48,10 +46,7 @@ function formatJSON(report) {
   return JSON.stringify(report, replacer);
 }
 
-async function readJSON(file, options) {
-  if (options.q) {
-    log.level = Logger.ERROR;
-  }
+async function readJSON(file) {
   var result = {};
   if (
     await fs
@@ -59,14 +54,14 @@ async function readJSON(file, options) {
       .then(() => true)
       .catch(() => false)
   ) {
-    log.debug("Parsing JSON from file %s", file);
+    log("Parsing JSON from file %s", file);
     try {
       result = JSON.parse(fs.readFileSync(file));
     } catch (e) {
-      log.warning("Could not parse JSON from file %s", file);
+      log("Could not parse JSON from file %s", file);
     }
   } else {
-    log.info('Not parsing missing file "%s"', file);
+    log('Not parsing missing file "%s"', file);
   }
   return result;
 }
