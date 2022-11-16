@@ -89,7 +89,7 @@ pluginData.forEach((plugin) => {
 
         resultsBefore.finalize();
 
-        expect(JSON.stringify(resultsBefore)).toBe(
+        expect(JSON.stringify(resultsBefore)).toStrictEqual(
           JSON.stringify(resultsAfter)
         );
       });
