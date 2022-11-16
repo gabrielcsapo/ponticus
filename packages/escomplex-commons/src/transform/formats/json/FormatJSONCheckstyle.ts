@@ -284,7 +284,7 @@ const s_DEFAULT_THRESHOLDS: {
   };
   methodReport: {
     cyclomatic: { info: number; warning: number; error: number };
-    halstead: { difficulty: { info: number; warning: number; error: number } };
+    "halstead.difficulty": { info: number; warning: number; error: number };
   };
   moduleReport: {
     maintainability: {
@@ -300,7 +300,7 @@ const s_DEFAULT_THRESHOLDS: {
   },
   methodReport: {
     cyclomatic: { info: 3, warning: 7, error: 12 },
-    halstead: { difficulty: { info: 8, warning: 13, error: 20 } },
+    "halstead.difficulty": { info: 8, warning: 13, error: 20 },
   },
   moduleReport: {
     maintainability: { _test: "<", info: 115, warning: 100, error: 90 },
