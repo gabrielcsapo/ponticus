@@ -1,12 +1,9 @@
 "use strict";
 
-import fs from "fs-extra";
-
 import getopt from "posix-getopt";
 
 import plato from "./plato.js";
 import info from "./info.js";
-import util from "./util.js";
 
 const options = {
   h: {
