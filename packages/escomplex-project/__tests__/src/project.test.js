@@ -605,10 +605,6 @@ parsers.forEach((Parser) => {
       test("modules are in correct order", () => {
         expect(result.modules).toMatchSnapshot();
       });
-
-      test("modules only contains object hash w/ filePath, srcPath and srcPathAlias entries", () => {
-        expect(JSON.stringify(result.modules)).toMatchSnapshot();
-      });
     });
 
     describe("local source + NPM module @ponticus/escomplex-commons and escomplex-module test w/ dependencies:", () => {
