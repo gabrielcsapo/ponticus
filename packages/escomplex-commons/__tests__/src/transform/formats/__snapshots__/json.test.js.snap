@@ -458,8 +458,6 @@ exports[`markdown formatter > forEach / formatReport (large-module/module): > fo
 "
 `;
 
-exports[`markdown formatter > forEach / formatReport (large-module/module): > formatName: markdown-adjacency 1`] = `""`;
-
 exports[`markdown formatter > forEach / formatReport (large-module/module): > formatName: markdown-minimal 1`] = `
 "* Module 1:
    * maintainability: 105.333
@@ -581,8 +579,6 @@ exports[`markdown formatter > forEach / formatReport (large-module/module): > fo
 
 "
 `;
-
-exports[`markdown formatter > forEach / formatReport (large-module/module): > formatName: markdown-visibility 1`] = `""`;
 
 exports[`markdown formatter > forEach / formatReport (large-project/project-no-modules): > formatName: markdown 1`] = `
 "* Project: 

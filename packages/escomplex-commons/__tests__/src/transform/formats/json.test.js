@@ -4,10 +4,10 @@ import ModuleReport from "../../../../src/module/report/ModuleReport";
 import ProjectReport from "../../../../src/project/report/ProjectReport";
 
 import FormatMarkdown from "../../../../src/transform/formats/markdown/FormatMarkdown";
-import FormatMarkdownAdjacency from "../../../../src/transform/formats/markdown/FormatMarkdownAdjacency.js";
-import FormatMarkdownMinimal from "../../../../src/transform/formats/markdown/FormatMarkdownMinimal.js";
-import FormatMarkdownModules from "../../../../src/transform/formats/markdown/FormatMarkdownModules.js";
-import FormatMarkdownVisibility from "../../../../src/transform/formats/markdown/FormatMarkdownVisibility.js";
+import FormatMarkdownAdjacency from "../../../../src/transform/formats/markdown/FormatMarkdownAdjacency";
+import FormatMarkdownMinimal from "../../../../src/transform/formats/markdown/FormatMarkdownMinimal";
+import FormatMarkdownModules from "../../../../src/transform/formats/markdown/FormatMarkdownModules";
+import FormatMarkdownVisibility from "../../../../src/transform/formats/markdown/FormatMarkdownVisibility";
 
 const formats = [
   new FormatMarkdown(),
