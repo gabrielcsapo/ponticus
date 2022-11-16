@@ -1,0 +1,2765 @@
+// Vitest Snapshot v1
+
+exports[`markdown formatter > forEach / formatReport (large-module/module): > formatName: markdown 1`] = `
+"* Module 1:
+   * Total lines: 1120
+   * Maintainability index: 105.333
+   * Dependency count: 6
+   * Average per-function physical LOC: 15.194
+   * Average per-function logical LOC: 8.333
+   * Average per-function cyclomatic complexity: 3.889
+   * Average per-function cyclomatic density: 62.645%
+   * Average per-function halstead difficulty: 8.141
+   * Average per-function halstead volume: 291.028
+   * Average per-function halstead effort: 8658.36
+   
+   * Module method: **&lt;anonymous&gt;**
+      * Line start: 984
+      * Line end: 993
+      * Physical LOC: 10
+      * Logical LOC: 6
+      * Cyclomatic complexity: 2
+      * Cyclomatic complexity density: 33.333%
+      * Halstead difficulty: 5.647
+      * Halstead volume: 239.749
+      * Halstead effort: 1353.875
+      * Parameter count: 2
+   
+   * Module method: **&lt;anonymous&gt;**
+      * Line start: 1007
+      * Line end: 1031
+      * Physical LOC: 25
+      * Logical LOC: 16
+      * Cyclomatic complexity: 10
+      * Cyclomatic complexity density: 62.5%
+      * Halstead difficulty: 14.5
+      * Halstead volume: 560.253
+      * Halstead effort: 8123.663
+      * Parameter count: 4
+   
+   * Module method: **&lt;anonymous&gt;**
+      * Line start: 1041
+      * Line end: 1078
+      * Physical LOC: 38
+      * Logical LOC: 22
+      * Cyclomatic complexity: 5
+      * Cyclomatic complexity density: 22.727%
+      * Halstead difficulty: 17.578
+      * Halstead volume: 755.424
+      * Halstead effort: 13278.939
+      * Parameter count: 3
+   
+   * Module method: **&lt;anonymous&gt;**
+      * Line start: 1086
+      * Line end: 1096
+      * Physical LOC: 11
+      * Logical LOC: 8
+      * Cyclomatic complexity: 3
+      * Cyclomatic complexity density: 37.5%
+      * Halstead difficulty: 8.5
+      * Halstead volume: 275.098
+      * Halstead effort: 2338.331
+      * Parameter count: 2
+   
+   * Module method: **&lt;anonymous&gt;**
+      * Line start: 1105
+      * Line end: 1114
+      * Physical LOC: 10
+      * Logical LOC: 12
+      * Cyclomatic complexity: 4
+      * Cyclomatic complexity density: 33.333%
+      * Halstead difficulty: 26.5
+      * Halstead volume: 432.565
+      * Halstead effort: 11462.969
+      * Parameter count: 3
+   
+   * Class: **Collection**
+      * Line start: 90
+      * Line end: 945
+      * Average per-function physical LOC: 14.613
+      * Average per-function logical LOC: 7.613
+      * Average per-function cyclomatic complexity: 3.742
+      * Average per-function cyclomatic density: 66.639%
+      * Average per-function halstead difficulty: 7.108
+      * Average per-function halstead volume: 264.965
+      * Average per-function halstead effort: 8875.587
+      
+      * Class method: **constructor**
+         * Line start: 105
+         * Line end: 145
+         * Physical LOC: 41
+         * Logical LOC: 18
+         * Cyclomatic complexity: 11
+         * Cyclomatic complexity density: 61.111%
+         * Halstead difficulty: 18.455
+         * Halstead volume: 615.221
+         * Halstead effort: 11353.625
+         * Parameter count: 2
+      
+      * Class method: **add**
+         * Line start: 175
+         * Line end: 178
+         * Physical LOC: 4
+         * Logical LOC: 2
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 50%
+         * Halstead difficulty: 3.056
+         * Halstead volume: 68.532
+         * Halstead effort: 209.405
+         * Parameter count: 2
+      
+      * Class method: **at**
+         * Line start: 190
+         * Line end: 194
+         * Physical LOC: 5
+         * Logical LOC: 3
+         * Cyclomatic complexity: 2
+         * Cyclomatic complexity density: 66.667%
+         * Halstead difficulty: 4.5
+         * Halstead volume: 53.151
+         * Halstead effort: 239.179
+         * Parameter count: 1
+      
+      * Class method: **clone**
+         * Line start: 203
+         * Line end: 209
+         * Physical LOC: 7
+         * Logical LOC: 3
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 33.333%
+         * Halstead difficulty: 5
+         * Halstead volume: 63.117
+         * Halstead effort: 315.583
+         * Parameter count: 0
+      
+      * Class method: **create**
+         * Line start: 241
+         * Line end: 262
+         * Physical LOC: 22
+         * Logical LOC: 12
+         * Cyclomatic complexity: 4
+         * Cyclomatic complexity density: 33.333%
+         * Halstead difficulty: 12.143
+         * Halstead volume: 293.438
+         * Halstead effort: 3563.171
+         * Parameter count: 2
+      
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 253
+         * Line end: 257
+         * Physical LOC: 5
+         * Logical LOC: 4
+         * Cyclomatic complexity: 3
+         * Cyclomatic complexity density: 75%
+         * Halstead difficulty: 2.667
+         * Halstead volume: 82.454
+         * Halstead effort: 219.878
+         * Parameter count: 3
+      
+      * Class method: **fetch**
+         * Line start: 298
+         * Line end: 317
+         * Physical LOC: 20
+         * Logical LOC: 6
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 16.667%
+         * Halstead difficulty: 7.636
+         * Halstead volume: 157.173
+         * Halstead effort: 1200.233
+         * Parameter count: 1
+      
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 303
+         * Line end: 312
+         * Physical LOC: 10
+         * Logical LOC: 6
+         * Cyclomatic complexity: 3
+         * Cyclomatic complexity density: 50%
+         * Halstead difficulty: 5.438
+         * Halstead volume: 191.756
+         * Halstead effort: 1042.671
+         * Parameter count: 1
+      
+      * Class method: **findWhere**
+         * Line start: 328
+         * Line end: 331
+         * Physical LOC: 4
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 1.875
+         * Halstead volume: 22.459
+         * Halstead effort: 42.11
+         * Parameter count: 1
+      
+      * Class method: **get**
+         * Line start: 345
+         * Line end: 354
+         * Physical LOC: 10
+         * Logical LOC: 5
+         * Cyclomatic complexity: 6
+         * Cyclomatic complexity density: 120%
+         * Halstead difficulty: 9.346
+         * Halstead volume: 231.89
+         * Halstead effort: 2167.284
+         * Parameter count: 1
+      
+      * Class method: **has**
+         * Line start: 362
+         * Line end: 365
+         * Physical LOC: 4
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 2.4
+         * Halstead volume: 38.039
+         * Halstead effort: 91.294
+         * Parameter count: 1
+      
+      * Class method: **initialize**
+         * Line start: 373
+         * Line end: 375
+         * Physical LOC: 3
+         * Logical LOC: 0
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 0%
+         * Halstead difficulty: 0
+         * Halstead volume: 0
+         * Halstead effort: 0
+         * Parameter count: 0
+      
+      * Class method: **modelId**
+         * Line start: 406
+         * Line end: 412
+         * Physical LOC: 7
+         * Logical LOC: 3
+         * Cyclomatic complexity: 2
+         * Cyclomatic complexity density: 66.667%
+         * Halstead difficulty: 3.231
+         * Halstead volume: 147.149
+         * Halstead effort: 475.403
+         * Parameter count: 1
+      
+      * Class method: **parse**
+         * Line start: 435
+         * Line end: 439
+         * Physical LOC: 5
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 0.75
+         * Halstead volume: 6.34
+         * Halstead effort: 4.755
+         * Parameter count: 2
+      
+      * Class method: **pluck**
+         * Line start: 461
+         * Line end: 464
+         * Physical LOC: 4
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 2
+         * Halstead volume: 18.095
+         * Halstead effort: 36.189
+         * Parameter count: 1
+      
+      * Class method: **pop**
+         * Line start: 474
+         * Line end: 478
+         * Physical LOC: 5
+         * Logical LOC: 2
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 50%
+         * Halstead difficulty: 4.714
+         * Halstead volume: 74.009
+         * Halstead effort: 348.899
+         * Parameter count: 1
+      
+      * Class method: **_prepareModel**
+         * Line start: 488
+         * Line end: 509
+         * Physical LOC: 22
+         * Logical LOC: 13
+         * Cyclomatic complexity: 5
+         * Cyclomatic complexity density: 38.462%
+         * Halstead difficulty: 11.579
+         * Halstead volume: 374.065
+         * Halstead effort: 4331.274
+         * Parameter count: 2
+      
+      * Class method: **push**
+         * Line start: 520
+         * Line end: 523
+         * Physical LOC: 4
+         * Logical LOC: 2
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 50%
+         * Halstead difficulty: 3.438
+         * Halstead volume: 70.308
+         * Halstead effort: 241.685
+         * Parameter count: 2
+      
+      * Class method: **remove**
+         * Line start: 537
+         * Line end: 551
+         * Physical LOC: 15
+         * Logical LOC: 11
+         * Cyclomatic complexity: 5
+         * Cyclomatic complexity density: 45.455%
+         * Halstead difficulty: 13
+         * Halstead volume: 358.203
+         * Halstead effort: 4656.639
+         * Parameter count: 2
+      
+      * Class method: **_reset**
+         * Line start: 557
+         * Line end: 572
+         * Physical LOC: 16
+         * Logical LOC: 3
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 33.333%
+         * Halstead difficulty: 2.8
+         * Halstead volume: 47.549
+         * Halstead effort: 133.137
+         * Parameter count: 0
+      
+      * Class method: **reset**
+         * Line start: 597
+         * Line end: 612
+         * Physical LOC: 16
+         * Logical LOC: 11
+         * Cyclomatic complexity: 4
+         * Cyclomatic complexity density: 36.364%
+         * Halstead difficulty: 16.059
+         * Halstead volume: 368.017
+         * Halstead effort: 5909.917
+         * Parameter count: 2
+      
+      * Class method: **set**
+         * Line start: 637
+         * Line end: 805
+         * Physical LOC: 169
+         * Logical LOC: 104
+         * Cyclomatic complexity: 45
+         * Cyclomatic complexity density: 43.269%
+         * Halstead difficulty: 54.632
+         * Halstead volume: 4238.78
+         * Halstead effort: 231571.258
+         * Parameter count: 2
+      
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 749
+         * Line end: 752
+         * Physical LOC: 4
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 2.5
+         * Halstead volume: 20.68
+         * Halstead effort: 51.699
+         * Parameter count: 2
+      
+      * Class method: **shift**
+         * Line start: 815
+         * Line end: 819
+         * Physical LOC: 5
+         * Logical LOC: 2
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 50%
+         * Halstead difficulty: 3.75
+         * Halstead volume: 55.351
+         * Halstead effort: 207.566
+         * Parameter count: 1
+      
+      * Class method: **slice**
+         * Line start: 828
+         * Line end: 831
+         * Physical LOC: 4
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 1.5
+         * Halstead volume: 43.185
+         * Halstead effort: 64.778
+         * Parameter count: 0
+      
+      * Class method: **sort**
+         * Line start: 843
+         * Line end: 866
+         * Physical LOC: 24
+         * Logical LOC: 13
+         * Cyclomatic complexity: 6
+         * Cyclomatic complexity density: 46.154%
+         * Halstead difficulty: 16.471
+         * Halstead volume: 376.519
+         * Halstead effort: 6201.488
+         * Parameter count: 1
+      
+      * Class method: **sync**
+         * Line start: 875
+         * Line end: 879
+         * Physical LOC: 5
+         * Logical LOC: 2
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 50%
+         * Halstead difficulty: 1.5
+         * Halstead volume: 62.907
+         * Halstead effort: 94.361
+         * Parameter count: 0
+      
+      * Class method: **toJSON**
+         * Line start: 900
+         * Line end: 903
+         * Physical LOC: 4
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 2
+         * Halstead volume: 19.651
+         * Halstead effort: 39.303
+         * Parameter count: 1
+      
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 902
+         * Line end: 902
+         * Physical LOC: 1
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 2
+         * Halstead volume: 18.095
+         * Halstead effort: 36.189
+         * Parameter count: 1
+      
+      * Class method: **unshift**
+         * Line start: 914
+         * Line end: 917
+         * Physical LOC: 4
+         * Logical LOC: 2
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 50%
+         * Halstead difficulty: 3.125
+         * Halstead volume: 62.907
+         * Halstead effort: 196.586
+         * Parameter count: 2
+      
+      * Class method: **where**
+         * Line start: 941
+         * Line end: 944
+         * Physical LOC: 4
+         * Logical LOC: 1
+         * Cyclomatic complexity: 2
+         * Cyclomatic complexity density: 200%
+         * Halstead difficulty: 2.8
+         * Halstead volume: 34.869
+         * Halstead effort: 97.634
+         * Parameter count: 2
+"
+`;
+
+exports[`markdown formatter > forEach / formatReport (large-module/module): > formatName: markdown-adjacency 1`] = `""`;
+
+exports[`markdown formatter > forEach / formatReport (large-module/module): > formatName: markdown-minimal 1`] = `
+"* Module 1:
+   * maintainability: 105.333
+   * Module method: **&lt;anonymous&gt;** (984)
+      * cyclomatic: 2
+      * halstead.difficulty: 5.647
+   * Module method: **&lt;anonymous&gt;** (1007)
+      * cyclomatic: 10
+      * halstead.difficulty: 14.5
+   * Module method: **&lt;anonymous&gt;** (1041)
+      * cyclomatic: 5
+      * halstead.difficulty: 17.578
+   * Module method: **&lt;anonymous&gt;** (1086)
+      * cyclomatic: 3
+      * halstead.difficulty: 8.5
+   * Module method: **&lt;anonymous&gt;** (1105)
+      * cyclomatic: 4
+      * halstead.difficulty: 26.5
+   * Class: **Collection** (90)
+      * maintainability: 106.722
+      * Class method: **constructor** (105)
+         * cyclomatic: 11
+         * halstead.difficulty: 18.455
+      * Class method: **add** (175)
+         * cyclomatic: 1
+         * halstead.difficulty: 3.056
+      * Class method: **at** (190)
+         * cyclomatic: 2
+         * halstead.difficulty: 4.5
+      * Class method: **clone** (203)
+         * cyclomatic: 1
+         * halstead.difficulty: 5
+      * Class method: **create** (241)
+         * cyclomatic: 4
+         * halstead.difficulty: 12.143
+      * Class method: **&lt;anonymous&gt;** (253)
+         * cyclomatic: 3
+         * halstead.difficulty: 2.667
+      * Class method: **fetch** (298)
+         * cyclomatic: 1
+         * halstead.difficulty: 7.636
+      * Class method: **&lt;anonymous&gt;** (303)
+         * cyclomatic: 3
+         * halstead.difficulty: 5.438
+      * Class method: **findWhere** (328)
+         * cyclomatic: 1
+         * halstead.difficulty: 1.875
+      * Class method: **get** (345)
+         * cyclomatic: 6
+         * halstead.difficulty: 9.346
+      * Class method: **has** (362)
+         * cyclomatic: 1
+         * halstead.difficulty: 2.4
+      * Class method: **initialize** (373)
+         * cyclomatic: 1
+         * halstead.difficulty: 0
+      * Class method: **modelId** (406)
+         * cyclomatic: 2
+         * halstead.difficulty: 3.231
+      * Class method: **parse** (435)
+         * cyclomatic: 1
+         * halstead.difficulty: 0.75
+      * Class method: **pluck** (461)
+         * cyclomatic: 1
+         * halstead.difficulty: 2
+      * Class method: **pop** (474)
+         * cyclomatic: 1
+         * halstead.difficulty: 4.714
+      * Class method: **_prepareModel** (488)
+         * cyclomatic: 5
+         * halstead.difficulty: 11.579
+      * Class method: **push** (520)
+         * cyclomatic: 1
+         * halstead.difficulty: 3.438
+      * Class method: **remove** (537)
+         * cyclomatic: 5
+         * halstead.difficulty: 13
+      * Class method: **_reset** (557)
+         * cyclomatic: 1
+         * halstead.difficulty: 2.8
+      * Class method: **reset** (597)
+         * cyclomatic: 4
+         * halstead.difficulty: 16.059
+      * Class method: **set** (637)
+         * cyclomatic: 45
+         * halstead.difficulty: 54.632
+      * Class method: **&lt;anonymous&gt;** (749)
+         * cyclomatic: 1
+         * halstead.difficulty: 2.5
+      * Class method: **shift** (815)
+         * cyclomatic: 1
+         * halstead.difficulty: 3.75
+      * Class method: **slice** (828)
+         * cyclomatic: 1
+         * halstead.difficulty: 1.5
+      * Class method: **sort** (843)
+         * cyclomatic: 6
+         * halstead.difficulty: 16.471
+      * Class method: **sync** (875)
+         * cyclomatic: 1
+         * halstead.difficulty: 1.5
+      * Class method: **toJSON** (900)
+         * cyclomatic: 1
+         * halstead.difficulty: 2
+      * Class method: **&lt;anonymous&gt;** (902)
+         * cyclomatic: 1
+         * halstead.difficulty: 2
+      * Class method: **unshift** (914)
+         * cyclomatic: 1
+         * halstead.difficulty: 3.125
+      * Class method: **where** (941)
+         * cyclomatic: 2
+         * halstead.difficulty: 2.8
+"
+`;
+
+exports[`markdown formatter > forEach / formatReport (large-module/module): > formatName: markdown-modules 1`] = `
+"* Module 1:
+
+"
+`;
+
+exports[`markdown formatter > forEach / formatReport (large-module/module): > formatName: markdown-visibility 1`] = `""`;
+
+exports[`markdown formatter > forEach / formatReport (large-project/project-no-modules): > formatName: markdown 1`] = `
+"* Project: 
+   * First-order density: 4.165%
+   * Change cost: 23.902%
+   * Core size: 27.66%
+   * Average per-module maintainability index: 132.078
+   * Average per-function physical LOC: 11.876
+   * Average per-function logical LOC: 4.179
+   * Average per-function parameter count: 1.129
+   * Average per-function cyclomatic complexity: 2.001
+   * Average per-function halstead difficulty: 4.968
+   * Average per-function halstead effort: 1311.535
+
+* Module 1:
+   * File path: \`./src/ESComplexProject.js\`
+   * Source path: \`./src/ESComplexProject.js\`
+
+* Module 2:
+   * File path: \`./src/index.js\`
+   * Source path: \`./src/index.js\`
+
+* Module 3:
+   * File path: \`./src/Plugins.js\`
+   * Source path: \`./src/Plugins.js\`
+
+* Module 4:
+   * File path: \`./test/fixture/testImportNPMAlias.js\`
+   * Source path: \`./test/fixture/testImportNPMAlias.js\`
+
+* Module 5:
+   * File path: \`./test/fixture/testRequireNPMAlias.js\`
+   * Source path: \`./test/fixture/testRequireNPMAlias.js\`
+
+* Module 6:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+
+* Module 7:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js\`
+
+* Module 8:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+
+* Module 9:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+
+* Module 10:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+
+* Module 11:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+
+* Module 12:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js\`
+
+* Module 13:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+
+* Module 14:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+
+* Module 15:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/module/report/MethodReport.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/module/report/MethodReport.js\`
+
+* Module 16:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+
+* Module 17:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/module/traits/actualize.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/module/traits/actualize.js\`
+
+* Module 18:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/module/traits/HalsteadArray.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/module/traits/HalsteadArray.js\`
+
+* Module 19:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/module/traits/Trait.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/module/traits/Trait.js\`
+
+* Module 20:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/module/traits/TraitHalstead.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/module/traits/TraitHalstead.js\`
+
+* Module 21:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/module/traits/TraitUtil.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/module/traits/TraitUtil.js\`
+
+* Module 22:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/project/report/ProjectReport.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/project/report/ProjectReport.js\`
+
+* Module 23:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+
+* Module 24:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+
+* Module 25:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+
+* Module 26:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+
+* Module 27:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+
+* Module 28:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+
+* Module 29:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+
+* Module 30:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+
+* Module 31:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+
+* Module 32:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+
+* Module 33:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+
+* Module 34:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+
+* Module 35:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+
+* Module 36:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+
+* Module 37:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+
+* Module 38:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+
+* Module 39:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+
+* Module 40:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/types/ReportType.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/types/ReportType.js\`
+
+* Module 41:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/utils/Enum.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/utils/Enum.js\`
+
+* Module 42:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+
+* Module 43:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* Module 44:
+   * File path: \`./node_modules/@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+   * Source path: \`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* Module 45:
+   * File path: \`./node_modules/typhonjs-escomplex-module/src/ESComplexModule.js\`
+   * Source path: \`typhonjs-escomplex-module/src/ESComplexModule.js\`
+
+* Module 46:
+   * File path: \`./node_modules/typhonjs-escomplex-module/src/index.js\`
+   * Source path: \`typhonjs-escomplex-module/src/index.js\`
+   * Source alias: \`typhonjs-escomplex-module\`
+
+* Module 47:
+   * File path: \`./node_modules/typhonjs-escomplex-module/src/Plugins.js\`
+   * Source path: \`typhonjs-escomplex-module/src/Plugins.js\`
+
+
+* Adjacency (dependencies / numerical indices correspond to ProjectReport modules / reports):
+* 1:	\`./src/ESComplexProject.js\`
+	* 3:	\`./src/Plugins.js\`
+	* 16:	\`@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+	* 22:	\`@ponticus/escomplex-commons/src/project/report/ProjectReport.js\`
+	* 45:	\`typhonjs-escomplex-module/src/ESComplexModule.js\`
+
+* 2:	\`./src/index.js\`
+	* 1:	\`./src/ESComplexProject.js\`
+
+* 4:	\`./test/fixture/testImportNPMAlias.js\`
+	* 46:	\`typhonjs-escomplex-module/src/index.js\`
+
+* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+
+* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+
+* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 14:	\`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+
+* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+	* 10:	\`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+
+* 12:	\`@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js\`
+	* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+
+* 13:	\`@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+	* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 15:	\`@ponticus/escomplex-commons/src/module/report/MethodReport.js\`
+	* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+
+* 16:	\`@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+	* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+	* 13:	\`@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 42:	\`@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 17:	\`@ponticus/escomplex-commons/src/module/traits/actualize.js\`
+	* 18:	\`@ponticus/escomplex-commons/src/module/traits/HalsteadArray.js\`
+	* 19:	\`@ponticus/escomplex-commons/src/module/traits/Trait.js\`
+	* 21:	\`@ponticus/escomplex-commons/src/module/traits/TraitUtil.js\`
+
+* 18:	\`@ponticus/escomplex-commons/src/module/traits/HalsteadArray.js\`
+	* 20:	\`@ponticus/escomplex-commons/src/module/traits/TraitHalstead.js\`
+
+* 22:	\`@ponticus/escomplex-commons/src/project/report/ProjectReport.js\`
+	* 12:	\`@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js\`
+	* 16:	\`@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 42:	\`@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+
+* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+
+* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+
+* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+
+* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+
+* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+
+* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+
+* 42:	\`@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 45:	\`typhonjs-escomplex-module/src/ESComplexModule.js\`
+	* 47:	\`typhonjs-escomplex-module/src/Plugins.js\`
+
+* 46:	\`typhonjs-escomplex-module/src/index.js\`
+	* 45:	\`typhonjs-escomplex-module/src/ESComplexModule.js\`
+
+* 47:	\`typhonjs-escomplex-module/src/Plugins.js\`
+	* 16:	\`@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+
+
+
+* Visibility (reverse dependents / numerical indices correspond to ProjectReport modules / reports):
+* 1:	\`./src/ESComplexProject.js\`
+	* 1:	\`./src/ESComplexProject.js\`
+	* 3:	\`./src/Plugins.js\`
+	* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 10:	\`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+	* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+	* 12:	\`@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js\`
+	* 13:	\`@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+	* 14:	\`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+	* 16:	\`@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+	* 22:	\`@ponticus/escomplex-commons/src/project/report/ProjectReport.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 42:	\`@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+	* 45:	\`typhonjs-escomplex-module/src/ESComplexModule.js\`
+	* 47:	\`typhonjs-escomplex-module/src/Plugins.js\`
+
+* 2:	\`./src/index.js\`
+	* 1:	\`./src/ESComplexProject.js\`
+	* 2:	\`./src/index.js\`
+	* 3:	\`./src/Plugins.js\`
+	* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 10:	\`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+	* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+	* 12:	\`@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js\`
+	* 13:	\`@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+	* 14:	\`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+	* 16:	\`@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+	* 22:	\`@ponticus/escomplex-commons/src/project/report/ProjectReport.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 42:	\`@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+	* 45:	\`typhonjs-escomplex-module/src/ESComplexModule.js\`
+	* 47:	\`typhonjs-escomplex-module/src/Plugins.js\`
+
+* 3:	\`./src/Plugins.js\`
+	* 3:	\`./src/Plugins.js\`
+
+* 4:	\`./test/fixture/testImportNPMAlias.js\`
+	* 4:	\`./test/fixture/testImportNPMAlias.js\`
+	* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 10:	\`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+	* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+	* 13:	\`@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+	* 14:	\`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+	* 16:	\`@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 42:	\`@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+	* 45:	\`typhonjs-escomplex-module/src/ESComplexModule.js\`
+	* 46:	\`typhonjs-escomplex-module/src/index.js\`
+	* 47:	\`typhonjs-escomplex-module/src/Plugins.js\`
+
+* 5:	\`./test/fixture/testRequireNPMAlias.js\`
+	* 5:	\`./test/fixture/testRequireNPMAlias.js\`
+
+* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+
+* 7:	\`@ponticus/escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js\`
+	* 7:	\`@ponticus/escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js\`
+
+* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 14:	\`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 10:	\`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+	* 10:	\`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+
+* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+	* 10:	\`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+	* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+
+* 12:	\`@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js\`
+	* 10:	\`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+	* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+	* 12:	\`@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js\`
+
+* 13:	\`@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+	* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 10:	\`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+	* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+	* 13:	\`@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+	* 14:	\`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 14:	\`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+	* 14:	\`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+
+* 15:	\`@ponticus/escomplex-commons/src/module/report/MethodReport.js\`
+	* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 14:	\`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+	* 15:	\`@ponticus/escomplex-commons/src/module/report/MethodReport.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 16:	\`@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+	* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 10:	\`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+	* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+	* 13:	\`@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+	* 14:	\`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+	* 16:	\`@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 42:	\`@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 17:	\`@ponticus/escomplex-commons/src/module/traits/actualize.js\`
+	* 17:	\`@ponticus/escomplex-commons/src/module/traits/actualize.js\`
+	* 18:	\`@ponticus/escomplex-commons/src/module/traits/HalsteadArray.js\`
+	* 19:	\`@ponticus/escomplex-commons/src/module/traits/Trait.js\`
+	* 20:	\`@ponticus/escomplex-commons/src/module/traits/TraitHalstead.js\`
+	* 21:	\`@ponticus/escomplex-commons/src/module/traits/TraitUtil.js\`
+
+* 18:	\`@ponticus/escomplex-commons/src/module/traits/HalsteadArray.js\`
+	* 18:	\`@ponticus/escomplex-commons/src/module/traits/HalsteadArray.js\`
+	* 20:	\`@ponticus/escomplex-commons/src/module/traits/TraitHalstead.js\`
+
+* 19:	\`@ponticus/escomplex-commons/src/module/traits/Trait.js\`
+	* 19:	\`@ponticus/escomplex-commons/src/module/traits/Trait.js\`
+
+* 20:	\`@ponticus/escomplex-commons/src/module/traits/TraitHalstead.js\`
+	* 20:	\`@ponticus/escomplex-commons/src/module/traits/TraitHalstead.js\`
+
+* 21:	\`@ponticus/escomplex-commons/src/module/traits/TraitUtil.js\`
+	* 21:	\`@ponticus/escomplex-commons/src/module/traits/TraitUtil.js\`
+
+* 22:	\`@ponticus/escomplex-commons/src/project/report/ProjectReport.js\`
+	* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 10:	\`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+	* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+	* 12:	\`@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js\`
+	* 13:	\`@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+	* 14:	\`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+	* 16:	\`@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+	* 22:	\`@ponticus/escomplex-commons/src/project/report/ProjectReport.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 42:	\`@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+
+* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+
+* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+
+* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+
+* 42:	\`@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+	* 42:	\`@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 45:	\`typhonjs-escomplex-module/src/ESComplexModule.js\`
+	* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 10:	\`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+	* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+	* 13:	\`@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+	* 14:	\`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+	* 16:	\`@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 42:	\`@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+	* 45:	\`typhonjs-escomplex-module/src/ESComplexModule.js\`
+	* 47:	\`typhonjs-escomplex-module/src/Plugins.js\`
+
+* 46:	\`typhonjs-escomplex-module/src/index.js\`
+	* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 10:	\`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+	* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+	* 13:	\`@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+	* 14:	\`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+	* 16:	\`@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 42:	\`@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+	* 45:	\`typhonjs-escomplex-module/src/ESComplexModule.js\`
+	* 46:	\`typhonjs-escomplex-module/src/index.js\`
+	* 47:	\`typhonjs-escomplex-module/src/Plugins.js\`
+
+* 47:	\`typhonjs-escomplex-module/src/Plugins.js\`
+	* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 10:	\`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+	* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+	* 13:	\`@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+	* 14:	\`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+	* 16:	\`@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 42:	\`@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+	* 47:	\`typhonjs-escomplex-module/src/Plugins.js\`
+
+"
+`;
+
+exports[`markdown formatter > forEach / formatReport (large-project/project-no-modules): > formatName: markdown-adjacency 1`] = `
+"* Adjacency (dependencies / numerical indices correspond to ProjectReport modules / reports):
+* 1:	\`./src/ESComplexProject.js\`
+	* 3:	\`./src/Plugins.js\`
+	* 16:	\`@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+	* 22:	\`@ponticus/escomplex-commons/src/project/report/ProjectReport.js\`
+	* 45:	\`typhonjs-escomplex-module/src/ESComplexModule.js\`
+
+* 2:	\`./src/index.js\`
+	* 1:	\`./src/ESComplexProject.js\`
+
+* 4:	\`./test/fixture/testImportNPMAlias.js\`
+	* 46:	\`typhonjs-escomplex-module/src/index.js\`
+
+* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+
+* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+
+* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 14:	\`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+
+* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+	* 10:	\`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+
+* 12:	\`@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js\`
+	* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+
+* 13:	\`@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+	* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 15:	\`@ponticus/escomplex-commons/src/module/report/MethodReport.js\`
+	* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+
+* 16:	\`@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+	* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+	* 13:	\`@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 42:	\`@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 17:	\`@ponticus/escomplex-commons/src/module/traits/actualize.js\`
+	* 18:	\`@ponticus/escomplex-commons/src/module/traits/HalsteadArray.js\`
+	* 19:	\`@ponticus/escomplex-commons/src/module/traits/Trait.js\`
+	* 21:	\`@ponticus/escomplex-commons/src/module/traits/TraitUtil.js\`
+
+* 18:	\`@ponticus/escomplex-commons/src/module/traits/HalsteadArray.js\`
+	* 20:	\`@ponticus/escomplex-commons/src/module/traits/TraitHalstead.js\`
+
+* 22:	\`@ponticus/escomplex-commons/src/project/report/ProjectReport.js\`
+	* 12:	\`@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js\`
+	* 16:	\`@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 42:	\`@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+
+* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+
+* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+
+* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+
+* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+
+* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+
+* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+
+* 42:	\`@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 45:	\`typhonjs-escomplex-module/src/ESComplexModule.js\`
+	* 47:	\`typhonjs-escomplex-module/src/Plugins.js\`
+
+* 46:	\`typhonjs-escomplex-module/src/index.js\`
+	* 45:	\`typhonjs-escomplex-module/src/ESComplexModule.js\`
+
+* 47:	\`typhonjs-escomplex-module/src/Plugins.js\`
+	* 16:	\`@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+
+"
+`;
+
+exports[`markdown formatter > forEach / formatReport (large-project/project-no-modules): > formatName: markdown-minimal 1`] = `
+"* Project:
+   * moduleAverage.maintainability: 132.078
+
+* Module 1:
+   * filePath: \`./src/ESComplexProject.js\`
+   * srcPath: \`./src/ESComplexProject.js\`
+
+* Module 2:
+   * filePath: \`./src/index.js\`
+   * srcPath: \`./src/index.js\`
+
+* Module 3:
+   * filePath: \`./src/Plugins.js\`
+   * srcPath: \`./src/Plugins.js\`
+
+* Module 4:
+   * filePath: \`./test/fixture/testImportNPMAlias.js\`
+   * srcPath: \`./test/fixture/testImportNPMAlias.js\`
+
+* Module 5:
+   * filePath: \`./test/fixture/testRequireNPMAlias.js\`
+   * srcPath: \`./test/fixture/testRequireNPMAlias.js\`
+
+* Module 6:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+
+* Module 7:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js\`
+
+* Module 8:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+
+* Module 9:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+
+* Module 10:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+
+* Module 11:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+
+* Module 12:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js\`
+
+* Module 13:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+
+* Module 14:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+
+* Module 15:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/report/MethodReport.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/report/MethodReport.js\`
+
+* Module 16:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+
+* Module 17:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/traits/actualize.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/traits/actualize.js\`
+
+* Module 18:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/traits/HalsteadArray.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/traits/HalsteadArray.js\`
+
+* Module 19:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/traits/Trait.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/traits/Trait.js\`
+
+* Module 20:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/traits/TraitHalstead.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/traits/TraitHalstead.js\`
+
+* Module 21:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/traits/TraitUtil.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/traits/TraitUtil.js\`
+
+* Module 22:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/project/report/ProjectReport.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/project/report/ProjectReport.js\`
+
+* Module 23:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+
+* Module 24:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+
+* Module 25:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+
+* Module 26:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+
+* Module 27:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+
+* Module 28:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+
+* Module 29:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+
+* Module 30:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+
+* Module 31:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+
+* Module 32:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+
+* Module 33:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+
+* Module 34:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+
+* Module 35:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+
+* Module 36:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+
+* Module 37:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+
+* Module 38:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+
+* Module 39:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+
+* Module 40:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/types/ReportType.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/types/ReportType.js\`
+
+* Module 41:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/utils/Enum.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/utils/Enum.js\`
+
+* Module 42:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+
+* Module 43:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* Module 44:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* Module 45:
+   * filePath: \`./node_modules/typhonjs-escomplex-module/src/ESComplexModule.js\`
+   * srcPath: \`typhonjs-escomplex-module/src/ESComplexModule.js\`
+
+* Module 46:
+   * filePath: \`./node_modules/typhonjs-escomplex-module/src/index.js\`
+   * srcPath: \`typhonjs-escomplex-module/src/index.js\`
+   * srcPathAlias: \`typhonjs-escomplex-module\`
+
+* Module 47:
+   * filePath: \`./node_modules/typhonjs-escomplex-module/src/Plugins.js\`
+   * srcPath: \`typhonjs-escomplex-module/src/Plugins.js\`
+"
+`;
+
+exports[`markdown formatter > forEach / formatReport (large-project/project-no-modules): > formatName: markdown-modules 1`] = `
+"* Module 1:
+   * filePath: \`./src/ESComplexProject.js\`
+   * srcPath: \`./src/ESComplexProject.js\`
+
+* Module 2:
+   * filePath: \`./src/index.js\`
+   * srcPath: \`./src/index.js\`
+
+* Module 3:
+   * filePath: \`./src/Plugins.js\`
+   * srcPath: \`./src/Plugins.js\`
+
+* Module 4:
+   * filePath: \`./test/fixture/testImportNPMAlias.js\`
+   * srcPath: \`./test/fixture/testImportNPMAlias.js\`
+
+* Module 5:
+   * filePath: \`./test/fixture/testRequireNPMAlias.js\`
+   * srcPath: \`./test/fixture/testRequireNPMAlias.js\`
+
+* Module 6:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+
+* Module 7:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js\`
+
+* Module 8:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+
+* Module 9:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+
+* Module 10:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+
+* Module 11:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+
+* Module 12:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js\`
+
+* Module 13:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+
+* Module 14:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+
+* Module 15:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/report/MethodReport.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/report/MethodReport.js\`
+
+* Module 16:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+
+* Module 17:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/traits/actualize.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/traits/actualize.js\`
+
+* Module 18:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/traits/HalsteadArray.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/traits/HalsteadArray.js\`
+
+* Module 19:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/traits/Trait.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/traits/Trait.js\`
+
+* Module 20:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/traits/TraitHalstead.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/traits/TraitHalstead.js\`
+
+* Module 21:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/module/traits/TraitUtil.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/module/traits/TraitUtil.js\`
+
+* Module 22:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/project/report/ProjectReport.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/project/report/ProjectReport.js\`
+
+* Module 23:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+
+* Module 24:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+
+* Module 25:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+
+* Module 26:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+
+* Module 27:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+
+* Module 28:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+
+* Module 29:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+
+* Module 30:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+
+* Module 31:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+
+* Module 32:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+
+* Module 33:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+
+* Module 34:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+
+* Module 35:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+
+* Module 36:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+
+* Module 37:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+
+* Module 38:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+
+* Module 39:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+
+* Module 40:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/types/ReportType.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/types/ReportType.js\`
+
+* Module 41:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/utils/Enum.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/utils/Enum.js\`
+
+* Module 42:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+
+* Module 43:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* Module 44:
+   * filePath: \`./node_modules/@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+   * srcPath: \`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* Module 45:
+   * filePath: \`./node_modules/typhonjs-escomplex-module/src/ESComplexModule.js\`
+   * srcPath: \`typhonjs-escomplex-module/src/ESComplexModule.js\`
+
+* Module 46:
+   * filePath: \`./node_modules/typhonjs-escomplex-module/src/index.js\`
+   * srcPath: \`typhonjs-escomplex-module/src/index.js\`
+   * srcPathAlias: \`typhonjs-escomplex-module\`
+
+* Module 47:
+   * filePath: \`./node_modules/typhonjs-escomplex-module/src/Plugins.js\`
+   * srcPath: \`typhonjs-escomplex-module/src/Plugins.js\`
+
+"
+`;
+
+exports[`markdown formatter > forEach / formatReport (large-project/project-no-modules): > formatName: markdown-visibility 1`] = `
+"* Visibility (reverse dependents / numerical indices correspond to ProjectReport modules / reports):
+* 1:	\`./src/ESComplexProject.js\`
+	* 1:	\`./src/ESComplexProject.js\`
+	* 3:	\`./src/Plugins.js\`
+	* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 10:	\`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+	* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+	* 12:	\`@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js\`
+	* 13:	\`@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+	* 14:	\`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+	* 16:	\`@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+	* 22:	\`@ponticus/escomplex-commons/src/project/report/ProjectReport.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 42:	\`@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+	* 45:	\`typhonjs-escomplex-module/src/ESComplexModule.js\`
+	* 47:	\`typhonjs-escomplex-module/src/Plugins.js\`
+
+* 2:	\`./src/index.js\`
+	* 1:	\`./src/ESComplexProject.js\`
+	* 2:	\`./src/index.js\`
+	* 3:	\`./src/Plugins.js\`
+	* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 10:	\`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+	* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+	* 12:	\`@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js\`
+	* 13:	\`@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+	* 14:	\`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+	* 16:	\`@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+	* 22:	\`@ponticus/escomplex-commons/src/project/report/ProjectReport.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 42:	\`@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+	* 45:	\`typhonjs-escomplex-module/src/ESComplexModule.js\`
+	* 47:	\`typhonjs-escomplex-module/src/Plugins.js\`
+
+* 3:	\`./src/Plugins.js\`
+	* 3:	\`./src/Plugins.js\`
+
+* 4:	\`./test/fixture/testImportNPMAlias.js\`
+	* 4:	\`./test/fixture/testImportNPMAlias.js\`
+	* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 10:	\`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+	* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+	* 13:	\`@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+	* 14:	\`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+	* 16:	\`@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 42:	\`@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+	* 45:	\`typhonjs-escomplex-module/src/ESComplexModule.js\`
+	* 46:	\`typhonjs-escomplex-module/src/index.js\`
+	* 47:	\`typhonjs-escomplex-module/src/Plugins.js\`
+
+* 5:	\`./test/fixture/testRequireNPMAlias.js\`
+	* 5:	\`./test/fixture/testRequireNPMAlias.js\`
+
+* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+
+* 7:	\`@ponticus/escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js\`
+	* 7:	\`@ponticus/escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js\`
+
+* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 14:	\`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 10:	\`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+	* 10:	\`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+
+* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+	* 10:	\`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+	* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+
+* 12:	\`@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js\`
+	* 10:	\`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+	* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+	* 12:	\`@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js\`
+
+* 13:	\`@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+	* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 10:	\`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+	* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+	* 13:	\`@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+	* 14:	\`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 14:	\`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+	* 14:	\`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+
+* 15:	\`@ponticus/escomplex-commons/src/module/report/MethodReport.js\`
+	* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 14:	\`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+	* 15:	\`@ponticus/escomplex-commons/src/module/report/MethodReport.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 16:	\`@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+	* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 10:	\`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+	* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+	* 13:	\`@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+	* 14:	\`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+	* 16:	\`@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 42:	\`@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 17:	\`@ponticus/escomplex-commons/src/module/traits/actualize.js\`
+	* 17:	\`@ponticus/escomplex-commons/src/module/traits/actualize.js\`
+	* 18:	\`@ponticus/escomplex-commons/src/module/traits/HalsteadArray.js\`
+	* 19:	\`@ponticus/escomplex-commons/src/module/traits/Trait.js\`
+	* 20:	\`@ponticus/escomplex-commons/src/module/traits/TraitHalstead.js\`
+	* 21:	\`@ponticus/escomplex-commons/src/module/traits/TraitUtil.js\`
+
+* 18:	\`@ponticus/escomplex-commons/src/module/traits/HalsteadArray.js\`
+	* 18:	\`@ponticus/escomplex-commons/src/module/traits/HalsteadArray.js\`
+	* 20:	\`@ponticus/escomplex-commons/src/module/traits/TraitHalstead.js\`
+
+* 19:	\`@ponticus/escomplex-commons/src/module/traits/Trait.js\`
+	* 19:	\`@ponticus/escomplex-commons/src/module/traits/Trait.js\`
+
+* 20:	\`@ponticus/escomplex-commons/src/module/traits/TraitHalstead.js\`
+	* 20:	\`@ponticus/escomplex-commons/src/module/traits/TraitHalstead.js\`
+
+* 21:	\`@ponticus/escomplex-commons/src/module/traits/TraitUtil.js\`
+	* 21:	\`@ponticus/escomplex-commons/src/module/traits/TraitUtil.js\`
+
+* 22:	\`@ponticus/escomplex-commons/src/project/report/ProjectReport.js\`
+	* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 10:	\`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+	* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+	* 12:	\`@ponticus/escomplex-commons/src/module/report/averages/ModuleAverage.js\`
+	* 13:	\`@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+	* 14:	\`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+	* 16:	\`@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+	* 22:	\`@ponticus/escomplex-commons/src/project/report/ProjectReport.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 42:	\`@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+
+* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+
+* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+
+* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+
+* 42:	\`@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+	* 42:	\`@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+
+* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+
+* 45:	\`typhonjs-escomplex-module/src/ESComplexModule.js\`
+	* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 10:	\`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+	* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+	* 13:	\`@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+	* 14:	\`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+	* 16:	\`@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 42:	\`@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+	* 45:	\`typhonjs-escomplex-module/src/ESComplexModule.js\`
+	* 47:	\`typhonjs-escomplex-module/src/Plugins.js\`
+
+* 46:	\`typhonjs-escomplex-module/src/index.js\`
+	* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 10:	\`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+	* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+	* 13:	\`@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+	* 14:	\`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+	* 16:	\`@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 42:	\`@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+	* 45:	\`typhonjs-escomplex-module/src/ESComplexModule.js\`
+	* 46:	\`typhonjs-escomplex-module/src/index.js\`
+	* 47:	\`typhonjs-escomplex-module/src/Plugins.js\`
+
+* 47:	\`typhonjs-escomplex-module/src/Plugins.js\`
+	* 6:	\`@ponticus/escomplex-commons/src/analyze/AnalyzeError.js\`
+	* 8:	\`@ponticus/escomplex-commons/src/module/report/AbstractReport.js\`
+	* 9:	\`@ponticus/escomplex-commons/src/module/report/AggregateMethodReport.js\`
+	* 10:	\`@ponticus/escomplex-commons/src/module/report/averages/HalsteadAverage.js\`
+	* 11:	\`@ponticus/escomplex-commons/src/module/report/averages/MethodAverage.js\`
+	* 13:	\`@ponticus/escomplex-commons/src/module/report/ClassReport.js\`
+	* 14:	\`@ponticus/escomplex-commons/src/module/report/HalsteadData.js\`
+	* 16:	\`@ponticus/escomplex-commons/src/module/report/ModuleReport.js\`
+	* 23:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSON.js\`
+	* 24:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js\`
+	* 25:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js\`
+	* 26:	\`@ponticus/escomplex-commons/src/transform/formats/json/FormatJSONModules.js\`
+	* 27:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js\`
+	* 28:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js\`
+	* 29:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js\`
+	* 30:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js\`
+	* 31:	\`@ponticus/escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js\`
+	* 32:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractFormatText.js\`
+	* 33:	\`@ponticus/escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js\`
+	* 34:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatText.js\`
+	* 35:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js\`
+	* 36:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextMinimal.js\`
+	* 37:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextModules.js\`
+	* 38:	\`@ponticus/escomplex-commons/src/transform/formats/text/FormatTextVisibility.js\`
+	* 39:	\`@ponticus/escomplex-commons/src/transform/TransformFormat.js\`
+	* 40:	\`@ponticus/escomplex-commons/src/types/ReportType.js\`
+	* 41:	\`@ponticus/escomplex-commons/src/utils/Enum.js\`
+	* 42:	\`@ponticus/escomplex-commons/src/utils/MathUtil.js\`
+	* 43:	\`@ponticus/escomplex-commons/src/utils/ObjectUtil.js\`
+	* 44:	\`@ponticus/escomplex-commons/src/utils/StringUtil.js\`
+	* 47:	\`typhonjs-escomplex-module/src/Plugins.js\`
+
+"
+`;
