@@ -2,6 +2,7 @@
 
 import { sum } from "lodash";
 
+// @ts-ignore
 import ESComplex from "@ponticus/escomplex";
 
 export function analyse(js: string) {

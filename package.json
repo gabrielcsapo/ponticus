@@ -3,9 +3,14 @@
   "description": "Visualize JavaScript source complexity",
   "repository": "https://github.com/gabrielcsapo/ponticus",
   "private": true,
+  "scriptsComments": {
+    "build:types": "Used to generate types using tsc",
+    "build": "used to generate es6 modules from scm"
+  },
   "scripts": {
     "postinstall": "npm run build --workspaces --if-present",
-    "build": "npm run build --workspaces --if-present",
+    "build:types": "npm run build:types --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present && npm run build:types --workspaces --if-present",
     "test": "CI=true npm run test --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present",
     "release": "release-it"

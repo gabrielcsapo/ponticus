@@ -1,12 +1,10 @@
 {
   "extends": "../../tsconfig",
   "compilerOptions": {
-    "allowJs": true,
     "composite": true,
-    "esModuleInterop": true,
-    "declaration": true,
+    "declarationDir": "dist/dts",
     "outDir": "dist",
     "rootDir": "src"
   },
-  "include": ["src/**/*.js"]
+  "include": ["src/**/*"]
 }

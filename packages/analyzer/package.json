@@ -6,6 +6,7 @@
   "version": "0.0.1",
   "scripts": {
     "build": "swc src -d dist --config-file ../../.swcrc",
+    "build:types": "tsc",
     "lint": "eslint src/*.ts",
     "test": "vitest"
   },
