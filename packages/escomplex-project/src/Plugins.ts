@@ -1,15 +1,31 @@
+import { PlatformPath } from 'path';
 import { PluginManager } from "@ponticus/plugin-manager";
 
 import { PluginMetricsProject } from "@ponticus/escomplex-plugin-metrics-project";
+import { ProjectReport } from "@ponticus/escomplex-commons";
+
+export interface PluginOptions {
+  loadDefaultPlugins: boolean;
+  plugins: Plugins[];
+}
 
 /**
  * Provides a wrapper around PluginManager for ESComplexProject. Several convenience methods for the plugin callbacks
  * properly manage and or create initial data that are processed by the plugins.
  *
  * The default plugins loaded include:
- * @see https://www.npmjs.com/package/@ponticus/escomplex-plugin-metrics-project
+ * @see PluginMetricsProject
+ * @link https://www.npmjs.com/package/@ponticus/escomplex-plugin-metrics-project
  */
 export default class Plugins {
+
+  /**
+   * Provides a generic plugin manager for dispatching events to module plugins.
+   * @type {PluginManager}
+   * @private
+   */
+  #pluginManager: PluginManager;
+
   /**
    * Initializes Plugins.
    *
@@ -19,21 +35,17 @@ export default class Plugins {
    * (Array<Object>)   plugins - A list of ESComplexProject plugins that have already been instantiated.
    * ```
    */
-  constructor(options = {}) {
-    /**
-     * Provides a generic plugin manager for dispatching events to module plugins.
-     * @type {PluginManager}
-     * @private
-     */
-    this._pluginManager = new PluginManager();
+  constructor(options: PluginOptions = {
+    loadDefaultPlugins: false,
+    plugins: []
+  }) {
 
-    if (
-      typeof options.loadDefaultPlugins === "boolean" &&
-      !options.loadDefaultPlugins
-    ) {
+    this.#pluginManager = new PluginManager();
+
+    if (!options.loadDefaultPlugins) {
       /* nop */
     } else {
-      this._pluginManager.add({
+      this.#pluginManager.add({
         name: "@ponticus/escomplex-plugin-metrics-project",
         instance: new PluginMetricsProject(),
       });
@@ -44,31 +56,27 @@ export default class Plugins {
    * Initializes the default `settings` object hash and then invokes the `onConfigure` plugin callback for all loaded
    * plugins.
    *
-   * @param {object}   options - (Optional) project processing options.
+   * @param {object} options - (Optional) project processing options.
    *
    * @returns {object}
    */
-  onConfigure(options) {
+  onConfigure(options: any /* ProjectOptions */) {
     /**
      * Default settings with potential user override of `serializeModules` and `skipCalculation`.
      * @type {{serializeModules: boolean, skipCalculation: boolean}}
      */
     const settings = {
-      serializeModules:
-        typeof options.serializeModules === "boolean"
-          ? options.serializeModules
-          : true,
-      skipCalculation:
-        typeof options.skipCalculation === "boolean"
-          ? options.skipCalculation
-          : false,
+      // @ts-ignore
+      serializeModules: typeof options.serializeModules === "boolean" ? options.serializeModules : true,
+      // @ts-ignore
+      skipCalculation: typeof options.skipCalculation === "boolean" ? options.skipCalculation : false,
     };
 
-    const event = this._pluginManager.invokeSyncEvent("onConfigure", {
+    const event = this.#pluginManager.invokeSyncEvent("onConfigure", {
       options,
       settings,
     });
-    return event !== null ? event.settings : settings;
+    return event?.settings ?? settings;
   }
 
   /**
@@ -81,14 +89,14 @@ export default class Plugins {
    *
    * @returns {ProjectReport}
    */
-  onProjectAverage(projectReport, pathModule, settings) {
-    const event = this._pluginManager.invokeSyncEvent(
+  onProjectAverage(projectReport: ProjectReport, pathModule: PlatformPath, settings: any) {
+    const event = this.#pluginManager.invokeSyncEvent(
       "onProjectAverage",
       void 0,
       { projectReport, pathModule, settings }
     );
 
-    return event !== null ? event.projectReport : projectReport;
+    return event?.projectReport ?? projectReport;
   }
 
   /**
@@ -101,14 +109,14 @@ export default class Plugins {
    *
    * @returns {ProjectReport}
    */
-  onProjectCalculate(projectReport, pathModule, settings) {
-    const event = this._pluginManager.invokeSyncEvent(
+  onProjectCalculate(projectReport: ProjectReport, pathModule: PlatformPath, settings: any) {
+    const event = this.#pluginManager.invokeSyncEvent(
       "onProjectCalculate",
       void 0,
       { projectReport, pathModule, settings }
     );
 
-    return event !== null ? event.projectReport : projectReport;
+    return event?.projectReport ?? projectReport;
   }
 
   /**
@@ -120,14 +128,14 @@ export default class Plugins {
    *
    * @returns {ProjectReport}
    */
-  onProjectEnd(projectReport, pathModule, settings) {
-    const event = this._pluginManager.invokeSyncEvent("onProjectEnd", void 0, {
+  onProjectEnd(projectReport: ProjectReport, pathModule: PlatformPath, settings: any) {
+    const event = this.#pluginManager.invokeSyncEvent("onProjectEnd", void 0, {
       projectReport,
       pathModule,
       settings,
     });
 
-    return event !== null ? event.projectReport : projectReport;
+    return event?.projectReport ?? projectReport;
   }
 
   /**
@@ -140,14 +148,14 @@ export default class Plugins {
    *
    * @returns {ProjectReport}
    */
-  onProjectPostAverage(projectReport, pathModule, settings) {
-    const event = this._pluginManager.invokeSyncEvent(
+  onProjectPostAverage(projectReport: ProjectReport, pathModule: PlatformPath, settings: any) {
+    const event = this.#pluginManager.invokeSyncEvent(
       "onProjectPostAverage",
       void 0,
       { projectReport, pathModule, settings }
     );
 
-    return event !== null ? event.projectReport : projectReport;
+    return event?.projectReport ?? projectReport;
   }
 
   /**
@@ -157,8 +165,8 @@ export default class Plugins {
    * @param {object}   pathModule - Provides an object which matches the Node path module.
    * @param {object}   settings - Settings for project processing.
    */
-  onProjectStart(pathModule, settings) {
-    this._pluginManager.invokeSyncEvent("onProjectStart", void 0, {
+  onProjectStart(pathModule: PlatformPath, settings: any) {
+    this.#pluginManager.invokeSyncEvent("onProjectStart", void 0, {
       pathModule,
       settings,
     });

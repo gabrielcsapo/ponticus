@@ -20,8 +20,8 @@ import _ from "lodash";
 import fastglob from "fast-glob";
 import debug from "debug";
 
-import ecmaFeatures from "./ecmafeatures.js";
-import eslintBase from "./eslintbase.js";
+import ecmaFeatures, { EcmaFeatures } from "./ecmafeatures";
+import eslintBase, { ESLintBase, ParserOptions } from "./eslintbase";
 
 // local lib
 import util from "./util.js";
@@ -30,6 +30,29 @@ import FileHistory from "./models/FileHistory.js";
 
 import ComplexityReporter from "./reporters/complexity/index.js";
 import ESLintReporter from "./reporters/eslint/index.js";
+
+type InspectOptions = {
+  recurse?: boolean;
+  q?: boolean;
+  title?: string;
+  exclude?: RegExp;
+  date?: number;
+  eslintrc?: string;
+};
+
+type ReportFlags = {
+  complexity: ComplexityReporterOptions,
+  eslint: string | {} | ESLintBase;
+}
+export interface ComplexityReporterOptions {
+    ecmaFeatures?: EcmaFeatures,
+    parserOptions?: ParserOptions,
+    sourceType: "module",
+    ecmaVersion: 6,
+    loc: true,
+    newmi: true,
+    range: true,
+  }
 
 const reporters: {
   eslint?: any;
@@ -57,14 +80,7 @@ var fileDir = "files";
 
 const log = debug("ponticus:plato");
 
-type InspectOptions = {
-  recurse?: boolean;
-  q?: boolean;
-  title?: string;
-  exclude?: RegExp;
-  date?: number;
-  eslintrc?: string;
-};
+
 
 async function inspect(
   inputFiles: string[] | string,
@@ -94,7 +110,7 @@ async function inspect(
 
   console.log(`Processing ${files.length} files from ${inputFiles}`);
 
-  var flags: any = {
+  var flags: ReportFlags = {
     complexity: {
       ecmaFeatures: ecmaFeatures,
       sourceType: "module",
@@ -136,7 +152,10 @@ async function inspect(
       } else {
         babelOptions = _eslint.parserOptions?.babelOptions;
       }
-      flags.complexity.parserOptions.babelOptions = babelOptions;
+
+      if (flags.complexity.parserOptions) {
+        flags.complexity.parserOptions.babelOptions = babelOptions;
+      }
     } else if (_eslint.ecmaFeatures) {
       flags.complexity.ecmaFeatures = _eslint.ecmaFeatures;
     }

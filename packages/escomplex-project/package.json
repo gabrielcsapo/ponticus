@@ -4,6 +4,7 @@
   "description": "Provides project oriented AST processing for @ponticus/escomplex complexity reports.",
   "homepage": "https://github.com/gabrielcsapo/ponticus",
   "main": "./dist/index.js",
+  "types": "./dist/dts/index.d.ts",
   "dependencies": {
     "@ponticus/escomplex-commons": "^0.0.1",
     "@ponticus/escomplex-module": "^0.0.1",

@@ -6,7 +6,7 @@ import escomplex from "@ponticus/escomplex";
 import _ from "lodash";
 
 class ComplexityReporter {
-  constructor(options) {
+  constructor(options /* ComplexityReporterOptions */) {
     this.options = options;
     this.babelOptions = options?.parserOptions?.babelOptions;
   }

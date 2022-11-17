@@ -1,4 +1,5 @@
 import { type EventEmitter } from "events";
+import { ProjectReport } from "@ponticus/escomplex-commons";
 
 /**
  * Provides the data / event passed to all invoked methods in {@link PluginManager#invokeSyncEvent}. The
@@ -49,6 +50,11 @@ export default class PluginEvent {
    * All loaded trait syntaxes for AST nodes
    */
   syntaxes: any;
+
+  /**
+   * TODO: i don't know where this is set, but it is _used_ in excomplex-project/plugins
+   */
+  projectReport: ProjectReport | undefined;
 
   /**
    * Initializes PluginEvent.

@@ -198,10 +198,10 @@ type PluginManagerOptions = {
  *
  * import PluginManager from 'typhonjs-plugin-manager';
  *
- * const pluginManager = new PluginManager({ eventbus });
+ * const pluginManager = new PluginManager(\{ eventbus \});
  *
- * pluginManager.add({ name: 'an-npm-plugin-enabled-module' });
- * pluginManager.add({ name: 'my-local-module', target: './myModule.js' });
+ * pluginManager.add(\{ name: 'an-npm-plugin-enabled-module' \});
+ * pluginManager.add(\{ name: 'my-local-module', target: './myModule.js' \});
  *
  * // Let's say an-npm-plugin-enabled-module responds to 'cool:event' which returns 'true'.
  * // Let's say my-local-module responds to 'hot:event' which returns 'false'.
@@ -214,7 +214,7 @@ type PluginManagerOptions = {
  *
  * // One can also indirectly invoke any method of the plugin via:
  * eventbus.triggerSync('plugins:invoke:sync:event', 'aCoolMethod'); // Any plugin with a method named `aCoolMethod` is invoked.
- * eventbus.triggerSync('plugins:invoke:sync:event', 'aCoolMethod', {}, {}, 'an-npm-plugin-enabled-module'); // specific invocation.
+ * eventbus.triggerSync('plugins:invoke:sync:event', 'aCoolMethod', \{\}, \{\}, 'an-npm-plugin-enabled-module'); // specific invocation.
  *
  * // The 3rd parameter will make a copy of the hash and the 4th defines a pass through object hash sending a single
  * // event / object hash to the invoked method.
@@ -273,15 +273,15 @@ export default class PluginManager {
    *
    * @param options - Provides various configuration options:
    *
-   * @param options.eventbus - An instance of 'backbone-esnext-events' used as the plugin eventbus.
+   * options.eventbus - An instance of 'backbone-esnext-events' used as the plugin eventbus.
    *
-   * @param options.eventPrepend - A customized name to prepend PluginManager events on the
+   * options.eventPrepend - A customized name to prepend PluginManager events on the
    *                                                     eventbus.
    *
-   * @param options.throwNoMethod - If true then when a method fails to be invoked by any plugin
+   * options.throwNoMethod - If true then when a method fails to be invoked by any plugin
    *                                                   an exception will be thrown.
    *
-   * @param options.throwNoPlugin- If true then when no plugin is matched to be invoked an
+   * options.throwNoPlugin- If true then when no plugin is matched to be invoked an
    *                                                   exception will be thrown.
    *
    *
