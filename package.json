@@ -8,6 +8,9 @@
     "build": "used to generate es6 modules from scm"
   },
   "scripts": {
+    "clean": "npm run clean:dist && npm run clean:tsbuildinfo",
+    "clean:dist": "find packages -name dist -type d -exec rm -rf {} \\;",
+    "clean:tsbuildinfo": "find packages -name tsconfig.tsbuildinfo -type f -exec rm -rf {} \\;",
     "postinstall": "npm run build --workspaces --if-present",
     "build:types": "npm run build:types --workspaces --if-present",
     "build": "npm run build --workspaces --if-present && npm run build:types --workspaces --if-present",
