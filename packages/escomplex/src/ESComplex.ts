@@ -19,13 +19,13 @@ export class ESComplex {
    * An instance of ESComplexModule.
    * @internal
    */
-  _escomplexModule: ESComplexModule;
+  #escomplexModule: ESComplexModule;
 
   /**
    * An instance of ESComplexProject.
    * @internal
    */
-  _escomplexProject: ESComplexProject;
+  #escomplexProject: ESComplexProject;
 
   /**
    * Initializes ESComplex.
@@ -67,8 +67,8 @@ export class ESComplex {
       throw new TypeError(`ctor error: 'options' is not an 'object'.`);
     }
 
-    this._escomplexModule = new ESComplexModule(options.module);
-    this._escomplexProject = new ESComplexProject(path, options);
+    this.#escomplexModule = new ESComplexModule(options.module);
+    this.#escomplexProject = new ESComplexProject(path, options);
   }
 
   /**
@@ -96,7 +96,7 @@ export class ESComplex {
       throw new TypeError(`analyze error: 'source' is not a 'string'.`);
     }
 
-    return this._escomplexModule.analyze(
+    return this.#escomplexModule.analyze(
       BabelParser.parse(source, parserOptions, parserOverride),
       options
     );
@@ -112,7 +112,7 @@ export class ESComplex {
    * @returns - A single module report.
    */
   analyzeModuleAST(ast: any | any[], options = {}) {
-    return this._escomplexModule.analyze(ast, options);
+    return this.#escomplexModule.analyze(ast, options);
   }
 
   /**
@@ -161,7 +161,7 @@ export class ESComplex {
       })
       .filter((source) => !!source);
 
-    return this._escomplexProject.analyze(modules, options);
+    return this.#escomplexProject.analyze(modules, options);
   }
 
   /**
@@ -175,7 +175,7 @@ export class ESComplex {
    * @returns - An object hash with a `reports` entry that is an Array of module results.
    */
   analyzeProjectAST(modules: any[], options = {}) {
-    return this._escomplexProject.analyze(modules, options);
+    return this.#escomplexProject.analyze(modules, options);
   }
 
   /**
@@ -204,7 +204,7 @@ export class ESComplex {
    * @returns - An object hash with a `reports` entry that is an Array of module results.
    */
   processProject(results: any, options = {}) {
-    return this._escomplexProject.process(results, options);
+    return this.#escomplexProject.process(results, options);
   }
 
   // Asynchronous Promise based methods ----------------------------------------------------------------------------
