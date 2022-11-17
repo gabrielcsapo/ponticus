@@ -194,7 +194,7 @@ export default class AbstractFormatText {
     const output: any[] = [];
 
     // Admittedly the following block is a bit obtuse.
-    entries.forEach((entry) => {
+    entries.forEach((entry:any) => {
       // Obtain the accessor field for SafeEntry or accept the bare entry.
       const accessor =
         entry instanceof StringUtil.SafeEntry ? entry.accessor : entry;

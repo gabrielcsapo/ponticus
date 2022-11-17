@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "allowJs": true,
+    "declaration": true,
     "declarationMap": true,
     "emitDeclarationOnly": true,
     "esModuleInterop": true,
