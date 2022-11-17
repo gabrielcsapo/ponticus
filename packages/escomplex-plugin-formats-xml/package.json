@@ -5,7 +5,7 @@
   "description": "Provides a plugin for @ponticus/escomplex project result / module report transformation to XML.",
   "main": "./dist/index.js",
   "scripts": {
-    "build": "swc src -d dist --config module.type=commonjs && tsc",
+    "build": "swc src -d dist --config-file ../../.swcrc",
     "lint": "eslint .",
     "prepublish": "npm run build",
     "test": "vitest"

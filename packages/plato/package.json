@@ -7,7 +7,7 @@
     "node": ">= 18.12.1"
   },
   "scripts": {
-    "build": "swc src -d dist --config module.type=commonjs && tsc",
+    "build": "swc src -d dist --config-file ../../.swcrc",
     "test": "echo 'TODO: Replace Grunt'",
     "lint": "eslint ."
   },

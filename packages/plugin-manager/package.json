@@ -16,7 +16,7 @@
     "vitest": "^0.25.1"
   },
   "scripts": {
-    "build": "swc src -d dist --config module.type=commonjs && tsc",
+    "build": "swc src -d dist --config-file ../../.swcrc",
     "lint": "eslint .",
     "prepublish": "npm run build",
     "test": "vitest"

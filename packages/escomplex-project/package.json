@@ -21,7 +21,7 @@
     "eslint-plugin-prettier": "^4.2.1"
   },
   "scripts": {
-    "build": "swc src -d dist --config module.type=commonjs",
+    "build": "swc src -d dist --config-file ../../.swcrc",
     "lint": "eslint .",
     "prepublish": "npm run build",
     "test": "vitest"
