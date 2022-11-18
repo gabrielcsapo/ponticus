@@ -1,27 +1,34 @@
 {
   "compilerOptions": {
+    "allowJs": true,
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
-    "declarationMap": true,
+    "lib": ["ESNext"],
     "module": "commonjs",
-    "target": "esnext",
-    "lib": ["esnext"],
-    "strict": true,
+    "moduleResolution": "node",
     "skipLibCheck": true,
     "sourceMap": true,
-    "outDir": "out"
+    "strict": false,
+    "target": "ESNext",
   },
   "exclude": ["node_modules", ".vscode-test"],
-  "files": [],
   "references": [
     { "path": "packages/analyzer" },
-    { "path": "packages/escomplex" },
-    { "path": "packages/escomplex-module" },
-    { "path": "packages/plugin-manager" },
-    { "path": "packages/babel-parser" },
     { "path": "packages/ast-walker" },
+    { "path": "packages/babel-parser" },
+    { "path": "packages/escomplex" },
+    { "path": "packages/escomplex-commons" },
+    { "path": "packages/escomplex-module" },
     { "path": "packages/escomplex-plugin-formats-xml" },
-    { "path": "packages/escomplex-commons" }
+    { "path": "packages/escomplex-plugin-metrics-module" },
+    { "path": "packages/escomplex-plugin-metrics-project" },
+    { "path": "packages/escomplex-plugin-syntax-babylon" },
+    { "path": "packages/escomplex-plugin-syntax-estree" },
+    { "path": "packages/escomplex-project" },
+    { "path": "packages/plato" },
+    { "path": "packages/plugin-manager" }
   ]
 }

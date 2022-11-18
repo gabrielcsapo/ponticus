@@ -30,11 +30,6 @@ export default class MethodReport extends AggregateReport {
    */
   paramNames: string[];
 
-  /**
-   * The number of parameters for the method.
-   */
-  paramCount: number;
-
   nestedMethods?: any[];
   /**
    * Initializes method report.

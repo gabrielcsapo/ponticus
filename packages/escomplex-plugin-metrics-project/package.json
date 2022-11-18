@@ -24,7 +24,8 @@
     "eslint-config-prettier": "^8.5.0"
   },
   "scripts": {
-    "build": "swc src -d dist --config module.type=commonjs",
+    "build": "swc src -d dist --config-file ../../.swcrc",
+    "build:types": "tsc",
     "lint": "eslint .",
     "prepublish": "npm run build",
     "test": "vitest"

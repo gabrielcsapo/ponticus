@@ -3,9 +3,17 @@
   "description": "Visualize JavaScript source complexity",
   "repository": "https://github.com/gabrielcsapo/ponticus",
   "private": true,
+  "scriptsComments": {
+    "build:types": "Used to generate types using tsc",
+    "build": "used to generate es6 modules from scm"
+  },
   "scripts": {
+    "clean": "npm run clean:dist && npm run clean:tsbuildinfo",
+    "clean:build": "find packages -name dist -type d -exec rm -rf {} \\;",
+    "clean:tsbuildinfo": "find packages -name tsconfig.tsbuildinfo -type f -exec rm -rf {} \\;",
     "postinstall": "npm run build --workspaces --if-present",
-    "build": "npm run build --workspaces --if-present",
+    "build:types": "npm run build:types --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present && npm run build:types --workspaces --if-present",
     "test": "CI=true npm run test --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present",
     "release": "release-it"
@@ -34,10 +42,14 @@
     "node": "18.12.1"
   },
   "devDependencies": {
+    "acorn": "^8.8.1",
+    "acorn-walk": "^8.2.0",
     "release-it": "^15.5.0",
     "release-it-lerna-changelog": "git@github.com:bertdeblock/release-it-lerna-changelog.git#fix-compat-with-release-it-v15",
     "release-it-workspaces": "^0.0.2",
-    "typescript": "^4.7.3"
+    "typescript": "^4.7.3",
+    "vite": "^3.2.4",
+    "vitest": "^0.25.2"
   },
   "release-it": {
     "plugins": {

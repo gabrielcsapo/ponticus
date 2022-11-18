@@ -14,10 +14,7 @@ export default class ModuleMethodReport extends MethodReport {
    * Stores the max nested method depth.
    */
   maxNestedMethodDepth: number;
-  /**
-   * Stores all nested method data.
-   */
-  nestedMethods: NestedMethodReport[];
+
   /**
    * Initializes module method report.
    *
