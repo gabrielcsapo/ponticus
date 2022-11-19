@@ -2,6 +2,8 @@ import path from "path";
 
 import { BabelParser } from "@ponticus/babel-parser";
 import { ESComplexModule } from "@ponticus/escomplex-module";
+
+// @ts-ignore
 import { ESComplexProject } from "@ponticus/escomplex-project";
 
 /**
@@ -10,8 +12,8 @@ import { ESComplexProject } from "@ponticus/escomplex-project";
  * source code which is translated via Babel Parser w/ all plugins enabled allowing any ES6/ES7/edge JS and Typescript
  * to be parsed. Asynchronous versions with the `Async` suffix of all methods are available as well.
  *
- * @see https://www.npmjs.com/package/@ponticus/escomplex-module
- * @see https://www.npmjs.com/package/@ponticus/escomplex-project
+ * @see https://www.npmjs.com/package/\@ponticus/escomplex-module
+ * @see https://www.npmjs.com/package/\@ponticus/escomplex-project
  * @see https://www.npmjs.com/package/babylon
  */
 export class ESComplex {

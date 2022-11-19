@@ -2,6 +2,7 @@
   "extends": "../../tsconfig",
   "compilerOptions": {
     "composite": true,
+    "declaration": true,
     "declarationDir": "dist/dts",
     "outDir": "dist",
     "rootDir": "src"

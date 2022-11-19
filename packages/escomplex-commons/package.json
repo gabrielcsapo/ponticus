@@ -7,7 +7,7 @@
   "types": "./dist/dts/index.d.ts",
   "scripts": {
     "build": "swc src -d dist --config-file ../../.swcrc",
-    "build:types": "tsc",
+    "build:types": "tsc -b",
     "lint": "eslint .",
     "prepublish": "npm run build",
     "test": "vitest"

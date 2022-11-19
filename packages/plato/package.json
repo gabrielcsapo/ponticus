@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "swc src -d dist --config-file ../../.swcrc",
-    "build:types": "tsc",
+    "build:types": "tsc -b",
     "test": "echo 'TODO: Replace Grunt'",
     "lint": "eslint ."
   },
