@@ -9,7 +9,7 @@
   },
   "scripts": {
     "clean": "npm run clean:build && npm run clean:tsbuildinfo",
-    "clean:build": "find packages -name dist -type d -exec rm -rf {} \\;",
+    "clean:build": "find packages -name dist -type d -exec rm -rf \"{}\" \\;",
     "clean:tsbuildinfo": "find packages -name tsconfig.tsbuildinfo -type f -exec rm -rf {} \\;",
     "postinstall": "npm run build --workspaces --if-present",
     "build:types": "tsc -b",
