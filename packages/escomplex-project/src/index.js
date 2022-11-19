@@ -1,6 +1,6 @@
 import path from "path";
 
-import ESComplexProject from "./ESComplexProject.js";
+import ESComplexProject from "./ESComplexProject";
 
 export { ESComplexProject };
 

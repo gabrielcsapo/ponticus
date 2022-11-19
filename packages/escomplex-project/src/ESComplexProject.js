@@ -2,7 +2,7 @@ import { ESComplexModule } from "@ponticus/escomplex-module";
 
 import { ModuleReport, ProjectReport } from "@ponticus/escomplex-commons";
 
-import Plugins from "./Plugins.js";
+import Plugins from "./Plugins";
 
 /**
  * Provides a runtime to invoke ESComplexProject plugins for processing / metrics calculations of projects.
