@@ -1,17 +1,41 @@
+import { PlatformPath } from 'path';
 import { ESComplexModule } from "@ponticus/escomplex-module";
-
 import { ModuleReport, ProjectReport } from "@ponticus/escomplex-commons";
 
-import Plugins from "./Plugins";
+import Plugins, { PluginOptions } from "./Plugins";
+
+export interface ProjectOptions {
+  module: PluginOptions;
+  project: PluginOptions;
+}
 
 /**
  * Provides a runtime to invoke ESComplexProject plugins for processing / metrics calculations of projects.
  */
 export default class ESComplexProject {
   /**
+   * Stores a module which matches the NodeJS path module API.
+   */
+  #pathModule: PlatformPath;
+
+  /**
+   * Provides dispatch methods to all module plugins.
+   * @type {Plugins}
+   * @private
+   */
+  #plugins: Plugins;
+
+  /**
+     * Stores the ESComplexModule instance used for generating module reports.
+     * @type {ESComplexModule}
+     * @private
+     */
+  #escomplexModule: ESComplexModule;
+
+  /**
    * Initializes ESComplexProject.
    *
-   * @param {object}   pathModule - Provides an object which matches the Node path module. In particular the following
+   * @param {PlatformPath} pathModule - Provides an object which matches the Node path module. In particular the following
    *                                entries must be provided:
    * ```
    * (string)    sep - Provides the platform-specific path segment separator: `/` on POSIX & `\` on Windows.
@@ -26,7 +50,7 @@ export default class ESComplexProject {
    * (function)  resolve - Resolves a sequence of paths or path segments into an absolute path.
    * ```
    *
-   * @param {object}   options - module and project options including user plugins to load including:
+   * @param {ProjectOptions}   options - module and project options including user plugins to load including:
    * ```
    * (object)             module - Provides an object hash of the following options for the module runtime:
    *    (boolean)         loadDefaultPlugins - When false ESComplexModule will not load any default plugins.
@@ -39,7 +63,16 @@ export default class ESComplexProject {
    *
    * @see https://nodejs.org/api/path.html
    */
-  constructor(pathModule, options = {}) {
+  constructor(pathModule: PlatformPath, options: ProjectOptions = {
+    module: {
+      loadDefaultPlugins: true,
+      plugins: [],
+    },
+    project: {
+      loadDefaultPlugins: true,
+      plugins: [],
+    },
+  }) {
     // Verify essential Node path module API.
     /* istanbul ignore if */
     if (typeof pathModule !== "object") {
@@ -84,26 +117,12 @@ export default class ESComplexProject {
       throw new TypeError("ctor error: `options` is not an `object`.");
     }
 
-    /**
-     * Stores a module which matches the NodeJS path module API.
-     * @type {Object}
-     * @private
-     */
-    this._pathModule = pathModule;
+    this.#pathModule = pathModule;
 
-    /**
-     * Provides dispatch methods to all module plugins.
-     * @type {Plugins}
-     * @private
-     */
-    this._plugins = new Plugins(options.project);
+    this.#plugins = new Plugins(options.project);
 
-    /**
-     * Stores the ESComplexModule instance used for generating module reports.
-     * @type {ESComplexModule}
-     * @private
-     */
-    this._escomplexModule = new ESComplexModule(options.module);
+    // @ts-ignore
+    this.#escomplexModule = new ESComplexModule(options.module);
   }
 
   /**
@@ -116,7 +135,8 @@ export default class ESComplexProject {
    *
    * @returns {ProjectReport}
    */
-  analyze(modules, options = {}) {
+  // @ts-ignore
+  analyze(modules: any[], options: ProjectOptions = {}) {
     if (!Array.isArray(modules)) {
       throw new TypeError("analyze error: `modules` is not an `array`.");
     }
@@ -126,9 +146,9 @@ export default class ESComplexProject {
       throw new TypeError("analyze error: `options` is not an `object`.");
     }
 
-    const settings = this._plugins.onConfigure(options);
+    const settings = this.#plugins.onConfigure(options);
 
-    this._plugins.onProjectStart(this._pathModule, settings);
+    this.#plugins.onProjectStart(this.#pathModule, settings);
 
     const moduleReports = modules.map((m) => {
       let moduleReport;
@@ -138,7 +158,7 @@ export default class ESComplexProject {
       }
 
       try {
-        moduleReport = this._escomplexModule.analyze(m.ast, options);
+        moduleReport = this.#escomplexModule.analyze(m.ast, options);
 
         // Set any supplied filePath / srcPath / srcPathAlias data.
         moduleReport.filePath = m.filePath;
@@ -147,10 +167,12 @@ export default class ESComplexProject {
 
         return moduleReport;
       } catch (error) {
-        // Include the module srcPath to distinguish the actual offending entry.
+        if (error instanceof Error) {
+          // Include the module srcPath to distinguish the actual offending entry.
 
-        /* istanbul ignore next */
-        error.message = `${m.srcPath}: ${error.message}`;
+          /* istanbul ignore next */
+          error.message = `${m.srcPath}: ${error.message}`;
+        }
 
         /* istanbul ignore next */
         throw error;
@@ -164,20 +186,20 @@ export default class ESComplexProject {
     }
 
     // Allow all plugins to have a calculation pass at the project report.
-    this._plugins.onProjectCalculate(projectReport, this._pathModule, settings);
+    this.#plugins.onProjectCalculate(projectReport, this.#pathModule, settings);
 
     // Allow all plugins to have a pass at the project report to calculate any averaged data.
-    this._plugins.onProjectAverage(projectReport, this._pathModule, settings);
+    this.#plugins.onProjectAverage(projectReport, this.#pathModule, settings);
 
     // Allow all plugins to have a pass at the project report to calculate any metrics that depend on averaged data.
-    this._plugins.onProjectPostAverage(
+    this.#plugins.onProjectPostAverage(
       projectReport,
-      this._pathModule,
+      this.#pathModule,
       settings
     );
 
     // Allow all plugins to clean up any resources as necessary.
-    this._plugins.onProjectEnd(projectReport, this._pathModule, settings);
+    this.#plugins.onProjectEnd(projectReport, this.#pathModule, settings);
 
     return projectReport.finalize();
   }
@@ -192,7 +214,7 @@ export default class ESComplexProject {
    *
    * @returns {ProjectReport}
    */
-  process(projectReport, options = {}) {
+  process(projectReport: ProjectReport, options = {}) {
     /* istanbul ignore if */
     if (!(projectReport instanceof ProjectReport)) {
       throw new TypeError(
@@ -215,28 +237,28 @@ export default class ESComplexProject {
       );
     }
 
-    const settings = this._plugins.onConfigure(options);
+    const settings = this.#plugins.onConfigure(options);
 
     // Override any stored settings given new options / settings set during processing reports.
     projectReport.settings = settings;
 
-    this._plugins.onProjectStart(this._pathModule, settings);
+    this.#plugins.onProjectStart(this.#pathModule, settings);
 
     // Allow all plugins to have a calculation pass at the project report.
-    this._plugins.onProjectCalculate(projectReport, this._pathModule, settings);
+    this.#plugins.onProjectCalculate(projectReport, this.#pathModule, settings);
 
     // Allow all plugins to have a pass at the project report to calculate any averaged data.
-    this._plugins.onProjectAverage(projectReport, this._pathModule, settings);
+    this.#plugins.onProjectAverage(projectReport, this.#pathModule, settings);
 
     // Allow all plugins to have a pass at the project report to calculate any metrics that depend on averaged data.
-    this._plugins.onProjectPostAverage(
+    this.#plugins.onProjectPostAverage(
       projectReport,
-      this._pathModule,
+      this.#pathModule,
       settings
     );
 
     // Allow all plugins to clean up any resources as necessary.
-    this._plugins.onProjectEnd(projectReport, this._pathModule, settings);
+    this.#plugins.onProjectEnd(projectReport, this.#pathModule, settings);
 
     return projectReport.finalize();
   }
@@ -253,9 +275,10 @@ export default class ESComplexProject {
    *
    * @returns {Promise<ProjectReport>}
    */
-  analyzeAsync(modules, options = {}) {
+  analyzeAsync(modules: any[], options = {}) {
     return new Promise((resolve, reject) => {
       try {
+        // @ts-ignore
         resolve(this.analyze(modules, options));
       } catch (err) {
         /* istanbul ignore next */ reject(err);
@@ -271,7 +294,7 @@ export default class ESComplexProject {
    *
    * @returns {Promise<ProjectReport>}
    */
-  processAsync(projectReport, options = {}) {
+  processAsync(projectReport: ProjectReport, options = {}) {
     return new Promise((resolve, reject) => {
       try {
         resolve(this.process(projectReport, options));

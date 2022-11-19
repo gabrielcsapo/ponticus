@@ -1,6 +1,33 @@
 "use strict";
 
-export default {
+export interface EcmaFeatures {
+  arrowFunctions: boolean;
+  blockBindings: boolean;
+  destructuring: boolean;
+  regexYFlag: boolean;
+  regexUFlag: boolean;
+  templateStrings: boolean;
+  binaryLiterals: boolean;
+  octalLiterals: boolean;
+  unicodeCodePointEscapes: boolean;
+  defaultParams: boolean;
+  restParams: boolean;
+  forOf: boolean;
+  objectLiteralComputedProperties: boolean;
+  objectLiteralShorthandMethods: boolean;
+  objectLiteralShorthandProperties: boolean;
+  objectLiteralDuplicateProperties: boolean;
+  generators: boolean;
+  spread: boolean;
+  classes: boolean;
+  modules: boolean;
+  jsx: boolean;
+  globalReturn: boolean;
+  typescript: boolean;
+  experimentalObjectRestSpread: boolean;
+}
+
+const DefaultEcmaFeatures: EcmaFeatures = {
   // enable parsing of arrow functions
   arrowFunctions: true,
   // enable parsing of let/const
@@ -48,3 +75,5 @@ export default {
   typescript: true,
   experimentalObjectRestSpread: true,
 };
+
+export default DefaultEcmaFeatures;
