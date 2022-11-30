@@ -2,12 +2,8 @@ import { PlatformPath } from 'path';
 import { ESComplexModule } from "@ponticus/escomplex-module";
 import { ModuleReport, ProjectReport } from "@ponticus/escomplex-commons";
 
-import Plugins, { PluginOptions } from "./Plugins";
-
-export interface ProjectOptions {
-  module: PluginOptions;
-  project: PluginOptions;
-}
+import Plugins from "./Plugins";
+import { ProjectOptions } from '@ponticus/types';
 
 /**
  * Provides a runtime to invoke ESComplexProject plugins for processing / metrics calculations of projects.

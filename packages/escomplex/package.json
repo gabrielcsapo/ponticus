@@ -37,7 +37,8 @@
   "dependencies": {
     "@ponticus/babel-parser": "^0.0.1",
     "@ponticus/escomplex-module": "^0.0.1",
-    "@ponticus/escomplex-project": "^0.0.1"
+    "@ponticus/escomplex-project": "^0.0.1",
+    "@ponticus/types": "^0.0.1"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.57",

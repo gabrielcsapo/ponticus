@@ -18,6 +18,7 @@
   "files": [],
   "exclude": ["node_modules", ".vscode-test"],
   "references": [
+    { "path": "packages/types" },
     { "path": "packages/analyzer" },
     { "path": "packages/ast-walker" },
     { "path": "packages/babel-parser" },
@@ -32,5 +33,6 @@
     { "path": "packages/escomplex-project" },
     { "path": "packages/plato" },
     { "path": "packages/plugin-manager" }
+
   ]
 }

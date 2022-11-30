@@ -36,6 +36,7 @@
     "packages/escomplex-test-data",
     "packages/plato",
     "packages/ponticus",
+    "packages/types",
     "./website"
   ],
   "volta": {
