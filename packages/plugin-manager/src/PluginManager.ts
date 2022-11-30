@@ -2,8 +2,8 @@ import path from "path";
 
 import { EventEmitter } from "events";
 
-import PluginEntry from "./PluginEntry.js";
-import PluginEvent from "./PluginEvent.js";
+import PluginEntry from "./PluginEntry";
+import PluginEvent from "./PluginEvent";
 
 type PluginConfig = {
   /**

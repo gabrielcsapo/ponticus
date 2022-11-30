@@ -1,5 +1,5 @@
-import PluginEntry from "./PluginEntry.js";
-import PluginEvent from "./PluginEvent.js";
-import PluginManager from "./PluginManager.js";
+import PluginEntry from "./PluginEntry";
+import PluginEvent from "./PluginEvent";
+import PluginManager from "./PluginManager";
 
 export { PluginEntry, PluginEvent, PluginManager };
