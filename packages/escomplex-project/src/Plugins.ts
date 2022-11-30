@@ -1,13 +1,9 @@
+import type { Plugin, PluginOptions } from '@ponticus/types';
 import { PlatformPath } from 'path';
 import { PluginManager } from "@ponticus/plugin-manager";
 
 import { PluginMetricsProject } from "@ponticus/escomplex-plugin-metrics-project";
 import { ProjectReport } from "@ponticus/escomplex-commons";
-
-export interface PluginOptions {
-  loadDefaultPlugins: boolean;
-  plugins: Plugins[];
-}
 
 /**
  * Provides a wrapper around PluginManager for ESComplexProject. Several convenience methods for the plugin callbacks
@@ -17,7 +13,7 @@ export interface PluginOptions {
  * @see PluginMetricsProject
  * @link https://www.npmjs.com/package/@ponticus/escomplex-plugin-metrics-project
  */
-export default class Plugins {
+export default class Plugins implements Plugin {
 
   /**
    * Provides a generic plugin manager for dispatching events to module plugins.

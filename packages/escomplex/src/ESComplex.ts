@@ -3,7 +3,7 @@ import path from "path";
 import { BabelParser } from "@ponticus/babel-parser";
 import { ESComplexModule } from "@ponticus/escomplex-module";
 import { ESComplexProject } from "@ponticus/escomplex-project";
-import { ProjectOptions } from "@ponticus/escomplex-project/dist/dts/ESComplexProject";
+import { ProjectOptions } from "@ponticus/types";
 
 /**
  * Next generation code complexity reporting for Javascript abstract syntax trees (AST). ESComplex exposes all methods
