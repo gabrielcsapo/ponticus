@@ -14,7 +14,8 @@ const pkg = JSON.parse(
 );
 
 function commaSeparatedList(value: string) {
-  return value.split(",");
+  // ensure we trim the whitespace on the string
+  return value.split(",").map((option) => option.trim());
 }
 
 const program = new Command();
