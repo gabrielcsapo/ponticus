@@ -35,7 +35,7 @@ type InspectOptions = {
   recurse?: boolean;
   q?: boolean;
   title?: string;
-  exclude?: RegExp;
+  exclude?: string[];
   date?: number;
   eslintrc?: string;
 };
@@ -94,7 +94,9 @@ async function inspect(
   let files = (
     await Promise.all(
       (Array.isArray(inputFiles) ? inputFiles : [inputFiles]).map(
-        async (pattern) => await fastglob(pattern)
+        async (pattern) => await fastglob(pattern, {
+          ignore: options.exclude
+        })
       )
     )
   ).flat();
@@ -224,10 +226,6 @@ async function runReports(
 ): Promise<void | any[]> {
   var commonBasePath = util.findCommonBase(files);
   let reports: any[] = files.map(async function reportEachFile(file) {
-    if (options.exclude && options.exclude.test(file)) {
-      log("exclude", file);
-      return;
-    }
     log("processing", file);
 
     let fileState = fs.statSync(file);

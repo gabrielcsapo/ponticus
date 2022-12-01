@@ -25,7 +25,7 @@ program.option("-t, --title <title>", "Title of the report");
 program.option("-q, --quiet", "Reduce output to errors only");
 program.option(
   "-x, --exclude <list>",
-  "File exclusion regex",
+  "File exclusion globs",
   commaSeparatedList
 );
 program.option("-o, --outputDir <directory>", "The output directory");
@@ -37,7 +37,7 @@ program.option(
 program.option("-n, --noempty", "Skips empty lines from line count");
 program.option(
   "-f, --files <list>",
-  "Files to process regex",
+  "Files to process globs",
   commaSeparatedList
 );
 
@@ -52,7 +52,7 @@ plato
     recurse: !!options.recurse,
     q: !!options.quiet,
     title: options.title,
-    exclude: new RegExp(options.exclude),
+    exclude: options.exclude,
     date: options.date,
     eslintrc: options.eslint,
   })

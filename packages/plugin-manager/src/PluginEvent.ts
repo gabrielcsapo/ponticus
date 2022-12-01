@@ -1,5 +1,5 @@
 import { type EventEmitter } from "events";
-import { ProjectReport } from "@ponticus/escomplex-commons";
+import { type ProjectReport } from "@ponticus/escomplex-commons";
 
 /**
  * Provides the data / event passed to all invoked methods in {@link PluginManager#invokeSyncEvent}. The

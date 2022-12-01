@@ -13,7 +13,7 @@
     "clean:tsbuildinfo": "find packages -name tsconfig.tsbuildinfo -type f -exec rm -rf {} \\;",
     "postinstall": "npm run build --workspaces --if-present",
     "build:types": "tsc -b",
-    "build": "npm run build --workspaces --if-present && npm run build:types",
+    "build": "npm run clean && npm run build --workspaces --if-present && npm run build:types",
     "test": "CI=true npm run test --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present",
     "release": "release-it"
