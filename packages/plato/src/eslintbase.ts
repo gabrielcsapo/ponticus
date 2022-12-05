@@ -1,40 +1,8 @@
 "use strict";
 
+import { ESLintBase } from "@ponticus/types";
 
-export interface Rules {
-    quotes: any[];
-    semi: any[];
-    curly: string[];
-    "no-dupe-keys": number;
-    "func-names": any[];
-}
-
-export interface Env {
-    es6: boolean;
-    browser: boolean;
-}
-
-export interface EcmaFeatures {
-    jsx: boolean;
-    experimentalObjectRestSpread: boolean;
-    modules: boolean;
-}
-
-export interface ParserOptions {
-    sourceType: string;
-    ecmaFeatures: EcmaFeatures;
-    babelOptions?: object;
-}
-
-export interface ESLintBase {
-    rules: Rules;
-    env: Env;
-    globals: string[];
-    parserOptions: ParserOptions;
-}
-
-
-const DefaultESLintBase: ESLintBase = {
+export const DefaultESLintBase: ESLintBase = {
   rules: {
     quotes: [2, "single"],
     semi: [2, "always"],
@@ -55,5 +23,4 @@ const DefaultESLintBase: ESLintBase = {
       modules: true,
     },
   },
-};
-export default DefaultESLintBase;
+};;

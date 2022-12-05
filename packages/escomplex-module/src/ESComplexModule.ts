@@ -6,6 +6,8 @@ import {
   // @ts-ignore
 } from "@ponticus/escomplex-commons";
 
+import { type File } from "@babel/types";
+
 import Plugins from "./Plugins.js";
 
 /**
@@ -45,7 +47,7 @@ export default class ESComplexModule {
    *
    * @returns A single module report.
    */
-  analyze(ast: any | any[], options = {}): ModuleReport {
+  analyze(ast: File, options = {}): ModuleReport {
     if (typeof ast !== "object" || Array.isArray(ast)) {
       throw new TypeError(
         "analyze error: `ast` is not an `object` or `array`."
