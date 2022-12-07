@@ -44,7 +44,6 @@ class ComplexityReporter {
   }
 
   async process(source: string, reportInfo) {
-    debugger;
     const report = await escomplex.analyzeModule(
       source,
       this.options,
