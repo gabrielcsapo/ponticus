@@ -1,13 +1,12 @@
-// @ts-ignore
 import { PluginMetricsModule } from "@ponticus/escomplex-plugin-metrics-module";
-// @ts-ignore
 import { PluginSyntaxBabylon } from "@ponticus/escomplex-plugin-syntax-babylon";
-// @ts-ignore
 import { ModuleReport } from "@ponticus/escomplex-commons";
+import { type Node } from "@babel/types";
 // TODO: import ModuleScopeControl from escomplex-commons
 type ModuleScopeControl = any;
 
 import { PluginManager } from "@ponticus/plugin-manager";
+import { ComplexityReporterOptions } from "@ponticus/types";
 
 type Scope = {
   /**
@@ -87,7 +86,7 @@ export default class Plugins {
    * @param options - (Optional) module processing options.
    *
    */
-  onConfigure(options: any) {
+  onConfigure(options: ComplexityReporterOptions) {
     let settings = {};
     const event = this._pluginManager.invokeSyncEvent("onConfigure", void 0, {
       options,
@@ -188,11 +187,7 @@ export default class Plugins {
    *
    * @returns The ModuleReport being processed.
    */
-  onModuleStart(
-    ast: { loc: { start: { line: any }; end: { line: any } } },
-    syntaxes: any,
-    settings: any
-  ): ModuleReport {
+  onModuleStart(ast: Node, syntaxes: any, settings: any): ModuleReport {
     const moduleReport = new ModuleReport(
       ast.loc.start.line,
       ast.loc.end.line,

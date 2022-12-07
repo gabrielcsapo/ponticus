@@ -20,39 +20,18 @@ import _ from "lodash";
 import fastglob from "fast-glob";
 import debug from "debug";
 
-import ecmaFeatures, { EcmaFeatures } from "./ecmafeatures";
-import eslintBase, { ESLintBase, ParserOptions } from "./eslintbase";
+import { DefaultECMAFeatures } from "./ecmafeatures";
+import { DefaultESLintBase } from "./eslintbase";
 
 // local lib
 import util from "./util.js";
 import OverviewHistory from "./models/OverviewHistory.js";
-import FileHistory from "./models/FileHistory.js";
+import FileHistory from "./models/FileHistory";
 
-import ComplexityReporter from "./reporters/complexity/index.js";
-import ESLintReporter from "./reporters/eslint/index.js";
+import ComplexityReporter from "./reporters/complexity/index";
+import ESLintReporter from "./reporters/eslint/index";
 
-type InspectOptions = {
-  recurse?: boolean;
-  q?: boolean;
-  title?: string;
-  exclude?: string[];
-  date?: number;
-  eslintrc?: string;
-};
-
-type ReportFlags = {
-  complexity: ComplexityReporterOptions,
-  eslint: string | {} | ESLintBase;
-}
-export interface ComplexityReporterOptions {
-    ecmaFeatures?: EcmaFeatures,
-    parserOptions?: ParserOptions,
-    sourceType: "module",
-    ecmaVersion: 6,
-    loc: true,
-    newmi: true,
-    range: true,
-  }
+import { type InspectOptions, type ReportFlags } from "@ponticus/types";
 
 const reporters: {
   eslint?: any;
@@ -114,14 +93,14 @@ async function inspect(
 
   var flags: ReportFlags = {
     complexity: {
-      ecmaFeatures: ecmaFeatures,
+      ecmaFeatures: DefaultECMAFeatures,
       sourceType: "module",
       ecmaVersion: 6,
       loc: true,
       newmi: true,
       range: true,
     },
-    eslint: options.eslintrc ? path.resolve(options.eslintrc) : eslintBase,
+    eslint: options.eslintrc ? path.resolve(options.eslintrc) : DefaultESLintBase,
   };
 
   if (options.eslintrc) {

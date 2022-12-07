@@ -4,9 +4,13 @@
 import escomplex from "@ponticus/escomplex";
 
 import _ from "lodash";
+import { type ComplexityReporterOptions } from "@ponticus/types";
 
 class ComplexityReporter {
-  constructor(options /* ComplexityReporterOptions */) {
+  options: ComplexityReporterOptions;
+  babelOptions: any;
+
+  constructor(options: ComplexityReporterOptions) {
     this.options = options;
     this.babelOptions = options?.parserOptions?.babelOptions;
   }
@@ -39,8 +43,8 @@ class ComplexityReporter {
       .value();
   }
 
-  async process(source, reportInfo) {
-    var report = await escomplex.analyzeModule(
+  async process(source: string, reportInfo) {
+    const report = await escomplex.analyzeModule(
       source,
       this.options,
       this.babelOptions

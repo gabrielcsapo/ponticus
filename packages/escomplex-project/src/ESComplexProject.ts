@@ -3,7 +3,10 @@ import { ESComplexModule } from "@ponticus/escomplex-module";
 import { ModuleReport, ProjectReport } from "@ponticus/escomplex-commons";
 
 import Plugins from "./Plugins";
-import { ProjectOptions } from '@ponticus/types';
+import {
+  ProjectOptions, ComplexityReporterOptions,
+  DefaultComplexityReporterOptions,
+} from '@ponticus/types';
 
 /**
  * Provides a runtime to invoke ESComplexProject plugins for processing / metrics calculations of projects.
@@ -132,7 +135,7 @@ export default class ESComplexProject {
    * @returns {ProjectReport}
    */
   // @ts-ignore
-  analyze(modules: any[], options: ProjectOptions = {}) {
+  analyze(modules: any[], options: ComplexityReporterOptions = DefaultComplexityReporterOptions) {
     if (!Array.isArray(modules)) {
       throw new TypeError("analyze error: `modules` is not an `array`.");
     }

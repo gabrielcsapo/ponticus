@@ -3,7 +3,11 @@ import path from "path";
 import { BabelParser } from "@ponticus/babel-parser";
 import { ESComplexModule } from "@ponticus/escomplex-module";
 import { ESComplexProject } from "@ponticus/escomplex-project";
-import { ProjectOptions } from "@ponticus/types";
+import {
+  ComplexityReporterOptions,
+  ProjectOptions,
+  DefaultComplexityReporterOptions,
+} from "@ponticus/types";
 
 /**
  * Next generation code complexity reporting for Javascript abstract syntax trees (AST). ESComplex exposes all methods
@@ -88,7 +92,7 @@ export class ESComplex {
    */
   analyzeModule(
     source: string,
-    options = {},
+    options: ComplexityReporterOptions = DefaultComplexityReporterOptions,
     parserOptions = void 0,
     parserOverride = void 0
   ) {
@@ -96,11 +100,9 @@ export class ESComplex {
     if (typeof source !== "string") {
       throw new TypeError(`analyze error: 'source' is not a 'string'.`);
     }
+    const ast = BabelParser.parse(source, parserOptions, parserOverride);
 
-    return this.#escomplexModule.analyze(
-      BabelParser.parse(source, parserOptions, parserOverride),
-      options
-    );
+    return this.#escomplexModule.analyze(ast, options);
   }
 
   /**
@@ -112,7 +114,7 @@ export class ESComplex {
    *
    * @returns - A single module report.
    */
-  analyzeModuleAST(ast: any | any[], options: ProjectOptions) {
+  analyzeModuleAST(ast: any | any[], options: ComplexityReporterOptions) {
     return this.#escomplexModule.analyze(ast, options);
   }
 
@@ -227,7 +229,7 @@ export class ESComplex {
    */
   analyzeModuleAsync(
     source: string,
-    options = {},
+    options: ComplexityReporterOptions,
     parserOptions = void 0,
     parserOverride = void 0
   ) {
@@ -251,7 +253,7 @@ export class ESComplex {
    *
    * @returns - A single module report.
    */
-  analyzeModuleASTAsync(ast: any | any[], options: ProjectOptions) {
+  analyzeModuleASTAsync(ast: any | any[], options: ComplexityReporterOptions) {
     return new Promise((resolve, reject) => {
       try {
         resolve(this.analyzeModuleAST(ast, options));
