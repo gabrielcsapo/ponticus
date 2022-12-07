@@ -15,6 +15,7 @@
     "build:types": "tsc -b",
     "build": "npm run clean && npm run build --workspaces --if-present && npm run build:types",
     "test": "CI=true npm run test --workspaces --if-present",
+    "test:updatesnapshot": "CI=true npm run test --workspaces --if-present -- --update",
     "lint": "npm run lint --workspaces --if-present",
     "release": "release-it"
   },

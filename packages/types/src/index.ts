@@ -109,9 +109,17 @@ export type ReportFlags = {
 export interface ComplexityReporterOptions {
   ecmaFeatures?: EcmaFeatures;
   parserOptions?: ParserOptions;
-  sourceType: "module";
-  ecmaVersion: 6;
-  loc: true;
-  newmi: true;
-  range: true;
+  sourceType: string;
+  ecmaVersion: number;
+  loc: boolean;
+  newmi: boolean;
+  range: boolean;
 }
+
+export const DefaultComplexityReporterOptions: ComplexityReporterOptions = {
+  sourceType: "module",
+  ecmaVersion: 6,
+  loc: true,
+  newmi: false,
+  range: true,
+};
