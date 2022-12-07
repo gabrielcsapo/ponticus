@@ -6,6 +6,7 @@ import { type Node } from "@babel/types";
 type ModuleScopeControl = any;
 
 import { PluginManager } from "@ponticus/plugin-manager";
+import { ComplexityReporterOptions } from "@ponticus/types";
 
 type Scope = {
   /**
@@ -85,7 +86,7 @@ export default class Plugins {
    * @param options - (Optional) module processing options.
    *
    */
-  onConfigure(options: any) {
+  onConfigure(options: ComplexityReporterOptions) {
     let settings = {};
     const event = this._pluginManager.invokeSyncEvent("onConfigure", void 0, {
       options,

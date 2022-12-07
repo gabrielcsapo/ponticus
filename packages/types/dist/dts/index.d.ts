@@ -49,7 +49,7 @@ export interface EcmaFeatures {
     experimentalObjectRestSpread?: boolean;
 }
 export interface Plugin {
-    onConfigure(options: ProjectOptions[]): any;
+    onConfigure(options: ComplexityReporterOptions[]): any;
     onProjectAverage(projectReport: any, pathModule: PlatformPath, settings: any): any;
     onProjectCalculate(projectReport: any, pathModule: PlatformPath, settings: any): any;
     onProjectEnd(projectReport: any, pathModule: PlatformPath, settings: any): any;
@@ -64,7 +64,7 @@ export interface ProjectOptions {
     module: PluginOptions;
     project: PluginOptions;
 }
-export type InspectOptions = {
+export declare type InspectOptions = {
     recurse?: boolean;
     q?: boolean;
     title?: string;
@@ -72,7 +72,7 @@ export type InspectOptions = {
     date?: number;
     eslintrc?: string;
 };
-export type ReportFlags = {
+export declare type ReportFlags = {
     complexity: ComplexityReporterOptions;
     eslint: string | ESLintBase;
 };

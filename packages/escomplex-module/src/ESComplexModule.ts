@@ -6,6 +6,8 @@ import {
   // @ts-ignore
 } from "@ponticus/escomplex-commons";
 
+import { ComplexityReporterOptions } from "@ponticus/types";
+
 import { type File } from "@babel/types";
 
 import Plugins from "./Plugins.js";
@@ -47,7 +49,7 @@ export default class ESComplexModule {
    *
    * @returns A single module report.
    */
-  analyze(ast: File, options = {}): ModuleReport {
+  analyze(ast: File, options: ComplexityReporterOptions): ModuleReport {
     if (typeof ast !== "object" || Array.isArray(ast)) {
       throw new TypeError(
         "analyze error: `ast` is not an `object` or `array`."
@@ -186,7 +188,7 @@ export default class ESComplexModule {
    *
    * @returns A single module report.
    */
-  analyzeAsync(ast: any | any[], options = {}): Promise<ModuleReport> {
+  analyzeAsync(ast: File, options): Promise<ModuleReport> {
     return new Promise((resolve, reject) => {
       try {
         resolve(this.analyze(ast, options));

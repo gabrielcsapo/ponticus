@@ -55,7 +55,7 @@ export interface EcmaFeatures {
   experimentalObjectRestSpread?: boolean;
 }
 export interface Plugin {
-  onConfigure(options: ProjectOptions[]): any;
+  onConfigure(options: ComplexityReporterOptions[]): any;
   onProjectAverage(
     projectReport: any,
     pathModule: PlatformPath,
