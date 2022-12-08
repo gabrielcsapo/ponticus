@@ -1,3 +1,3 @@
-import BabelParser, { onPluginLoad } from "./BabelParser.js";
+import BabelParser, { onPluginLoad } from "@ponticus/babel-parser/BabelParser";
 
 export { BabelParser, onPluginLoad };
