@@ -19,8 +19,18 @@
     "parser",
     "AST"
   ],
-  "main": "./dist/index.js",
-  "types": "./dist/dts/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./src/*.ts",
+      "import": "./dist/*.js",
+      "require": "./dist/*.js"
+    }
+  },
   "dependencies": {
     "@babel/parser": "^7.20.3"
   },

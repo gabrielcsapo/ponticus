@@ -9,7 +9,7 @@
     "incremental": true,
     "lib": ["ESNext"],
     "module": "commonjs",
-    "moduleResolution": "node",
+    "moduleResolution": "nodenext",
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": false,

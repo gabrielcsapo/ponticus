@@ -1,4 +1,4 @@
-import ESComplexModule from "./ESComplexModule.js";
+import ESComplexModule from "@ponticus/escomplex-module/ESComplexModule";
 
 export { ESComplexModule };
 

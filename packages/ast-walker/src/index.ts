@@ -1,6 +1,6 @@
 import { type PluginEvent } from "@ponticus/plugin-manager";
 
-import ASTWalker from "./ASTWalker.js";
+import ASTWalker from "@ponticus/ast-walker/ASTWalker";
 
 export { ASTWalker };
 

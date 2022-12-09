@@ -1,9 +1,7 @@
 import { ASTWalker } from "@ponticus/ast-walker";
-// @ts-ignore
 import {
   type ModuleReport,
   ModuleScopeControl,
-  // @ts-ignore
 } from "@ponticus/escomplex-commons";
 
 import {
@@ -13,7 +11,7 @@ import {
 
 import { type File } from "@babel/types";
 
-import Plugins from "./Plugins.js";
+import Plugins from "@ponticus/escomplex-module/Plugins";
 
 /**
  * Provides a runtime to invoke ESComplexModule plugins for processing / metrics calculations of independent modules.
