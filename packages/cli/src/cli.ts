@@ -1,13 +1,18 @@
 #!/usr/bin/env node
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
-import generate from "./cmds/generate";
+import analyze from "./cmds/analyze";
+import report from "./cmds/report";
 
-const x = yargs(hideBin(process.argv))
+yargs(hideBin(process.argv))
   .usage("Ponticus complexity analyzer/reporter.")
-  .command(generate)
+  .epilogue(
+    "For more information, see https://gabrielcsapo.github.io/ponticus/"
+  )
+  .command(analyze)
+  .command(report)
   .version()
-  .showHelp()
-  .parse();
-
-console.log(x);
+  .parseAsync()
+  .then((args) => {
+    console.log(args);
+  });
