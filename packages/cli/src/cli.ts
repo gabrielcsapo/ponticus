@@ -1,14 +1,13 @@
 #!/usr/bin/env node
-import yargs from "yargs/yargs";
+import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
+import generate from "./cmds/generate";
 
-const argv = yargs(hideBin(process.argv)).options({
-  a: { type: "boolean", default: false },
-  b: { type: "string", demandOption: true },
-  c: { type: "number", alias: "chill" },
-  d: { type: "array" },
-  e: { type: "count" },
-  f: { choices: ["1", "2", "3"] },
-}).argv;
+const x = yargs(hideBin(process.argv))
+  .usage("Ponticus complexity analyzer/reporter.")
+  .command(generate)
+  .version()
+  .showHelp()
+  .parse();
 
-console.log(argv);
+console.log(x);
