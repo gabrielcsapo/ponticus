@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
-import analyze from "./cmds/analyze";
-import report from "./cmds/report";
+import analyze from "@ponticus/cli/cmds/analyze";
+import report from "@ponticus/cli/cmds/report";
 
 yargs(hideBin(process.argv))
   .usage("Ponticus complexity analyzer/reporter.")
@@ -11,6 +11,8 @@ yargs(hideBin(process.argv))
   )
   .command(analyze)
   .command(report)
+  .strictCommands()
+  .strictOptions()
   .version()
   .parseAsync()
   .then((args) => {

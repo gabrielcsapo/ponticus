@@ -1,6 +1,25 @@
 import { PlatformPath } from "path";
+import { type ArgumentsCamelCase } from "yargs";
 
-// how can we use template types?
+export interface AnalyzeCommandArgs extends ArgumentsCamelCase {
+  files: string[];
+  outputDir: string;
+  recursive: boolean;
+  title: string;
+}
+
+export interface ReportCommandArgs extends ArgumentsCamelCase {
+  input: string;
+  outputDir: string;
+  format: "stdout" | "xml" | "html";
+}
+
+/**
+ * Report can ALSO run as a subcommand of the Analyze command.
+ * In those cases the Report handler will get the combined args from both commands.
+ */
+export type AnalyzeAndReportCommandArgs = AnalyzeCommandArgs &
+  ReportCommandArgs;
 
 export interface Rules {
   quotes: any[];

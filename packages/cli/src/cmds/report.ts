@@ -1,3 +1,7 @@
+import {
+  AnalyzeAndReportCommandArgs,
+  ReportCommandArgs,
+} from "@ponticus/types";
 import { type CommandModule } from "yargs";
 
 const GenerateCommand: CommandModule = {
@@ -27,7 +31,7 @@ const GenerateCommand: CommandModule = {
         })
     );
   },
-  handler: async (args) => {
+  handler: async (args: ReportCommandArgs | AnalyzeAndReportCommandArgs) => {
     console.log("Gonna report so much of a generated report!", args);
     return Promise.resolve();
   },

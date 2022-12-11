@@ -1,11 +1,12 @@
 import { type CommandModule } from "yargs";
-import report from "./report";
+import { type AnalyzeCommandArgs } from "@ponticus/types";
+import report from "@ponticus/cli/cmds/report";
 
 const AnalyzeCommand: CommandModule = {
   command: "analyze",
   describe: "Perform a complexity analysis for the given input",
   builder: (_yargs) => {
-    console.log(report);
+    console.log("analyze");
     return (
       _yargs
         .option("exclude", {
@@ -27,7 +28,7 @@ const AnalyzeCommand: CommandModule = {
         .option("title", {
           alias: "t",
           type: "string",
-          description: "Lunchbox",
+          description: "The title of the report",
         })
         // true if present
         .option("recursive", {
@@ -39,7 +40,7 @@ const AnalyzeCommand: CommandModule = {
         .command(report)
     );
   },
-  handler: async (args) => {
+  handler: async (args: AnalyzeCommandArgs) => {
     console.log("Gonna analyze so much stuff!", args);
     return Promise.resolve();
   },
