@@ -1,14 +1,13 @@
-import {
+/* import {
   AnalyzeAndReportCommandArgs,
   ReportCommandArgs,
-} from "@ponticus/types";
+} from "@ponticus/types"; */
 import { type CommandModule } from "yargs";
 
 const GenerateCommand: CommandModule = {
   command: "report",
   describe: "Report a complexity report from the raw analysis.",
   builder: (_yargs) => {
-    console.log("reporter");
     return (
       _yargs
         .option("analysis", {
@@ -31,10 +30,11 @@ const GenerateCommand: CommandModule = {
         })
     );
   },
-  handler: async (args: ReportCommandArgs | AnalyzeAndReportCommandArgs) => {
-    console.log("Gonna report so much of a generated report!", args);
-    return Promise.resolve();
-  },
+  handler:
+    async (/* args: ReportCommandArgs | AnalyzeAndReportCommandArgs */) => {
+      console.log("Gonna report so much of a generated report!");
+      return Promise.resolve();
+    },
 };
 
 export default GenerateCommand;
