@@ -14,6 +14,6 @@ yargs(hideBin(process.argv))
   .strict()
   .version()
   .parseAsync()
-  .then((args) => {
-    console.log(args);
+  .then(() => {
+    console.log("done");
   });

@@ -1,8 +1,9 @@
-/* import {
+import { type CommandModule } from "yargs";
+import {
   AnalyzeAndReportCommandArgs,
   ReportCommandArgs,
-} from "@ponticus/types"; */
-import { type CommandModule } from "yargs";
+} from "@ponticus/types";
+import RunPlatoAnalysis from "@ponticus/cli/utils/plato/run-analysis";
 
 const GenerateCommand: CommandModule = {
   command: "report",
@@ -23,18 +24,18 @@ const GenerateCommand: CommandModule = {
           default: ".",
         })
         // the type of report: these should be pluggable, ideally specififed in a "ponticus" section of the consumer's package.json
+        // for now this is hidden while we continue to use Plato
         .option("format", {
-          type: "boolean",
-          default: "stdout",
-          choices: ["stdout", "xml", "html"],
+          default: "plato",
+          hidden: true,
+          choices: ["stdout", "plato", "xml", "html"],
         })
     );
   },
-  handler:
-    async (/* args: ReportCommandArgs | AnalyzeAndReportCommandArgs */) => {
-      console.log("Gonna report so much of a generated report!");
-      return Promise.resolve();
-    },
+  handler: async (args: ReportCommandArgs | AnalyzeAndReportCommandArgs) => {
+    console.log("Gonna report so much of a generated report!");
+    return RunPlatoAnalysis(args as AnalyzeAndReportCommandArgs);
+  },
 };
 
 export default GenerateCommand;

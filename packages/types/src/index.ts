@@ -6,6 +6,7 @@ export interface AnalyzeCommandArgs extends ArgumentsCamelCase {
   outputDir: string;
   recursive: boolean;
   title: string;
+  exclude: string[];
 }
 
 export interface ReportCommandArgs extends ArgumentsCamelCase {

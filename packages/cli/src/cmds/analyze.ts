@@ -1,5 +1,6 @@
 import { type CommandModule } from "yargs";
-/* import { type AnalyzeCommandArgs } from "@ponticus/types"; */
+import { type AnalyzeCommandArgs } from "@ponticus/types";
+import RunPlatoAnalysis from "@ponticus/cli/utils/plato/run-analysis";
 import report from "@ponticus/cli/cmds/report";
 
 const AnalyzeCommand: CommandModule = {
@@ -8,6 +9,7 @@ const AnalyzeCommand: CommandModule = {
   builder: (_yargs) => {
     return (
       _yargs
+        .usage("Analyze the source code and run the report.")
         .option("exclude", {
           alias: "x",
           description: "File exclusion globs",
@@ -18,6 +20,10 @@ const AnalyzeCommand: CommandModule = {
           type: "array",
           description: "A comma separated list of globs",
           demandOption: true,
+        })
+        .option("noEmpty", {
+          type: "boolean",
+          default: false,
         })
         // default to current directory
         .option("outputDir", {
@@ -41,9 +47,9 @@ const AnalyzeCommand: CommandModule = {
         .command("$0", "report", report)
     );
   },
-  handler: async (/* args: AnalyzeCommandArgs */) => {
+  handler: async (args: AnalyzeCommandArgs) => {
     console.log("Gonna analyze so much stuff!");
-    return Promise.resolve();
+    return RunPlatoAnalysis(args);
   },
 };
 
