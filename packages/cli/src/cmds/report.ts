@@ -3,7 +3,7 @@ import {
   AnalyzeAndReportCommandArgs,
   ReportCommandArgs,
 } from "@ponticus/types";
-import RunPlatoAnalysis from "@ponticus/cli/utils/plato/run-analysis";
+import RunPlatoAnalysis from "../utils/plato/analyzer";
 
 const GenerateCommand: CommandModule = {
   command: "report",
@@ -34,7 +34,9 @@ const GenerateCommand: CommandModule = {
   },
   handler: async (args: ReportCommandArgs | AnalyzeAndReportCommandArgs) => {
     console.log("Gonna report so much of a generated report!");
-    return RunPlatoAnalysis(args as AnalyzeAndReportCommandArgs);
+    if (args.analyzer === "plato") {
+      return RunPlatoAnalysis(args as AnalyzeAndReportCommandArgs);
+    }
   },
 };
 

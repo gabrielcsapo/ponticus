@@ -443,6 +443,7 @@ function writeFile(file: string, source: string) {
 export default {
   getOverviewReport,
   updateHistoricalOverview,
+  updateHistoricalReport,
   writeReport,
   writeFile,
   writeOverview,

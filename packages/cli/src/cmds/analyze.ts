@@ -1,6 +1,6 @@
 import { type CommandModule } from "yargs";
 import { type AnalyzeCommandArgs } from "@ponticus/types";
-import RunPlatoAnalysis from "@ponticus/cli/utils/plato/run-analysis";
+import RunPlatoAnalysis from "../utils/plato/analyzer";
 import report from "@ponticus/cli/cmds/report";
 
 const AnalyzeCommand: CommandModule = {
@@ -36,11 +36,11 @@ const AnalyzeCommand: CommandModule = {
           type: "string",
           description: "The title of the report",
         })
-        // true if present
-        .option("recursive", {
-          alias: "r",
-          type: "boolean",
-          default: true,
+        .option("analyzer", {
+          type: "string",
+          choices: ["plato"],
+          default: "plato",
+          hidden: true,
         })
         // the report subcommand
         // NOTE: Run by default until plato functionality can be separated
@@ -49,7 +49,11 @@ const AnalyzeCommand: CommandModule = {
   },
   handler: async (args: AnalyzeCommandArgs) => {
     console.log("Gonna analyze so much stuff!");
-    return RunPlatoAnalysis(args);
+    if (args.analyzer === "plato") {
+      return RunPlatoAnalysis(args);
+    } else {
+      console.log("Naw, I'll do it later");
+    }
   },
 };
 
