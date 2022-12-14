@@ -10,9 +10,8 @@ export interface AnalyzeCommandArgs extends ArgumentsCamelCase {
 }
 
 export interface ReportCommandArgs extends ArgumentsCamelCase {
-  input: string;
-  outputDir: string;
-  format: "stdout" | "xml" | "html";
+  format: "plato" | "html" | "stdout" | "xml";
+  inputDir: string;
 }
 
 /**

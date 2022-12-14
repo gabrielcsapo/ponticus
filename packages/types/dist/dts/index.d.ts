@@ -2,16 +2,15 @@
 import { PlatformPath } from "path";
 import { type ArgumentsCamelCase } from "yargs";
 export interface AnalyzeCommandArgs extends ArgumentsCamelCase {
+    analyzer: "plato";
     files: string[];
-    outputDir: string;
-    recursive: boolean;
-    title: string;
     exclude: string[];
+    outputDir: string;
+    title: string;
 }
 export interface ReportCommandArgs extends ArgumentsCamelCase {
-    input: string;
-    outputDir: string;
-    format: "stdout" | "xml" | "html";
+    format: "plato" | "html" | "stdout" | "xml";
+    inputDir: string;
 }
 /**
  * Report can ALSO run as a subcommand of the Analyze command.

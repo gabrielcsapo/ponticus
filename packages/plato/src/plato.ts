@@ -303,7 +303,18 @@ async function runReports(
   return finalReports;
 }
 
-async function updateHistoricalOverview(
+async function updateHistoricalOverviewJSON(
+  outfilePrefix: string,
+  overview: any,
+  options: any
+) {
+  var existingData =
+    (await util.readJSON(outfilePrefix + ".history.json")) || {};
+  var history = new OverviewHistory(existingData);
+  history.addReport(overview, options.date);
+  await writeReportJSON(outfilePrefix + ".history", history.toJSON());
+}
+async function updateHistoricalOverviewModule(
   outfilePrefix: string,
   overview: any,
   options: any
@@ -314,34 +325,73 @@ async function updateHistoricalOverview(
   history.addReport(overview, options.date);
   await writeReport(outfilePrefix + ".history", history.toJSON(), "__history");
 }
-
-async function updateHistoricalReport(
+async function updateHistoricalOverview(
   outfilePrefix: string,
   overview: any,
   options: any
 ) {
+  await updateHistoricalOverviewJSON(outfilePrefix, overview, options);
+  await updateHistoricalOverviewModule(outfilePrefix, overview, options);
+}
+
+async function updateHistoricalJSON(
+  outfilePrefix: string,
+  overview: any,
+  options: any) {
   var existingData =
     (await util.readJSON(outfilePrefix + ".history.json")) || {};
   var history = new FileHistory(existingData);
   overview.date = options.date;
   history.addReport(overview, options.date);
-  await writeReport(outfilePrefix + ".history", history.toJSON(), "__history");
+  await writeReportJSON(outfilePrefix + ".history", history.toJSON());
+}
+async function updateHistoricalModule(
+  outfilePrefix: string,
+  overview: any,
+  options: any) {
+  var existingData =
+    (await util.readJSON(outfilePrefix + ".history.json")) || {};
+  var history = new FileHistory(existingData);
+  await writeReportModule(outfilePrefix + ".history", history.toJSON(), "__history");
+}
+async function updateHistoricalReport(
+  outfilePrefix: string,
+  overview: any,
+  options: any
+) {
+  updateHistoricalJSON(outfilePrefix, overview, options);
+  updateHistoricalModule(outfilePrefix, overview, options);
+
 }
 
+async function writeReportJSON(
+  outfilePrefix: string,
+  report: any,
+) {
+  const formatted = util.formatJSON(report);
+  writeFile(outfilePrefix + ".json", formatted);
+}
+async function writeReportModule(
+  outfilePrefix: string,
+  report: any,
+  exportName?: string
+) {
+
+  const formatted = util.formatJSON(report);
+  exportName = exportName || "__report";
+  const module = exportName + " = " + formatted;
+  writeFile(outfilePrefix + ".js", module);
+}
 async function writeReport(
   outfilePrefix: string,
   report: any,
   exportName?: string
 ) {
-  var formatted = util.formatJSON(report);
 
-  writeFile(outfilePrefix + ".json", formatted);
-
-  exportName = exportName || "__report";
-
-  var module = exportName + " = " + formatted;
-
-  writeFile(outfilePrefix + ".js", module);
+  await writeReportJSON(outfilePrefix, report);
+  await writeReportModule(outfilePrefix,
+    report,
+    exportName)
 }
 
 async function writeOverview(
@@ -442,9 +492,15 @@ function writeFile(file: string, source: string) {
 
 export default {
   getOverviewReport,
+  updateHistoricalOverviewJSON,
+  updateHistoricalOverviewModule,
   updateHistoricalOverview,
+  updateHistoricalJSON,
+  updateHistoricalModule,
   updateHistoricalReport,
   writeReport,
+  writeReportJSON,
+  writeReportModule,
   writeFile,
   writeOverview,
   inspect,

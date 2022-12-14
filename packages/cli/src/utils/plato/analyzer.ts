@@ -12,10 +12,10 @@ import fs from "fs";
 import path from "path";
 
 const {
-  writeReport: writeAnalysis,
-  updateHistoricalReport: updateHistoricalAnalysis,
+  writeReportJSON,
+  updateHistoricalJSON,
   getOverviewReport: getOverviewAnalysis,
-  updateHistoricalOverview: updateHistoricalOverviewAnalysis,
+  updateHistoricalOverviewJSON,
 } = Plato;
 
 const log = debug("ponticus:cli:plato:analyzer");
@@ -57,18 +57,13 @@ export default async function runAnalysis(commandArgs: AnalyzeCommandArgs) {
     eslint: DefaultESLintBase,
   };
 
-  const reports = await runReports(
-    filesToAnalyze,
-    commandArgs,
-    flags,
-    outputDir
-  );
+  const reports = await runReports(filesToAnalyze, commandArgs, flags);
 
   if (reports) {
     const reportFilePrefix = path.join(outputDir, "report");
     const overviewReport = getOverviewAnalysis(reports);
-    await writeAnalysis(reportFilePrefix, overviewReport);
-    await updateHistoricalOverviewAnalysis(
+    await writeReportJSON(reportFilePrefix, overviewReport);
+    await updateHistoricalOverviewJSON(
       reportFilePrefix,
       overviewReport,
       commandArgs
@@ -79,11 +74,13 @@ export default async function runAnalysis(commandArgs: AnalyzeCommandArgs) {
 async function runReports(
   files: string[],
   options: AnalyzeCommandArgs,
-  flags: ReportFlags,
-  fileOutputDir?: string
+  flags: ReportFlags
 ): Promise<void | any[]> {
   // src files are copied here for reference in the report
   const fileDir = "files";
+  const fileOutputDir = options.outputDir
+    ? path.join(options.outputDir, fileDir)
+    : fileDir;
   const commonBasePath = util.findCommonBase(files);
   let reports: any[] = files.map(async function reportEachFile(file) {
     log("processing", file);
@@ -159,6 +156,6 @@ async function runReports(
 
 async function writeFileAnalysis(outdir: string, report: any, options: any) {
   const outfilePrefix = path.join(outdir, "report");
-  await updateHistoricalAnalysis(outfilePrefix, report, options);
-  await writeAnalysis(outfilePrefix, report);
+  await updateHistoricalJSON(outfilePrefix, report, options);
+  await writeReportJSON(outfilePrefix, report);
 }
