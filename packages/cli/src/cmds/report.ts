@@ -24,6 +24,7 @@ const GenerateCommand: CommandModule = {
     );
   },
   handler: async (args: AnalyzeAndReportCommandArgs) => {
+    const start = Date.now();
     console.log("Gonna report so much of a generated report!");
     if (args.analyzer === "plato") {
       console.log("Bug first, let us performan an analysis using Plato");
@@ -36,6 +37,7 @@ const GenerateCommand: CommandModule = {
     } else {
       console.log("I have literally nothing to do");
     }
+    console.log(Date.now() - start);
   },
 };
 

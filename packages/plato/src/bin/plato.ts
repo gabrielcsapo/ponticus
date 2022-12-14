@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 "use strict";
-
 import { Command } from "commander";
 
 import fs from "fs";
@@ -47,7 +46,7 @@ program.option("-e, --eslint", "Specify a eslintrc file for ESLint linting");
 program.parse(process.argv);
 
 const options = program.opts();
-
+const start = Date.now();
 plato
   .inspect(options.files, options.outputDir, {
     recurse: !!options.recurse,
@@ -59,6 +58,7 @@ plato
   })
   .then(() => {
     console.log("done!");
+    console.log(Date.now() - start);
   })
   .catch((ex) => {
     console.log(ex);
