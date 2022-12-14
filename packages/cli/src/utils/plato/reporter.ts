@@ -5,7 +5,13 @@ import fastglob from "fast-glob";
 
 import Plato from "@ponticus/plato/plato";
 
-const { writeReportModule, writeFileReportUI } = Plato;
+const {
+  writeReportModule,
+  writeFileReportUI,
+  writeOverallReportUI,
+  updateHistoricalModule,
+  updateHistoricalOverviewModule,
+} = Plato;
 
 const log = debug("ponticus:cli:plato:reporter");
 
@@ -31,14 +37,21 @@ export default async function generateReport(inputDir: string) {
       const reportDir = path.join(inputDir, path.dirname(f));
       const reportSource = await fs.readFile(path.join(inputDir, f), "utf8");
       const report = JSON.parse(reportSource);
+      const reportPrefix = path.join(reportDir, "report");
       if (f.includes("files")) {
         if (!f.includes("history")) {
           const source = await fs.readFile(report.info.file, "utf-8");
           writeFileReportUI(reportDir, report, source, {});
+          writeReportModule(reportPrefix, report);
+        } else {
+          updateHistoricalModule(reportPrefix);
         }
-        writeReportModule(path.join(reportDir, "report"), report);
       } else {
-        console.log("we will see");
+        if (!f.includes("history")) {
+          writeOverallReportUI(report, reportDir, {});
+          writeReportModule(reportPrefix, report);
+          updateHistoricalOverviewModule(reportPrefix, report, {});
+        }
       }
     })
   );

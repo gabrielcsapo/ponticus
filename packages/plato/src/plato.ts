@@ -165,34 +165,15 @@ async function inspect(
 
     reports = await runReports(files, options, flags, fileOutputDir);
     var reportFilePrefix = path.join(outputDir, "report");
-    var overview = path.join(outputDir, "index.html");
-    var wallDisplay = path.join(outputDir, "display.html");
-    fs.cpSync(assets, path.join(outputDir, "assets"), { recursive: true });
+
     if (!Array.isArray(reports)) {
       throw new Error("reprts did not return array");
     }
     var overviewReport = getOverviewReport(reports);
     await updateHistoricalOverview(reportFilePrefix, overviewReport, options);
     await writeReport(reportFilePrefix, overviewReport);
-    await writeOverview(
-      overview,
-      overviewReport,
-      {
-        title: options.title,
-        flags: flags,
-      },
-      overviewTemplate
-    );
-    await writeOverview(
-      wallDisplay,
-      overviewReport,
-      {
-        title: options.title,
-        flags: flags,
-      },
-      displayTemplate
-    );
-  }
+    await writeOverallReportUI(overviewReport, outputDir, options, flags);
+  };
 
   return reports;
 }
@@ -301,6 +282,30 @@ async function runReports(
     .catch((e) => console.log(e));
 
   return finalReports;
+}
+
+async function writeOverallReportUI(overviewReport, outputDir, options, flags = {}) {
+  var overview = path.join(outputDir, "index.html");
+  var wallDisplay = path.join(outputDir, "display.html");
+  fs.cpSync(assets, path.join(outputDir, "assets"), { recursive: true });
+  await writeOverview(
+    overview,
+    overviewReport,
+    {
+      title: options.title,
+      flags: flags,
+    },
+    overviewTemplate
+  );
+  await writeOverview(
+    wallDisplay,
+    overviewReport,
+    {
+      title: options.title,
+      flags: flags,
+    },
+    displayTemplate
+  );
 }
 
 async function updateHistoricalOverviewJSON(
@@ -507,6 +512,7 @@ export default {
   updateHistoricalReport,
   writeFileReportUI,
   writeFileReport,
+  writeOverallReportUI,
   writeReport,
   writeReportJSON,
   writeReportModule,
