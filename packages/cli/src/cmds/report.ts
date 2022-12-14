@@ -3,6 +3,8 @@ import { AnalyzeAndReportCommandArgs } from "@ponticus/types";
 import RunPlatoAnalysis from "../utils/plato/analyzer";
 import CreatePlatoReport from "../utils/plato/reporter";
 
+import { performance } from "node:perf_hooks";
+
 const GenerateCommand: CommandModule = {
   command: "report",
   describe: "Report a complexity report from the raw analysis.",
@@ -24,20 +26,32 @@ const GenerateCommand: CommandModule = {
     );
   },
   handler: async (args: AnalyzeAndReportCommandArgs) => {
-    const start = Date.now();
     console.log("Gonna report so much of a generated report!");
     if (args.analyzer === "plato") {
-      console.log("Bug first, let us performan an analysis using Plato");
+      console.log("Bug first, let us perform an analysis using Plato");
+      performance.mark("ponticus:plato:analysis:start");
       await RunPlatoAnalysis(args);
+      performance.mark("ponticus:plato:analysis:stop");
     }
     if (args.format === "plato") {
       // use the outputDir from the analysis if present, otherwise use the inputDir
       console.log("Now, let us provide a plato report!");
+      performance.mark("ponticus:plato:report:start");
       await CreatePlatoReport(args.outputDir ?? args.inputDir);
+      performance.mark("ponticus:plato:report:stop");
+      performance.measure(
+        "ponticus:plato:analysis",
+        "ponticus:plato:analysis:start",
+        "ponticus:plato:analysis:stop"
+      );
+      performance.measure(
+        "ponticus:plato:report",
+        "ponticus:plato:report:start",
+        "ponticus:plato:report:stop"
+      );
     } else {
       console.log("I have literally nothing to do");
     }
-    console.log(Date.now() - start);
   },
 };
 

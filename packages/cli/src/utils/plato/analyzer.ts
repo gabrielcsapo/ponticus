@@ -70,6 +70,7 @@ export default async function runAnalysis(commandArgs: AnalyzeCommandArgs) {
       commandArgs
     );
   }
+  return reports;
 }
 
 async function runReports(

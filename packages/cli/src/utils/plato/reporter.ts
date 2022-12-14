@@ -22,7 +22,6 @@ const log = debug("ponticus:cli:plato:reporter");
  * assumptions re: which files the report creates (i.e. report.json and report.history.json) and where they live (files/__filename__/)
  */
 export default async function generateReport(inputDir: string) {
-  console.log(inputDir);
   // find all the report.json and report.history.json
   const analysisFiles = await fastglob(
     ["**/report.json", "**/report.history.json"],
@@ -32,7 +31,7 @@ export default async function generateReport(inputDir: string) {
     }
   );
   log(analysisFiles);
-  const reporting = Promise.allSettled(
+  const reporting = await Promise.allSettled(
     analysisFiles.map(async (f) => {
       const reportDir = path.join(inputDir, path.dirname(f));
       const reportSource = await fs.readFile(path.join(inputDir, f), "utf8");
@@ -57,5 +56,4 @@ export default async function generateReport(inputDir: string) {
   );
   log(reporting);
   return reporting;
-  // write
 }
