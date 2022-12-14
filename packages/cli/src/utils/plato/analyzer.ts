@@ -28,6 +28,7 @@ export default async function runAnalysis(commandArgs: AnalyzeCommandArgs) {
       [files].map(
         async (pattern) =>
           await fastglob(pattern, {
+            absolute: true,
             onlyFiles: true,
             ignore: exclude,
           })
