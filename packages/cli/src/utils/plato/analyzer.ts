@@ -28,7 +28,7 @@ export default async function runAnalysis(commandArgs: AnalyzeCommandArgs) {
       [files].map(
         async (pattern) =>
           await fastglob(pattern, {
-            absolute: true,
+            // absolute: true,
             onlyFiles: true,
             ignore: exclude,
           })
@@ -111,7 +111,8 @@ async function runReports(
       }
       var report = {
         info: {
-          file: file,
+          // get the absolute path so it can be referenced from the report
+          file: path.resolve(path.relative(process.cwd(), file)),
           fileShort: fileShort,
           fileSafe: fileSafe,
           link: fileDir + "/" + fileSafe + "/index.html",
