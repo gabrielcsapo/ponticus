@@ -7,13 +7,16 @@ import { performance, PerformanceObserver } from "node:perf_hooks";
 
 import fs from "fs";
 import path from "path";
+import debug from "debug";
+
+const log = debug("perf");
 
 import plato from "../plato.js";
 
 const obs = new PerformanceObserver((list, observer) => {
-  /* console.log(list.getEntries()[0]);
+  log(list.getEntries()[0]);
   performance.clearMarks();
-  observer.disconnect(); */
+  observer.disconnect();
 });
 obs.observe({ entryTypes: ['measure'], buffered: true });
 

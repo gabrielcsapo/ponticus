@@ -9,9 +9,10 @@ import { performance, PerformanceObserver } from "node:perf_hooks";
 
 const log = debug("ponticus:cli");
 
+const perfLog = log.extend("perf");
 const obs = new PerformanceObserver((items) => {
   items.getEntries().forEach((entry) => {
-    log(entry);
+    perfLog(entry);
   });
 });
 obs.observe({ entryTypes: ["measure"] });
