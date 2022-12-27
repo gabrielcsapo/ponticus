@@ -8,11 +8,6 @@
   },
   "description": "CLI for ponticus",
   "exports": {
-    ".": {
-      "types": "./src/index.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.js"
-    },
     "./*": {
       "types": "./src/*.ts",
       "import": "./dist/*.js",
@@ -22,7 +17,7 @@
   "scripts": {
     "build": "swc src -d dist --config-file ../../.swcrc",
     "build:types": "tsc -b",
-    "lint": "eslint .",
+    "lint": "eslint . --ext .ts",
     "prepublish": "npm run build",
     "tests-are-coming-soon": "vitest"
   },
