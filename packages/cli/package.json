@@ -19,7 +19,7 @@
     "build:types": "tsc -b",
     "lint": "eslint . --ext .ts",
     "prepublish": "npm run build",
-    "tests-are-coming-soon": "vitest"
+    "test": "vitest"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.57",

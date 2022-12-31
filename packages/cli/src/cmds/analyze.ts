@@ -50,7 +50,7 @@ const AnalyzeCommand: CommandModule = {
   handler: async (args: AnalyzeCommandArgs) => {
     console.log("Gonna analyze so much stuff!");
     if (args.analyzer === "plato") {
-      return RunPlatoAnalysis(args);
+      RunPlatoAnalysis(args);
     } else {
       console.log("Naw, I'll do it later");
     }
