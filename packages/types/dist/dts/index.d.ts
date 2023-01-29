@@ -1,5 +1,22 @@
 /// <reference types="node" />
 import { PlatformPath } from "path";
+import { type ArgumentsCamelCase } from "yargs";
+export interface AnalyzeCommandArgs extends ArgumentsCamelCase {
+    analyzer: "plato";
+    files: string[];
+    exclude: string[];
+    outputDir: string;
+    title: string;
+}
+export interface ReportCommandArgs extends ArgumentsCamelCase {
+    format: "plato" | "html" | "stdout" | "xml";
+    inputDir: string;
+}
+/**
+ * Report can ALSO run as a subcommand of the Analyze command.
+ * In those cases the Report handler will get the combined args from both commands.
+ */
+export declare type AnalyzeAndReportCommandArgs = AnalyzeCommandArgs & ReportCommandArgs;
 export interface Rules {
     quotes: any[];
     semi: any[];

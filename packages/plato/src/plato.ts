@@ -165,34 +165,15 @@ async function inspect(
 
     reports = await runReports(files, options, flags, fileOutputDir);
     var reportFilePrefix = path.join(outputDir, "report");
-    var overview = path.join(outputDir, "index.html");
-    var wallDisplay = path.join(outputDir, "display.html");
-    fs.cpSync(assets, path.join(outputDir, "assets"), { recursive: true });
+
     if (!Array.isArray(reports)) {
       throw new Error("reprts did not return array");
     }
     var overviewReport = getOverviewReport(reports);
     await updateHistoricalOverview(reportFilePrefix, overviewReport, options);
     await writeReport(reportFilePrefix, overviewReport);
-    await writeOverview(
-      overview,
-      overviewReport,
-      {
-        title: options.title,
-        flags: flags,
-      },
-      overviewTemplate
-    );
-    await writeOverview(
-      wallDisplay,
-      overviewReport,
-      {
-        title: options.title,
-        flags: flags,
-      },
-      displayTemplate
-    );
-  }
+    await writeOverallReportUI(overviewReport, outputDir, options, flags);
+  };
 
   return reports;
 }
@@ -303,7 +284,42 @@ async function runReports(
   return finalReports;
 }
 
-async function updateHistoricalOverview(
+async function writeOverallReportUI(overviewReport, outputDir, options, flags = {}) {
+  var overview = path.join(outputDir, "index.html");
+  var wallDisplay = path.join(outputDir, "display.html");
+  fs.cpSync(assets, path.join(outputDir, "assets"), { recursive: true });
+  await writeOverview(
+    overview,
+    overviewReport,
+    {
+      title: options.title,
+      flags: flags,
+    },
+    overviewTemplate
+  );
+  await writeOverview(
+    wallDisplay,
+    overviewReport,
+    {
+      title: options.title,
+      flags: flags,
+    },
+    displayTemplate
+  );
+}
+
+async function updateHistoricalOverviewJSON(
+  outfilePrefix: string,
+  overview: any,
+  options: any
+) {
+  var existingData =
+    (await util.readJSON(outfilePrefix + ".history.json")) || {};
+  var history = new OverviewHistory(existingData);
+  history.addReport(overview, options.date);
+  await writeReportJSON(outfilePrefix + ".history", history.toJSON());
+}
+async function updateHistoricalOverviewModule(
   outfilePrefix: string,
   overview: any,
   options: any
@@ -314,34 +330,71 @@ async function updateHistoricalOverview(
   history.addReport(overview, options.date);
   await writeReport(outfilePrefix + ".history", history.toJSON(), "__history");
 }
-
-async function updateHistoricalReport(
+async function updateHistoricalOverview(
   outfilePrefix: string,
   overview: any,
   options: any
 ) {
+  await updateHistoricalOverviewJSON(outfilePrefix, overview, options);
+  await updateHistoricalOverviewModule(outfilePrefix, overview, options);
+}
+
+async function updateHistoricalJSON(
+  outfilePrefix: string,
+  overview: any,
+  options: any) {
   var existingData =
     (await util.readJSON(outfilePrefix + ".history.json")) || {};
   var history = new FileHistory(existingData);
   overview.date = options.date;
   history.addReport(overview, options.date);
-  await writeReport(outfilePrefix + ".history", history.toJSON(), "__history");
+  await writeReportJSON(outfilePrefix + ".history", history.toJSON());
+}
+async function updateHistoricalModule(
+  outfilePrefix: string) {
+  var existingData =
+    (await util.readJSON(outfilePrefix + ".history.json")) || {};
+  var history = new FileHistory(existingData);
+  await writeReportModule(outfilePrefix + ".history", history.toJSON(), "__history");
+}
+async function updateHistoricalReport(
+  outfilePrefix: string,
+  overview: any,
+  options: any
+) {
+  updateHistoricalJSON(outfilePrefix, overview, options);
+  updateHistoricalModule(outfilePrefix);
+
 }
 
+async function writeReportJSON(
+  outfilePrefix: string,
+  report: any,
+) {
+  const formatted = util.formatJSON(report);
+  writeFile(outfilePrefix + ".json", formatted);
+}
+async function writeReportModule(
+  outfilePrefix: string,
+  report: any,
+  exportName?: string
+) {
+
+  const formatted = util.formatJSON(report);
+  exportName = exportName || "__report";
+  const module = exportName + " = " + formatted;
+  writeFile(outfilePrefix + ".js", module);
+}
 async function writeReport(
   outfilePrefix: string,
   report: any,
   exportName?: string
 ) {
-  var formatted = util.formatJSON(report);
 
-  writeFile(outfilePrefix + ".json", formatted);
-
-  exportName = exportName || "__report";
-
-  var module = exportName + " = " + formatted;
-
-  writeFile(outfilePrefix + ".js", module);
+  await writeReportJSON(outfilePrefix, report);
+  await writeReportModule(outfilePrefix,
+    report,
+    exportName)
 }
 
 async function writeOverview(
@@ -360,12 +413,13 @@ async function writeOverview(
   writeFile(outfile, parsed);
 }
 
-async function writeFileReport(
+async function writeFileReportUI(
   outdir: string,
   report: any,
   source: string,
   options: any
 ) {
+  debugger;
   var overviewSource = fs.readFileSync(fileTemplate, "utf8");
 
   var parsed = _.template(overviewSource)({
@@ -373,9 +427,17 @@ async function writeFileReport(
     report: report,
   });
   var indexPath = path.join(outdir, "index.html");
-  var outfilePrefix = path.join(outdir, "report");
-
   writeFile(indexPath, parsed);
+}
+async function writeFileReport(
+  outdir: string,
+  report: any,
+  source: string,
+  options: any
+) {
+  await writeFileReportUI(outdir, report, source, options);
+
+  var outfilePrefix = path.join(outdir, "report");
   await updateHistoricalReport(outfilePrefix, report, options);
   await writeReport(outfilePrefix, report);
 }
@@ -442,8 +504,18 @@ function writeFile(file: string, source: string) {
 
 export default {
   getOverviewReport,
+  updateHistoricalOverviewJSON,
+  updateHistoricalOverviewModule,
   updateHistoricalOverview,
+  updateHistoricalJSON,
+  updateHistoricalModule,
+  updateHistoricalReport,
+  writeFileReportUI,
+  writeFileReport,
+  writeOverallReportUI,
   writeReport,
+  writeReportJSON,
+  writeReportModule,
   writeFile,
   writeOverview,
   inspect,

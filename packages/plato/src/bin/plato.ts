@@ -1,13 +1,24 @@
 #!/usr/bin/env node
 
 "use strict";
-
 import { Command } from "commander";
+
+import { performance, PerformanceObserver } from "node:perf_hooks";
 
 import fs from "fs";
 import path from "path";
+import debug from "debug";
+
+const log = debug("perf");
 
 import plato from "../plato.js";
+
+const obs = new PerformanceObserver((list, observer) => {
+  log(list.getEntries()[0]);
+  performance.clearMarks();
+  observer.disconnect();
+});
+obs.observe({ entryTypes: ['measure'], buffered: true });
 
 const pkg = JSON.parse(
   fs.readFileSync(path.resolve(__dirname, "..", "..", "package.json"), "utf8")
@@ -48,6 +59,7 @@ program.parse(process.argv);
 
 const options = program.opts();
 
+performance.mark('plato:start');
 plato
   .inspect(options.files, options.outputDir, {
     recurse: !!options.recurse,
@@ -59,6 +71,8 @@ plato
   })
   .then(() => {
     console.log("done!");
+    performance.mark(`plato:end`);
+    performance.measure(`plato`, 'plato:start', 'plato:end');
   })
   .catch((ex) => {
     console.log(ex);

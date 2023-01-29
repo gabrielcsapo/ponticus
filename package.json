@@ -21,24 +21,25 @@
   },
   "license": "ISC",
   "workspaces": [
-    "packages/plugin-manager",
-    "packages/escomplex-commons",
+    "./website",
+    "packages/analyzer",
     "packages/ast-walker",
     "packages/babel-parser",
-    "packages/escomplex-project",
+    "packages/cli",
+    "packages/escomplex-commons",
     "packages/escomplex-module",
-    "packages/escomplex",
-    "packages/analyzer",
     "packages/escomplex-plugin-formats-xml",
     "packages/escomplex-plugin-metrics-module",
     "packages/escomplex-plugin-metrics-project",
     "packages/escomplex-plugin-syntax-babylon",
     "packages/escomplex-plugin-syntax-estree",
+    "packages/escomplex-project",
     "packages/escomplex-test-data",
+    "packages/escomplex",
     "packages/plato",
+    "packages/plugin-manager",
     "packages/ponticus",
-    "packages/types",
-    "./website"
+    "packages/types"
   ],
   "volta": {
     "node": "18.12.1"
